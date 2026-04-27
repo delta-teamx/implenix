@@ -1,0 +1,22 @@
+---
+title: "Custom Webhook"
+description: "Send Implenix call data to any system via webhook."
+section: "CRM Integrations"
+order: 5
+---
+
+# Custom Webhook
+
+PLACEHOLDER DOC CONTENT — replace with the verified webhook spec.
+
+Every call event can be POSTed to a custom HTTPS endpoint. Payload includes caller, transcript, intent, booking, and recording URL.
+
+```json
+{
+  "callId": "string",
+  "callerPhone": "string",
+  "intent": "string",
+  "transcript": "string",
+  "bookedAt": "ISO-8601 datetime"
+}
+```

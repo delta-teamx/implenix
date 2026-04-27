@@ -1,0 +1,31 @@
+import Link from 'next/link';
+
+export default function LandingLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="min-h-screen flex flex-col bg-brand-dark">
+      <header className="border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 h-14 flex items-center">
+          <Link
+            href="/"
+            className="font-heading text-brand-purple text-xl"
+          >
+            Implenix
+          </Link>
+        </div>
+      </header>
+      <main className="flex-1">{children}</main>
+      <footer className="border-t border-brand-purple/20 bg-black">
+        <div className="max-w-content mx-auto px-6 py-6 text-xs text-white/60 flex flex-wrap items-center justify-between gap-2 font-body">
+          <span>© 2025 Implenix. All rights reserved.</span>
+          <Link href="/privacy-policy" className="hover:text-brand-cyan">
+            Privacy
+          </Link>
+        </div>
+      </footer>
+    </div>
+  );
+}

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-dark: #070538;
+  --color-brand-purple: #bb00ff;
+  --color-brand-cyan: #3dfaff;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+html {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-brand-purple);
+  color: var(--color-white);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.01em;
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono), monospace;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(61, 250, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(61, 250, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.coordinate-marker::before,
+.coordinate-marker::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-brand-purple);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-brand-cyan);
+  outline-offset: 2px;
+}
+
+.prose-implenix {
+  --tw-prose-body: #ffffff;
+  --tw-prose-headings: #ffffff;
+  --tw-prose-links: var(--color-brand-cyan);
+  --tw-prose-bold: #ffffff;
+  --tw-prose-code: var(--color-brand-cyan);
+  --tw-prose-quotes: #ffffff;
+  --tw-prose-quote-borders: var(--color-brand-purple);
+  --tw-prose-hr: rgba(187, 0, 255, 0.3);
+}
+
+.prose-implenix code {
+  background-color: #000000;
+  padding: 0.15rem 0.35rem;
+  border-radius: 2px;
+  color: var(--color-brand-cyan);
+}
+
+.prose-implenix pre {
+  background-color: #000000;
+  border: 1px solid rgba(61, 250, 255, 0.2);
+}

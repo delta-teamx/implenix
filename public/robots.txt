@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /lp/
+Disallow: /api/
+Disallow: /admin/
+Sitemap: https://implenix.net/sitemap.xml
