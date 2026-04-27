@@ -7,40 +7,84 @@ import {
   RefreshCw,
   ListChecks,
   Sparkles,
+  ArrowRight,
 } from 'lucide-react';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
 import { LeadForm } from '@/components/common/LeadForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
+import { Badge } from '@/components/common/Badge';
+import { SectionHeader } from '@/components/common/SectionHeader';
+import { BentoCard } from '@/components/common/BentoCard';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { DividedStats } from '@/components/common/DividedStats';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { faqSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 const FEATURES = [
-  { Icon: PhoneOutgoing, label: 'Outbound follow-up at the right cadence' },
-  { Icon: BellRing, label: 'Appointment reminders and confirmations' },
-  { Icon: Clock, label: 'Time-zone aware call windows' },
-  { Icon: RefreshCw, label: 'Two-way CRM sync after every call' },
-  { Icon: ListChecks, label: 'Custom qualification logic' },
-  { Icon: Sparkles, label: 'Re-engagement of cold and lost leads' },
+  {
+    Icon: PhoneOutgoing,
+    title: 'Outbound at the right cadence',
+    description: 'Multi-step sequences that respect call windows and prior outcomes.',
+    span: 'lg' as const,
+    accent: 'purple' as const,
+  },
+  {
+    Icon: BellRing,
+    title: 'Reminders & confirmations',
+    description: 'Reduce no-shows with timed pre-appointment outreach.',
+  },
+  {
+    Icon: Clock,
+    title: 'Time-zone aware',
+    description: 'Calls go out during local business hours.',
+  },
+  {
+    Icon: RefreshCw,
+    title: 'Two-way CRM sync',
+    description: 'Outcomes write back automatically.',
+  },
+  {
+    Icon: ListChecks,
+    title: 'Custom qualification logic',
+    description: 'Define disqualifiers, hot triggers, and escalation rules.',
+    span: 'lg' as const,
+    accent: 'purple' as const,
+  },
+  {
+    Icon: Sparkles,
+    title: 'Re-engagement of cold leads',
+    description: 'Surface forgotten pipeline with periodic outreach.',
+  },
 ];
 
 const USE_CASES = [
   {
-    title: 'New Lead Follow-up',
+    title: 'New lead follow-up',
     body: 'Automatically call new leads within 60 seconds, qualify intent, and book a meeting.',
   },
   {
-    title: 'Appointment Reminder',
+    title: 'Appointment reminder',
     body: 'Confirm upcoming appointments, reschedule conflicts, and reduce no-shows.',
   },
   {
-    title: 'No-show Re-engagement',
+    title: 'No-show re-engagement',
     body: 'Reach back out to no-shows the same day with a friendly path to rebook.',
   },
   {
-    title: 'Estimate Follow-up',
+    title: 'Estimate follow-up',
     body: 'Follow up on quotes that went cold and route warm replies to your closer.',
   },
+];
+
+const SAMPLE_TRANSCRIPT = [
+  { ts: '00:00', speaker: 'system' as const, text: 'Outbound · new lead · 38s after CRM creation' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Hi Sam — calling from Summit Realty about the listing on Cedar.' },
+  { ts: '00:07', speaker: 'caller' as const, text: 'Yeah — is it still available?' },
+  { ts: '00:09', speaker: 'agent' as const, text: 'It is. Want to book a showing this week?' },
+  { ts: '00:13', speaker: 'caller' as const, text: 'Saturday morning works.' },
+  { ts: '00:17', speaker: 'agent' as const, text: 'Booked — 10am Saturday. Confirmation incoming.' },
+  { ts: '00:21', speaker: 'system' as const, text: 'Showing booked · agent assigned · CRM updated' },
 ];
 
 const FAQS = [
@@ -82,46 +126,78 @@ export default function AIFollowupPage() {
   return (
     <>
       <SchemaOrg schema={[faqSchema(FAQS)]} />
-      <section className="grid-bg">
-        <div className="max-w-content mx-auto px-6 py-20 md:py-28">
-          <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-            [ solution // ai follow-up ]
-          </span>
-          <h1 className="font-heading text-4xl md:text-6xl mt-4 max-w-4xl leading-tight">
-            AI Follow-up Calls That{' '}
-            <span className="text-brand-cyan">Close While You Work</span>
-          </h1>
-          <p className="mt-6 font-body text-lg text-white/80 max-w-3xl">
-            Outbound sequences, lead nurture, appointment reminders, and
-            re-engagement campaigns. The Implenix follow-up agent calls every
-            lead at the right moment.
-          </p>
+
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              <Badge label="Solution · AI follow-up" variant="purple" />
+              <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+                AI follow-up calls that{' '}
+                <span className="text-brand-cyan">close</span> while you work
+              </h1>
+              <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
+                Outbound sequences, lead nurture, appointment reminders, and
+                re-engagement campaigns. The Implenix follow-up agent calls
+                every lead at the right moment.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Link
+                  href="/contact"
+                  data-cta-location="solutions-hero"
+                  data-cta-type="primary"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+                >
+                  Book a Demo <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="#faq"
+                  data-cta-location="solutions-hero"
+                  data-cta-type="secondary"
+                  className="inline-flex items-center justify-center border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  Read FAQ
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <CodeWindow
+                title="summit-realty.followup.log"
+                lines={SAMPLE_TRANSCRIPT}
+                caption="Sample outbound · lead → showing booked in 21s"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/20">
-        <div className="max-w-content mx-auto px-6 py-20">
-          <h2 className="font-heading text-3xl md:text-4xl">What it does</h2>
-          <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {FEATURES.map(({ Icon, label }) => (
-              <li
-                key={label}
-                className="border border-brand-purple/20 p-5 flex items-start gap-3"
-              >
-                <Icon size={22} className="text-brand-cyan shrink-0 mt-0.5" />
-                <span className="font-body text-white text-sm">{label}</span>
-              </li>
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Capabilities"
+            title="What the follow-up agent does"
+          />
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-4 gap-5">
+            {FEATURES.map((f) => (
+              <BentoCard key={f.title} {...f} />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 py-20">
-          <h2 className="font-heading text-3xl md:text-4xl">Use cases</h2>
-          <div className="mt-10 grid sm:grid-cols-2 gap-6">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Use cases"
+            title="Four sequences we ship out of the box"
+            badgeVariant="purple"
+          />
+          <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {USE_CASES.map((u) => (
-              <div key={u.title} className="border-l-[3px] border-brand-purple bg-black p-6">
+              <div
+                key={u.title}
+                className="border-l-[3px] border-brand-purple bg-black p-6"
+              >
                 <h3 className="font-heading text-xl text-white">{u.title}</h3>
                 <p className="mt-2 font-body text-sm text-white/75 leading-relaxed">
                   {u.body}
@@ -132,57 +208,49 @@ export default function AIFollowupPage() {
         </div>
       </section>
 
-      <section className="bg-black">
-        <div className="max-w-content mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Outcomes"
+            title="What teams see after deployment"
+          />
+          <div className="mt-12">
+            <DividedStats
+              stats={[
+                { number: '<60s', label: 'speed-to-lead on new inbound leads' },
+                { number: '-29%', label: 'no-show rate on booked appointments' },
+                { number: '+41%', label: 'cold pipeline re-engaged month over month' },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl">Hear a follow-up call</h2>
-            <p className="mt-4 text-white/70 font-body">
-              A real outbound qualification call routed back to a human closer.
-            </p>
+            <SectionHeader
+              eyebrow="Hear it"
+              title="A real outbound qualification call"
+              description="A real outbound qualification call routed back to a human closer."
+              badgeVariant="purple"
+            />
           </div>
           <AudioPlayer label="Demo: Real estate lead follow-up" />
         </div>
       </section>
 
-      <section className="bg-brand-dark border-t border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 className="font-heading text-3xl md:text-4xl">Pricing</h2>
-            <p className="mt-4 font-body text-white/80 max-w-md">
-              Custom pricing based on outbound volume and the complexity of your
-              workflows.
-            </p>
-            <Link
-              href="/contact"
-              data-cta-location="solutions-followup-pricing"
-              data-cta-type="primary"
-              className="mt-6 inline-flex bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
-            >
-              Get a Quote
-            </Link>
-          </div>
-          <div className="border border-brand-cyan/30 p-6">
-            <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-              [ what is included ]
-            </span>
-            <ul className="mt-4 space-y-2 font-body text-sm text-white/85">
-              <li>Outbound campaign design</li>
-              <li>CRM-triggered sequences</li>
-              <li>Live transfer to human closer</li>
-              <li>Reporting and ongoing optimization</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black">
-        <div className="max-w-content mx-auto px-6 py-20">
-          <h2 className="font-heading text-3xl md:text-4xl">Frequently asked</h2>
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
+      <section id="faq" className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="Frequently asked"
+          />
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
             {FAQS.map((f) => (
-              <div key={f.question} className="border border-brand-purple/20 p-5">
+              <div key={f.question} className="border border-brand-purple/20 p-6">
                 <p className="font-heading text-white text-lg">{f.question}</p>
-                <p className="mt-2 font-body text-sm text-white/75 leading-relaxed">
+                <p className="mt-3 font-body text-sm text-white/75 leading-relaxed">
                   {f.answer}
                 </p>
               </div>
@@ -192,16 +260,13 @@ export default function AIFollowupPage() {
       </section>
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10">
-          <div>
-            <h2 className="font-heading text-3xl md:text-4xl">
-              Get a custom Implenix demo
-            </h2>
-            <p className="mt-4 font-body text-white/75 max-w-md">
-              We will design a follow-up sequence against your funnel and run a
-              live test on your number.
-            </p>
-          </div>
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-2 gap-10">
+          <SectionHeader
+            eyebrow="Get started"
+            title="Get a custom Implenix demo"
+            description="We will design a follow-up sequence against your funnel and run a live test on your number."
+            badgeVariant="purple"
+          />
           <div className="border border-brand-purple/30 bg-black p-6">
             <LeadForm variant="demo" ctaLocation="solutions-ai-followup" />
           </div>

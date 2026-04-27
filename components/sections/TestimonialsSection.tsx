@@ -1,3 +1,4 @@
+import { SectionHeader } from '@/components/common/SectionHeader';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
 
 const PLACEHOLDERS = [
@@ -28,11 +29,13 @@ export function TestimonialsSection() {
   return (
     <section className="bg-brand-dark border-t border-brand-purple/15">
       <div className="max-w-content mx-auto px-6 py-24">
-        <h2 className="font-heading text-3xl md:text-5xl text-white max-w-3xl">
-          Verified results from real businesses
-        </h2>
+        <SectionHeader
+          eyebrow="Verified results"
+          title="From real businesses"
+          description="Every quote here is paired with a real call recording. Click play, hear the agent."
+        />
         {/* REPLACE WITH REAL TESTIMONIALS + REAL RECORDING LINKS */}
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
+        <div className="mt-12 grid md:grid-cols-3 gap-5">
           {PLACEHOLDERS.map((t) => (
             <TestimonialCard key={t.businessName} {...t} />
           ))}

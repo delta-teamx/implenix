@@ -9,6 +9,7 @@ import { CaseStudiesPreview } from '@/components/sections/CaseStudiesPreview';
 import { DemoCTASection } from '@/components/sections/DemoCTASection';
 import { ROICalculator } from '@/components/common/ROICalculator';
 import { StickyDemoCTA } from '@/components/common/StickyDemoCTA';
+import { SectionHeader } from '@/components/common/SectionHeader';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { organizationSchema, websiteSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
@@ -33,13 +34,12 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
-          <h2 className="font-heading text-3xl md:text-5xl text-white max-w-3xl">
-            Calculate what missed calls are costing you
-          </h2>
-          <p className="mt-4 font-body text-white/70 max-w-2xl">
-            Plug in your numbers. See the monthly cost. Unlock the full
-            breakdown to share with your team.
-          </p>
+          <SectionHeader
+            eyebrow="ROI calculator"
+            title="Calculate what missed calls are costing you"
+            description="Plug in your numbers. See the monthly cost. Unlock the full breakdown to share with your team."
+            badgeVariant="purple"
+          />
           <div className="mt-12">
             <ROICalculator />
           </div>
