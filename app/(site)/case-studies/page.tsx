@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { allCaseStudies } from 'contentlayer/generated';
+import { Badge } from '@/components/common/Badge';
 import { buildMetadata } from '@/lib/seo';
 import { CaseStudiesClient } from './CaseStudiesClient';
 
@@ -26,18 +27,19 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <section className="grid-bg">
-        <div className="max-w-content mx-auto px-6 py-20 md:py-24">
-          <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-            [ proof // case studies ]
-          </span>
-          <h1 className="font-heading text-4xl md:text-6xl mt-4">
-            Case Studies
-          </h1>
-          <p className="mt-4 font-body text-white/75 max-w-2xl">
-            Verified deployments from the Implenix portfolio. Filter by
-            industry to see what we have shipped for businesses like yours.
-          </p>
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
+          <div className="max-w-3xl flex flex-col gap-5">
+            <Badge label="Proof · Case studies" variant="purple" />
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.04]">
+              Verified deployments from the Implenix portfolio.
+            </h1>
+            <p className="font-body text-white/75 text-lg max-w-2xl leading-relaxed">
+              Filter by industry to see what we have shipped for businesses
+              like yours. Every case study is paired with a real call
+              recording.
+            </p>
+          </div>
         </div>
       </section>
       <section className="bg-black border-t border-brand-purple/20">

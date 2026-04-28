@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { allResources } from 'contentlayer/generated';
+import { Badge } from '@/components/common/Badge';
 import { buildMetadata } from '@/lib/seo';
 import { ResourcesClient, type ResourceItem } from './ResourcesClient';
 
@@ -30,16 +31,19 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <section className="grid-bg">
-        <div className="max-w-content mx-auto px-6 py-20 md:py-24">
-          <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-            [ resources // hub ]
-          </span>
-          <h1 className="font-heading text-4xl md:text-6xl mt-4">Resources</h1>
-          <p className="mt-4 font-body text-white/75 max-w-2xl">
-            Long-form guides, deployment playbooks, and a working glossary for
-            anyone implementing voice AI in a local business.
-          </p>
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
+          <div className="max-w-3xl flex flex-col gap-5">
+            <Badge label="Resources · Hub" variant="cyan" />
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.04]">
+              Guides, playbooks, and a working{' '}
+              <span className="text-brand-cyan">voice-AI glossary</span>.
+            </h1>
+            <p className="font-body text-white/75 text-lg max-w-2xl leading-relaxed">
+              Long-form articles, deployment playbooks, and a working glossary
+              for anyone implementing voice AI in a local business.
+            </p>
+          </div>
         </div>
       </section>
       <section className="bg-black border-t border-brand-purple/20">

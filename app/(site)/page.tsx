@@ -6,6 +6,8 @@ import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { IntegrationStrip } from '@/components/sections/IntegrationStrip';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { CaseStudiesPreview } from '@/components/sections/CaseStudiesPreview';
+import { ComparisonSection } from '@/components/sections/ComparisonSection';
+import { QuoteSection } from '@/components/sections/QuoteSection';
 import { DemoCTASection } from '@/components/sections/DemoCTASection';
 import { ROICalculator } from '@/components/common/ROICalculator';
 import { StickyDemoCTA } from '@/components/common/StickyDemoCTA';
@@ -28,8 +30,10 @@ export default function HomePage() {
       <Hero />
       <ProblemSection />
       <HowItWorks />
+      <ComparisonSection />
       <IndustriesGrid />
       <IntegrationStrip />
+      <QuoteSection />
       <TestimonialsSection />
       <CaseStudiesPreview />
       <section className="bg-brand-dark border-t border-brand-purple/15">

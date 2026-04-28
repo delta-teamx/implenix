@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { allCaseStudies } from 'contentlayer/generated';
-import { StatCard } from '@/components/common/StatCard';
+import { Badge } from '@/components/common/Badge';
+import { SectionHeader } from '@/components/common/SectionHeader';
+import { DividedStats } from '@/components/common/DividedStats';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
 import { LeadForm } from '@/components/common/LeadForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
@@ -54,57 +58,83 @@ export default function CaseStudyPage({ params }: { params: Params }) {
         ]}
       />
 
-      <div className="max-w-content mx-auto px-6 py-16 grid lg:grid-cols-[1fr_320px] gap-10 items-start">
-        <div className="min-w-0">
-          <header className="border-b border-brand-purple/20 pb-8">
-            <span className="bg-brand-purple text-white text-[10px] uppercase tracking-widest font-medium px-2 py-1">
-              {doc.industry}
-            </span>
-            <h1 className="font-heading text-3xl md:text-5xl mt-4 leading-tight">
-              {doc.resultHeadline}
-            </h1>
-            <dl className="mt-8 grid sm:grid-cols-3 gap-6 text-sm font-body">
-              <div>
-                <dt className="text-white/50 uppercase tracking-widest text-xs">Industry</dt>
-                <dd className="mt-1 text-white">{overview.industry}</dd>
-              </div>
-              <div>
-                <dt className="text-white/50 uppercase tracking-widest text-xs">Size</dt>
-                <dd className="mt-1 text-white">{overview.size}</dd>
-              </div>
-              <div>
-                <dt className="text-white/50 uppercase tracking-widest text-xs">Challenge</dt>
-                <dd className="mt-1 text-white">{overview.challenge}</dd>
-              </div>
-            </dl>
-          </header>
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-20">
+          <Link
+            href="/case-studies"
+            data-cta-location="case-study-back"
+            className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-brand-cyan font-mono mb-8 hover:opacity-80"
+          >
+            <ArrowLeft size={12} /> All case studies
+          </Link>
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <Badge label={`Case Study · ${doc.industry}`} variant="purple" />
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.04]">
+                {doc.resultHeadline}
+              </h1>
+              <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
+                {doc.summary}
+              </p>
+            </div>
+            <aside className="lg:col-span-4">
+              <dl className="border border-brand-cyan/30 bg-black divide-y divide-brand-purple/15">
+                <Item label="Industry" value={overview.industry} />
+                <Item label="Size" value={overview.size} />
+                <Item label="Challenge" value={overview.challenge} />
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
 
-          <section className="mt-10">
-            <h2 className="font-heading text-2xl md:text-3xl">The Problem</h2>
-            <p className="mt-4 font-body text-white/80 leading-relaxed">
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-20">
+          <SectionHeader
+            eyebrow="Outcomes"
+            title="The numbers from this deployment"
+          />
+          <div className="mt-12">
+            <DividedStats
+              stats={[primary, secondary, time]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-content mx-auto px-6 py-20 grid lg:grid-cols-[1fr_320px] gap-10 items-start border-t border-brand-purple/15">
+        <div className="min-w-0 flex flex-col gap-16">
+          <section>
+            <SectionHeader eyebrow="The problem" title="What broke" badgeVariant="purple" />
+            <p className="mt-6 font-body text-white/80 leading-relaxed">
               {doc.summary}
             </p>
-            <ul className="mt-6 space-y-2 font-body text-white/85 list-disc pl-6 marker:text-brand-purple">
+            <ul className="mt-6 space-y-3 font-body text-white/85">
               {doc.painPoints.map((pp) => (
-                <li key={pp}>{pp}</li>
+                <li
+                  key={pp}
+                  className="flex items-start gap-3 border-l-[3px] border-brand-purple bg-black p-4"
+                >
+                  <span>{pp}</span>
+                </li>
               ))}
             </ul>
           </section>
 
-          <section className="mt-12">
-            <h2 className="font-heading text-2xl md:text-3xl">The Solution</h2>
-            <p className="mt-4 font-body text-white/80 leading-relaxed">
+          <section>
+            <SectionHeader eyebrow="The solution" title="What we shipped" />
+            <p className="mt-6 font-body text-white/80 leading-relaxed">
               {doc.solutionSummary}
             </p>
-            <div className="mt-6">
-              <span className="text-xs uppercase tracking-widest text-white/60 font-mono">
-                [ integrations ]
+            <div className="mt-8 border border-brand-cyan/30 bg-black p-6">
+              <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
+                ▸ Integrations
               </span>
-              <ul className="mt-3 flex flex-wrap gap-2">
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {doc.integrations.map((i) => (
                   <li
                     key={i}
-                    className="border border-brand-cyan/40 text-brand-cyan text-xs px-3 py-1 font-mono"
+                    className="border border-brand-cyan/40 text-brand-cyan text-xs px-3 py-1.5 font-mono"
                   >
                     {i}
                   </li>
@@ -113,25 +143,21 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             </div>
           </section>
 
-          <section className="mt-12">
-            <h2 className="font-heading text-2xl md:text-3xl">Results</h2>
-            <div className="mt-6 grid sm:grid-cols-3 gap-4">
-              <StatCard number={primary.number} label={primary.label} />
-              <StatCard number={secondary.number} label={secondary.label} accent="purple" />
-              <StatCard number={time.number} label={time.label} />
-            </div>
-          </section>
-
-          <section className="mt-12">
-            <h2 className="font-heading text-2xl md:text-3xl">Call Recording</h2>
-            <div className="mt-4">
+          <section>
+            <SectionHeader
+              eyebrow="Listen"
+              title="Sample call from this deployment"
+              description="Real audio from a live call after go-live."
+              badgeVariant="purple"
+            />
+            <div className="mt-6">
               {/* EMBED REAL CALL RECORDING HERE — this section is a lead magnet */}
-              <AudioPlayer label="Sample call from this deployment" />
-              <details className="mt-4 border border-brand-purple/20 p-4">
+              <AudioPlayer label="Sample call recording" />
+              <details className="mt-4 border border-brand-purple/20 p-5 bg-black">
                 <summary className="cursor-pointer text-white font-body text-sm">
                   View transcript
                 </summary>
-                <p className="mt-3 text-white/70 text-sm font-mono leading-relaxed whitespace-pre-line">
+                <p className="mt-4 text-white/70 text-sm font-mono leading-relaxed whitespace-pre-line">
                   {`[00:00] Agent: Thank you for calling Northwind HVAC.
 [00:04] Caller: Hi, my system stopped blowing cold air...
 [PLACEHOLDER TRANSCRIPT — REPLACE WITH REAL TEXT]`}
@@ -140,25 +166,42 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             </div>
           </section>
 
-          <section className="mt-12 prose-implenix">
+          <section className="prose-implenix">
             <MDX components={mdxComponents} />
           </section>
 
           <RelatedContent topic="More case studies" type="case-study" />
         </div>
 
-        <aside className="lg:sticky lg:top-24 border border-brand-purple/30 bg-black p-6">
-          <h3 className="font-heading text-xl text-white">
-            Get the same results for your business
+        <aside className="lg:sticky lg:top-24 border border-brand-purple/30 bg-black p-6 flex flex-col gap-4">
+          <Badge label="Get the same result" variant="cyan" />
+          <h3 className="font-heading text-xl text-white leading-snug">
+            Run this playbook for your business
           </h3>
-          <p className="mt-2 text-sm text-white/70 font-body">
+          <p className="text-sm text-white/70 font-body leading-relaxed">
             We will scope a deployment for your team in 15 minutes.
           </p>
-          <div className="mt-4">
-            <LeadForm variant="demo" ctaLocation={`case-study-${doc.slug}`} />
-          </div>
+          <LeadForm variant="demo" ctaLocation={`case-study-${doc.slug}`} />
+          <Link
+            href="/case-studies"
+            data-cta-location="case-study-sidebar"
+            className="inline-flex items-center gap-1.5 text-brand-cyan text-sm hover:underline mt-2"
+          >
+            Browse other case studies <ArrowRight size={14} />
+          </Link>
         </aside>
       </div>
     </>
+  );
+}
+
+function Item({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="p-5">
+      <dt className="text-xs uppercase tracking-widest text-white/55 font-mono">
+        {label}
+      </dt>
+      <dd className="mt-1 font-body text-white text-sm">{value}</dd>
+    </div>
   );
 }

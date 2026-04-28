@@ -4,8 +4,10 @@ import { Play, ShieldCheck } from 'lucide-react';
 import { LeadForm } from '@/components/common/LeadForm';
 import { StatCard } from '@/components/common/StatCard';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
+import { Badge } from '@/components/common/Badge';
+import { CodeWindow } from '@/components/common/CodeWindow';
 import { buildMetadata } from '@/lib/seo';
-import { INDUSTRIES, getIndustryBySlug } from '@/lib/industries';
+import { INDUSTRIES } from '@/lib/industries';
 
 type Variant = 'a' | 'b';
 type LandingConfig = {
@@ -76,47 +78,60 @@ export default function LandingPage({ params }: { params: Params }) {
   return cfg.variant === 'a' ? <VariantA cfg={cfg} /> : <VariantB cfg={cfg} />;
 }
 
+const SAMPLE_LP_CALL = [
+  { ts: '00:00', speaker: 'system' as const, text: 'Inbound · Implenix agent' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Thanks for calling — how can I help?' },
+  { ts: '00:05', speaker: 'caller' as const, text: 'I need a quote and the soonest opening.' },
+  { ts: '00:08', speaker: 'agent' as const, text: 'Booking you in now. Confirmation by text.' },
+  { ts: '00:12', speaker: 'system' as const, text: 'Booking confirmed · CRM updated' },
+];
+
 // Variant A — Google Search Ad: form above the fold, single focused CTA.
 function VariantA({ cfg }: { cfg: LandingConfig }) {
   return (
     <>
       {/* META PIXEL: REPLACE 000000000000000 — fires PageView automatically. */}
       {/* GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX/CONVERSION_LABEL on lead submit */}
-      <section className="grid-bg">
-        <div className="max-w-content mx-auto px-6 py-16 md:py-20 grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-7">
-            <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-              [ landing // search ad ]
-            </span>
-            <h1 className="font-heading text-3xl md:text-5xl mt-4 leading-tight">
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-16 pb-16 md:pt-20 md:pb-20 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            <Badge label={`Built for ${cfg.industryName}`} variant="cyan" />
+            <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
               {cfg.headline}
             </h1>
-            <p className="mt-4 font-body text-white/80 text-lg max-w-2xl">
+            <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
               {cfg.subhead}
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="grid sm:grid-cols-3 gap-3 mt-2">
               {cfg.benefits?.map((b) => (
                 <li
                   key={b}
-                  className="flex items-start gap-3 font-body text-white"
+                  className="border border-brand-purple/20 bg-black p-4 flex items-start gap-2 font-body text-white text-sm"
                 >
-                  <ShieldCheck size={18} className="text-brand-cyan mt-0.5 shrink-0" />
+                  <ShieldCheck size={16} className="text-brand-cyan mt-0.5 shrink-0" />
                   {b}
                 </li>
               ))}
             </ul>
-            <div className="mt-10">
-              {cfg.testimonialQuote && (
+            <div className="mt-6">
+              <CodeWindow
+                title={`${cfg.industryName.toLowerCase().replace(/\s+/g, '-')}.call.log`}
+                lines={SAMPLE_LP_CALL}
+                caption={`Sample ${cfg.industryName} inbound call · 12s`}
+              />
+            </div>
+            {cfg.testimonialQuote && (
+              <div className="mt-8">
                 <TestimonialCard
                   businessName={`${cfg.industryName} Operator`}
                   ownerName="PLACEHOLDER"
                   industry={cfg.industryName}
                   quote={cfg.testimonialQuote}
                 />
-              )}
-            </div>
+              </div>
+            )}
             {cfg.stat && (
-              <div className="mt-6 max-w-sm">
+              <div className="mt-2 max-w-sm">
                 <StatCard
                   number={cfg.stat.number}
                   label={cfg.stat.label}
@@ -126,27 +141,35 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
             )}
           </div>
 
-          <aside id="lp-form" className="lg:col-span-5 border border-brand-purple/30 bg-black p-6 lg:sticky lg:top-6">
-            <h2 className="font-heading text-2xl text-white">
+          <aside
+            id="lp-form"
+            className="lg:col-span-5 border border-brand-purple/30 bg-black p-6 lg:sticky lg:top-6 flex flex-col gap-4"
+          >
+            <Badge label="Free audit · 15 min" variant="purple" />
+            <h2 className="font-heading text-2xl text-white leading-snug">
               Get a free audit
             </h2>
-            <p className="mt-2 text-sm text-white/70 font-body">
+            <p className="text-sm text-white/70 font-body leading-relaxed">
               We will run an Implenix audit on your inbound calls and book a
               15-minute walkthrough.
             </p>
-            <div className="mt-5">
-              <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}-top`} />
-            </div>
+            <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}-top`} />
           </aside>
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/20">
-        <div className="max-w-content mx-auto px-6 py-16">
-          <h2 className="font-heading text-2xl md:text-4xl">
-            One more time — let’s book it
-          </h2>
-          <div className="mt-6 max-w-xl">
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <Badge label="Last chance" variant="purple" />
+            <h2 className="font-heading text-2xl md:text-4xl mt-5">
+              One more time — let’s book it.
+            </h2>
+            <p className="mt-3 text-white/70 font-body">
+              30 seconds. We will call you back today.
+            </p>
+          </div>
+          <div className="border border-brand-purple/30 bg-brand-dark p-6">
             <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}-bottom`} />
           </div>
         </div>
@@ -160,23 +183,33 @@ function VariantB({ cfg }: { cfg: LandingConfig }) {
   return (
     <>
       {/* META PIXEL: REPLACE 000000000000000 — fires PageView automatically. */}
-      <section className="grid-bg">
-        <div className="max-w-content mx-auto px-6 py-16 md:py-24 text-center">
-          <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-            [ landing // meta ]
-          </span>
-          <h1 className="font-heading text-4xl md:text-6xl mt-4 max-w-3xl mx-auto leading-tight">
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-24 text-center flex flex-col items-center gap-6">
+          <Badge label="Implenix · 60-second pitch" variant="purple" />
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl max-w-3xl mx-auto leading-[1.04]">
             {cfg.hookHeadline ?? cfg.headline}
           </h1>
-          <p className="mt-4 font-body text-white/80 max-w-2xl mx-auto">
+          <p className="font-body text-white/80 max-w-2xl mx-auto text-lg">
             {cfg.subhead}
           </p>
-          <div className="mt-10 max-w-2xl mx-auto border border-brand-purple/30 bg-black p-3 aspect-video flex items-center justify-center">
-            <div className="w-16 h-16 bg-brand-purple flex items-center justify-center rounded-sm">
-              <Play size={28} className="text-white" />
+          <div className="mt-4 w-full max-w-2xl mx-auto border border-brand-purple/30 bg-black aspect-video flex items-center justify-center relative">
+            <div className="absolute top-3 left-3 flex gap-1.5">
+              <span className="w-2 h-2 bg-brand-purple rounded-full" />
+              <span className="w-2 h-2 bg-brand-cyan rounded-full" />
+              <span className="w-2 h-2 bg-white/40 rounded-full" />
             </div>
+            <button
+              type="button"
+              className="w-16 h-16 bg-brand-purple flex items-center justify-center rounded-sm hover:opacity-90"
+              aria-label="Play video"
+            >
+              <Play size={28} className="text-white" />
+            </button>
+            <span className="absolute bottom-3 right-3 text-[11px] font-mono uppercase tracking-widest text-white/40">
+              implenix.demo.mp4
+            </span>
           </div>
-          <div className="mt-10 flex justify-center gap-3 flex-wrap font-mono text-xs uppercase tracking-widest text-white/60">
+          <div className="flex justify-center gap-3 flex-wrap font-mono text-xs uppercase tracking-widest text-white/60 mt-2">
             <span className="border border-brand-cyan/40 px-3 py-1">10 specialists</span>
             <span className="border border-brand-cyan/40 px-3 py-1">7–14 day deploy</span>
             <span className="border border-brand-cyan/40 px-3 py-1">24/7 coverage</span>
@@ -184,12 +217,13 @@ function VariantB({ cfg }: { cfg: LandingConfig }) {
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/20">
-        <div className="max-w-content mx-auto px-6 py-16">
-          <h2 className="font-heading text-2xl md:text-3xl text-center">
-            Get your free audit
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-16 flex flex-col items-center gap-6">
+          <Badge label="Free audit" variant="cyan" />
+          <h2 className="font-heading text-2xl md:text-3xl text-center max-w-xl">
+            We will call you back within one business hour.
           </h2>
-          <div className="mt-6 max-w-md mx-auto border border-brand-purple/30 p-6 bg-brand-dark">
+          <div className="w-full max-w-md border border-brand-purple/30 p-6 bg-brand-dark">
             <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}`} />
           </div>
         </div>
