@@ -40,12 +40,28 @@ export function trackLead(source: string): void {
   trackEvent('lead', { source });
 }
 
+// POSTs the form payload to the internal /api/leads route, which forwards to
+// CRM_WEBHOOK_URL when configured. Failures are swallowed so the UI can still
+// complete its success state — analytics events still fire either way.
 export async function submitWebhook(
-  payload: Record<string, unknown>,
+  data: Record<string, unknown>,
   source: string,
 ): Promise<void> {
-  // <!-- CONNECT FORM SUBMISSION TO CRM ENDPOINT HERE -->
-  // Replace with fetch('/api/leads') or direct webhook URL when wiring CRM.
   if (typeof window === 'undefined') return;
-  trackEvent('form_submit', { source, ...payload });
+  trackEvent('form_submit', { source, ...data });
+  try {
+    await fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source,
+        data,
+        page: window.location.pathname,
+        ts: new Date().toISOString(),
+      }),
+      keepalive: true,
+    });
+  } catch {
+    // Never block the success state on a webhook failure.
+  }
 }

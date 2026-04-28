@@ -1,15 +1,29 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Rss } from 'lucide-react';
 import { allBlogPosts } from 'contentlayer/generated';
 import { Badge } from '@/components/common/Badge';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, SITE_URL } from '@/lib/seo';
 import { BlogIndexClient } from './BlogIndexClient';
 
-export const metadata: Metadata = buildMetadata({
+const baseMetadata = buildMetadata({
   title: 'Implenix Blog — AI Voice Agents and Local Business',
   description:
     'Field notes, operator playbooks, and case studies from teams that run on calls. The Implenix blog.',
   path: '/blog',
 });
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  alternates: {
+    ...baseMetadata.alternates,
+    types: {
+      'application/rss+xml': [
+        { url: `${SITE_URL}/blog/rss.xml`, title: 'Implenix Blog RSS' },
+      ],
+    },
+  },
+};
 
 export default function BlogIndexPage() {
   const posts = [...allBlogPosts]
@@ -42,6 +56,12 @@ export default function BlogIndexPage() {
               studies — published by the team deploying voice AI for local
               business.
             </p>
+            <Link
+              href="/blog/rss.xml"
+              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-brand-cyan hover:opacity-80 self-start"
+            >
+              <Rss size={12} /> Subscribe via RSS
+            </Link>
           </div>
         </div>
       </section>

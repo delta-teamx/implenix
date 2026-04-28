@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
+import { LeadForm } from '@/components/common/LeadForm';
 
 const COLUMNS = [
   {
@@ -79,14 +80,24 @@ export function Footer() {
 
       <div className="bg-black border-t border-brand-purple/20">
         <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-6 gap-10">
-          <div className="col-span-2 lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2 flex flex-col gap-5">
             <Link href="/" className="font-heading text-brand-purple text-2xl">
               Implenix
             </Link>
-            <p className="mt-3 text-white/60 text-sm font-body max-w-xs">
+            <p className="text-white/60 text-sm font-body max-w-xs">
               We Automate the Call. You Close the Deal.
             </p>
-            <p className="mt-6 text-xs text-white/45 font-mono uppercase tracking-widest">
+            <div className="border border-brand-purple/20 bg-brand-dark p-4">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan mb-2">
+                ▸ Field notes by email
+              </p>
+              <p className="font-body text-xs text-white/65 mb-3 leading-relaxed">
+                Operator playbooks, deployment notes, and tuning tips. One
+                email per week. No spam.
+              </p>
+              <LeadForm variant="newsletter" ctaLocation="footer-newsletter" />
+            </div>
+            <p className="text-xs text-white/45 font-mono uppercase tracking-widest">
               ▸ implenix.net
             </p>
           </div>

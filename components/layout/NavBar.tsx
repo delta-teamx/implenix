@@ -1,20 +1,74 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import {
+  Menu,
+  X,
+  ArrowRight,
+  ChevronDown,
+  PhoneCall,
+  PhoneOutgoing,
+  Wrench,
+  Stethoscope,
+  Home as HomeIcon,
+  Scale,
+  Droplets,
+  Sparkles,
+  Car,
+  HardHat,
+} from 'lucide-react';
+import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
-const NAV_LINKS = [
-  { href: '/solutions/ai-receptionist', label: 'Solutions' },
-  { href: '/ai-receptionist-for-hvac-businesses', label: 'Industries' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/docs/getting-started/quick-start', label: 'Docs' },
+type NavGroup = {
+  label: string;
+  href: string;
+  type: 'link' | 'mega-solutions' | 'mega-industries';
+};
+
+const NAV_GROUPS: NavGroup[] = [
+  { label: 'Solutions', href: '/solutions/ai-receptionist', type: 'mega-solutions' },
+  {
+    label: 'Industries',
+    href: '/ai-receptionist-for-hvac-businesses',
+    type: 'mega-industries',
+  },
+  { label: 'Case Studies', href: '/case-studies', type: 'link' },
+  { label: 'Resources', href: '/resources', type: 'link' },
+  { label: 'Blog', href: '/blog', type: 'link' },
+  { label: 'Docs', href: '/docs/getting-started/quick-start', type: 'link' },
 ];
+
+const SOLUTIONS = [
+  {
+    href: '/solutions/ai-receptionist',
+    title: 'AI Receptionist',
+    description: 'Answer every inbound call. Qualify and book the lead.',
+    Icon: PhoneCall,
+  },
+  {
+    href: '/solutions/ai-followup',
+    title: 'AI Follow-up',
+    description: 'Outbound sequences, reminders, and re-engagement.',
+    Icon: PhoneOutgoing,
+  },
+];
+
+const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
+  hvac: Wrench,
+  dental: Stethoscope,
+  'real-estate': HomeIcon,
+  'law-firms': Scale,
+  plumbing: Droplets,
+  'med-spa': Sparkles,
+  'auto-repair': Car,
+  roofing: HardHat,
+};
 
 export function NavBar() {
   const [open, setOpen] = useState(false);
+  const [activeMega, setActiveMega] = useState<NavGroup['type'] | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -22,6 +76,31 @@ export function NavBar() {
       document.body.style.overflow = '';
     };
   }, [open]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveMega(null);
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const onEnter = (type: NavGroup['type']) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    if (type === 'link') {
+      setActiveMega(null);
+      return;
+    }
+    setActiveMega(type);
+  };
+
+  const onLeave = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setActiveMega(null), 120);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-brand-dark border-b border-brand-purple/20">
@@ -36,17 +115,35 @@ export function NavBar() {
             Implenix
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-7">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                data-cta-location="nav"
-                className="text-[13px] text-white/85 hover:text-brand-cyan transition-colors duration-150 font-body"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center gap-6" onMouseLeave={onLeave}>
+            {NAV_GROUPS.map((group) => {
+              const isMega = group.type !== 'link';
+              return (
+                <div
+                  key={group.label}
+                  onMouseEnter={() => onEnter(group.type)}
+                  className="relative"
+                >
+                  <Link
+                    href={group.href}
+                    data-cta-location="nav"
+                    aria-haspopup={isMega ? 'true' : undefined}
+                    aria-expanded={isMega ? activeMega === group.type : undefined}
+                    className="inline-flex items-center gap-1 text-[13px] text-white/85 hover:text-brand-cyan transition-colors duration-150 font-body py-2"
+                  >
+                    {group.label}
+                    {isMega ? (
+                      <ChevronDown
+                        size={12}
+                        className={`transition-transform ${
+                          activeMega === group.type ? 'rotate-180 text-brand-cyan' : ''
+                        }`}
+                      />
+                    ) : null}
+                  </Link>
+                </div>
+              );
+            })}
           </nav>
         </div>
 
@@ -78,9 +175,79 @@ export function NavBar() {
         </button>
       </div>
 
+      {/* Desktop mega menu panel */}
+      <div
+        onMouseEnter={() => {
+          if (closeTimer.current) clearTimeout(closeTimer.current);
+        }}
+        onMouseLeave={onLeave}
+        className={`hidden lg:block absolute left-0 right-0 top-14 border-b border-brand-purple/20 bg-brand-dark transition-[opacity,transform,visibility] duration-150 ${
+          activeMega
+            ? 'opacity-100 translate-y-0 visible'
+            : 'opacity-0 -translate-y-1 invisible pointer-events-none'
+        }`}
+      >
+        <div className="max-w-content mx-auto px-6 py-8">
+          {activeMega === 'mega-solutions' ? (
+            <div className="grid md:grid-cols-2 gap-3">
+              {SOLUTIONS.map(({ href, title, description, Icon }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group flex items-start gap-4 border border-brand-purple/20 hover:border-brand-purple p-5 transition-colors"
+                >
+                  <span className="w-10 h-10 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
+                    <Icon size={18} className="text-brand-cyan" />
+                  </span>
+                  <span className="flex-1">
+                    <span className="block font-heading text-white text-base">
+                      {title}
+                    </span>
+                    <span className="block text-sm text-white/65 font-body mt-1 leading-relaxed">
+                      {description}
+                    </span>
+                  </span>
+                  <ArrowRight
+                    size={16}
+                    className="text-brand-cyan mt-1 transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              ))}
+            </div>
+          ) : null}
+
+          {activeMega === 'mega-industries' ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {INDUSTRIES.map((i) => {
+                const Icon = INDUSTRY_ICONS[i.slug] ?? Wrench;
+                return (
+                  <Link
+                    key={i.slug}
+                    href={industryUrl(i.slug)}
+                    className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
+                  >
+                    <span className="w-8 h-8 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
+                      <Icon size={14} className="text-brand-cyan" />
+                    </span>
+                    <span className="flex-1">
+                      <span className="block font-heading text-white text-sm">
+                        {i.name}
+                      </span>
+                      <span className="block text-xs text-white/55 font-body mt-1">
+                        {i.painPoint}
+                      </span>
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
+        </div>
+      </div>
+
       {open && (
         <div className="lg:hidden fixed inset-0 top-14 bg-brand-dark z-40 flex flex-col px-6 py-8 gap-5 overflow-y-auto">
-          {NAV_LINKS.map((link) => (
+          {NAV_GROUPS.map((link) => (
             <Link
               key={link.href}
               href={link.href}

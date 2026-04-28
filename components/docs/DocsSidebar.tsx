@@ -94,6 +94,7 @@ function SidebarSection({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         className="w-full flex items-center justify-between text-left text-xs uppercase tracking-widest text-white/60 hover:text-white py-2"
       >
         {section.title}
@@ -110,6 +111,7 @@ function SidebarSection({
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  aria-current={active ? 'page' : undefined}
                   className={`block py-1.5 text-sm font-body transition-colors ${
                     active
                       ? 'text-brand-purple'
