@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { LeadForm } from '@/components/common/LeadForm';
+import { LogoLockup } from '@/components/common/LogoLockup';
 
 const COLUMNS = [
   {
@@ -81,9 +82,7 @@ export function Footer() {
       <div className="bg-black border-t border-brand-purple/20">
         <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-6 gap-10">
           <div className="col-span-2 lg:col-span-2 flex flex-col gap-5">
-            <Link href="/" className="font-heading text-brand-purple text-2xl">
-              Implenix
-            </Link>
+            <LogoLockup size="md" />
             <p className="text-white/60 text-sm font-body max-w-xs">
               We Automate the Call. You Close the Deal.
             </p>

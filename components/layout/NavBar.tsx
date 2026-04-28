@@ -18,6 +18,7 @@ import {
   Car,
   HardHat,
 } from 'lucide-react';
+import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
 type NavGroup = {
@@ -106,14 +107,8 @@ export function NavBar() {
     <header className="sticky top-0 z-50 bg-brand-dark border-b border-brand-purple/20">
       <div className="max-w-content mx-auto flex items-center justify-between px-6 h-14">
         <div className="flex items-center gap-10">
-          <Link
-            href="/"
-            className="font-heading text-brand-purple text-xl tracking-tight"
-            data-cta-location="nav"
-            data-cta-type="logo"
-          >
-            Implenix
-          </Link>
+          <LogoLockup size="sm" />
+
 
           <nav className="hidden lg:flex items-center gap-6" onMouseLeave={onLeave}>
             {NAV_GROUPS.map((group) => {

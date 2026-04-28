@@ -66,16 +66,32 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <span
-              style={{
-                fontSize: 28,
-                color: '#bb00ff',
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Implenix
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <span
+                style={{
+                  fontSize: 36,
+                  color: '#ffffff',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  display: 'flex',
+                }}
+              >
+                <span style={{ color: '#3dfaff' }}>i</span>mplenix
+              </span>
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="#3dfaff" transform="rotate(6 50 50)">
+                  <rect x="34" y="10" width="58" height="16" rx="8" />
+                  <rect x="76" y="14" width="16" height="50" rx="8" />
+                  <rect x="8" y="50" width="58" height="16" rx="8" />
+                  <rect x="50" y="54" width="16" height="40" rx="8" />
+                </g>
+              </svg>
+            </div>
             <span
               style={{
                 display: 'flex',

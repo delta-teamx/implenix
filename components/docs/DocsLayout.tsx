@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { allDocs } from 'contentlayer/generated';
+import { LogoLockup } from '@/components/common/LogoLockup';
 import { DocsSidebar } from './DocsSidebar';
 import { DocsSearch, type DocSearchEntry } from './DocsSearch';
 
@@ -17,12 +18,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
       <header className="border-b border-brand-purple/20 bg-brand-dark sticky top-0 z-30">
         <div className="max-w-content mx-auto px-6 h-14 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 shrink-0">
-            <Link
-              href="/docs/getting-started/quick-start"
-              className="font-heading text-brand-purple text-xl"
-            >
-              Implenix
-            </Link>
+            <LogoLockup size="sm" href="/docs/getting-started/quick-start" />
             <span className="font-mono text-[10px] uppercase tracking-widest text-white/45 border border-brand-purple/30 px-2 py-0.5">
               Docs
             </span>

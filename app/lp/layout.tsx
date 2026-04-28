@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LogoLockup } from '@/components/common/LogoLockup';
 
 export default function LandingLayout({
   children,
@@ -9,12 +10,7 @@ export default function LandingLayout({
     <div className="min-h-screen flex flex-col bg-brand-dark">
       <header className="border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 h-14 flex items-center">
-          <Link
-            href="/"
-            className="font-heading text-brand-purple text-xl"
-          >
-            Implenix
-          </Link>
+          <LogoLockup size="sm" />
         </div>
       </header>
       <main className="flex-1">{children}</main>
