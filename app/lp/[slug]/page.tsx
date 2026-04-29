@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Play, ShieldCheck } from 'lucide-react';
-import { LeadForm } from '@/components/common/LeadForm';
+import { GhlForm } from '@/components/common/GhlForm';
 import { StatCard } from '@/components/common/StatCard';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
 import { Badge } from '@/components/common/Badge';
@@ -143,17 +143,19 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
 
           <aside
             id="lp-form"
-            className="lg:col-span-5 border border-brand-purple/30 bg-black p-6 lg:sticky lg:top-6 flex flex-col gap-4"
+            className="lg:col-span-5 lg:sticky lg:top-6 flex flex-col gap-4"
           >
-            <Badge label="Free audit · 15 min" variant="purple" />
-            <h2 className="font-heading text-2xl text-white leading-snug">
-              Get a free audit
-            </h2>
-            <p className="text-sm text-white/70 font-body leading-relaxed">
-              We will run an Implenix audit on your inbound calls and book a
-              15-minute walkthrough.
-            </p>
-            <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}-top`} />
+            <div className="border border-brand-purple/30 bg-black p-6 flex flex-col gap-4">
+              <Badge label="Free audit · 15 min" variant="purple" />
+              <h2 className="font-heading text-2xl text-white leading-snug">
+                Get a free audit
+              </h2>
+              <p className="text-sm text-white/70 font-body leading-relaxed">
+                We will run an Implenix audit on your inbound calls and book a
+                15-minute walkthrough.
+              </p>
+            </div>
+            <GhlForm formKey="lp" ctaLocation={`lp-${cfg.slug}-top`} height={520} />
           </aside>
         </div>
       </section>
@@ -169,9 +171,7 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
               30 seconds. We will call you back today.
             </p>
           </div>
-          <div className="border border-brand-purple/30 bg-brand-dark p-6">
-            <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}-bottom`} />
-          </div>
+          <GhlForm formKey="lp" ctaLocation={`lp-${cfg.slug}-bottom`} height={520} />
         </div>
       </section>
     </>
@@ -223,8 +223,8 @@ function VariantB({ cfg }: { cfg: LandingConfig }) {
           <h2 className="font-heading text-2xl md:text-3xl text-center max-w-xl">
             We will call you back within one business hour.
           </h2>
-          <div className="w-full max-w-md border border-brand-purple/30 p-6 bg-brand-dark">
-            <LeadForm variant="lp" ctaLocation={`lp-${cfg.slug}`} />
+          <div className="w-full max-w-md">
+            <GhlForm formKey="lp" ctaLocation={`lp-${cfg.slug}`} height={520} />
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { LeadForm } from '@/components/common/LeadForm';
+import { GhlForm } from '@/components/common/GhlForm';
 
 export function DemoCTASection() {
   return (
@@ -18,9 +18,8 @@ export function DemoCTASection() {
             ▸ A member of the Implenix team will call you within 24 hours.
           </p>
         </div>
-        <div className="lg:col-span-7 bg-black border border-brand-purple/30 p-6 md:p-8">
-          {/* CONNECT TO CALENDLY OR CRM ENDPOINT */}
-          <LeadForm variant="demo" ctaLocation="homepage-bottom" />
+        <div className="lg:col-span-7">
+          <GhlForm formKey="demo" ctaLocation="homepage-bottom" height={620} />
         </div>
       </div>
     </section>

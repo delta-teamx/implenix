@@ -1,27 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { CallFlowDiagram } from '@/components/common/CallFlowDiagram';
-import { CodeWindow } from '@/components/common/CodeWindow';
 import { Badge } from '@/components/common/Badge';
-
-const SAMPLE_TRANSCRIPT = [
-  { ts: '00:00', speaker: 'system' as const, text: 'Inbound call · +1 (415) 555-0184 · HVAC Tier 1' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Northwind HVAC, this is Ava — how can I help?' },
-  { ts: '00:05', speaker: 'caller' as const, text: 'My AC stopped working. House is at 88 degrees.' },
-  { ts: '00:09', speaker: 'agent' as const, text: 'Sorry to hear that. I can dispatch a tech today. Are you the homeowner?' },
-  { ts: '00:13', speaker: 'caller' as const, text: 'Yes. 1420 Cedar Lane.' },
-  { ts: '00:17', speaker: 'agent' as const, text: 'Booked. A tech will arrive between 2 and 4 pm. Confirmation sent by text.' },
-  { ts: '00:22', speaker: 'system' as const, text: 'CRM updated · job #44129 created · calendar synced' },
-];
+import { IPhoneMock } from '@/components/common/IPhoneMock';
 
 export function Hero() {
   return (
     <section className="relative grid-bg border-b border-brand-purple/15">
-      <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
+      <div className="max-w-content mx-auto px-6 pt-20 pb-20 md:pt-28 md:pb-28">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
             <Badge label="Implenix · AI Voice Agents" variant="cyan" />
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.02] tracking-tight">
               The AI that{' '}
               <span className="text-brand-purple">answers</span>,
               <br />
@@ -59,17 +48,10 @@ export function Hero() {
               <Stat label="Deploy" value="7–14 d" />
             </dl>
           </div>
-          <div className="lg:col-span-5">
-            <CallFlowDiagram />
+          <div className="lg:col-span-5 flex justify-center">
+            <IPhoneMock />
           </div>
         </div>
-      </div>
-      <div className="max-w-content mx-auto px-6 pb-20">
-        <CodeWindow
-          title="northwind-hvac.call.log"
-          lines={SAMPLE_TRANSCRIPT}
-          caption="Sample handoff · agent → CRM · 22 second resolution"
-        />
       </div>
     </section>
   );

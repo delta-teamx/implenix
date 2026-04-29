@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { allIndustries } from 'contentlayer/generated';
 import { CaseStudyCard } from '@/components/common/CaseStudyCard';
-import { LeadForm } from '@/components/common/LeadForm';
+import { GhlForm } from '@/components/common/GhlForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -215,9 +215,11 @@ export default function IndustryPage({ params }: { params: Params }) {
             description="We will set up a live test against your business and walk you through the agent end to end."
             badgeVariant="purple"
           />
-          <div className="border border-brand-purple/30 bg-black p-6">
-            <LeadForm variant="demo" ctaLocation={`industry-${slug}`} />
-          </div>
+          <GhlForm
+            formKey="industry"
+            ctaLocation={`industry-${slug}`}
+            height={620}
+          />
         </div>
         <div className="max-w-content mx-auto px-6 pb-16">
           <div className="prose-implenix max-w-3xl">

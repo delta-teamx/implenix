@@ -8,7 +8,7 @@ import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { DividedStats } from '@/components/common/DividedStats';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { LeadForm } from '@/components/common/LeadForm';
+import { GhlForm } from '@/components/common/GhlForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
@@ -181,7 +181,11 @@ export default function CaseStudyPage({ params }: { params: Params }) {
           <p className="text-sm text-white/70 font-body leading-relaxed">
             We will scope a deployment for your team in 15 minutes.
           </p>
-          <LeadForm variant="demo" ctaLocation={`case-study-${doc.slug}`} />
+          <GhlForm
+            formKey="caseStudy"
+            ctaLocation={`case-study-${doc.slug}`}
+            height={520}
+          />
           <Link
             href="/case-studies"
             data-cta-location="case-study-sidebar"

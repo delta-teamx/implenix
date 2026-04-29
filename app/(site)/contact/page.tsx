@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Mail, MessageSquare, Clock, ShieldCheck } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
+import { GhlForm } from '@/components/common/GhlForm';
 import { buildMetadata } from '@/lib/seo';
-import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Talk to Implenix — Book a Demo or Get a Quote',
@@ -83,7 +83,7 @@ export default function ContactPage() {
             <h2 className="font-heading text-2xl md:text-3xl text-white mt-3 mb-8">
               We will reach out within one business day.
             </h2>
-            <ContactForm />
+            <GhlForm formKey="contact" ctaLocation="contact" height={680} />
           </div>
 
           <aside className="flex flex-col gap-3">

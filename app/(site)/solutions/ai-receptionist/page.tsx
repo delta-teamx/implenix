@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { LeadForm } from '@/components/common/LeadForm';
+import { GhlForm } from '@/components/common/GhlForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -266,9 +266,7 @@ export default function AIReceptionistPage() {
             description="We will run a live test against your business and walk you through the agent end to end."
             badgeVariant="purple"
           />
-          <div className="border border-brand-purple/30 bg-black p-6">
-            <LeadForm variant="demo" ctaLocation="solutions-ai-receptionist" />
-          </div>
+          <GhlForm formKey="demo" ctaLocation="solutions-ai-receptionist" height={620} />
         </div>
         <div className="max-w-content mx-auto px-6 pb-16">
           <RelatedContent topic="AI Receptionist" type="industry" />
