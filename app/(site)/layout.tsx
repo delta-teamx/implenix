@@ -1,5 +1,6 @@
 import { NavBar } from '@/components/layout/NavBar';
 import { Footer } from '@/components/layout/Footer';
+import { LeadMagnetPopup } from '@/components/common/LeadMagnetPopup';
 
 export default function SiteLayout({
   children,
@@ -17,6 +18,7 @@ export default function SiteLayout({
       <NavBar />
       <main id="main">{children}</main>
       <Footer />
+      <LeadMagnetPopup />
     </>
   );
 }
