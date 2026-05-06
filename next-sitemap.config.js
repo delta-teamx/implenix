@@ -25,9 +25,11 @@ module.exports = {
       changefreq = 'daily';
     } else if (
       path.startsWith('/ai-receptionist-for-') ||
-      path.startsWith('/ai-receptionist-vs-')
+      path.startsWith('/ai-receptionist-vs-') ||
+      path.endsWith('-alternative')
     ) {
-      // Programmatic SEO money pages — industry + comparison.
+      // Programmatic SEO money pages — industry, comparison, and
+      // competitor-alternative landings.
       priority = 0.9;
       changefreq = 'weekly';
     } else if (
