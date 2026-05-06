@@ -27,6 +27,11 @@ import {
   PawPrint,
   Bone,
   Brain,
+  Flower2,
+  Trees,
+  Bug,
+  Truck,
+  Dumbbell,
 } from 'lucide-react';
 import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
@@ -86,6 +91,11 @@ const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
   veterinarians: PawPrint,
   chiropractors: Bone,
   therapists: Brain,
+  spas: Flower2,
+  landscapers: Trees,
+  'pest-control': Bug,
+  'moving-companies': Truck,
+  'personal-trainers': Dumbbell,
 };
 
 export function NavBar() {

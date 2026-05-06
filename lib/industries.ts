@@ -109,6 +109,31 @@ export const INDUSTRIES: IndustryMeta[] = [
     name: 'Therapists',
     painPoint: 'New-client calls die in provider voicemail.',
   },
+  {
+    slug: 'spas',
+    name: 'Spas',
+    painPoint: 'Front desk cannot greet guests and answer calls at once.',
+  },
+  {
+    slug: 'landscapers',
+    name: 'Landscapers',
+    painPoint: 'Spring season buries the owner\'s phone.',
+  },
+  {
+    slug: 'pest-control',
+    name: 'Pest Control',
+    painPoint: 'Emergency infestation calls hit voicemail at 8 PM.',
+  },
+  {
+    slug: 'moving-companies',
+    name: 'Moving Companies',
+    painPoint: 'Peak season turns the phone into a denial-of-service.',
+  },
+  {
+    slug: 'personal-trainers',
+    name: 'Personal Trainers',
+    painPoint: 'You\'re in a session when prospects call.',
+  },
 ];
 
 export const INDUSTRY_SLUGS = INDUSTRIES.map((i) => i.slug);

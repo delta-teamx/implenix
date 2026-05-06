@@ -1152,6 +1152,471 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     caseStudySlug: 'placeholder-dental',
     related: ['chiropractors', 'medical-practices', 'dentists'],
   },
+
+  {
+    slug: 'spas',
+    name: 'Spas',
+    nicheSingular: 'day spa',
+    metaTitle: 'AI Receptionist for Spas | Implenix',
+    metaDescription:
+      'AI receptionist for day spas and wellness studios. Book treatments, handle gift-card and package questions, and capture every after-hours booking call.',
+    targetKeyword: 'ai receptionist for spas',
+    relatedKeywords: [
+      'spa booking ai',
+      'day spa answering service',
+      'wellness studio receptionist',
+      'spa call automation',
+    ],
+    intro:
+      "A day spa lives in a quiet contradiction: the front desk is supposed to be a calm, welcoming presence for the guest checking in — and a hot phone line at the same time. Massage and facial bookings, package and gift-card questions, group bookings for bridal parties, and last-minute cancellations all collide in the same queue, with the same staff person, during the same hour the spa is busiest. Implenix is the AI receptionist for spas: it answers every inbound within one ring, books treatments live against your scheduling system, handles gift-card balance and package-redemption questions directly from your point-of-sale, and routes group bookings (bridal, mother-daughter, corporate) into the right coordinator queue. New-guest intake captures intake-form needs, allergens, mobility considerations, and pregnancy/treatment contraindications so therapists are not surprised. Returning guests get fast-path identification — caller ID matches the account, intake skipped, schedule shown. Cancellations and reschedules write back live so the slot reopens for the next caller. After-hours bookings flow normally; Saturday-morning rushes do not break the front desk. The result: spas reclaim 15-18 hours per week of front-desk phone time, capture 30-40% more after-hours bookings, and the guest in the lobby actually gets a calm welcome instead of being mid-conversation when the next call rings.",
+    heroStat: '+38%',
+    heroStatLabel: 'after-hours bookings captured',
+    avgWeeklyCalls: 155,
+    avgClientValue: 220,
+    painPoints: [
+      {
+        title: 'Front desk cannot greet guests and answer calls at once',
+        description:
+          'PLACEHOLDER — The first impression of a spa is the front desk. When the phone rings every two minutes, the in-person guest gets the worse experience.',
+      },
+      {
+        title: 'Gift-card and package questions are repetitive call-killers',
+        description:
+          'PLACEHOLDER — "Can you check my gift-card balance" follows a clean script but eats real time. Multiplied across the day, it is the front desk\'s third job.',
+      },
+      {
+        title: 'Bridal and group bookings get lost in the routine queue',
+        description:
+          'PLACEHOLDER — A six-person bridal package is a real revenue event. If the booking call hits voicemail, that party books somewhere else.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Live treatment booking with intake-form pre-flight',
+        description:
+          'Captures allergens, mobility, contraindications. Therapists see the prep details before the guest arrives.',
+      },
+      {
+        title: 'Gift-card balance and package-redemption from POS',
+        description:
+          'Caller-verified guests can check balances and book against package redemptions without staff involvement.',
+      },
+      {
+        title: 'Group / bridal booking routed to coordinator',
+        description:
+          'Multi-guest bookings pull out of the routine queue and route to your senior booking coordinator via live transfer.',
+      },
+    ],
+    stats: [
+      { number: '+38%', label: 'after-hours bookings' },
+      { number: '-17h', label: 'front-desk phone time / week' },
+      { number: '<60s', label: 'average pickup time' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — Saturday lobbies used to be a circus. Now the front desk is actually with our guests and the phone still gets answered every time.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, multi-room day spa',
+    faqs: [
+      {
+        question: 'Does it integrate with Mindbody, Boulevard, Booker, Vagaro?',
+        answer:
+          'Yes. We support the major spa booking and POS systems via direct integration or webhook. Bookings, package redemptions, and gift-card balances flow back live.',
+      },
+      {
+        question: 'Can it handle gift-card balance lookups?',
+        answer:
+          'Yes. Caller-verified guests can check balances and apply gift cards to bookings without staff involvement.',
+      },
+      {
+        question: 'How does it handle group and bridal bookings?',
+        answer:
+          'Group bookings route to your senior coordinator via live transfer or callback queue, depending on your rules.',
+      },
+      {
+        question: 'Will it know about contraindications?',
+        answer:
+          'Intake captures pregnancy, mobility, allergens, and treatment contraindications during the booking call. Therapists see the prep before the guest arrives.',
+      },
+      {
+        question: 'How long is deployment?',
+        answer:
+          '7 to 10 business days for most spas.',
+      },
+    ],
+    caseStudySlug: 'placeholder-dental',
+    related: ['med-spas', 'salons', 'chiropractors'],
+  },
+
+  {
+    slug: 'landscapers',
+    name: 'Landscapers',
+    nicheSingular: 'landscaping company',
+    metaTitle: 'AI Receptionist for Landscapers | Implenix',
+    metaDescription:
+      'AI receptionist for landscaping companies. Capture seasonal demand spikes, qualify project bids, and handle recurring service calls without hiring extra staff.',
+    targetKeyword: 'ai receptionist for landscapers',
+    relatedKeywords: [
+      'landscaping answering service',
+      'lawn care call automation',
+      'landscaper receptionist',
+      'landscape business phone ai',
+    ],
+    intro:
+      "Landscaping is a seasonal business with a non-seasonal phone problem. Spring brings a six-week deluge of cleanup, mulch, irrigation, and design-build calls. Summer is recurring maintenance plus weather-driven rescheduling chaos. Fall is leaf-removal and hardscape bids. Winter is plowing dispatch when it snows and silence when it does not. Most landscapers handle all of it with the owner's cell phone, which means the moment a crew leaves for the first job at 6:30 AM, every inbound call goes to voicemail until lunch. Implenix is the AI receptionist for landscapers: it answers every inbound within one ring, qualifies design-build bids (property size, scope, decision-makers, budget posture), books recurring maintenance customers against your real route schedule, and handles weather-driven reschedules without involving the owner. Plowing dispatch flips on automatically when storms hit. Commercial accounts route to your account manager. Routine calls — \"can you skip me this week\" or \"add an extra cut\" — happen live and write back to your scheduling system. The result: landscapers capture 40-60% more spring-season bid calls without hiring temporary staff, weather reschedules stop breaking the route, and the owner stops missing dinner because the phone never quits.",
+    heroStat: '+52%',
+    heroStatLabel: 'spring-season bid calls captured',
+    avgWeeklyCalls: 145,
+    avgClientValue: 1850,
+    painPoints: [
+      {
+        title: 'Spring season buries the owner\'s phone',
+        description:
+          'PLACEHOLDER — March-May call volume is 4x baseline. Without surge capacity, design-build bids die in voicemail and routine maintenance customers churn.',
+      },
+      {
+        title: 'Weather reschedules break the entire route',
+        description:
+          'PLACEHOLDER — Rain pushes today\'s route to tomorrow. Customers call to confirm or move. Without live handling, the route compounds and everyone is angry by Friday.',
+      },
+      {
+        title: 'Crews are unreachable, owner answers everything',
+        description:
+          'PLACEHOLDER — The crew leaves at 6:30 AM. The owner is in a truck with cement gloves on. The phone rings until lunch.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Design-build bid qualification with property pre-screen',
+        description:
+          'Property size, scope, decision-makers, budget posture, irrigation history. Site visits only get booked when your minimum bar passes.',
+      },
+      {
+        title: 'Recurring maintenance schedule changes live',
+        description:
+          'Skip-this-week, add-a-cut, move-to-Friday handled directly. The route updates without owner involvement.',
+      },
+      {
+        title: 'Storm-mode plow dispatch toggle',
+        description:
+          'Flip plow dispatch on the night before a storm. Inbound plowing calls follow their own routing rules and SLA.',
+      },
+    ],
+    stats: [
+      { number: '+52%', label: 'bid calls captured' },
+      { number: '<60s', label: 'average pickup time' },
+      { number: '-12h', label: 'owner phone time / week' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — March used to mean 16-hour days because the phone never stopped. This year I left at 6 PM most nights.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, residential landscaping company',
+    faqs: [
+      {
+        question: 'Does it integrate with LMN, Aspire, Service Autopilot?',
+        answer:
+          'Yes. We support the major landscaping CRMs via direct integration or webhook. Routes, schedules, and customer notes flow back automatically.',
+      },
+      {
+        question: 'Can it scale for spring season?',
+        answer:
+          'Yes. Concurrent capacity is not capped. The same system handles March 15 and August 15 with no overtime.',
+      },
+      {
+        question: 'How does it handle weather-driven reschedules?',
+        answer:
+          'Customers can move themselves to the next available date or skip a week. The route updates live without owner involvement.',
+      },
+      {
+        question: 'Can it dispatch plowing in winter?',
+        answer:
+          'Yes. Storm-mode toggle flips the agent into plow-dispatch routing. Plowing customers follow a separate SLA.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '7 to 14 business days. We can compress for spring-season prep.',
+      },
+    ],
+    caseStudySlug: 'placeholder-hvac',
+    related: ['contractors', 'cleaning-services', 'pest-control'],
+  },
+
+  {
+    slug: 'pest-control',
+    name: 'Pest Control',
+    nicheSingular: 'pest control company',
+    metaTitle: 'AI Receptionist for Pest Control Companies | Implenix',
+    metaDescription:
+      'AI receptionist for pest control companies. Capture emergency infestation calls, book recurring service, and qualify commercial accounts — 24/7.',
+    targetKeyword: 'ai receptionist for pest control',
+    relatedKeywords: [
+      'pest control answering service',
+      'exterminator call automation',
+      'pest company receptionist',
+      'commercial pest dispatch',
+    ],
+    intro:
+      "A pest control operator's phone has two modes: routine recurring service and the high-emotion emergency call from a customer who just discovered something they cannot live with. The emergency calls do not wait — a homeowner who sees rodents at 8 PM is calling three companies, and the first to pick up wins. Most operators handle this with a dispatcher who covers business hours and a callback service that does not. Implenix is the AI receptionist for pest control companies: it answers every inbound within one ring, triages emergency infestations against your urgent-pest list (rodents, bedbugs, wasps, termites, hornets), books recurring service against your route schedule, and routes commercial accounts to your account manager. New-customer intake captures pest type, location, square footage, pets/children present, and prior treatment history so the tech rolls with the right product. Recurring customers on a quarterly contract get fast-path identification — name and address lookup pulls them out of the new-business queue. Commercial accounts with SLAs route to dedicated handling. The result: pest control operators capture 40-50% more emergency calls during peak pest season, reduce dispatch friction during summer rushes, and stop losing recurring customers to the company that picked up the phone first.",
+    heroStat: '+48%',
+    heroStatLabel: 'emergency-call capture rate',
+    avgWeeklyCalls: 130,
+    avgClientValue: 380,
+    painPoints: [
+      {
+        title: 'Emergency infestation calls hit voicemail at 8 PM',
+        description:
+          'PLACEHOLDER — A homeowner who just found rodents calls three companies in 10 minutes. Voicemail loses the job permanently.',
+      },
+      {
+        title: 'Summer pest season overwhelms dispatch',
+        description:
+          'PLACEHOLDER — Wasp and ant season runs 4-5x baseline call volume. Without surge capacity, recurring customers feel deprioritized.',
+      },
+      {
+        title: 'Commercial SLAs drown in residential queue',
+        description:
+          'PLACEHOLDER — A restaurant with a contracted SLA expects priority. Without account-aware routing, they sit behind a homeowner asking about ant traps.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Emergency triage by pest type',
+        description:
+          'Rodents, bedbugs, wasps, termites, hornets — flagged urgent and dispatched immediately. Routine pests get booked into the next available window.',
+      },
+      {
+        title: 'Recurring contract fast-path with route awareness',
+        description:
+          'Caller verification pulls quarterly customers into their own flow. Schedule changes and add-ons happen without dispatcher involvement.',
+      },
+      {
+        title: 'Commercial account routing with SLA priority',
+        description:
+          'Allow-listed restaurants and property managers route directly to your account manager via live transfer.',
+      },
+    ],
+    stats: [
+      { number: '+48%', label: 'emergency capture rate' },
+      { number: '<60s', label: 'average pickup time' },
+      { number: '-15h', label: 'dispatcher phone time / week' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — Last summer we lost about 20 emergency calls a week to voicemail. This year, every one got picked up and dispatched.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, regional pest control company',
+    faqs: [
+      {
+        question: 'Does it integrate with PestPac, ServSuite, FieldRoutes?',
+        answer:
+          'Yes. We support the major pest-control platforms via direct integration or webhook. Routes, jobs, and customer updates flow back automatically.',
+      },
+      {
+        question: 'How does it triage emergencies?',
+        answer:
+          'Against your defined urgent-pest list. Callers describing rodents, bedbugs, wasps, termites, or hornets route to immediate dispatch.',
+      },
+      {
+        question: 'Can it handle commercial accounts differently?',
+        answer:
+          'Yes. Account-based routing keeps commercial SLA accounts on a priority path. Restaurants and property managers route to your account manager.',
+      },
+      {
+        question: 'Will the agent quote pricing?',
+        answer:
+          'Within ranges your team approves. Final quotes go to a tech on-site.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '7 to 10 business days for most pest-control operators.',
+      },
+    ],
+    caseStudySlug: 'placeholder-hvac',
+    related: ['cleaning-services', 'landscapers', 'plumbers'],
+  },
+
+  {
+    slug: 'moving-companies',
+    name: 'Moving Companies',
+    nicheSingular: 'moving company',
+    metaTitle: 'AI Receptionist for Moving Companies | Implenix',
+    metaDescription:
+      'AI receptionist for moving companies. Capture every quote call during peak season, qualify residential vs commercial moves, and stop dropping bids to voicemail.',
+    targetKeyword: 'ai receptionist for moving companies',
+    relatedKeywords: [
+      'moving company answering service',
+      'mover quote intake ai',
+      'relocation business receptionist',
+      'moving call automation',
+    ],
+    intro:
+      "Moving is the most seasonal business in the service economy. Memorial Day through Labor Day, every operator runs at 130% of capacity, the phone never stops, and every call that hits voicemail is a $1,500-$8,000 job that books with whoever answered. Quote intake is the bottleneck because it is detailed: pickup, destination, square footage, stairs, elevators, parking permits, packing scope, specialty items, dates flexible vs hard. The owner can either answer the phone or run the job — not both. Implenix is the AI receptionist for moving companies: it answers every inbound within one ring, runs the quote intake script your estimator would, captures all the pricing-relevant variables, and books site surveys (virtual or in-person) into your real calendar. Local vs long-distance vs commercial each follow their own qualification path. High-touch quotes (executive relocations, fragile/specialty items, multi-day) route to your senior estimator. Same-day or next-day moves get screened against capacity. Off-season the agent handles steady-state volume; peak season it scales without overtime. After-call attribution writes the lead into your CRM with full intake — your estimator's first callback is a real conversation, not a 20-minute fact-finding call.",
+    heroStat: '+58%',
+    heroStatLabel: 'peak-season quote calls captured',
+    avgWeeklyCalls: 175,
+    avgClientValue: 2400,
+    painPoints: [
+      {
+        title: 'Memorial Day through Labor Day buries the phone',
+        description:
+          'PLACEHOLDER — Peak season runs 3-4x baseline volume. Without surge capacity, $5K+ jobs die in voicemail every single day.',
+      },
+      {
+        title: 'Quote intake is too detailed for owners on jobs',
+        description:
+          'PLACEHOLDER — A real estimate needs 15+ variables. Owners on a job site cannot capture them on a rushed call. The estimate is wrong, the move is bid badly.',
+      },
+      {
+        title: 'Long-distance and commercial calls mix with local',
+        description:
+          'PLACEHOLDER — A long-distance corporate relocation needs different intake than a local apartment move. Same queue, same script — both lose.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Quote intake with pickup/destination + scope capture',
+        description:
+          'All 15+ pricing variables captured cleanly: stairs, elevators, parking permits, specialty items, packing scope. Estimator gets a complete brief.',
+      },
+      {
+        title: 'Local / long-distance / commercial path triage',
+        description:
+          'Each move type has its own intake. Long-distance corporate relocations route to the senior estimator from the start.',
+      },
+      {
+        title: 'Site survey booking — virtual or in-person',
+        description:
+          'Books surveys directly into your calendar with full context. Customer chooses virtual vs in-person based on your rules.',
+      },
+    ],
+    stats: [
+      { number: '+58%', label: 'peak-season quote calls' },
+      { number: '<60s', label: 'average pickup time' },
+      { number: '+24%', label: 'estimator close rate' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — June used to be chaos. We dropped 20 calls a day. This year we picked them all up and our close rate went up because the intake was actually complete.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, regional moving company',
+    faqs: [
+      {
+        question: 'Does it integrate with SmartMoving, MoveitPro, Network Movers?',
+        answer:
+          'Yes. We support the major moving CRMs via direct integration or webhook. Quotes, surveys, and customer updates flow back automatically.',
+      },
+      {
+        question: 'Can it scale for peak season?',
+        answer:
+          'Yes. Concurrent capacity is not capped. Same system handles May, June, and December with no overtime.',
+      },
+      {
+        question: 'Can it handle long-distance and commercial differently?',
+        answer:
+          'Yes. Each move type has its own intake script. Long-distance and corporate relocations route to your senior estimator.',
+      },
+      {
+        question: 'Will the agent quote pricing?',
+        answer:
+          'It can share rate ranges your team approves for typical moves. Specific quotes always go to an estimator after the survey.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '7 to 14 business days. Faster if you want to be ready before peak season.',
+      },
+    ],
+    caseStudySlug: 'placeholder-hvac',
+    related: ['cleaning-services', 'contractors', 'landscapers'],
+  },
+
+  {
+    slug: 'personal-trainers',
+    name: 'Personal Trainers',
+    nicheSingular: 'training studio',
+    metaTitle: 'AI Receptionist for Personal Trainers | Implenix',
+    metaDescription:
+      'AI receptionist for personal trainers and fitness studios. Book consultations, handle package questions, and stop missing new-client calls during sessions.',
+    targetKeyword: 'ai receptionist for personal trainers',
+    relatedKeywords: [
+      'personal trainer answering service',
+      'fitness studio booking ai',
+      'gym call automation',
+      'training receptionist',
+    ],
+    intro:
+      "A personal trainer's most expensive hours — the ones in actual sessions with clients — are also the hours when new-client inquiry calls land. Solo trainers are with a client at the moment a prospect calls; small studios have the same problem multiplied across coaches. The result is a familiar pattern: prospect researches, calls three studios, two pick up, one is yours, you call back two hours later, the prospect already booked. Implenix is the AI receptionist for personal trainers: it answers every inbound within one ring, runs your consultation intake (goals, current activity, injuries, schedule, package preference), and books the discovery session directly into your calendar against your real availability. Existing clients get fast-path identification — they can move sessions, ask package balance questions, or buy add-ons without disrupting your training schedule. Class and group-training inquiries follow their own intake. Cancellations write back live so the slot reopens. Solo trainers can finally hold sessions without watching the phone; small studios capture 30-40% more discovery sessions in the first quarter without hiring a coordinator.",
+    heroStat: '+39%',
+    heroStatLabel: 'discovery sessions booked',
+    avgWeeklyCalls: 85,
+    avgClientValue: 1200,
+    painPoints: [
+      {
+        title: 'You\'re in a session when prospects call',
+        description:
+          'PLACEHOLDER — The whole problem in one sentence. The trainer cannot answer because they are training. The prospect books somewhere else.',
+      },
+      {
+        title: 'Returning client questions disrupt the session',
+        description:
+          'PLACEHOLDER — A returning client texting to move tomorrow\'s session interrupts the current session. Multiplied across the day, it is exhausting.',
+      },
+      {
+        title: 'Package and pricing questions follow a clean script — but eat time',
+        description:
+          'PLACEHOLDER — "How much for 10 sessions" is a 90-second call. The trainer should not be the one taking it.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Consultation intake with goals + injuries pre-screen',
+        description:
+          'Captures goals, current activity, injuries, schedule, package preference. The first session starts informed.',
+      },
+      {
+        title: 'Returning-client schedule and package handling',
+        description:
+          'Caller-verified clients move sessions, check package balances, and buy add-ons without trainer involvement.',
+      },
+      {
+        title: 'Class / group-training routing',
+        description:
+          'Class and group inquiries follow their own intake script and route to the right schedule.',
+      },
+    ],
+    stats: [
+      { number: '+39%', label: 'discovery sessions' },
+      { number: '<60s', label: 'average pickup time' },
+      { number: '-9h', label: 'trainer phone time / week' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — Before, every session was punctuated by my phone vibrating. Now I run the session, and the calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, two-coach training studio',
+    faqs: [
+      {
+        question: 'Does it integrate with Mindbody, TrueCoach, Trainerize?',
+        answer:
+          'Yes. We support the major fitness and training platforms via direct integration or webhook. Bookings, packages, and client updates flow back automatically.',
+      },
+      {
+        question: 'Can it sell packages?',
+        answer:
+          'Within scope you define. The agent can quote ranges your team approves and accept payment via your POS link sent by SMS during the call. Hard sells go to a human.',
+      },
+      {
+        question: 'How does it handle injury-relevant intake?',
+        answer:
+          'Captured during the consultation booking call. Trainer sees the prep before the session.',
+      },
+      {
+        question: 'Can it handle group classes?',
+        answer:
+          'Yes. Class inquiries route to a separate intake script and book against your class schedule.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '7 to 10 business days for most training studios.',
+      },
+    ],
+    caseStudySlug: 'placeholder-dental',
+    related: ['chiropractors', 'salons', 'med-spas'],
+  },
 ];
 
 export const INDUSTRY_PROFILE_SLUGS = INDUSTRY_PROFILES.map((p) => p.slug);
