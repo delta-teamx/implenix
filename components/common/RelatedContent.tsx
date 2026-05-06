@@ -11,9 +11,9 @@ type Props = {
 
 const FALLBACKS: Record<Props['type'], LinkItem[]> = {
   industry: [
-    { href: '/ai-receptionist-for-hvac-businesses', label: 'AI Receptionist for HVAC' },
-    { href: '/ai-receptionist-for-dental-businesses', label: 'AI Receptionist for Dental' },
-    { href: '/ai-receptionist-for-plumbing-businesses', label: 'AI Receptionist for Plumbing' },
+    { href: '/ai-receptionist-for-hvac-companies', label: 'AI Receptionist for HVAC Companies' },
+    { href: '/ai-receptionist-for-dentists', label: 'AI Receptionist for Dentists' },
+    { href: '/ai-receptionist-for-plumbers', label: 'AI Receptionist for Plumbers' },
   ],
   blog: [
     { href: '/blog', label: 'Latest from the Implenix blog' },

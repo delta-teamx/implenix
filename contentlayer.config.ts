@@ -25,7 +25,7 @@ export const Industry = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (doc) => `/ai-receptionist-for-${doc.slug}-businesses`,
+      resolve: (doc) => `/ai-receptionist-for-${doc.slug}`,
     },
   },
 }));

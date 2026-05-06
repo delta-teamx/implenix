@@ -31,7 +31,7 @@ const NAV_GROUPS: NavGroup[] = [
   { label: 'Solutions', href: '/solutions/ai-receptionist', type: 'mega-solutions' },
   {
     label: 'Industries',
-    href: '/ai-receptionist-for-hvac-businesses',
+    href: '/ai-receptionist-for-hvac-companies',
     type: 'mega-industries',
   },
   { label: 'Pricing', href: '/pricing', type: 'link' },
@@ -56,14 +56,14 @@ const SOLUTIONS = [
 ];
 
 const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
-  hvac: Wrench,
-  dental: Stethoscope,
+  'hvac-companies': Wrench,
+  dentists: Stethoscope,
   'real-estate': HomeIcon,
   'law-firms': Scale,
-  plumbing: Droplets,
-  'med-spa': Sparkles,
+  plumbers: Droplets,
+  'med-spas': Sparkles,
   'auto-repair': Car,
-  roofing: HardHat,
+  roofers: HardHat,
 };
 
 export function NavBar() {

@@ -17,12 +17,12 @@ import { localBusinessSchema, faqSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
-type Params = { industry: string };
+type Params = { slug: string };
 
 const VALID_SLUGS = INDUSTRIES.map((i) => i.slug);
 
 export function generateStaticParams() {
-  return VALID_SLUGS.map((slug) => ({ industry: slug }));
+  return VALID_SLUGS.map((slug) => ({ slug }));
 }
 
 function getDoc(slug: string) {
@@ -30,7 +30,7 @@ function getDoc(slug: string) {
 }
 
 export function generateMetadata({ params }: { params: Params }): Metadata {
-  const slug = params.industry;
+  const slug = params.slug;
   if (!VALID_SLUGS.includes(slug)) return {};
   const doc = getDoc(slug);
   if (!doc) return {};
@@ -42,7 +42,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 }
 
 export default function IndustryPage({ params }: { params: Params }) {
-  const slug = params.industry;
+  const slug = params.slug;
   if (!VALID_SLUGS.includes(slug)) notFound();
   const doc = getDoc(slug);
   if (!doc) notFound();
@@ -73,7 +73,7 @@ export default function IndustryPage({ params }: { params: Params }) {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'Industries', href: industryUrl('hvac') },
+              { label: 'Industries', href: industryUrl('hvac-companies') },
               { label: doc.industry, href: industryUrl(slug) },
             ]}
             className="mb-8"

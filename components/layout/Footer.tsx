@@ -18,10 +18,10 @@ const COLUMNS = [
   {
     heading: 'Industries',
     links: [
-      { href: '/ai-receptionist-for-hvac-businesses', label: 'HVAC' },
-      { href: '/ai-receptionist-for-dental-businesses', label: 'Dental' },
-      { href: '/ai-receptionist-for-real-estate-businesses', label: 'Real Estate' },
-      { href: '/ai-receptionist-for-law-firms-businesses', label: 'Law Firms' },
+      { href: '/ai-receptionist-for-hvac-companies', label: 'HVAC' },
+      { href: '/ai-receptionist-for-dentists', label: 'Dental' },
+      { href: '/ai-receptionist-for-real-estate', label: 'Real Estate' },
+      { href: '/ai-receptionist-for-law-firms', label: 'Law Firms' },
     ],
   },
   {
