@@ -4,6 +4,7 @@ import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { allDocs } from 'contentlayer/generated';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { techArticleSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
@@ -39,6 +40,14 @@ export default function DocPage({ params }: { params: Params }) {
             url: doc.url,
           }),
         ]}
+      />
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Docs', href: '/docs/getting-started/quick-start' },
+          { label: doc.section, href: doc.url },
+          { label: doc.title, href: doc.url },
+        ]}
+        className="mb-4"
       />
       <div className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
         [ docs // {doc.section.toLowerCase()} ]

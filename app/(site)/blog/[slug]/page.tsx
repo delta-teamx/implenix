@@ -8,6 +8,7 @@ import { mdxComponents } from '@/components/docs/MdxComponents';
 import { Badge } from '@/components/common/Badge';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { blogPostingSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
@@ -60,7 +61,15 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
       {/* CONTENT VIA MDX FILES IN /content/blog/ — ASSIGN TO CONTENT TEAM */}
       <section className="grid-bg border-b border-brand-purple/15">
-        <div className="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-28 md:pb-16">
+        <div className="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'Blog', href: '/blog' },
+              { label: doc.category, href: doc.url },
+            ]}
+            className="mb-6"
+          />
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-brand-cyan font-mono mb-8 hover:opacity-80"

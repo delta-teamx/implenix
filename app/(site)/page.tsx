@@ -13,7 +13,11 @@ import { ROICalculator } from '@/components/common/ROICalculator';
 import { StickyDemoCTA } from '@/components/common/StickyDemoCTA';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
-import { organizationSchema, websiteSchema } from '@/lib/schema';
+import {
+  organizationSchema,
+  websiteSchema,
+  softwareApplicationSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -26,7 +30,13 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <SchemaOrg schema={[organizationSchema(), websiteSchema()]} />
+      <SchemaOrg
+        schema={[
+          organizationSchema(),
+          websiteSchema(),
+          softwareApplicationSchema(),
+        ]}
+      />
       <Hero />
       <CostOfNothingSection />
       <HowItWorks />

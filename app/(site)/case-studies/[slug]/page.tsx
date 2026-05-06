@@ -12,6 +12,7 @@ import { GhlForm } from '@/components/common/GhlForm';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { articleSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
@@ -59,7 +60,15 @@ export default function CaseStudyPage({ params }: { params: Params }) {
       />
 
       <section className="grid-bg border-b border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-20">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-20">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'Case Studies', href: '/case-studies' },
+              { label: doc.industry, href: `/case-studies/${doc.slug}` },
+            ]}
+            className="mb-6"
+          />
           <Link
             href="/case-studies"
             data-cta-location="case-study-back"

@@ -12,7 +12,8 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import { DividedStats } from '@/components/common/DividedStats';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
-import { localBusinessSchema, faqSchema } from '@/lib/schema';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { localBusinessSchema, faqSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
@@ -55,11 +56,28 @@ export default function IndustryPage({ params }: { params: Params }) {
   return (
     <>
       <SchemaOrg
-        schema={[localBusinessSchema(doc.industry, doc.url), faqSchema(faq)]}
+        schema={[
+          localBusinessSchema(doc.industry, doc.url),
+          faqSchema(faq),
+          serviceSchema({
+            name: `AI Receptionist for ${doc.industry}`,
+            description: doc.metaDescription,
+            serviceType: 'AI Receptionist',
+            url: doc.url,
+          }),
+        ]}
       />
 
       <section className="grid-bg border-b border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-20 md:pt-24 md:pb-24">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'Industries', href: industryUrl('hvac') },
+              { label: doc.industry, href: industryUrl(slug) },
+            ]}
+            className="mb-8"
+          />
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 flex flex-col gap-6">
               <Badge label={`Industry · ${doc.industry}`} variant="cyan" />
