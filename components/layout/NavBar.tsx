@@ -17,6 +17,10 @@ import {
   Sparkles,
   Car,
   HardHat,
+  Zap,
+  Scissors,
+  Calculator,
+  Megaphone,
 } from 'lucide-react';
 import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
@@ -64,6 +68,12 @@ const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
   'med-spas': Sparkles,
   'auto-repair': Car,
   roofers: HardHat,
+  'medical-practices': Stethoscope,
+  electricians: Zap,
+  contractors: HardHat,
+  salons: Scissors,
+  accountants: Calculator,
+  'marketing-agencies': Megaphone,
 };
 
 export function NavBar() {
