@@ -32,14 +32,20 @@ import {
   Bug,
   Truck,
   Dumbbell,
+  Headphones,
+  UserCog,
+  ListTree,
+  Voicemail,
+  PhoneForwarded,
 } from 'lucide-react';
 import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
+import { COMPARISON_PROFILES } from '@/lib/seo/comparisons';
 
 type NavGroup = {
   label: string;
   href: string;
-  type: 'link' | 'mega-solutions' | 'mega-industries';
+  type: 'link' | 'mega-solutions' | 'mega-industries' | 'mega-compare';
 };
 
 const NAV_GROUPS: NavGroup[] = [
@@ -49,9 +55,13 @@ const NAV_GROUPS: NavGroup[] = [
     href: '/ai-receptionist-for-hvac-companies',
     type: 'mega-industries',
   },
+  {
+    label: 'Compare',
+    href: '/ai-receptionist-vs-answering-service',
+    type: 'mega-compare',
+  },
   { label: 'Pricing', href: '/pricing', type: 'link' },
   { label: 'Case Studies', href: '/case-studies', type: 'link' },
-  { label: 'Audit', href: '/audit', type: 'link' },
   { label: 'Try Live', href: '/try-it', type: 'link' },
 ];
 
@@ -69,6 +79,14 @@ const SOLUTIONS = [
     Icon: PhoneOutgoing,
   },
 ];
+
+const COMPARE_ICONS: Record<string, typeof Wrench> = {
+  'answering-service': Headphones,
+  'virtual-assistant': UserCog,
+  'ivr-system': ListTree,
+  voicemail: Voicemail,
+  'call-center': PhoneForwarded,
+};
 
 const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
   'hvac-companies': Wrench,
@@ -264,6 +282,37 @@ export function NavBar() {
                         {i.painPoint}
                       </span>
                     </span>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : null}
+
+          {activeMega === 'mega-compare' ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {COMPARISON_PROFILES.map((c) => {
+                const Icon = COMPARE_ICONS[c.slug] ?? Headphones;
+                return (
+                  <Link
+                    key={c.slug}
+                    href={`/ai-receptionist-vs-${c.slug}`}
+                    className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
+                  >
+                    <span className="w-9 h-9 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
+                      <Icon size={16} className="text-brand-cyan" />
+                    </span>
+                    <span className="flex-1">
+                      <span className="block font-heading text-white text-sm">
+                        AI Receptionist vs {c.alternativeName}
+                      </span>
+                      <span className="block text-xs text-white/55 font-body mt-1">
+                        {c.punchlineLabel}
+                      </span>
+                    </span>
+                    <ArrowRight
+                      size={14}
+                      className="text-brand-cyan mt-1 transition-transform group-hover:translate-x-1"
+                    />
                   </Link>
                 );
               })}

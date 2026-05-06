@@ -25,6 +25,16 @@ const COLUMNS = [
     ],
   },
   {
+    heading: 'Compare',
+    links: [
+      { href: '/ai-receptionist-vs-answering-service', label: 'vs Answering Service' },
+      { href: '/ai-receptionist-vs-virtual-assistant', label: 'vs Virtual Assistant' },
+      { href: '/ai-receptionist-vs-ivr-system', label: 'vs IVR System' },
+      { href: '/ai-receptionist-vs-voicemail', label: 'vs Voicemail' },
+      { href: '/ai-receptionist-vs-call-center', label: 'vs Call Center' },
+    ],
+  },
+  {
     heading: 'Company',
     links: [
       { href: '/about', label: 'About' },
@@ -81,7 +91,7 @@ export function Footer() {
       </section>
 
       <div className="bg-black border-t border-brand-purple/20">
-        <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-6 gap-10">
+        <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-7 gap-10">
           <div className="col-span-2 lg:col-span-2 flex flex-col gap-5">
             <LogoLockup size="md" />
             <p className="text-white/60 text-sm font-body max-w-xs">
