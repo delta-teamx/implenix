@@ -79,6 +79,36 @@ export const INDUSTRIES: IndustryMeta[] = [
     name: 'Marketing Agencies',
     painPoint: 'Cold pitches drown out real RFPs in the inbound queue.',
   },
+  {
+    slug: 'cleaning-services',
+    name: 'Cleaning Services',
+    painPoint: 'Dispatcher juggling phone, schedule, and key handoffs.',
+  },
+  {
+    slug: 'mortgage-brokers',
+    name: 'Mortgage Brokers',
+    painPoint: 'Rate-shoppers move on if you do not pick up first.',
+  },
+  {
+    slug: 'insurance-agents',
+    name: 'Insurance Agents',
+    painPoint: 'Producers stuck on coverage questions instead of selling.',
+  },
+  {
+    slug: 'veterinarians',
+    name: 'Veterinarians',
+    painPoint: 'Anxious pet parents hitting voicemail at 9 PM.',
+  },
+  {
+    slug: 'chiropractors',
+    name: 'Chiropractors',
+    painPoint: 'Phone rings during the busiest adjustment hours.',
+  },
+  {
+    slug: 'therapists',
+    name: 'Therapists',
+    painPoint: 'New-client calls die in provider voicemail.',
+  },
 ];
 
 export const INDUSTRY_SLUGS = INDUSTRIES.map((i) => i.slug);

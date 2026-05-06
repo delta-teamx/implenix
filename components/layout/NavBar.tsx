@@ -21,6 +21,12 @@ import {
   Scissors,
   Calculator,
   Megaphone,
+  SprayCan,
+  Banknote,
+  Umbrella,
+  PawPrint,
+  Bone,
+  Brain,
 } from 'lucide-react';
 import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
@@ -74,6 +80,12 @@ const INDUSTRY_ICONS: Record<string, typeof Wrench> = {
   salons: Scissors,
   accountants: Calculator,
   'marketing-agencies': Megaphone,
+  'cleaning-services': SprayCan,
+  'mortgage-brokers': Banknote,
+  'insurance-agents': Umbrella,
+  veterinarians: PawPrint,
+  chiropractors: Bone,
+  therapists: Brain,
 };
 
 export function NavBar() {

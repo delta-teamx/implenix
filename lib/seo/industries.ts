@@ -594,6 +594,564 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     caseStudySlug: 'placeholder-real-estate',
     related: ['accountants', 'law-firms', 'real-estate'],
   },
+
+  {
+    slug: 'cleaning-services',
+    name: 'Cleaning Services',
+    nicheSingular: 'cleaning service',
+    metaTitle: 'AI Receptionist for Cleaning Services | Implenix',
+    metaDescription:
+      'AI receptionist for residential and commercial cleaning services. Book recurring jobs, handle key handoffs, and stop dropping calls during peak hours.',
+    targetKeyword: 'ai receptionist for cleaning services',
+    relatedKeywords: [
+      'cleaning company answering service',
+      'maid service booking ai',
+      'commercial cleaning call automation',
+      'cleaning business receptionist',
+    ],
+    intro:
+      "A cleaning company runs on recurring revenue and tight scheduling. Your dispatcher is juggling key handoffs, gate codes, parking instructions, and the customer who wants to add a deep clean to next Thursday's appointment — all while the phone rings off the hook with new-customer calls. Most cleaning operators handle this by running their phone through a single dispatcher who picks up when she can. Half the time she cannot. Implenix is the AI receptionist for cleaning services: it answers every inbound inside one ring, books one-time and recurring jobs against your real availability, captures square footage / bathroom count / pet info / access instructions, and handles routine schedule changes without involving your dispatcher. New-customer intake captures the questions that actually matter — frequency, scope, surfaces, allergens — so your crew shows up ready. Recurring customers get fast-path identification: caller ID matches an active account, the agent skips intake and goes straight to schedule changes or add-ons. Commercial accounts with SLAs route to your account manager. Cancellations write back live so the slot reopens. The result: cleaning operators reclaim 12-15 hours per week of dispatcher phone time, capture 30-40% more after-hours bookings, and stop losing recurring customers to operational friction. The crew shows up to clean, not to apologize.",
+    heroStat: '+34%',
+    heroStatLabel: 'after-hours bookings captured',
+    avgWeeklyCalls: 130,
+    avgClientValue: 220,
+    painPoints: [
+      {
+        title: 'Dispatcher juggles phone and schedule simultaneously',
+        description:
+          'PLACEHOLDER — One person answering the phone while moving keys, gate codes, and crew assignments. The phone always loses.',
+      },
+      {
+        title: 'Recurring customers churn over scheduling friction',
+        description:
+          'PLACEHOLDER — A customer calls to move next Thursday, hits voicemail, tries the cleaner across town. By the time you call back the relationship is gone.',
+      },
+      {
+        title: 'Commercial SLA calls sit in the same queue as residential bids',
+        description:
+          'PLACEHOLDER — A property manager with a contracted SLA expects priority. They will not get it from a queue that treats them like a new homeowner inquiry.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'New-customer intake with scope + access capture',
+        description:
+          'Square footage, bathrooms, pets, access instructions, allergens. The crew arrives knowing exactly what they are walking into.',
+      },
+      {
+        title: 'Recurring customer fast-path with caller ID',
+        description:
+          'Active accounts skip intake. The agent goes directly to schedule changes, add-ons, or notes for the next visit.',
+      },
+      {
+        title: 'Commercial account routing with SLA priority',
+        description:
+          'Allow-listed property managers and commercial accounts route to your account manager via live transfer.',
+      },
+    ],
+    stats: [
+      { number: '+34%', label: 'after-hours bookings' },
+      { number: '-15h', label: 'dispatcher phone time / week' },
+      { number: '<60s', label: 'average pickup time' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — My dispatcher used to spend half the day on the phone. Now she runs the schedule, handles exceptions, and the routine calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, residential cleaning service',
+    faqs: [
+      {
+        question: 'Does it integrate with Jobber, Housecall Pro, ZenMaid?',
+        answer:
+          'Yes. We support direct integrations with the major cleaning-business CRMs. Bookings, schedule changes, and notes write back automatically.',
+      },
+      {
+        question: 'Can it handle recurring schedule changes?',
+        answer:
+          'Yes. The agent moves the booking, frees the slot, writes the change back, and sends the customer a confirmation — without dispatcher involvement.',
+      },
+      {
+        question: 'How does it handle key codes and access instructions?',
+        answer:
+          'Captured during intake and stored on the customer record. The crew sees them on their assignment before arrival.',
+      },
+      {
+        question: 'Can it differentiate residential and commercial?',
+        answer:
+          'Yes. Account-based routing keeps residential intake separate from commercial SLA calls. Each path has its own script.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '7 to 10 business days for most cleaning operators.',
+      },
+    ],
+    caseStudySlug: 'placeholder-hvac',
+    related: ['contractors', 'electricians', 'plumbers'],
+  },
+
+  {
+    slug: 'mortgage-brokers',
+    name: 'Mortgage Brokers',
+    nicheSingular: 'mortgage brokerage',
+    metaTitle: 'AI Receptionist for Mortgage Brokers | Implenix',
+    metaDescription:
+      'AI receptionist for mortgage brokers and lenders. Capture rate-shoppers, route urgent closings, and stop losing pre-approval calls to voicemail.',
+    targetKeyword: 'ai receptionist for mortgage brokers',
+    relatedKeywords: [
+      'mortgage broker answering service',
+      'loan officer call automation',
+      'mortgage lead intake ai',
+      'lender receptionist',
+    ],
+    intro:
+      "A mortgage broker's pipeline is rate-sensitive and time-bound. Calls come in three flavors: rate-shoppers comparing five lenders in a single hour, existing clients chasing closing-document status, and Realtors needing pre-approval letters before tomorrow's offer deadline. Each one is high-stakes, and each one loses if it sits in voicemail. Implenix is the AI receptionist for mortgage brokers: it answers every inbound within one ring, qualifies rate-shoppers (loan amount, property type, credit posture, timeline) before they reach a loan officer, and routes existing-client questions through caller-verified fast-path. Pre-approval letter requests from Realtors get same-day priority routing. Document collection happens via secure SMS portal links the agent sends mid-call — borrowers stop saying \"I emailed it\" and the LO stops chasing missing pages. Compliance-sensitive intake follows your defined scripts so your team is not freelancing on disclosure language. After every call, the lead lands in your LOS or CRM with full context — including a recording the LO can review before calling back. Brokers who deploy Implenix typically cut LO phone time by 12-18 hours per week while qualified pre-approval volume climbs 40-50%, and Realtor partners stop dropping referrals because the broker is now the fastest call back in the market.",
+    heroStat: '+47%',
+    heroStatLabel: 'qualified pre-approval requests',
+    avgWeeklyCalls: 120,
+    avgClientValue: 4200,
+    painPoints: [
+      {
+        title: 'Rate-shoppers do not wait — they call the next number',
+        description:
+          'PLACEHOLDER — Mortgage shoppers call 4-6 lenders in a single hour. If you do not pick up, they are gone before you even know they called.',
+      },
+      {
+        title: 'Loan officers burn an hour daily on document chase',
+        description:
+          'PLACEHOLDER — "I sent it." "I did not receive it." "Let me re-send." Multiplied across every active file, this is real labor cost.',
+      },
+      {
+        title: 'Realtor partners drop you over response time',
+        description:
+          'PLACEHOLDER — A Realtor needs a pre-approval letter by tomorrow morning. If you call back at 4 PM, they used a different lender on the offer.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Rate-shopper qualification before LO involvement',
+        description:
+          'Loan amount, property type, credit posture, employment, timeline. Below-bar inquiries get a friendly no-thanks. Above-bar route to an LO with full context.',
+      },
+      {
+        title: 'Realtor partner fast-path with priority routing',
+        description:
+          'Allow-listed Realtor partners route to a dedicated callback queue with same-day SLA. Pre-approval letter requests get priority.',
+      },
+      {
+        title: 'Document collection via secure SMS portal link',
+        description:
+          'Mid-call, the agent texts a link the borrower can use to upload pay stubs, bank statements, or W-2s. Files attach to the loan file before the call ends.',
+      },
+    ],
+    stats: [
+      { number: '+47%', label: 'qualified pre-approval requests' },
+      { number: '-15h', label: 'LO phone time per week' },
+      { number: '<2 min', label: 'Realtor response time' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — My LOs stopped working until 9 PM chasing documents. The agent collects them during the first call and we close on time.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, regional mortgage brokerage',
+    faqs: [
+      {
+        question: 'Does it integrate with Encompass, BytePro, LendingPad?',
+        answer:
+          'Yes. We support the major LOS platforms via direct integration or webhook. Lead, application status, and document tasks flow back automatically.',
+      },
+      {
+        question: 'Can it pre-qualify rate-shoppers?',
+        answer:
+          'Yes. Loan amount, property type, credit posture, timeline, and decision-maker confirmation are captured up front. Below-bar inquiries get a polite no-thanks.',
+      },
+      {
+        question: 'Is the agent compliant with mortgage disclosure rules?',
+        answer:
+          'The agent follows your team-approved scripts. We do not freelance on disclosure language. Calls are recorded with consent for compliance review.',
+      },
+      {
+        question: 'Can it handle urgent Realtor partner requests?',
+        answer:
+          'Yes. Allow-listed Realtor partners route to a dedicated priority queue. Pre-approval letter requests get same-day SLA.',
+      },
+      {
+        question: 'How does document collection work?',
+        answer:
+          'The agent texts a secure portal link mid-call. Borrowers upload pay stubs, bank statements, W-2s during the call. Files attach to the loan file automatically.',
+      },
+    ],
+    caseStudySlug: 'placeholder-real-estate',
+    related: ['real-estate', 'insurance-agents', 'accountants'],
+  },
+
+  {
+    slug: 'insurance-agents',
+    name: 'Insurance Agents',
+    nicheSingular: 'insurance agency',
+    metaTitle: 'AI Receptionist for Insurance Agents | Implenix',
+    metaDescription:
+      'AI receptionist for insurance agents and agencies. Handle quote requests, claim intake, and policy questions — without burning your producers on the phone.',
+    targetKeyword: 'ai receptionist for insurance agents',
+    relatedKeywords: [
+      'insurance agency answering service',
+      'insurance call automation',
+      'agent receptionist ai',
+      'insurance quote intake',
+    ],
+    intro:
+      "An insurance agency's phone traffic looks deceptively simple from the outside: people call to get a quote, ask a policy question, or report a claim. Inside the agency, those three buckets eat the entire day. Producers should be selling. Instead, they are answering \"is this covered\" calls. CSRs should be handling renewals. Instead, they are intaking auto claims at 7 PM. Implenix is the AI receptionist for insurance agents: it answers every inbound within one ring, runs your quote intake script, routes claim calls into your defined claim-intake path, and handles routine policy questions without producer involvement. Quote intake captures the data your producers actually need — driver count, vehicles, drivers' age, coverage limits, prior carrier — so the producer's first callback is a real conversation, not a fact-finding mission. Existing-policyholders get caller-verified fast-path: name and policy number look up the account, and the agent answers most billing/policy/coverage questions directly from your AMS. Claim intake follows your carrier's required script and routes to the right adjuster path. After-hours claim calls do not hit voicemail — they get full intake. The result: agencies cut producer phone time by 15-20 hours per week, capture 35-45% more after-hours quote requests, and stop losing renewal customers to the agency that picks up faster.",
+    heroStat: '+42%',
+    heroStatLabel: 'after-hours quote requests captured',
+    avgWeeklyCalls: 140,
+    avgClientValue: 1850,
+    painPoints: [
+      {
+        title: 'Producers stuck on the phone instead of selling',
+        description:
+          'PLACEHOLDER — Every "is my deductible $500 or $1000" call answered by a producer is real commission lost. The agency feels expensive without being efficient.',
+      },
+      {
+        title: 'Claim intake at 7 PM goes to voicemail',
+        description:
+          'PLACEHOLDER — Auto accidents do not happen 9-5. If your claim line is voicemail after hours, customers feel unsupported and your retention drops.',
+      },
+      {
+        title: 'Quote shoppers comparison-shop in real time',
+        description:
+          'PLACEHOLDER — Auto and home shoppers call 3-5 agents in an hour. The first to answer with a quote becomes the favorite.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Quote intake with line-of-business triage',
+        description:
+          'Auto, home, life, commercial — each path has its own intake. Driver counts, vehicles, coverage history captured cleanly for the producer.',
+      },
+      {
+        title: 'Existing-policyholder self-service',
+        description:
+          'Name + policy number verifies the account. Routine billing, declarations, and coverage questions answer directly from your AMS.',
+      },
+      {
+        title: '24/7 claim intake with carrier-script compliance',
+        description:
+          'After-hours claims get full intake. The agent follows your carrier-required script and routes to the right adjuster path.',
+      },
+    ],
+    stats: [
+      { number: '+42%', label: 'after-hours quote requests' },
+      { number: '-18h', label: 'producer phone time / week' },
+      { number: '100%', label: 'claim coverage 24/7' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — My producers used to lose their first hour every morning to "did you get my email" calls. Now they pick up at 9 and start closing.',
+    testimonialAuthor: 'PLACEHOLDER — Owner, multi-line independent agency',
+    faqs: [
+      {
+        question: 'Does it integrate with AMS360, Applied Epic, EZLynx?',
+        answer:
+          'Yes. We integrate with the major AMS platforms via API or webhook. Calls, quote intake, and policyholder updates flow back automatically.',
+      },
+      {
+        question: 'Can it handle different lines of business?',
+        answer:
+          'Yes. Auto, home, life, and commercial each have their own intake script. The agent triages by line of business at the start of every quote call.',
+      },
+      {
+        question: 'How does claim intake work?',
+        answer:
+          'After-hours claims get full intake following your carrier-required script. The agent collects all required data and routes to the right adjuster path.',
+      },
+      {
+        question: 'Can it answer policyholder coverage questions?',
+        answer:
+          'Within scope. Caller-verified policyholders can get billing, declarations, and routine coverage questions answered directly from your AMS. Complex questions transfer to a CSR.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '10 to 14 business days for most agencies. Faster if you are on a supported AMS.',
+      },
+    ],
+    caseStudySlug: 'placeholder-real-estate',
+    related: ['mortgage-brokers', 'accountants', 'law-firms'],
+  },
+
+  {
+    slug: 'veterinarians',
+    name: 'Veterinarians',
+    nicheSingular: 'veterinary practice',
+    metaTitle: 'AI Receptionist for Veterinarians | Implenix',
+    metaDescription:
+      'AI receptionist for veterinary practices. Triage emergencies, book wellness exams, and handle anxious pet-parent calls — 24/7, with your tone.',
+    targetKeyword: 'ai receptionist for veterinarians',
+    relatedKeywords: [
+      'veterinary clinic answering service',
+      'animal hospital phone ai',
+      'vet receptionist',
+      'pet emergency call routing',
+    ],
+    intro:
+      "A veterinary practice handles three call types in the same queue: anxious pet parents calling about something that might be an emergency, routine wellness/booking calls, and prescription/food refill requests. The mix is brutal because every caller thinks their call is the urgent one — and one of them really is. Voicemail is not an option for a vet. A pet parent who hits voicemail when their dog is bloating drives to the emergency clinic across town and never comes back. Implenix is the AI receptionist for veterinarians: it answers every inbound within one ring, triages emergencies against your defined urgent-criteria list (bloating, seizures, ingestion, breathing trouble, hit-by-car, large-breed limp), and routes them straight to your on-call line or the nearest emergency partner. Routine wellness bookings happen live against your PIMS schedule. Refill requests follow your in-house pharmacy or online formulary path. New-client intake captures species, breed, age, vaccine history, prior vet, and reason for visit before the appointment is booked. After hours, urgent triage stays live; non-urgent goes into a callback queue your tech reviews first thing. The agent's tone is warm — it knows pet parents are scared. Practices that deploy Implenix typically cut tech and front-desk phone time 15-20 hours per week, see no-show rates drop 25-30% with proactive confirmations, and stop losing emergency triage to the urgent-care across the street.",
+    heroStat: '+91%',
+    heroStatLabel: 'after-hours triage capture rate',
+    avgWeeklyCalls: 200,
+    avgClientValue: 280,
+    painPoints: [
+      {
+        title: 'Anxious pet parents hitting voicemail at 9 PM',
+        description:
+          'PLACEHOLDER — A panicked owner whose dog is bloating cannot wait. They drive to the emergency clinic across town and never come back.',
+      },
+      {
+        title: 'Front desk drowns in routine refill calls',
+        description:
+          'PLACEHOLDER — Refill requests follow a clean script but eat front-desk time. The receptionist has no bandwidth left for the new puppy walking through the door.',
+      },
+      {
+        title: 'New-client intake is inconsistent',
+        description:
+          'PLACEHOLDER — Different staff capture different intake fields. The DVM sometimes walks into the room without species or vaccine history loaded.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Emergency triage against urgent-criteria list',
+        description:
+          'Bloating, seizures, ingestion, breathing trouble — flagged urgent and routed live to your on-call line or nearest emergency partner.',
+      },
+      {
+        title: 'Wellness booking against PIMS schedule',
+        description:
+          'Avimark, Cornerstone, ezyVet, Vetspire — the agent reads real availability and books with full intake (species, breed, age, vaccine history).',
+      },
+      {
+        title: 'Refill requests with formulary routing',
+        description:
+          'In-house vs online pharmacy paths handled distinctly. Records the medication, prescriber, and pet ID into your PIMS as a refill task.',
+      },
+    ],
+    stats: [
+      { number: '+91%', label: 'after-hours triage capture' },
+      { number: '-29%', label: 'no-show rate' },
+      { number: '-17h', label: 'front-desk phone time / week' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — Our front desk used to be in tears by Friday. Now they actually leave the building at closing. The agent handles the volume.',
+    testimonialAuthor: 'PLACEHOLDER — Practice manager, two-doctor small animal clinic',
+    faqs: [
+      {
+        question: 'Does it integrate with Avimark, Cornerstone, ezyVet?',
+        answer:
+          'Yes. We support the major veterinary PIMS via direct integration or webhook. Appointments, refills, and intake notes write back automatically.',
+      },
+      {
+        question: 'How does it triage emergencies?',
+        answer:
+          'Against your defined urgent-criteria list. Callers describing flagged symptoms (bloat, seizure, ingestion, breathing trouble) route live to your on-call line or emergency partner.',
+      },
+      {
+        question: 'Can it handle large/exotic and small animal differently?',
+        answer:
+          'Yes. Species-aware routing. Equine, exotic, and large-animal calls follow their own intake and routing rules.',
+      },
+      {
+        question: 'Will the tone be appropriate for anxious pet parents?',
+        answer:
+          'We tune voice and pacing for warmth. Pet parents calling in distress hear a calm, empathetic voice that triages quickly and routes them correctly.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '10 to 14 business days for most practices.',
+      },
+    ],
+    caseStudySlug: 'placeholder-dental',
+    related: ['medical-practices', 'chiropractors', 'dentists'],
+  },
+
+  {
+    slug: 'chiropractors',
+    name: 'Chiropractors',
+    nicheSingular: 'chiropractic practice',
+    metaTitle: 'AI Receptionist for Chiropractors | Implenix',
+    metaDescription:
+      'AI receptionist for chiropractic practices. Book new patients, handle insurance auth, and stop losing intake calls during peak adjustment hours.',
+    targetKeyword: 'ai receptionist for chiropractors',
+    relatedKeywords: [
+      'chiropractor answering service',
+      'chiropractic clinic ai',
+      'chiropractic intake automation',
+      'spine clinic receptionist',
+    ],
+    intro:
+      "Chiropractic practices have a particular phone problem: the busy hours on the phone are the same hours the doctor is in adjustments. New-patient calls land at 11 AM when the entire team is mid-treatment. Existing-patient reschedules pile up. Insurance authorization questions follow a script the front desk could handle in their sleep — except they are not at the desk, they are running the table. Implenix is the AI receptionist for chiropractors: it answers every inbound within one ring, books new-patient intake with insurance pre-screening (carrier, member ID, prior auth, treatment history), handles existing-patient reschedules live, and routes anything clinical to the doctor's callback queue. Recurring patients on care plans get fast-path identification — name and DOB lookup pulls them out of the new-patient queue. Insurance auth questions follow your verification script. Treatment-plan upgrades and re-exams route to the appropriate path. The result: chiropractors capture 30-40% more new-patient bookings without hiring a second front-desk staff, no-show rates drop 20-25% with proactive confirmations, and the doctor stops walking into the next adjustment behind because someone needed to take a phone call. Treatment time stays treatment time.",
+    heroStat: '+36%',
+    heroStatLabel: 'new-patient bookings in 30 days',
+    avgWeeklyCalls: 165,
+    avgClientValue: 1800,
+    painPoints: [
+      {
+        title: 'Phone rings during the busiest adjustment hours',
+        description:
+          'PLACEHOLDER — Peak treatment hours are also peak inbound. The front desk is on the table, not at the desk. New patients hit voicemail.',
+      },
+      {
+        title: 'Insurance auth eats half the day',
+        description:
+          'PLACEHOLDER — Verifying coverage and prior auth follows a clean script — but it is repetitive, time-consuming, and easy to drop.',
+      },
+      {
+        title: 'No-shows compound across recurring care plans',
+        description:
+          'PLACEHOLDER — A patient on a 24-visit plan who no-shows breaks the entire week. Without proactive reminders, this happens constantly.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'New-patient intake with insurance pre-screen',
+        description:
+          'Carrier, member ID, prior auth, treatment history captured. Books only if your accepted-payer rules pass.',
+      },
+      {
+        title: 'Existing-patient reschedule fast-path',
+        description:
+          'Name + DOB verifies the patient. Reschedules and add-ons move directly into your scheduling system.',
+      },
+      {
+        title: 'Recurring care-plan reminder calls',
+        description:
+          'Outbound confirmation calls 24 hours before, plus SMS reminder. No-show rates fall sharply.',
+      },
+    ],
+    stats: [
+      { number: '+36%', label: 'new-patient bookings' },
+      { number: '-23%', label: 'no-show rate' },
+      { number: '<60s', label: 'average pickup time' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — Before Implenix I was running back to the front desk every 20 minutes. Now I run my schedule and the calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER — DC, two-provider chiropractic clinic',
+    faqs: [
+      {
+        question: 'Does it integrate with ChiroTouch, Genesis, eClinicalWorks?',
+        answer:
+          'Yes. We support the major chiropractic and EHR platforms via direct integration or webhook. Appointments, insurance verification, and patient updates flow back automatically.',
+      },
+      {
+        question: 'Can it verify insurance?',
+        answer:
+          'It captures carrier, member ID, group, and prior-auth status. Real-time eligibility checks happen if your clearinghouse supports them; otherwise it queues for the front desk.',
+      },
+      {
+        question: 'Will it route clinical questions to the doctor?',
+        answer:
+          'Yes. Defined transfer rules pull clinical questions out of the routine queue and into the doctor\'s callback path.',
+      },
+      {
+        question: 'Is it HIPAA compliant?',
+        answer:
+          'Yes. We sign a BAA, encrypt PHI in transit and at rest, restrict access by role, and follow HIPAA minimum-necessary principles.',
+      },
+      {
+        question: 'How fast is deployment?',
+        answer:
+          '10 to 14 business days for most chiropractic practices.',
+      },
+    ],
+    caseStudySlug: 'placeholder-dental',
+    related: ['medical-practices', 'dentists', 'therapists'],
+  },
+
+  {
+    slug: 'therapists',
+    name: 'Therapists',
+    nicheSingular: 'therapy practice',
+    metaTitle: 'AI Receptionist for Therapists | Implenix',
+    metaDescription:
+      'AI receptionist for therapy practices. Handle sensitive new-client intake, route crisis calls, and protect your provider hours.',
+    targetKeyword: 'ai receptionist for therapists',
+    relatedKeywords: [
+      'therapy practice answering service',
+      'mental health intake automation',
+      'counseling receptionist ai',
+      'therapist call handling',
+    ],
+    intro:
+      "Therapists have the most sensitive phone problem in any service business. Every new-client call is someone reaching out, often after a long pause. Voicemail can break that thread permanently. Existing clients sometimes call in moments of crisis. Insurance and sliding-scale questions are emotionally loaded. Yet most therapy practices route their phone through the same provider who is in session 25 hours a week. Implenix is the AI receptionist for therapists: it answers every inbound within one ring with a warm, screened voice, runs your new-client intake (presenting concern, insurance / sliding-scale, prior therapy, geographic location, modality preference), and books only when your practice rules allow. Crisis-keyword detection routes self-harm and acute-distress callers directly to your defined crisis path — your warm-line, an on-call clinician, or 988 — within seconds, never to voicemail. Existing-client questions about scheduling, copay, or telehealth links resolve without disrupting your session schedule. Sliding-scale conversations follow your stated policy without freelancing. After-hours, urgent triage stays live; non-urgent goes into a callback queue your office manager handles first thing. The tone matches the field. The intake is consistent. And the provider keeps their session hours protected, which is the whole point.",
+    heroStat: '+44%',
+    heroStatLabel: 'new-client intake conversion',
+    avgWeeklyCalls: 90,
+    avgClientValue: 4800,
+    painPoints: [
+      {
+        title: 'New-client calls land in provider voicemail',
+        description:
+          'PLACEHOLDER — A first-time call took courage. If it ends in voicemail, that thread often breaks for good.',
+      },
+      {
+        title: 'Crisis calls cannot wait for callback',
+        description:
+          'PLACEHOLDER — A client in acute distress calling at 9 PM needs an answer in seconds, not the next morning.',
+      },
+      {
+        title: 'Insurance and sliding-scale questions burn provider time',
+        description:
+          'PLACEHOLDER — Detailed, emotionally loaded conversations that follow a clear policy — but cost the provider real session hours.',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Warm new-client intake with modality and insurance pre-screen',
+        description:
+          'Captures presenting concern, insurance/sliding-scale, prior therapy, geography, modality preference. Books only when practice rules allow.',
+      },
+      {
+        title: 'Crisis-keyword detection with live routing',
+        description:
+          'Self-harm and acute-distress phrases route immediately to your warm-line, on-call clinician, or 988 — never to voicemail.',
+      },
+      {
+        title: 'Existing-client schedule + copay handling',
+        description:
+          'Schedule changes, telehealth link reissues, and copay questions resolve without involving the provider.',
+      },
+    ],
+    stats: [
+      { number: '+44%', label: 'new-client intake conversion' },
+      { number: '100%', label: 'crisis call live routing' },
+      { number: '-12h', label: 'provider phone time / week' },
+    ],
+    testimonialQuote:
+      'PLACEHOLDER — My new clients used to drop off after a missed first call. Now every initial call gets answered, screened, and warmly handed back to me.',
+    testimonialAuthor: 'PLACEHOLDER — LCSW, solo private practice',
+    faqs: [
+      {
+        question: 'Is it appropriate for sensitive mental health calls?',
+        answer:
+          'Yes. The voice and pacing are tuned for warmth. Crisis keywords route to a live human or hotline within seconds. We do not provide clinical advice.',
+      },
+      {
+        question: 'How does crisis detection work?',
+        answer:
+          'A defined keyword + sentiment list flags acute distress in real time. Flagged callers route to your defined crisis path (warm-line, on-call clinician, 988) immediately.',
+      },
+      {
+        question: 'Does it integrate with SimplePractice, TherapyNotes, TheraNest?',
+        answer:
+          'Yes. We support the major mental-health practice management systems via direct integration or webhook.',
+      },
+      {
+        question: 'Is it HIPAA compliant?',
+        answer:
+          'Yes. We sign a BAA, encrypt PHI in transit and at rest, restrict access by role, and follow HIPAA minimum-necessary principles.',
+      },
+      {
+        question: 'Can it handle sliding-scale conversations?',
+        answer:
+          'Yes — within the stated policy you provide. The agent does not freelance fee discussions; it follows your script.',
+      },
+    ],
+    caseStudySlug: 'placeholder-dental',
+    related: ['chiropractors', 'medical-practices', 'dentists'],
+  },
 ];
 
 export const INDUSTRY_PROFILE_SLUGS = INDUSTRY_PROFILES.map((p) => p.slug);
