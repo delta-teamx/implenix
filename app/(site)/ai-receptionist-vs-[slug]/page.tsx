@@ -19,6 +19,7 @@ import {
   COMPARISON_SLUGS,
   getComparisonProfile,
 } from '@/lib/seo/comparisons';
+import { COMPETITOR_PROFILES } from '@/lib/seo/competitors';
 
 type Params = { slug: string };
 
@@ -291,7 +292,7 @@ export default function ComparisonPage({ params }: { params: Params }) {
             </Link>
           </div>
         </div>
-        <div className="max-w-content mx-auto px-6 pb-16">
+        <div className="max-w-content mx-auto px-6 pb-16 grid lg:grid-cols-2 gap-10">
           <RelatedContent
             topic="Other comparisons"
             type="resource"
@@ -301,6 +302,14 @@ export default function ComparisonPage({ params }: { params: Params }) {
                 href: `/ai-receptionist-vs-${p.slug}`,
                 label: `AI Receptionist vs ${p.alternativeName}`,
               }))}
+          />
+          <RelatedContent
+            topic="Specific brand alternatives"
+            type="resource"
+            links={COMPETITOR_PROFILES.map((c) => ({
+              href: `/${c.routeSlug}`,
+              label: `${c.competitorName} alternative`,
+            }))}
           />
         </div>
       </section>

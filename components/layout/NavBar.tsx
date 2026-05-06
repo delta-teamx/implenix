@@ -41,6 +41,7 @@ import {
 import { LogoLockup } from '@/components/common/LogoLockup';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 import { COMPARISON_PROFILES } from '@/lib/seo/comparisons';
+import { COMPETITOR_PROFILES } from '@/lib/seo/competitors';
 
 type NavGroup = {
   label: string;
@@ -289,33 +290,63 @@ export function NavBar() {
           ) : null}
 
           {activeMega === 'mega-compare' ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {COMPARISON_PROFILES.map((c) => {
-                const Icon = COMPARE_ICONS[c.slug] ?? Headphones;
-                return (
-                  <Link
-                    key={c.slug}
-                    href={`/ai-receptionist-vs-${c.slug}`}
-                    className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
-                  >
-                    <span className="w-9 h-9 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
-                      <Icon size={16} className="text-brand-cyan" />
-                    </span>
-                    <span className="flex-1">
-                      <span className="block font-heading text-white text-sm">
-                        AI Receptionist vs {c.alternativeName}
+            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan mb-3">
+                  ▸ Compare to category
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {COMPARISON_PROFILES.map((c) => {
+                    const Icon = COMPARE_ICONS[c.slug] ?? Headphones;
+                    return (
+                      <Link
+                        key={c.slug}
+                        href={`/ai-receptionist-vs-${c.slug}`}
+                        className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
+                      >
+                        <span className="w-9 h-9 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
+                          <Icon size={16} className="text-brand-cyan" />
+                        </span>
+                        <span className="flex-1">
+                          <span className="block font-heading text-white text-sm">
+                            vs {c.alternativeName}
+                          </span>
+                          <span className="block text-xs text-white/55 font-body mt-1">
+                            {c.punchlineLabel}
+                          </span>
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-brand-purple mb-3">
+                  ▸ Brand alternatives
+                </p>
+                <div className="flex flex-col gap-3">
+                  {COMPETITOR_PROFILES.map((c) => (
+                    <Link
+                      key={c.slug}
+                      href={`/${c.routeSlug}`}
+                      className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
+                    >
+                      <span className="flex-1">
+                        <span className="block font-heading text-white text-sm">
+                          {c.competitorName} alternative
+                        </span>
+                        <span className="block text-xs text-white/55 font-body mt-1">
+                          {c.punchlineLabel}
+                        </span>
                       </span>
-                      <span className="block text-xs text-white/55 font-body mt-1">
-                        {c.punchlineLabel}
-                      </span>
-                    </span>
-                    <ArrowRight
-                      size={14}
-                      className="text-brand-cyan mt-1 transition-transform group-hover:translate-x-1"
-                    />
-                  </Link>
-                );
-              })}
+                      <ArrowRight
+                        size={14}
+                        className="text-brand-cyan mt-1 transition-transform group-hover:translate-x-1"
+                      />
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           ) : null}
         </div>

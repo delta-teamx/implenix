@@ -16,6 +16,7 @@ import {
   COMPETITOR_PROFILES,
   type CompetitorProfile,
 } from '@/lib/seo/competitors';
+import { COMPARISON_PROFILES } from '@/lib/seo/comparisons';
 
 type Props = {
   profile: CompetitorProfile;
@@ -286,7 +287,7 @@ export function CompetitorAlternativePage({ profile }: Props) {
             </Link>
           </div>
         </div>
-        <div className="max-w-content mx-auto px-6 pb-16">
+        <div className="max-w-content mx-auto px-6 pb-16 grid lg:grid-cols-2 gap-10">
           <RelatedContent
             topic="Other alternatives"
             type="resource"
@@ -295,6 +296,14 @@ export function CompetitorAlternativePage({ profile }: Props) {
             ).map((p) => ({
               href: `/${p.routeSlug}`,
               label: `${p.competitorName} alternative`,
+            }))}
+          />
+          <RelatedContent
+            topic="Compare to category"
+            type="resource"
+            links={COMPARISON_PROFILES.slice(0, 3).map((c) => ({
+              href: `/ai-receptionist-vs-${c.slug}`,
+              label: `AI Receptionist vs ${c.alternativeName}`,
             }))}
           />
         </div>

@@ -32,6 +32,9 @@ const COLUMNS = [
       { href: '/ai-receptionist-vs-ivr-system', label: 'vs IVR System' },
       { href: '/ai-receptionist-vs-voicemail', label: 'vs Voicemail' },
       { href: '/ai-receptionist-vs-call-center', label: 'vs Call Center' },
+      { href: '/smith-ai-alternative', label: 'Smith.ai alternative' },
+      { href: '/goodcall-alternative', label: 'Goodcall alternative' },
+      { href: '/ruby-receptionists-alternative', label: 'Ruby alternative' },
     ],
   },
   {
