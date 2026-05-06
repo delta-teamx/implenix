@@ -27,19 +27,19 @@ export function StickyDemoCTA() {
     <div className="fixed bottom-4 inset-x-4 lg:left-auto lg:right-6 lg:bottom-6 lg:w-80 z-40 bg-black border border-brand-purple p-4 flex items-center gap-4">
       <div className="flex-1">
         <p className="font-heading text-white text-sm">
-          See the agent in action
+          Find out what you're losing
         </p>
         <p className="text-xs text-white/70 font-body mt-0.5">
-          Live walk-through, 15 minutes.
+          Free missed-call audit · 60 seconds.
         </p>
       </div>
       <Link
-        href="/contact"
+        href="/audit"
         data-cta-location="sticky"
         data-cta-type="primary"
         className="bg-brand-purple text-white text-xs font-medium px-3 py-2 rounded-sm inline-flex items-center gap-1"
       >
-        Book <ArrowRight size={12} />
+        Audit <ArrowRight size={12} />
       </Link>
       <button
         aria-label="Dismiss"

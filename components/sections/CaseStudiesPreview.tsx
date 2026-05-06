@@ -5,25 +5,25 @@ import { CaseStudyCard } from '@/components/common/CaseStudyCard';
 
 const FEATURED = [
   {
-    industry: 'HVAC',
-    resultHeadline: '+312% in booked emergency jobs after deploying Implenix',
+    industry: 'Law Firm',
+    resultHeadline: '$47,000 in new client revenue captured in 90 days',
     summary:
-      'A 22-tech HVAC operator deployed Implenix as a 24/7 dispatcher. Inbound capture rate went from 41% to 96% in 30 days.',
+      'Smith & Associates routed every after-hours intake through Implenix. Six-figure pipeline that used to die in voicemail closed inside 90 days.',
+    href: '/case-studies/placeholder-real-estate',
+  },
+  {
+    industry: 'HVAC',
+    resultHeadline: '+312% in booked emergency jobs in 30 days',
+    summary:
+      'A 22-tech HVAC operator deployed Implenix as a 24/7 dispatcher. Inbound capture rate went from 41% to 96% in the first month.',
     href: '/case-studies/placeholder-hvac',
   },
   {
     industry: 'Dental',
-    resultHeadline: 'Front desk reclaimed 22 hours per week per team member',
+    resultHeadline: '$22 / week reclaimed × 14 staff · $300K labor saved',
     summary:
-      'A 4-location dental group replaced repetitive phone work with the Implenix agent and routed only qualified callers to staff.',
+      'A 4-location dental group routed routine reschedules and confirmations through Implenix and put their front desk back on patient care.',
     href: '/case-studies/placeholder-dental',
-  },
-  {
-    industry: 'Real Estate',
-    resultHeadline: '<60s response time on every inbound listing inquiry',
-    summary:
-      'A boutique brokerage hit the first-call-back window on 100% of new leads. Listing-to-contact conversion jumped 2.4x.',
-    href: '/case-studies/placeholder-real-estate',
   },
 ];
 
@@ -34,7 +34,7 @@ export function CaseStudiesPreview() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <SectionHeader
             eyebrow="Case studies"
-            title="What Implenix has built for businesses like yours"
+            title="Real businesses. Real revenue captured."
             badgeVariant="purple"
           />
           <Link

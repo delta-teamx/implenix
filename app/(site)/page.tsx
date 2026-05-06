@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
-import { ProblemSection } from '@/components/sections/ProblemSection';
+import { CostOfNothingSection } from '@/components/sections/CostOfNothingSection';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { IntegrationStrip } from '@/components/sections/IntegrationStrip';
@@ -17,9 +17,9 @@ import { organizationSchema, websiteSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Local Businesses | Implenix',
+  title: 'Stop Missing Calls That Cost You Clients | Implenix',
   description:
-    'Implenix builds and deploys AI voice agents that answer, qualify, and book every call for local businesses. Never miss a lead again.',
+    'Every missed call is a client who hired your competitor. Implenix answers them all — 24/7, like a senior receptionist who never sleeps.',
   path: '/',
 });
 
@@ -28,7 +28,7 @@ export default function HomePage() {
     <>
       <SchemaOrg schema={[organizationSchema(), websiteSchema()]} />
       <Hero />
-      <ProblemSection />
+      <CostOfNothingSection />
       <HowItWorks />
       <ComparisonSection />
       <IndustriesGrid />

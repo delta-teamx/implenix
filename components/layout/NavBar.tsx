@@ -34,10 +34,10 @@ const NAV_GROUPS: NavGroup[] = [
     href: '/ai-receptionist-for-hvac-businesses',
     type: 'mega-industries',
   },
+  { label: 'Pricing', href: '/pricing', type: 'link' },
   { label: 'Case Studies', href: '/case-studies', type: 'link' },
-  { label: 'Resources', href: '/resources', type: 'link' },
-  { label: 'Blog', href: '/blog', type: 'link' },
-  { label: 'Docs', href: '/docs/getting-started/quick-start', type: 'link' },
+  { label: 'Audit', href: '/audit', type: 'link' },
+  { label: 'Try Live', href: '/try-it', type: 'link' },
 ];
 
 const SOLUTIONS = [
@@ -152,12 +152,12 @@ export function NavBar() {
             Sign in
           </Link>
           <Link
-            href="/contact"
+            href="/audit"
             data-cta-location="nav"
             data-cta-type="primary"
             className="inline-flex items-center gap-1 bg-brand-purple text-white font-medium text-[13px] px-4 py-2 rounded-sm hover:opacity-90"
           >
-            Book a Demo <ArrowRight size={14} />
+            Get free audit <ArrowRight size={14} />
           </Link>
         </div>
 
