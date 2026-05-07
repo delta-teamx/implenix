@@ -1,0 +1,305 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  Moon,
+  Sun,
+  AlertTriangle,
+  Clock,
+  Phone,
+  CalendarCheck,
+} from 'lucide-react';
+import { Badge } from '@/components/common/Badge';
+import { SectionHeader } from '@/components/common/SectionHeader';
+import { DividedStats } from '@/components/common/DividedStats';
+import { RelatedContent } from '@/components/common/RelatedContent';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
+import { buildMetadata, SITE_NAME } from '@/lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: '24/7 AI Receptionist | Round-the-Clock Call Coverage | Implenix',
+  description:
+    '24/7 AI receptionist that answers, qualifies, and books every call — nights, weekends, holidays. No premium for after-hours coverage.',
+  path: '/24-7-ai-receptionist',
+});
+
+const FAQS = [
+  {
+    question: 'What is a 24/7 AI receptionist?',
+    answer:
+      'A 24/7 AI receptionist answers your inbound business calls continuously — every hour, every day, including nights, weekends, and holidays. It does not sleep, take breaks, or charge a premium for after-hours coverage.',
+  },
+  {
+    question: 'Why does 24/7 coverage matter?',
+    answer:
+      'Most local-business inbound happens during peak hours when staff cannot pick up, and 30-50% of bookings actually come from outside business hours. After-hours emergencies (HVAC outages, plumbing leaks, vet emergencies) cannot wait for the next business day — the first business to answer wins.',
+  },
+  {
+    question: 'Is there a premium for after-hours coverage?',
+    answer:
+      'No. Implenix is a fixed monthly cost regardless of when calls come in. Traditional answering services charge premium rates (often 2-3x) for after-hours coverage. The AI runs continuously at the same price.',
+  },
+  {
+    question: 'Can it handle emergency calls overnight?',
+    answer:
+      'Yes. We define your urgent-criteria rules during onboarding. Emergency calls trigger live transfer to your on-call line, dispatch software, or escalation path within seconds — even at 2 AM.',
+  },
+  {
+    question: 'Will customers know it is AI rather than a human at midnight?',
+    answer:
+      'For routine bookings and qualification calls, most customers do not realize. Late-night callers often appreciate getting an answer at all rather than voicemail.',
+  },
+  {
+    question: 'Does it slow down at peak hours?',
+    answer:
+      'No. Concurrent capacity is unbounded — a hundred simultaneous callers all get answered in under one ring. Storm-driven spikes, lunch-rush concurrency, and holiday surges do not break the system.',
+  },
+];
+
+const COVERAGE_BLOCKS = [
+  {
+    Icon: Sun,
+    label: 'Business hours',
+    note: 'Concurrent capacity for peak hours so the front desk stops dropping calls during lunch rushes and storm seasons.',
+  },
+  {
+    Icon: Moon,
+    label: 'After hours',
+    note: '30-50% of typical SMB bookings happen outside business hours. The AI captures all of them at no premium upcharge.',
+  },
+  {
+    Icon: AlertTriangle,
+    label: 'Overnight emergencies',
+    note: 'Urgent-criteria rules trigger live transfer to your on-call line within seconds. No "leave a message and we will call back" voicemail.',
+  },
+  {
+    Icon: Clock,
+    label: 'Weekends and holidays',
+    note: 'Saturdays, Sundays, and holidays are continuous coverage at the same fixed price. No double-time rates.',
+  },
+];
+
+export default function TwentyFourSevenAIReceptionistPage() {
+  return (
+    <>
+      <SchemaOrg
+        schema={[
+          articleSchema({
+            title: '24/7 AI Receptionist',
+            description:
+              '24/7 AI receptionist for round-the-clock inbound call coverage with no after-hours premium.',
+            url: '/24-7-ai-receptionist',
+            datePublished: new Date().toISOString().slice(0, 10),
+            author: SITE_NAME,
+          }),
+          faqSchema(FAQS),
+          serviceSchema({
+            name: '24/7 AI Receptionist',
+            description:
+              'Round-the-clock AI receptionist coverage at fixed monthly cost.',
+            serviceType: '24/7 AI Receptionist',
+            url: '/24-7-ai-receptionist',
+          }),
+        ]}
+      />
+
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-20 md:pt-24 md:pb-24">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: '24/7 Coverage', href: '/24-7-ai-receptionist' },
+            ]}
+            className="mb-8"
+          />
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <Badge label="24/7 · Round the clock" variant="cyan" />
+              <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
+                <span className="text-brand-purple">24/7 AI receptionist</span>{' '}
+                — every call, every hour.
+              </h1>
+              <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
+                Most after-hours calls go to voicemail and never call back.
+                Implenix answers them all — overnight emergencies, weekend
+                bookings, holiday inquiries — at the same fixed monthly cost
+                as business-hours coverage.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Link
+                  href="/audit"
+                  data-cta-location="247-hero"
+                  data-cta-type="primary"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+                >
+                  Get my missed-call audit <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/try-it"
+                  data-cta-location="247-hero"
+                  data-cta-type="secondary"
+                  className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  Hear it live
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-20">
+          <div className="max-w-3xl">
+            <SectionHeader
+              eyebrow="Why 24/7 matters"
+              title="The hours your business does not cover are the hours pipeline disappears"
+            />
+            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+              <p>
+                A typical local business covers 40-50 hours of phone time
+                a week with their staff or owner answering. The other
+                118-128 hours go to voicemail or get screened by an
+                answering service that charges premium rates for after-
+                hours work. The economics never quite work — voicemail
+                loses callers outright, and after-hours premium billing
+                makes a $300/month service feel like $900/month by
+                month-end.
+              </p>
+              <p>
+                A 24/7 AI receptionist runs continuously at fixed monthly
+                cost. The same agent handles a 9 AM booking call, a
+                Saturday quote inquiry, an 11 PM emergency dispatch, and
+                a Sunday morning reschedule — without any time-of-day
+                surcharge. For local-services businesses where after-
+                hours emergencies dominate the inbound profile (HVAC,
+                plumbing, electrical, roofing, vet), 24/7 coverage stops
+                being a nice-to-have and becomes the entire reason to
+                deploy. For everyone else, it is the difference between
+                booking that 8 PM lead before they call your competitor
+                and watching the lead disappear.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Coverage profile"
+            title="The four hour bands an AI receptionist actually covers"
+            description="All four are continuous, all four are billed the same."
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {COVERAGE_BLOCKS.map((b) => (
+              <article
+                key={b.label}
+                className="bg-black border border-brand-purple/20 p-5 flex flex-col gap-3"
+              >
+                <span className="w-9 h-9 border border-brand-cyan/30 bg-brand-dark flex items-center justify-center">
+                  <b.Icon size={16} className="text-brand-cyan" />
+                </span>
+                <p className="font-heading text-white text-base">{b.label}</p>
+                <p className="text-xs font-body text-white/65 leading-relaxed">
+                  {b.note}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="What 24/7 actually moves"
+            title="Numbers from the deployment portfolio"
+          />
+          <div className="mt-12">
+            <DividedStats
+              stats={[
+                { number: '30-50%', label: 'of bookings happen outside business hours' },
+                { number: '+92%', label: 'after-hours emergency capture rate (HVAC / plumbing)' },
+                { number: '$0', label: 'after-hours premium with Implenix' },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader eyebrow="FAQ" title="24/7 coverage questions" />
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {FAQS.map((f) => (
+              <div
+                key={f.question}
+                className="border border-brand-purple/20 bg-black p-6"
+              >
+                <p className="font-heading text-white text-lg">{f.question}</p>
+                <p className="mt-3 font-body text-sm text-white/75 leading-relaxed">
+                  {f.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <Badge label="Stop missing 11 PM emergencies" variant="purple" />
+            <h2 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.05]">
+              See what your after-hours pipeline is worth.
+            </h2>
+            <p className="mt-4 font-body text-white/75 max-w-xl">
+              60-second audit. We estimate your specific after-hours
+              capture opportunity based on industry call patterns.
+            </p>
+          </div>
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+            <Link
+              href="/audit"
+              data-cta-location="247-bottom"
+              data-cta-type="primary"
+              className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+            >
+              Get my audit <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/pricing"
+              data-cta-location="247-bottom"
+              data-cta-type="secondary"
+              className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+            >
+              See pricing
+            </Link>
+          </div>
+        </div>
+        <div className="max-w-content mx-auto px-6 pb-16">
+          <RelatedContent
+            topic="Keep reading"
+            type="resource"
+            links={[
+              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              {
+                href: '/ai-receptionist-vs-answering-service',
+                label: 'AI Receptionist vs Answering Service',
+              },
+              {
+                href: '/ai-receptionist-for-hvac-companies',
+                label: 'For HVAC: 24/7 emergency dispatch',
+              },
+            ]}
+          />
+        </div>
+      </section>
+    </>
+  );
+}

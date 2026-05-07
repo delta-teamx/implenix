@@ -1,0 +1,327 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  Cloud,
+  Zap,
+  Globe2,
+  Database,
+} from 'lucide-react';
+import { Badge } from '@/components/common/Badge';
+import { SectionHeader } from '@/components/common/SectionHeader';
+import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { RelatedContent } from '@/components/common/RelatedContent';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
+import { buildMetadata, SITE_NAME } from '@/lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Virtual AI Receptionist | Cloud-Hosted Phone Agent | Implenix',
+  description:
+    'Virtual AI receptionist hosted in the cloud. No hardware, no on-prem install. Deploy in 7-14 days, scale to peak instantly, integrate with your CRM live.',
+  path: '/virtual-ai-receptionist',
+});
+
+const FAQS = [
+  {
+    question: 'What is a virtual AI receptionist?',
+    answer:
+      'A virtual AI receptionist is a cloud-hosted voice-AI agent that answers your business phone without any on-premise hardware or human staff on-site. The agent runs in our infrastructure, integrates with your phone routing via SIP, and handles inbound calls 24/7 from anywhere.',
+  },
+  {
+    question: 'How is this different from a regular virtual assistant?',
+    answer:
+      'A virtual assistant is a remote human worker doing administrative work (email, calendar, research) that includes phone as a slice. A virtual AI receptionist is dedicated phone infrastructure — only handles calls, but does so 24/7 with unlimited concurrent capacity and real-time CRM integration.',
+  },
+  {
+    question: 'Do I need to install anything on-site?',
+    answer:
+      'No. The agent runs entirely in the cloud. Your existing business number forwards (or ports) to our SIP trunk. Setup is configuration-only, no hardware installation.',
+  },
+  {
+    question: 'Can it handle my call volume?',
+    answer:
+      'Yes. Concurrent capacity is unbounded. A hundred simultaneous callers all get answered in under one ring. Storm-driven spikes, tax-season surges, and holiday concurrency do not break the system.',
+  },
+  {
+    question: 'How does it integrate with my existing tools?',
+    answer:
+      'Cloud-to-cloud API integration with your CRM (HubSpot, Salesforce, Zoho, GoHighLevel), calendar (Google, Outlook, Calendly), and industry PMS systems. No custom code typically required.',
+  },
+  {
+    question: 'Is the cloud-hosted model secure?',
+    answer:
+      'Yes. We sign a BAA for HIPAA-regulated practices, encrypt audio and transcripts in transit and at rest, restrict access by role, and maintain audit logs. Compliance documentation is available on request.',
+  },
+];
+
+const FEATURES = [
+  {
+    Icon: Cloud,
+    label: 'Cloud-hosted',
+    note: 'No on-premise hardware. Your existing business number forwards to the agent in our infrastructure.',
+  },
+  {
+    Icon: Zap,
+    label: 'Scales to peak',
+    note: 'Unlimited concurrent capacity. The same agent handles one call or a hundred simultaneously.',
+  },
+  {
+    Icon: Globe2,
+    label: 'Multi-language',
+    note: 'Deploy in English, Spanish, or both. Language can branch on the first turn of the call.',
+  },
+  {
+    Icon: Database,
+    label: 'Live integrations',
+    note: 'Cloud-to-cloud API integration with your CRM, calendar, and dispatch tools. Two-way sync during the call.',
+  },
+];
+
+export default function VirtualAIReceptionistPage() {
+  return (
+    <>
+      <SchemaOrg
+        schema={[
+          articleSchema({
+            title: 'Virtual AI Receptionist',
+            description:
+              'Virtual AI receptionist hosted in the cloud — no on-prem hardware, scalable, integrated with your CRM and calendar live.',
+            url: '/virtual-ai-receptionist',
+            datePublished: new Date().toISOString().slice(0, 10),
+            author: SITE_NAME,
+          }),
+          faqSchema(FAQS),
+          serviceSchema({
+            name: 'Virtual AI Receptionist',
+            description:
+              'Cloud-hosted virtual AI receptionist for businesses replacing on-prem receptionist or virtual assistant.',
+            serviceType: 'Virtual AI Receptionist',
+            url: '/virtual-ai-receptionist',
+          }),
+        ]}
+      />
+
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-20 md:pt-24 md:pb-24">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'Virtual AI Receptionist', href: '/virtual-ai-receptionist' },
+            ]}
+            className="mb-8"
+          />
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <Badge label="Service · Virtual" variant="cyan" />
+              <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
+                <span className="text-brand-purple">Virtual AI receptionist</span>
+                . Hosted in the cloud.
+              </h1>
+              <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
+                No hardware, no on-prem install, no human staff on-site.
+                Implenix runs as a virtual AI receptionist in our cloud,
+                connects to your phone routing via SIP, and handles every
+                inbound call 24/7 — with live CRM and calendar
+                integration.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Link
+                  href="/audit"
+                  data-cta-location="virtual-hero"
+                  data-cta-type="primary"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+                >
+                  Get my missed-call audit <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/try-it"
+                  data-cta-location="virtual-hero"
+                  data-cta-type="secondary"
+                  className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  Hear it live
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-20">
+          <div className="max-w-3xl">
+            <SectionHeader
+              eyebrow="What it is"
+              title="A cloud-hosted alternative to in-office or virtual-assistant phone handling"
+            />
+            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+              <p>
+                The phrase "virtual receptionist" historically meant a
+                remote human worker — a virtual assistant who handled
+                phones from a different location. That model still
+                exists, with the constraints any single human role has:
+                limited working hours, single-call concurrency, training
+                overhead, turnover risk. A virtual AI receptionist is
+                the same idea taken to its logical conclusion: a remote
+                phone-handling service that runs continuously at fixed
+                cost, never has a bad day, and integrates with your
+                business systems live.
+              </p>
+              <p>
+                Implenix hosts the entire agent in our cloud. Your
+                business number forwards (or ports) to our SIP trunk;
+                from there the call flows through speech-to-text, the
+                tuned dialogue model, calendar and CRM API calls, and
+                back to text-to-speech for the response — with sub-
+                800ms turn-taking. Setup is configuration only. No
+                hardware install, no PBX changes, no IT project. Most
+                deployments go live in 7-14 business days, parallel-
+                tested for a week, then routed to real traffic.
+              </p>
+              <p>
+                The cloud-hosted model brings every advantage you would
+                expect: instant scaling for peak hours, multi-region
+                redundancy, continuous updates without re-provisioning,
+                and integration with any cloud-based CRM or calendar
+                via API. For businesses replacing an in-office or
+                virtual-assistant phone setup, the upgrade path is
+                low-friction and the operating economics shift
+                dramatically in your favor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Why virtual"
+            title="What you get from a cloud-hosted AI receptionist"
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {FEATURES.map((f) => (
+              <article
+                key={f.label}
+                className="bg-black border border-brand-purple/20 p-5 flex flex-col gap-3"
+              >
+                <span className="w-9 h-9 border border-brand-cyan/30 bg-brand-dark flex items-center justify-center">
+                  <f.Icon size={16} className="text-brand-cyan" />
+                </span>
+                <p className="font-heading text-white text-base">{f.label}</p>
+                <p className="text-xs font-body text-white/65 leading-relaxed">
+                  {f.note}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Compared"
+            title="Virtual AI Receptionist vs Virtual Assistant"
+            description="Both are remote phone-handling services. The operating models are different."
+          />
+          <div className="mt-12">
+            <ComparisonTable
+              highlightColumn={0}
+              columns={['Implenix · Virtual AI', 'Virtual Assistant']}
+              rows={[
+                { label: '24/7 phone coverage', cells: [true, false] },
+                { label: 'Concurrent call handling', cells: ['unlimited', '1 at a time'] },
+                { label: 'Custom industry script', cells: [true, 'partial'] },
+                { label: 'Direct calendar booking', cells: [true, true] },
+                { label: 'Two-way CRM sync', cells: [true, 'partial'] },
+                { label: 'Email and admin work', cells: [false, true] },
+                { label: 'Training overhead', cells: ['none', '20–60 hours'] },
+                { label: 'Turnover risk', cells: ['none', 'high'] },
+                { label: 'Monthly cost', cells: ['from $297', '$1,500–$4,000'] },
+              ]}
+            />
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/ai-receptionist-vs-virtual-assistant"
+              className="inline-flex items-center gap-1.5 text-sm text-brand-cyan hover:underline"
+            >
+              Deep-dive: AI Receptionist vs Virtual Assistant <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader eyebrow="FAQ" title="Common questions" />
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {FAQS.map((f) => (
+              <div
+                key={f.question}
+                className="border border-brand-purple/20 bg-black p-6"
+              >
+                <p className="font-heading text-white text-lg">{f.question}</p>
+                <p className="mt-3 font-body text-sm text-white/75 leading-relaxed">
+                  {f.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <Badge label="Cloud-deploy in 14 days" variant="purple" />
+            <h2 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.05]">
+              See what cloud-hosted phone handling looks like for your business.
+            </h2>
+            <p className="mt-4 font-body text-white/75 max-w-xl">
+              60-second audit. We estimate your missed-call cost and what
+              a virtual AI receptionist would recover.
+            </p>
+          </div>
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+            <Link
+              href="/audit"
+              data-cta-location="virtual-bottom"
+              data-cta-type="primary"
+              className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+            >
+              Get my audit <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/pricing"
+              data-cta-location="virtual-bottom"
+              data-cta-type="secondary"
+              className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+            >
+              See pricing
+            </Link>
+          </div>
+        </div>
+        <div className="max-w-content mx-auto px-6 pb-16">
+          <RelatedContent
+            topic="Keep reading"
+            type="resource"
+            links={[
+              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              {
+                href: '/ai-receptionist-vs-virtual-assistant',
+                label: 'AI Receptionist vs Virtual Assistant',
+              },
+              { href: '/24-7-ai-receptionist', label: '24/7 AI Receptionist' },
+            ]}
+          />
+        </div>
+      </section>
+    </>
+  );
+}
