@@ -53,6 +53,7 @@ const COLUMNS = [
       { href: '/try-it', label: 'Hear it live' },
       { href: '/blog', label: 'Blog' },
       { href: '/resources', label: 'Guides & Playbooks' },
+      { href: '/glossary', label: 'Voice AI glossary' },
     ],
   },
 ];
