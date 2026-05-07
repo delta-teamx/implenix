@@ -14,6 +14,19 @@ const SLUG_REDIRECTS = [
   { from: 'auto-repair', to: 'auto-repair' },
 ];
 
+// Static page slugs at /ai-receptionist-for-* that must NOT be rewritten
+// to the dynamic /i/[slug] handler — they have their own dedicated
+// pillar pages and should resolve to those.
+const STATIC_FOR_SLUGS = [
+  'agencies',
+  'small-business',
+  'solopreneurs',
+  'startups',
+  'multi-location-businesses',
+];
+
+const STATIC_VS_SLUGS = ['human-receptionist'];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -35,6 +48,29 @@ const nextConfig = {
       permanent: true,
     }));
     return [...fromBusinesses, ...fromIndustries];
+  },
+  // Next.js does not support partially-dynamic directory names like
+  // `ai-receptionist-for-[slug]`. The dynamic page lives at /i/[slug]
+  // and /v/[slug] internally, and we rewrite the SEO-friendly URLs to
+  // those clean dynamic routes here. Static pages at the same path
+  // (e.g. /ai-receptionist-for-agencies) are NOT rewritten — Next.js
+  // resolves the literal directory match first and only falls through
+  // to the rewrite for slugs that aren't statically defined.
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      afterFiles: [
+        {
+          source: '/ai-receptionist-for-:slug',
+          destination: '/i/:slug',
+        },
+        {
+          source: '/ai-receptionist-vs-:slug',
+          destination: '/v/:slug',
+        },
+      ],
+      fallback: [],
+    };
   },
 };
 
