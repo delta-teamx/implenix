@@ -25,9 +25,9 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: '12 Benefits of an AI Receptionist (with Real Numbers) | Implenix',
+  title: '12 Benefits of AI Receptionist (Real Numbers) | Implenix',
   description:
-    'The 12 measurable benefits of an AI receptionist for local businesses, agencies, and professional firms — cost savings, capture rate, after-hours coverage, real ROI math.',
+    '12 measurable benefits of an AI receptionist — cost savings, capture rate, after-hours coverage, real ROI math, with backing numbers from deployments.',
   path: '/benefits-of-ai-receptionist',
 });
 

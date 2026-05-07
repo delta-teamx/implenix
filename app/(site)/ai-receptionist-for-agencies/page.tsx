@@ -25,7 +25,7 @@ import {
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Agencies | RFP Qualification 24/7 | Implenix',
+  title: 'AI Receptionist for Agencies | RFP Qualification | Implenix',
   description:
     'AI receptionist built for agencies. Qualify RFPs, screen cold pitches, route partner inquiries, and stop dropping six-figure leads to voicemail.',
   path: '/ai-receptionist-for-agencies',

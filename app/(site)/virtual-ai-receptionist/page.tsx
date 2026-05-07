@@ -17,7 +17,7 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Virtual AI Receptionist | Cloud-Hosted Phone Agent | Implenix',
+  title: 'Virtual AI Receptionist | Cloud-Hosted Agent | Implenix',
   description:
     'Virtual AI receptionist hosted in the cloud. No hardware, no on-prem install. Deploy in 7-14 days, scale to peak instantly, integrate with your CRM live.',
   path: '/virtual-ai-receptionist',

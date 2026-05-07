@@ -1,6 +1,13 @@
+# *
 User-agent: *
 Allow: /
 Disallow: /lp/
 Disallow: /api/
 Disallow: /admin/
+Disallow: /preview/
+
+# Host
+Host: https://implenix.net
+
+# Sitemaps
 Sitemap: https://implenix.net/sitemap.xml

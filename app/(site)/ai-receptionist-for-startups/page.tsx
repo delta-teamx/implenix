@@ -20,7 +20,7 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Startups | Look Established on Day 1 | Implenix',
+  title: 'AI Receptionist for Startups | Implenix',
   description:
     'AI receptionist for startups. Qualify inbound leads, screen vendor pitches, and look like an established business — for $297/mo, no hire needed.',
   path: '/ai-receptionist-for-startups',

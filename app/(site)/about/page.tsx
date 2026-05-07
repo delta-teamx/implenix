@@ -8,7 +8,7 @@ import { Timeline } from '@/components/common/Timeline';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'About Implenix — The Team Building AI Calling for Local Business',
+  title: 'About Implenix — Building AI Calling for Local Business',
   description:
     'Implenix is 10 specialists deploying AI receptionist and automated calling systems for local businesses. Read why we exist and who we are.',
   path: '/about',

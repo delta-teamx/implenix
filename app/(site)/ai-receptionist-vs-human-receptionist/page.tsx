@@ -24,7 +24,7 @@ import {
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist vs Human Receptionist | Cost & Coverage | Implenix',
+  title: 'AI Receptionist vs Human Receptionist | Cost Math | Implenix',
   description:
     'AI receptionist vs human receptionist: real cost math, coverage, concurrency, and quality. The hybrid pattern most businesses end up running.',
   path: '/ai-receptionist-vs-human-receptionist',

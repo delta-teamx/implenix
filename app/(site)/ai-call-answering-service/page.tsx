@@ -19,7 +19,7 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Call Answering Service | Answer, Qualify, Book 24/7 | Implenix',
+  title: 'AI Call Answering Service | 24/7 Pickup, Booking | Implenix',
   description:
     'AI call answering service that picks up every call, captures intake, qualifies callers, and books appointments — without the per-minute billing.',
   path: '/ai-call-answering-service',

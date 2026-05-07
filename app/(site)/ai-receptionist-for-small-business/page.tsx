@@ -24,7 +24,7 @@ import { faqSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Small Business | 24/7 Call Answering | Implenix',
+  title: 'AI Receptionist for Small Business | 24/7 Pickup | Implenix',
   description:
     'AI receptionist for small business owners. Answer every call while you work, book appointments 24/7, sync your CRM. Less than the cost of a part-time hire.',
   path: '/ai-receptionist-for-small-business',

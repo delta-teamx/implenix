@@ -10,9 +10,9 @@ import { buildMetadata, SITE_NAME } from '@/lib/seo';
 import { GLOSSARY_ENTRIES } from '@/lib/seo/glossary';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist Glossary | Voice AI Terms Defined | Implenix',
+  title: 'AI Receptionist Glossary | Voice AI Terms | Implenix',
   description:
-    'Definitions for AI receptionist, voice AI, call routing, lead qualification, SIP trunk, IVR, and the rest of the voice-AI vocabulary — from the Implenix team.',
+    'Definitions for AI receptionist, voice AI, call routing, SIP trunk, IVR, and the rest of the voice-AI vocabulary.',
   path: '/glossary',
 });
 

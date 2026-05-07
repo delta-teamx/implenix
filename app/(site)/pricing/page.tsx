@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Pricing — Outcome-Based AI Receptionist Plans | Implenix',
   description:
-    'Implenix plans are priced against the cost of a human receptionist ($3,500–$5,000/mo). Solo Operator, Growing Agency, Established Firm tiers — see estimated revenue captured per tier.',
+    'Implenix plans priced against a human receptionist ($3,500-$5,000/mo). Solo, Growing, Established tiers — revenue captured per tier.',
   path: '/pricing',
 });
 

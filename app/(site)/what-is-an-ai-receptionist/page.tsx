@@ -11,9 +11,9 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'What Is an AI Receptionist? Definition + How It Works | Implenix',
+  title: 'What Is an AI Receptionist? Definition | Implenix',
   description:
-    'An AI receptionist is a voice AI agent that answers calls, qualifies leads, and books appointments 24/7. See what it is, how it differs from a chatbot or IVR, and when to deploy one.',
+    'AI receptionist defined: voice agent that answers, qualifies, and books calls 24/7. How it differs from chatbots, IVR, and when to deploy one.',
   path: '/what-is-an-ai-receptionist',
 });
 

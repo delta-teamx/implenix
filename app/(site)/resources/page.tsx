@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo';
 import { ResourcesClient, type ResourceItem } from './ResourcesClient';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Resources — Guides, Playbooks, and Voice AI Glossary | Implenix',
+  title: 'Resources — Guides + Playbooks + Glossary | Implenix',
   description:
     'Long-form guides, deployment playbooks, and a working glossary for anyone implementing voice AI in a local business.',
   path: '/resources',

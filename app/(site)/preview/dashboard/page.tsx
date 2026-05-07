@@ -18,7 +18,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Inside Implenix — Dashboard Preview | Implenix',
   description:
-    'A walkthrough of the Implenix dashboard before you sign up. Revenue captured, cost of doing nothing, conversation replay, and configurable handoff — exactly what you get inside.',
+    'Walkthrough of the Implenix dashboard. Revenue captured, cost of doing nothing, conversation replay, configurable handoff.',
   path: '/preview/dashboard',
 });
 

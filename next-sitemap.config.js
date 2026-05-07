@@ -21,8 +21,13 @@ module.exports = {
     let changefreq = 'weekly';
 
     if (path === '/') {
+      // Home page — top priority.
       priority = 1.0;
       changefreq = 'daily';
+    } else if (path === '/ai-receptionist') {
+      // Primary keyword pillar — second-highest priority.
+      priority = 0.95;
+      changefreq = 'weekly';
     } else if (
       path.startsWith('/ai-receptionist-for-') ||
       path.startsWith('/ai-receptionist-vs-') ||
@@ -36,6 +41,7 @@ module.exports = {
       path === '/pricing' ||
       path === '/audit' ||
       path === '/try-it' ||
+      path === '/ai-phone-answering-service' ||
       path.startsWith('/solutions')
     ) {
       // Commercial-intent pillars.
@@ -43,8 +49,24 @@ module.exports = {
       changefreq = 'weekly';
     } else if (path.startsWith('/case-studies')) {
       priority = 0.8;
+    } else if (
+      path === '/what-is-an-ai-receptionist' ||
+      path === '/how-does-an-ai-receptionist-work' ||
+      path === '/benefits-of-ai-receptionist' ||
+      path === '/ai-receptionist-cost-comparison' ||
+      path === '/ai-call-answering-service' ||
+      path === '/24-7-ai-receptionist' ||
+      path === '/virtual-ai-receptionist'
+    ) {
+      // Information-stage cluster pages.
+      priority = 0.75;
+      changefreq = 'monthly';
     } else if (path.startsWith('/blog') || path.startsWith('/resources')) {
       priority = 0.6;
+    } else if (path.startsWith('/glossary')) {
+      // Long-tail entity pages — lower priority but still indexable.
+      priority = 0.5;
+      changefreq = 'monthly';
     } else if (path.startsWith('/docs')) {
       priority = 0.5;
       changefreq = 'monthly';

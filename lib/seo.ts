@@ -39,7 +39,9 @@ export function buildMetadata({
 }: BuildMetadataInput): Metadata {
   const url = `${SITE_URL}${path}`;
   return {
-    title,
+    // Pass title as absolute so the root layout's titleTemplate does not
+    // double-apply " | Implenix" when page-level titles already include it.
+    title: { absolute: title },
     description,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: url },

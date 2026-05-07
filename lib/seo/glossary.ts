@@ -27,7 +27,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'AI Receptionist',
     shortDefinition:
       'Voice-AI agent that answers, qualifies, and books inbound business calls 24/7.',
-    metaTitle: 'AI Receptionist — Definition + How It Works | Implenix Glossary',
+    metaTitle: 'AI Receptionist — Definition | Implenix Glossary',
     metaDescription:
       'AI receptionist defined: voice-AI agent that answers business phones in real time, qualifies callers, books appointments, and syncs with your CRM.',
     intro:
@@ -68,7 +68,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'Voice AI',
     shortDefinition:
       'AI systems that produce or understand spoken language in real time.',
-    metaTitle: 'Voice AI — Definition + Real-Time Speech Stack | Implenix Glossary',
+    metaTitle: 'Voice AI — Definition | Implenix Glossary',
     metaDescription:
       'Voice AI defined: real-time speech-to-text, text-to-speech, and natural language understanding combined into systems that converse with humans on calls.',
     intro:
@@ -110,7 +110,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
       'Logic that directs an inbound call to the right destination based on rules.',
     metaTitle: 'Call Routing — Rules, Patterns, Examples | Implenix Glossary',
     metaDescription:
-      'Call routing defined: rule-based logic that directs inbound calls to the right destination — agent, queue, voicemail, or live transfer — based on caller attributes.',
+      'Call routing defined: rule-based logic that directs inbound calls to the right destination based on caller attributes and intent.',
     intro:
       'Call routing is the rule-based logic that directs an inbound phone call to the appropriate destination based on attributes of the caller and the situation. Common routing patterns include geofenced routing (call from a Boston area code routes to the Boston location), service-area routing (zip code lookup determines the right service team), VIP routing (allow-listed numbers route to a senior account manager), urgent-criteria routing (callers describing emergency keywords route to dispatch), and overflow routing (calls during peak hours route to a backup team). Call routing predates AI receptionists — traditional PBXs and IVRs implement basic routing through extension menus — but AI receptionists make routing significantly more powerful because the routing logic can use the full content of the conversation rather than just static caller attributes. An AI receptionist can route based on what the caller said, how they said it, what the caller history shows, and what the live business state is (calendar capacity, on-call rotation) at the moment of the call.',
     keyPoints: [
@@ -151,9 +151,9 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'Lead Qualification',
     shortDefinition:
       'Capturing the data points needed to decide whether a prospect is worth pursuing.',
-    metaTitle: 'Lead Qualification — Definition + Examples | Implenix Glossary',
+    metaTitle: 'Lead Qualification — Definition | Implenix Glossary',
     metaDescription:
-      'Lead qualification defined: capturing the attributes (budget, timeline, decision-maker, fit) that determine whether a prospect is worth a sales conversation.',
+      'Lead qualification defined: capturing budget, timeline, decision-maker, fit — the attributes that determine sales-worthiness.',
     intro:
       'Lead qualification is the process of capturing the attributes of a prospect that determine whether they are worth pursuing as a sales opportunity. Standard frameworks (BANT — budget, authority, need, timeline; CHAMP — challenges, authority, money, prioritization; or industry-specific variants) define which questions to ask and which answers separate a fit lead from a non-fit lead. Traditionally lead qualification happens in a discovery call run by a salesperson, which means the qualifying questions consume the salespersons time even when the lead turns out to be a poor fit. Front-end lead qualification — capturing the same data on the inbound call before a salesperson is involved — is one of the highest-leverage uses of an AI receptionist. The AI runs the qualifying script, captures the data, and either books the discovery call (if the lead passes) or sends a polite no-thanks (if it does not). For agencies and professional services where discovery time is expensive, this saves significant strategist hours per week.',
     keyPoints: [
@@ -197,7 +197,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'Appointment Booking',
     shortDefinition:
       'Reserving a time slot for a customer interaction directly during the call.',
-    metaTitle: 'Appointment Booking — Live Booking on Calls | Implenix Glossary',
+    metaTitle: 'Appointment Booking — Definition | Implenix Glossary',
     metaDescription:
       'Appointment booking via AI receptionist: reading live calendar availability and reserving the slot during the conversation, with confirmation by SMS.',
     intro:
@@ -329,7 +329,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'Natural Language Understanding (NLU)',
     shortDefinition:
       'AI subsystems that classify intent and extract entities from human speech or text.',
-    metaTitle: 'Natural Language Understanding (NLU) — Definition | Implenix Glossary',
+    metaTitle: 'Natural Language Understanding | Implenix Glossary',
     metaDescription:
       'NLU defined: the AI subsystems that classify intent and extract entities from speech or text. Core component of AI receptionists.',
     intro:
@@ -372,7 +372,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'SIP Trunk',
     shortDefinition:
       'A virtual phone connection that carries voice calls over the internet.',
-    metaTitle: 'SIP Trunk — Definition + Use in AI Receptionists | Implenix Glossary',
+    metaTitle: 'SIP Trunk — Definition | Implenix Glossary',
     metaDescription:
       'SIP trunk defined: virtual phone connection carrying voice calls over IP. How AI receptionists use SIP for inbound and outbound call handling.',
     intro:
@@ -415,9 +415,9 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     term: 'IVR (Interactive Voice Response)',
     shortDefinition:
       'Menu-based phone systems that route callers via DTMF digit selection.',
-    metaTitle: 'IVR — Definition + Why AI Receptionists Replace It | Implenix Glossary',
+    metaTitle: 'IVR — Definition | Implenix Glossary',
     metaDescription:
-      'IVR defined: menu-based phone systems that route callers via "press 1 for sales, press 2 for support." Why customers hate IVR and how AI replaces it.',
+      "IVR defined: menu-based phone systems that route callers via 'press 1 for sales.' Why customers hate it and how AI replaces it.",
     intro:
       'IVR (Interactive Voice Response) refers to menu-based phone systems that route callers by DTMF (touch-tone) digit selection or simple speech recognition — the familiar "press 1 for sales, press 2 for support" experience. IVR predates modern voice AI by several decades and remains widespread because it is cheap and predictable. It is also universally hated by callers — multiple studies consistently put IVR among the worst customer-service experiences across industries, with hangup rates frequently above 50%. IVR exists for one core reason: routing inbound calls to the right human or queue. It does not book appointments, qualify leads, or capture intake — those tasks fall to whoever picks up after the IVR finishes. AI receptionists supersede IVR by replacing the menu with an actual conversation, classifying intent from natural language rather than digit selection, and resolving the request directly (booking, intake, transfer) rather than just routing. For most local businesses, an AI receptionist replaces an IVR plus a receptionist plus voicemail with one system.',
     keyPoints: [

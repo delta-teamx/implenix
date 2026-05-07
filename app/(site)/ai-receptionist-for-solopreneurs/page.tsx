@@ -20,7 +20,7 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Solopreneurs | Stop Missing Calls Solo | Implenix',
+  title: 'AI Receptionist for Solopreneurs | Implenix',
   description:
     'AI receptionist for solo operators. Answer every call while you work the job. Book appointments, sync your CRM, transfer urgent calls — for $297/mo.',
   path: '/ai-receptionist-for-solopreneurs',

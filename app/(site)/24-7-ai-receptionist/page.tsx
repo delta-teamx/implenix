@@ -19,7 +19,7 @@ import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: '24/7 AI Receptionist | Round-the-Clock Call Coverage | Implenix',
+  title: '24/7 AI Receptionist | Round-the-Clock Coverage | Implenix',
   description:
     '24/7 AI receptionist that answers, qualifies, and books every call — nights, weekends, holidays. No premium for after-hours coverage.',
   path: '/24-7-ai-receptionist',
