@@ -263,29 +263,43 @@ export function NavBar() {
           ) : null}
 
           {activeMega === 'mega-industries' ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {INDUSTRIES.map((i) => {
-                const Icon = INDUSTRY_ICONS[i.slug] ?? Wrench;
-                return (
-                  <Link
-                    key={i.slug}
-                    href={industryUrl(i.slug)}
-                    className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
-                  >
-                    <span className="w-8 h-8 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
-                      <Icon size={14} className="text-brand-cyan" />
-                    </span>
-                    <span className="flex-1">
-                      <span className="block font-heading text-white text-sm">
-                        {i.name}
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {INDUSTRIES.slice(0, 6).map((i) => {
+                  const Icon = INDUSTRY_ICONS[i.slug] ?? Wrench;
+                  return (
+                    <Link
+                      key={i.slug}
+                      href={industryUrl(i.slug)}
+                      className="group flex items-start gap-3 border border-brand-purple/20 hover:border-brand-purple p-4 transition-colors"
+                    >
+                      <span className="w-8 h-8 border border-brand-cyan/30 bg-black flex items-center justify-center shrink-0">
+                        <Icon size={14} className="text-brand-cyan" />
                       </span>
-                      <span className="block text-xs text-white/55 font-body mt-1">
-                        {i.painPoint}
+                      <span className="flex-1">
+                        <span className="block font-heading text-white text-sm">
+                          {i.name}
+                        </span>
+                        <span className="block text-xs text-white/55 font-body mt-1">
+                          {i.painPoint}
+                        </span>
                       </span>
-                    </span>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
+              </div>
+              <Link
+                href="/industries"
+                className="group inline-flex items-center justify-between gap-3 border border-brand-cyan/40 hover:border-brand-cyan p-4 transition-colors"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ See all {INDUSTRIES.length} industries
+                </span>
+                <ArrowRight
+                  size={14}
+                  className="text-brand-cyan transition-transform group-hover:translate-x-1"
+                />
+              </Link>
             </div>
           ) : null}
 
