@@ -1,0 +1,411 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  Phone,
+  Mic,
+  Brain,
+  CalendarCheck,
+  Database,
+  PhoneForwarded,
+} from 'lucide-react';
+import { Badge } from '@/components/common/Badge';
+import { SectionHeader } from '@/components/common/SectionHeader';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { Timeline } from '@/components/common/Timeline';
+import { RelatedContent } from '@/components/common/RelatedContent';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { faqSchema, articleSchema, serviceSchema } from '@/lib/schema';
+import { buildMetadata, SITE_NAME } from '@/lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'How Does an AI Receptionist Work? Complete Guide | Implenix',
+  description:
+    'How an AI receptionist works step-by-step: voice AI, telephony, NLU, calendar booking, CRM sync, and live transfer. The full call lifecycle explained.',
+  path: '/how-does-an-ai-receptionist-work',
+});
+
+const FAQS = [
+  {
+    question: 'How does an AI receptionist actually answer a call?',
+    answer:
+      'When a call lands on your business number, it routes through telephony infrastructure (typically a SIP trunk) into the voice AI. The agent picks up, plays the greeting, and starts listening. Speech-to-text converts the caller\'s words to text in real time, the language model classifies intent and extracts entities, and the response generator picks the next prompt from your defined script.',
+  },
+  {
+    question: 'What technology does it use?',
+    answer:
+      'Conversational voice AI (text-to-speech and speech-to-text), natural language understanding for intent and entity extraction, telephony (SIP) for call routing, and APIs for two-way integration with your CRM and calendar. Modern systems use streaming audio so latency feels natural — under 800ms turn-taking.',
+  },
+  {
+    question: 'How does it know what to say?',
+    answer:
+      'During onboarding, your team works with us to tune the call script, voice, qualification logic, and transfer rules. The agent follows that defined dialogue tree at runtime — it does not freelance answers. For questions outside the defined script, it transfers to a human or follows a fallback rule.',
+  },
+  {
+    question: 'How does it book appointments live?',
+    answer:
+      'The agent makes an API call to your calendar (Google, Outlook, Calendly, or your industry PMS) during the conversation, reads back the next available slots, and writes the booking with full intake context once the caller confirms. The customer gets an SMS or email confirmation before the call ends.',
+  },
+  {
+    question: 'How does it handle CRM sync?',
+    answer:
+      'Two-way API integration. During the call, the agent looks up the contact (if known) and writes the call event, transcript, recording URL, and outcome to the CRM record. After the call, follow-up tasks or pipeline stage changes happen automatically per your rules.',
+  },
+  {
+    question: 'How does live transfer work?',
+    answer:
+      'Defined rules trigger transfers — VIP allow-list, urgent keywords, frustration detection (sentiment + tone), or specific intent classes. The agent says "let me get the right person" and warm-transfers the call to your team or backup human service via SIP within seconds.',
+  },
+  {
+    question: 'What happens after the call ends?',
+    answer:
+      'The recording uploads to storage, the transcript finalizes, the contact and outcome write to your CRM, and any follow-up actions trigger (booking confirmation, reminder sequence, escalation queue). Reporting aggregates everything for your dashboard.',
+  },
+  {
+    question: 'How long does setup take?',
+    answer:
+      '7 to 14 business days for most deployments. The work splits across script tuning, voice selection, integration setup, transfer rule definition, and a parallel-test phase before cutting over real traffic.',
+  },
+];
+
+const SAMPLE_CALL = [
+  { ts: '00:00', speaker: 'system' as const, text: 'Inbound · SIP routed to AI agent' },
+  { ts: '00:00', speaker: 'system' as const, text: 'Audio stream opened · STT initialized' },
+  { ts: '00:01', speaker: 'agent' as const, text: 'Greeting played from tuned script' },
+  { ts: '00:04', speaker: 'caller' as const, text: 'I need to book a kitchen quote.' },
+  { ts: '00:04', speaker: 'system' as const, text: 'Intent: book_estimate · entity: kitchen' },
+  { ts: '00:07', speaker: 'agent' as const, text: 'Capturing scope, square footage, decision-maker' },
+  { ts: '00:14', speaker: 'system' as const, text: 'Calendar API · 3 slots found · agent reads back' },
+  { ts: '00:18', speaker: 'caller' as const, text: 'Wednesday at 10 works.' },
+  { ts: '00:19', speaker: 'system' as const, text: 'Booking written · SMS confirmation sent · CRM updated' },
+];
+
+const PIPELINE_STEPS = [
+  {
+    title: 'Call hits your business number',
+    description:
+      'Your existing number forwards (or ports) to the Implenix SIP trunk. From the caller\'s side, nothing has changed — they dial the same number they always did.',
+  },
+  {
+    title: 'Voice AI picks up within one ring',
+    description:
+      'The audio stream opens, speech-to-text initializes, and the agent plays the greeting from your tuned script. Latency is under 800ms turn-taking — natural conversation pace.',
+  },
+  {
+    title: 'Caller intent gets classified',
+    description:
+      'Natural language understanding converts the caller\'s speech to structured intent and entities (book_appointment, request_quote, ask_pricing, emergency, etc.). Your defined script branches based on the classification.',
+  },
+  {
+    title: 'Qualification + booking happens live',
+    description:
+      'The agent walks through your qualification questions, calls your calendar API live for availability, and books the appointment with full intake context once confirmed.',
+  },
+  {
+    title: 'Transfer rules check on every turn',
+    description:
+      'Throughout the call, the agent evaluates transfer triggers — VIP allow-list, urgent keywords, sentiment, frustration, off-script questions. When triggered, it warm-transfers to your team or backup service.',
+  },
+  {
+    title: 'CRM and downstream systems update',
+    description:
+      'Contact, call event, transcript, recording URL, and outcome write to your CRM during the call. Follow-up tasks, confirmations, and pipeline updates trigger per your rules.',
+  },
+];
+
+export default function HowDoesAnAIReceptionistWorkPage() {
+  return (
+    <>
+      <SchemaOrg
+        schema={[
+          articleSchema({
+            title: 'How Does an AI Receptionist Work? Complete Guide',
+            description:
+              'Step-by-step walkthrough of how an AI receptionist handles a call: voice AI, telephony, NLU, calendar, CRM, transfer rules.',
+            url: '/how-does-an-ai-receptionist-work',
+            datePublished: new Date().toISOString().slice(0, 10),
+            author: SITE_NAME,
+          }),
+          faqSchema(FAQS),
+          serviceSchema({
+            name: 'AI Receptionist',
+            description:
+              'AI receptionist that handles inbound calls end-to-end with voice AI and live integrations.',
+            serviceType: 'AI Receptionist',
+            url: '/how-does-an-ai-receptionist-work',
+          }),
+        ]}
+      />
+
+      <section className="grid-bg border-b border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 pt-20 pb-20 md:pt-24 md:pb-24">
+          <Breadcrumbs
+            crumbs={[
+              { label: 'Home', href: '/' },
+              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              {
+                label: 'How It Works',
+                href: '/how-does-an-ai-receptionist-work',
+              },
+            ]}
+            className="mb-8"
+          />
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <Badge label="Guide · How it works" variant="cyan" />
+              <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
+                How does an{' '}
+                <span className="text-brand-purple">AI receptionist</span>{' '}
+                work?
+              </h1>
+              <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
+                A complete walkthrough of the call lifecycle: how the call
+                routes in, what the voice AI actually does, how booking and
+                CRM sync happen live, and how transfer rules send the right
+                calls to a human in seconds.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Link
+                  href="/try-it"
+                  data-cta-location="how-does-hero"
+                  data-cta-type="primary"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+                >
+                  Hear it on a real number <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/ai-receptionist"
+                  data-cta-location="how-does-hero"
+                  data-cta-type="secondary"
+                  className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  See the product
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-20">
+          <div className="max-w-3xl">
+            <SectionHeader
+              eyebrow="At a glance"
+              title="The call lifecycle, end to end"
+            />
+            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+              <p>
+                An AI receptionist runs as a deployed service sitting between
+                your phone routing and your business systems. When a call
+                lands on your number, telephony infrastructure (typically a
+                SIP trunk) routes it to the voice agent. The agent answers
+                immediately, listens to the caller, classifies intent in
+                real time, walks through your defined script, books or
+                routes the call as needed, and writes everything back to
+                your CRM and calendar before the call ends. The whole
+                lifecycle takes 30 seconds to two minutes for routine calls
+                and writes structured data your team can act on.
+              </p>
+              <p>
+                The technology is layered. At the bottom is telephony — your
+                phone provider routes inbound calls to the AI's SIP
+                endpoint. Above that, the voice layer streams audio in both
+                directions: speech-to-text converts the caller's voice to
+                text in real time, and text-to-speech synthesizes the
+                agent's responses back. The intelligence layer combines a
+                language model for intent classification with your tuned
+                script for the dialogue flow — the agent does not freelance
+                answers, it follows a defined branch tree. The integration
+                layer makes API calls during the conversation: calendar
+                lookups for booking, CRM writes for contact updates, SMS
+                sends for confirmations.
+              </p>
+              <p>
+                Configurable handoff rules check on every conversational
+                turn. If the caller's intent or sentiment matches a defined
+                trigger — VIP allow-list, urgent keywords like "emergency"
+                or "lawsuit," frustration detected via tone, or a question
+                the script does not cover — the agent transfers the call
+                live to your team or a backup human service. Transfers
+                happen via SIP, take seconds, and the receiving human gets
+                a context briefing so they pick up mid-conversation, not
+                from scratch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5">
+            <SectionHeader
+              eyebrow="The pipeline"
+              title="What happens on every call, step by step"
+              badgeVariant="purple"
+            />
+            <p className="mt-6 font-body text-white/75 leading-relaxed">
+              From the caller's side, this is a normal phone call. From the
+              system's side, six things are happening in parallel.
+            </p>
+          </div>
+          <div className="lg:col-span-7">
+            <Timeline steps={PIPELINE_STEPS} />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            <Badge label="Behind the scenes" variant="cyan" />
+            <h2 className="font-heading text-3xl md:text-5xl leading-[1.05]">
+              The system events behind a single call
+            </h2>
+            <p className="font-body text-white/75 leading-relaxed max-w-xl">
+              An annotated transcript showing what the voice layer, NLU,
+              calendar API, and CRM writer are each doing during a 19-second
+              booking call.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <CodeWindow
+              title="agent-call-pipeline.log"
+              lines={SAMPLE_CALL}
+              caption="Annotated · system events alongside dialogue"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="The technology stack"
+            title="Six components working together"
+            description="Each plays a specific role in the call. The integration is what makes the whole agent practical."
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <StackCard
+              Icon={Phone}
+              label="Telephony (SIP)"
+              note="Routes the call from your business number to the agent. Standard infrastructure most phone providers support natively."
+            />
+            <StackCard
+              Icon={Mic}
+              label="Voice layer"
+              note="Streaming speech-to-text + text-to-speech with sub-800ms turn-taking. Tuned per industry for tone."
+            />
+            <StackCard
+              Icon={Brain}
+              label="Natural language understanding"
+              note="Classifies intent (book, quote, emergency, transfer) and extracts entities (address, scope, contact)."
+            />
+            <StackCard
+              Icon={CalendarCheck}
+              label="Calendar integration"
+              note="Reads availability and writes bookings during the call. Supports Google, Outlook, Calendly, industry PMS."
+            />
+            <StackCard
+              Icon={Database}
+              label="CRM integration"
+              note="Two-way: contact lookup at start, write-back during call. HubSpot, Salesforce, Zoho, GoHighLevel native."
+            />
+            <StackCard
+              Icon={PhoneForwarded}
+              label="Transfer router"
+              note="Evaluates rules every turn. SIP-based warm transfers with context briefing for the human picking up."
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader eyebrow="FAQ" title="Common questions" />
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {FAQS.map((f) => (
+              <div
+                key={f.question}
+                className="border border-brand-purple/20 bg-black p-6"
+              >
+                <p className="font-heading text-white text-lg">{f.question}</p>
+                <p className="mt-3 font-body text-sm text-white/75 leading-relaxed">
+                  {f.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <Badge label="Try it on a real call" variant="purple" />
+            <h2 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.05]">
+              The fastest way to understand it is to call it.
+            </h2>
+            <p className="mt-4 font-body text-white/75 max-w-xl">
+              We run a live demo number configured as a sample HVAC
+              receptionist. Try emergencies, quotes, reschedules — see how
+              the pipeline above handles each one in real time.
+            </p>
+          </div>
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+            <Link
+              href="/try-it"
+              data-cta-location="how-does-bottom"
+              data-cta-type="primary"
+              className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90"
+            >
+              Call the demo line <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/audit"
+              data-cta-location="how-does-bottom"
+              data-cta-type="secondary"
+              className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+            >
+              Get my audit
+            </Link>
+          </div>
+        </div>
+        <div className="max-w-content mx-auto px-6 pb-16">
+          <RelatedContent
+            topic="Keep reading"
+            type="resource"
+            links={[
+              { href: '/what-is-an-ai-receptionist', label: 'What is an AI receptionist?' },
+              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/preview/dashboard', label: 'Inside the Implenix dashboard' },
+            ]}
+          />
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StackCard({
+  Icon,
+  label,
+  note,
+}: {
+  Icon: typeof Phone;
+  label: string;
+  note: string;
+}) {
+  return (
+    <article className="bg-black border border-brand-purple/20 p-5 flex flex-col gap-3">
+      <span className="w-9 h-9 border border-brand-cyan/30 bg-brand-dark flex items-center justify-center">
+        <Icon size={16} className="text-brand-cyan" />
+      </span>
+      <p className="font-heading text-white text-base">{label}</p>
+      <p className="text-xs font-body text-white/65 leading-relaxed">{note}</p>
+    </article>
+  );
+}
