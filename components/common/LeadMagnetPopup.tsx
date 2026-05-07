@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, Download, ShieldCheck } from 'lucide-react';
 import { Badge } from './Badge';
-import { trackLead, submitWebhook } from '@/lib/analytics';
+import { trackLead, submitWebhook, GA4_EVENTS } from '@/lib/analytics';
 
 // Trigger thresholds
 const SHOW_AFTER_MS = 25_000;
@@ -219,7 +219,7 @@ function OfferView({ onSuccess }: { onSuccess: () => void }) {
   const form = useForm<Values>({ resolver: zodResolver(formSchema) });
   const onSubmit = async (data: Values) => {
     await submitWebhook({ ...data, magnet: 'missed-call-playbook' }, 'lead-popup');
-    trackLead('lead-popup');
+    trackLead('lead-popup', GA4_EVENTS.leadPopup);
     onSuccess();
   };
   return (

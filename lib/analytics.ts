@@ -1,4 +1,4 @@
-// GTM, Meta Pixel, and Google Ads conversion helpers.
+// GTM, Meta Pixel, Google Ads conversion, and GA4 conversion helpers.
 // Replace placeholder IDs in /app/layout.tsx before launch.
 
 declare global {
@@ -11,33 +11,70 @@ declare global {
 
 type EventParams = Record<string, unknown>;
 
+// Named GA4 conversion events. Mark these as "Mark as conversion" in the
+// Google Analytics 4 Admin → Events panel to register them as conversions.
+// Keep names stable — analytics dashboards and ad campaigns reference
+// these strings.
+export const GA4_EVENTS = {
+  // Lead capture surfaces (form submits)
+  leadAudit: 'lead_audit', // /audit gate unlock
+  leadPopup: 'lead_popup', // lead-magnet popup playbook signup
+  leadContact: 'lead_contact', // /contact form submit
+  leadDemo: 'lead_demo', // demo CTA / GHL form submit
+  leadNewsletter: 'lead_newsletter', // newsletter form submit
+  leadGhl: 'lead_ghl', // any GHL iframe submit
+  // Engagement signals
+  tryItCallClicked: 'try_demo_call_clicked', // /try-it phone number click
+  pricingViewed: 'pricing_viewed', // /pricing page view
+  industryViewed: 'industry_page_viewed', // /ai-receptionist-for-* view
+  comparisonViewed: 'comparison_page_viewed', // vs / alternative pages
+} as const;
+
+export type GA4EventName = (typeof GA4_EVENTS)[keyof typeof GA4_EVENTS];
+
 export function trackEvent(eventName: string, params: EventParams = {}): void {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...params });
 }
 
-export function trackConversion(type: string): void {
+// GA4 named conversion event. Pushes to dataLayer for GTM tag-managed
+// firing AND directly to gtag if available. Fires Google Ads conversion
+// in parallel for paid-traffic attribution.
+export function trackConversion(
+  eventName: GA4EventName,
+  params: EventParams = {},
+): void {
   if (typeof window === 'undefined') return;
-  // Google Ads conversion event placeholder.
-  // <!-- GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX/CONVERSION_LABEL -->
+  // GA4 named event (configure as Conversion in GA4 Admin)
   if (typeof window.gtag === 'function') {
+    window.gtag('event', eventName, params);
+    // Google Ads conversion event placeholder — replace with real label
+    // <!-- GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX/CONVERSION_LABEL -->
     window.gtag('event', 'conversion', {
       send_to: 'AW-XXXXXXXXXX/CONVERSION_LABEL',
-      type,
+      event_label: eventName,
+      ...params,
     });
   }
-  trackEvent('conversion', { type });
+  trackEvent(eventName, params);
 }
 
-export function trackLead(source: string): void {
+// Meta Pixel Lead event + GA4 conversion. Use this on any form submit
+// that captures a contact identity (email, phone). Pass a GA4 event name
+// for consistent dashboard reporting.
+export function trackLead(
+  source: string,
+  ga4Event: GA4EventName = GA4_EVENTS.leadGhl,
+  params: EventParams = {},
+): void {
   if (typeof window === 'undefined') return;
   // Meta Pixel Lead event placeholder.
   // <!-- META PIXEL: REPLACE 000000000000000 -->
   if (typeof window.fbq === 'function') {
-    window.fbq('track', 'Lead', { source });
+    window.fbq('track', 'Lead', { source, ...params });
   }
-  trackEvent('lead', { source });
+  trackConversion(ga4Event, { source, ...params });
 }
 
 // POSTs the form payload to the internal /api/leads route, which forwards to

@@ -4,7 +4,20 @@ import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { GHL_FORM_IDS, ghlEmbedUrl, type GhlFormKey } from '@/lib/ghl';
-import { trackLead, trackConversion } from '@/lib/analytics';
+import { trackLead, GA4_EVENTS, type GA4EventName } from '@/lib/analytics';
+
+// Map GHL form keys to GA4 event names so each slot reports under a
+// distinct conversion. Demo, contact, and audit get their own event;
+// other variants share leadGhl.
+const FORM_KEY_TO_EVENT: Record<string, GA4EventName> = {
+  demo: GA4_EVENTS.leadDemo,
+  contact: GA4_EVENTS.leadContact,
+  lp: GA4_EVENTS.leadDemo,
+  industry: GA4_EVENTS.leadDemo,
+  caseStudy: GA4_EVENTS.leadDemo,
+  newsletter: GA4_EVENTS.leadNewsletter,
+  roiGate: GA4_EVENTS.leadAudit,
+};
 
 type Props = {
   formKey: GhlFormKey;
@@ -48,8 +61,11 @@ export function GhlForm({
           ? data
           : (data && (data.type || data.event)) || '';
       if (typeof type === 'string' && /submit|success/i.test(type)) {
-        trackLead(ctaLocation);
-        trackConversion(ctaLocation);
+        trackLead(
+          ctaLocation,
+          FORM_KEY_TO_EVENT[formKey] ?? GA4_EVENTS.leadGhl,
+          { formKey },
+        );
       }
     }
     window.addEventListener('message', onMessage);

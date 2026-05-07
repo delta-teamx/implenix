@@ -51,6 +51,15 @@ export const metadata: Metadata = {
     description: DEFAULT_SEO.description,
   },
   robots: { index: true, follow: true },
+  // Search Console + Bing Webmaster verification.
+  // Set NEXT_PUBLIC_GOOGLE_VERIFICATION + NEXT_PUBLIC_BING_VERIFICATION
+  // before launch to validate site ownership.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { 'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION] }
+      : undefined,
+  },
 };
 
 export default function RootLayout({

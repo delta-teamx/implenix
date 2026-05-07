@@ -12,7 +12,7 @@ import {
   runAudit,
   type IndustryKey,
 } from '@/lib/audit';
-import { trackLead, submitWebhook } from '@/lib/analytics';
+import { trackLead, submitWebhook, GA4_EVENTS } from '@/lib/analytics';
 
 const inputSchema = z.object({
   phone: z
@@ -235,7 +235,10 @@ function GateOrUnlock({
       { ...data, ...snapshot, magnet: 'missed-call-audit' },
       'audit',
     );
-    trackLead('audit');
+    trackLead('audit', GA4_EVENTS.leadAudit, {
+      industry: snapshot.industry,
+      averageClientValue: snapshot.averageClientValue,
+    });
     setStage('unlocked');
   };
 

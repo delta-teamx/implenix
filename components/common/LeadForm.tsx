@@ -14,7 +14,7 @@ import {
   type LpFormValues,
   BUSINESS_TYPES,
 } from '@/lib/forms';
-import { trackLead, submitWebhook, trackConversion } from '@/lib/analytics';
+import { trackLead, submitWebhook, GA4_EVENTS } from '@/lib/analytics';
 
 type Variant = 'demo' | 'gate' | 'newsletter' | 'lp';
 
@@ -85,8 +85,7 @@ function DemoForm({ ctaLocation, submitted, setSubmitted, onSuccess }: SubProps)
   const form = useForm<DemoFormValues>({ resolver: zodResolver(demoFormSchema) });
   const onSubmit = async (data: DemoFormValues) => {
     await submitWebhook(data, ctaLocation);
-    trackLead(ctaLocation);
-    trackConversion('demo');
+    trackLead(ctaLocation, GA4_EVENTS.leadDemo);
     setSubmitted(true);
     onSuccess?.();
     // <!-- CONNECT TO CALENDLY OR CRM ENDPOINT -->
@@ -149,7 +148,7 @@ function GateForm({ ctaLocation, submitted, setSubmitted, onSuccess }: SubProps)
   const form = useForm<GateFormValues>({ resolver: zodResolver(gateFormSchema) });
   const onSubmit = async (data: GateFormValues) => {
     await submitWebhook(data, ctaLocation);
-    trackLead(ctaLocation);
+    trackLead(ctaLocation, GA4_EVENTS.leadAudit);
     setSubmitted(true);
     onSuccess?.();
     // <!-- CONNECT FORM SUBMISSION TO CRM ENDPOINT HERE -->
@@ -188,7 +187,7 @@ function NewsletterForm({ ctaLocation, submitted, setSubmitted, onSuccess }: Sub
   });
   const onSubmit = async (data: NewsletterFormValues) => {
     await submitWebhook(data, ctaLocation);
-    trackLead(ctaLocation);
+    trackLead(ctaLocation, GA4_EVENTS.leadNewsletter);
     setSubmitted(true);
     onSuccess?.();
   };
@@ -226,8 +225,7 @@ function LpForm({ ctaLocation, submitted, setSubmitted, onSuccess }: SubProps) {
   const form = useForm<LpFormValues>({ resolver: zodResolver(lpFormSchema) });
   const onSubmit = async (data: LpFormValues) => {
     await submitWebhook(data, ctaLocation);
-    trackLead(ctaLocation);
-    trackConversion('lp');
+    trackLead(ctaLocation, GA4_EVENTS.leadDemo, { variant: 'lp' });
     setSubmitted(true);
     onSuccess?.();
   };
