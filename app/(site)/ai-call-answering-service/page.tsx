@@ -12,6 +12,8 @@ import {
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { BentoCard } from '@/components/common/BentoCard';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -209,6 +211,68 @@ export default function AICallAnsweringServicePage() {
                 no premium for after-hours.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Hear it"
+            title="An actual call from the answering service"
+            description="The same flow runs at noon, midnight, or 3am. No human operator on the other end — and most callers cannot tell."
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title="answering-service.log"
+                lines={[
+                  { ts: '07:42', speaker: 'system', text: 'Inbound call · Saturday 7:42am · Answered in 0 rings' },
+                  { ts: '07:42', speaker: 'agent', text: 'Thanks for calling Northside Plumbing, this is Avery. How can I help today?' },
+                  { ts: '07:42', speaker: 'caller', text: 'My water heater is leaking everywhere, can someone come out?' },
+                  { ts: '07:42', speaker: 'agent', text: "Yes — that qualifies as urgent. Let me get a tech routed. Are you the homeowner, and what's the address?" },
+                  { ts: '07:42', speaker: 'caller', text: '17 Oakland Ave, homeowner.' },
+                  { ts: '07:42', speaker: 'agent', text: "Got it. Mike is closest — ETA about 50 minutes. I've dispatched him and texted you a confirmation. Anything else right now?" },
+                  { ts: '07:43', speaker: 'caller', text: 'No, thank you.' },
+                  { ts: '07:43', speaker: 'system', text: 'Call ended · 1m 02s · Tech dispatched · CRM updated · SMS confirmation sent' },
+                ]}
+                caption="Same call on a per-minute service = ~$2 billable · On Implenix = $0 marginal"
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-brand-dark p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ What just happened
+                </span>
+                <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
+                  Saturday morning emergency, picked up in zero rings,
+                  qualified the urgency, dispatched the on-call tech, and
+                  confirmed via SMS — all in 62 seconds. Zero per-minute
+                  charges. Zero callbacks owed.
+                </p>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ Coverage
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  24/7
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  Same fixed price for evenings, weekends, holidays — no upcharge.
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div className="mt-16">
+            <DividedStats
+              stats={[
+                { number: '<1 ring', label: 'Pickup time on every inbound call, every time' },
+                { number: '$0/min', label: 'Per-minute billing — fixed monthly cost regardless of volume' },
+                { number: '24/7', label: 'After-hours coverage included at the same price' },
+              ]}
+            />
           </div>
         </div>
       </section>

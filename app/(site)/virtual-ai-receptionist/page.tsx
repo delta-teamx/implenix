@@ -9,7 +9,9 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { CodeWindow } from '@/components/common/CodeWindow';
 import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -219,10 +221,71 @@ export default function VirtualAIReceptionistPage() {
               </article>
             ))}
           </div>
+          <div className="mt-16">
+            <DividedStats
+              stats={[
+                { number: '7-14 days', label: 'Cloud deploy time — no hardware, no on-prem install' },
+                { number: '<800ms', label: 'Turn-taking latency end-to-end through the cloud' },
+                { number: 'unlimited', label: 'Concurrent calls — scales instantly with peak hours' },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Hear it"
+            title="A virtual receptionist call, end to end"
+            description="The agent runs in our cloud. Your business number forwards to the SIP trunk. The caller never knows where the agent is hosted — they just know they got an instant answer."
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title="virtual-receptionist.log"
+                lines={[
+                  { ts: '10:08', speaker: 'system', text: 'Inbound · SIP trunk → cloud agent · Caller ID resolved · CRM lookup complete' },
+                  { ts: '10:08', speaker: 'agent', text: 'Thanks for calling Brookside Dental, this is Skyler. Are you a current patient or new with us?' },
+                  { ts: '10:08', speaker: 'caller', text: "I'm a current patient, just need to reschedule my Thursday cleaning." },
+                  { ts: '10:08', speaker: 'agent', text: "I see you on Dr. Patel's calendar Thursday at 2pm. What day works better?" },
+                  { ts: '10:08', speaker: 'caller', text: 'Friday afternoon if possible.' },
+                  { ts: '10:08', speaker: 'agent', text: "Friday at 3pm with Dr. Patel — moved. You'll get a confirmation text and the new calendar invite in a moment. Anything else?" },
+                  { ts: '10:09', speaker: 'caller', text: 'Nope, thanks.' },
+                  { ts: '10:09', speaker: 'system', text: 'Calendar updated · CRM note added · SMS sent · No on-prem hardware involved · 47s' },
+                ]}
+                caption="Cloud-to-cloud — SIP, dialogue model, calendar, CRM — all hosted, all live"
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ Call path
+                </span>
+                <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
+                  Caller → your business number → SIP trunk → cloud agent →
+                  STT → tuned dialogue model → calendar/CRM API → TTS → caller.
+                  Every hop happens in our infrastructure with sub-800ms
+                  turn-taking.
+                </p>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ On-prem hardware
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  None
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  No PBX changes, no IT project, no installs. Configuration only.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="Compared"
@@ -257,7 +320,7 @@ export default function VirtualAIReceptionistPage() {
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/15">
+      <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader eyebrow="FAQ" title="Common questions" />
           <div className="mt-10 grid md:grid-cols-2 gap-5">

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { CodeWindow } from '@/components/common/CodeWindow';
 import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
@@ -269,6 +270,62 @@ export default function BenefitsOfAIReceptionistPage() {
       <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
+            eyebrow="Hear it"
+            title="What three of those benefits look like in one call"
+            description="Captured pipeline, after-hours coverage, and live calendar booking — all firing on the same 58-second call."
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title="benefits.log"
+                lines={[
+                  { ts: '20:33', speaker: 'system', text: 'Inbound · Wednesday 8:33pm · After-hours window · Answered in 0 rings' },
+                  { ts: '20:33', speaker: 'agent', text: 'Thanks for calling Cedar Park Roofing, this is Riley. What can I help with?' },
+                  { ts: '20:33', speaker: 'caller', text: 'Need a quote on a roof replacement, asphalt shingle, single-story.' },
+                  { ts: '20:33', speaker: 'agent', text: "Great. Three quick questions: city, ballpark square footage, and is this insurance-driven or out of pocket?" },
+                  { ts: '20:34', speaker: 'caller', text: 'Cedar Park, around 2,200 square feet, insurance.' },
+                  { ts: '20:34', speaker: 'agent', text: "Cedar Park is in our service zone. I have an inspector available Thursday at 2pm or Friday at 10am for the on-site quote. Which works?" },
+                  { ts: '20:34', speaker: 'caller', text: 'Thursday 2pm.' },
+                  { ts: '20:34', speaker: 'agent', text: "Booked. You'll get a confirmation text and a pre-inspection checklist by email. Insurance carrier on file?" },
+                  { ts: '20:34', speaker: 'caller', text: 'Allstate.' },
+                  { ts: '20:34', speaker: 'agent', text: "Logged. We'll bring documentation formatted for Allstate. See you Thursday." },
+                  { ts: '20:35', speaker: 'system', text: 'Lead captured · Inspection booked · CRM enriched · 58s · This call would have been voicemail before' },
+                ]}
+                caption="One call, three benefits firing at once: recovered pipeline + 24/7 capture + live calendar booking"
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-brand-dark p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ What this call delivered
+                </span>
+                <ul className="mt-3 flex flex-col gap-2 font-body text-white/85 text-sm leading-relaxed">
+                  <li>· $12k–$25k pipeline lead, captured in 58s</li>
+                  <li>· 8:33pm answer time vs voicemail before</li>
+                  <li>· Inspection booked live, not "we'll call back"</li>
+                  <li>· Carrier logged, doc prep auto-routed</li>
+                </ul>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ Net effect
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  +1 booking
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  That otherwise would not have existed. Multiply across 200+ inbound calls/month.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
             eyebrow="The list"
             title="12 benefits, with the number that backs each one"
             description="Numbered for the People Also Ask boxes. Real magnitudes from the deployment portfolio."
@@ -301,7 +358,7 @@ export default function BenefitsOfAIReceptionistPage() {
         </div>
       </section>
 
-      <section className="bg-brand-dark border-t border-brand-purple/15">
+      <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="At a glance"
@@ -320,7 +377,7 @@ export default function BenefitsOfAIReceptionistPage() {
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/15">
+      <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="FAQ"

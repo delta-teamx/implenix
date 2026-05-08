@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { CodeWindow } from '@/components/common/CodeWindow';
 import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
@@ -190,6 +191,59 @@ export default function TwentyFourSevenAIReceptionistPage() {
       <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
+            eyebrow="Hear it"
+            title="A 2:14 AM call that would have been voicemail"
+            description="Tuesday overnight, HVAC line. The agent picks up before voicemail engages, qualifies the urgency, and dispatches the on-call tech in under a minute."
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title="overnight-call.log"
+                lines={[
+                  { ts: '02:14', speaker: 'system', text: 'Inbound · Tuesday 2:14am · After-hours · Answered in 0 rings' },
+                  { ts: '02:14', speaker: 'agent', text: "Northside HVAC, this is Avery. Are you having a heating or cooling problem right now?" },
+                  { ts: '02:14', speaker: 'caller', text: "Furnace stopped, kids' bedroom is freezing." },
+                  { ts: '02:14', speaker: 'agent', text: "I'm sorry — that's exactly what we cover for after-hours emergency. I'll dispatch our on-call tech. Address?" },
+                  { ts: '02:14', speaker: 'caller', text: '4412 Maple, Northside.' },
+                  { ts: '02:15', speaker: 'agent', text: "Got it. Mike is on call and en route — ETA about 45 minutes. I've sent you a confirmation text. Anything else right now?" },
+                  { ts: '02:15', speaker: 'caller', text: 'No, thanks for picking up.' },
+                  { ts: '02:15', speaker: 'system', text: 'Call ended · 53s · Tech dispatched · CRM updated · No after-hours premium charged' },
+                ]}
+                caption="2:14am dispatch · On voicemail this caller would have called the next HVAC company on Google"
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-brand-dark p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ The hours your business does not cover
+                </span>
+                <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
+                  A typical local business covers 40-50 phone hours a week.
+                  The other 118-128 hours go to voicemail. The AI runs the
+                  same script at 2pm, 2am, Sunday brunch, and Christmas
+                  morning at the same fixed price.
+                </p>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ After-hours premium
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  $0
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  No 2x or 3x upcharge for nights, weekends, or holidays.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
             eyebrow="Coverage profile"
             title="The four hour bands an AI receptionist actually covers"
             description="All four are continuous, all four are billed the same."
@@ -214,7 +268,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
         </div>
       </section>
 
-      <section className="bg-brand-dark border-t border-brand-purple/15">
+      <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="What 24/7 actually moves"
@@ -232,7 +286,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/15">
+      <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader eyebrow="FAQ" title="24/7 coverage questions" />
           <div className="mt-10 grid md:grid-cols-2 gap-5">
