@@ -136,7 +136,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'electrical contractor',
     metaTitle: 'AI Receptionist for Electricians | Implenix',
     metaDescription:
-      'AI receptionist for electricians. Capture every emergency outage call, qualify the job, and dispatch the right tech — 24/7. Built for residential and commercial.',
+      'AI receptionist for electricians. Capture emergency outages, qualify jobs, and dispatch the right tech 24/7 — residential and commercial.',
     targetKeyword: 'ai receptionist for electricians',
     relatedKeywords: [
       'electrician answering service',
@@ -229,7 +229,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'general contractor',
     metaTitle: 'AI Receptionist for Contractors | Implenix',
     metaDescription:
-      'AI receptionist for general contractors. Qualify project leads, route subs, and stop losing six-figure bids to voicemail. Built for residential and commercial GCs.',
+      'AI receptionist for general contractors. Qualify project leads, route subs, and stop losing six-figure bids to voicemail.',
     targetKeyword: 'ai receptionist for contractors',
     relatedKeywords: [
       'general contractor answering service',
@@ -415,7 +415,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'accounting firm',
     metaTitle: 'AI Receptionist for Accountants | Implenix',
     metaDescription:
-      'AI receptionist for accounting firms and CPAs. Handle tax-season call spikes, qualify new client intake, and route document requests — without burning your associates.',
+      'AI receptionist for accounting firms and CPAs. Handle tax-season spikes, qualify new client intake, and route document requests live.',
     targetKeyword: 'ai receptionist for accountants',
     relatedKeywords: [
       'accounting firm answering service',
@@ -1252,7 +1252,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'landscaping company',
     metaTitle: 'AI Receptionist for Landscapers | Implenix',
     metaDescription:
-      'AI receptionist for landscaping companies. Capture seasonal demand spikes, qualify project bids, and handle recurring service calls without hiring extra staff.',
+      'AI receptionist for landscapers. Capture seasonal spikes, qualify bids, and handle recurring service calls without hiring more staff.',
     targetKeyword: 'ai receptionist for landscapers',
     relatedKeywords: [
       'landscaping answering service',
@@ -1438,7 +1438,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'moving company',
     metaTitle: 'AI Receptionist for Moving Companies | Implenix',
     metaDescription:
-      'AI receptionist for moving companies. Capture every quote call during peak season, qualify residential vs commercial moves, and stop dropping bids to voicemail.',
+      'AI receptionist for moving companies. Capture peak-season quotes, qualify residential vs commercial moves, and stop dropping bids.',
     targetKeyword: 'ai receptionist for moving companies',
     relatedKeywords: [
       'moving company answering service',
