@@ -5,6 +5,8 @@ import { ArrowRight, Check, X } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -131,6 +133,53 @@ export default function ComparisonPage({ params }: { params: Params }) {
             <p className="mt-6 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               {profile.intro}
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Hear it"
+            title={`Same call, AI vs ${profile.alternativeName.toLowerCase()}`}
+            description={`A real example of where the difference shows up. The transcript below is illustrative — the underlying flow ships in every Implenix deployment.`}
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title={`vs-${profile.slug}.log`}
+                lines={profile.sampleCall}
+                caption={profile.sampleCallCaption}
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-brand-dark p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ What changed
+                </span>
+                <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
+                  The AI takes the call live, books the appointment, and writes
+                  it back to your CRM in under two minutes. The{' '}
+                  {profile.alternativeShort} flow takes longer, costs more, or
+                  loses the call entirely.
+                </p>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ Punchline
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  {profile.punchlineStat}
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  {profile.punchlineLabel}
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div className="mt-16">
+            <DividedStats stats={profile.outcomes} />
           </div>
         </div>
       </section>

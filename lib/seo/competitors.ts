@@ -18,6 +18,14 @@ export type CompetitorComparisonRow = {
 
 export type CompetitorFaq = { question: string; answer: string };
 
+export type CompetitorSampleCallLine = {
+  ts: string;
+  speaker: 'agent' | 'caller' | 'system';
+  text: string;
+};
+
+export type CompetitorOutcomeStat = { number: string; label: string };
+
 export type CompetitorProfile = {
   slug: string; // e.g. "smith-ai"
   routeSlug: string; // URL path segment ending in -alternative, e.g. "smith-ai-alternative"
@@ -34,6 +42,11 @@ export type CompetitorProfile = {
   whenChooseThem: { headline: string; reasons: string[] };
   whenChooseUs: { headline: string; reasons: string[] };
   faqs: CompetitorFaq[];
+  // Visual blocks: sample call transcript demonstrating the differentiator
+  sampleCall: CompetitorSampleCallLine[];
+  sampleCallCaption: string;
+  // 3 outcome stats rendered as a DividedStats row
+  outcomes: CompetitorOutcomeStat[];
 };
 
 export const COMPETITOR_PROFILES: CompetitorProfile[] = [
@@ -119,6 +132,23 @@ export const COMPETITOR_PROFILES: CompetitorProfile[] = [
           'For crisis lines, sensitive intake, or industries where human warmth is the primary value, a hybrid is often best: Implenix handles 80%+ of routine inbound at fixed cost, and a small live team handles the remainder via live transfer.',
       },
     ],
+    sampleCall: [
+      { ts: '11:02', speaker: 'system', text: 'Peak hour · 800 calls/month account · 6 concurrent inbound right now' },
+      { ts: '11:02', speaker: 'agent', text: 'Thanks for calling Riverstone Law, this is Morgan. How can I help today?' },
+      { ts: '11:02', speaker: 'caller', text: 'I want to schedule a consultation about an estate planning matter.' },
+      { ts: '11:02', speaker: 'agent', text: "Of course. Quick three questions to route you correctly: are you the executor or the estate owner, is there a deadline driving this, and which county?" },
+      { ts: '11:02', speaker: 'caller', text: 'Estate owner, no deadline, Travis County.' },
+      { ts: '11:02', speaker: 'agent', text: "Travis County is in our practice area. I see Megan has openings Wednesday at 10am or Friday at 2pm. Which works?" },
+      { ts: '11:03', speaker: 'caller', text: 'Wednesday 10am.' },
+      { ts: '11:03', speaker: 'agent', text: "Booked with Megan, Wednesday 10am. You'll get a confirmation email with our intake form and a calendar invite. Anything else?" },
+      { ts: '11:03', speaker: 'system', text: 'Booked + qualified + CRM updated · 1m 04s · 5 other concurrent calls also handled · No per-call charge' },
+    ],
+    sampleCallCaption: 'Same call on Smith.ai = 4 minutes billable @ ~$1.65/min · On Implenix = $0 marginal cost',
+    outcomes: [
+      { number: '$0', label: 'Per-call marginal cost vs $4–$8 per call on per-minute pricing' },
+      { number: 'unlimited', label: 'Concurrent calls vs staff-bound capacity on human-anchored services' },
+      { number: '24/7', label: 'After-hours coverage included — no premium upcharge' },
+    ],
   },
 
   {
@@ -202,6 +232,25 @@ export const COMPETITOR_PROFILES: CompetitorProfile[] = [
         answer:
           'Yes. Multi-location routing, account-based call handling, and per-location reporting are all supported on the Established Firm tier.',
       },
+    ],
+    sampleCall: [
+      { ts: '13:21', speaker: 'system', text: 'Inbound · Multi-location dental practice · Insurance pre-screen tuned in onboarding' },
+      { ts: '13:21', speaker: 'agent', text: 'Thanks for calling Brookside Dental — this is Skyler. Are you a current patient or new?' },
+      { ts: '13:21', speaker: 'caller', text: 'New, I just moved here.' },
+      { ts: '13:21', speaker: 'agent', text: "Welcome. Two quick questions: do you have dental insurance, and if so which carrier? And is there a specific concern or is this a routine cleaning?" },
+      { ts: '13:21', speaker: 'caller', text: 'Delta Dental PPO, just routine cleaning and exam.' },
+      { ts: '13:21', speaker: 'agent', text: "Delta Dental PPO is in-network at all three of our locations. Which is closest — Brookside Main, Westgate, or Eastfield?" },
+      { ts: '13:22', speaker: 'caller', text: 'Westgate.' },
+      { ts: '13:22', speaker: 'agent', text: "Dr. Chen at Westgate has openings next Tuesday at 9am or Thursday at 3pm. Which works?" },
+      { ts: '13:22', speaker: 'caller', text: 'Thursday 3pm.' },
+      { ts: '13:22', speaker: 'agent', text: "Booked. I'll text you the new-patient intake link and a confirmation. See you Thursday." },
+      { ts: '13:22', speaker: 'system', text: 'Insurance pre-screened · Multi-location routed · New-patient intake auto-sent · 1m 11s' },
+    ],
+    sampleCallCaption: 'Industry-tuned intake — insurance, multi-location routing, new-patient flow — not a templated default',
+    outcomes: [
+      { number: '25', label: 'Industry playbooks tuned by humans vs templated category defaults' },
+      { number: 'multi-loc', label: 'Native multi-location routing vs single-location defaults' },
+      { number: 'two-way', label: 'CRM sync depth — writes back during the call, not after' },
     ],
   },
 
@@ -287,6 +336,23 @@ export const COMPETITOR_PROFILES: CompetitorProfile[] = [
         answer:
           "If your competitive positioning depends on a human voice answering, Ruby remains defensible. We work well alongside that — Implenix handles overflow, after-hours, and routine qualification while Ruby covers the brand-critical moments.",
       },
+    ],
+    sampleCall: [
+      { ts: '21:46', speaker: 'system', text: 'Inbound · Tuesday 9:46pm · Boutique law firm · After-hours window' },
+      { ts: '21:46', speaker: 'agent', text: 'Thanks for calling Hartley & Pierce. This is Quinn. How can I help?' },
+      { ts: '21:46', speaker: 'caller', text: "I was rear-ended on the way home and I think I want to talk to an attorney about it." },
+      { ts: '21:46', speaker: 'agent', text: "I'm sorry that happened. Are you safe and is anyone injured?" },
+      { ts: '21:46', speaker: 'caller', text: 'Yeah we are okay, just shaken up.' },
+      { ts: '21:46', speaker: 'agent', text: "Glad to hear it. I can book a free consultation with our personal injury team. Tomorrow at 10am or Thursday at 2pm — which works for you?" },
+      { ts: '21:47', speaker: 'caller', text: 'Tomorrow 10am please.' },
+      { ts: '21:47', speaker: 'agent', text: "Booked with David at 10am. I'll text you the intake form and the calendar invite tonight. If anything changes before then, call back any time." },
+      { ts: '21:47', speaker: 'system', text: '9:46pm booking · Calendar booked + intake form sent · On Ruby this needs a premium after-hours add-on or rolls to morning' },
+    ],
+    sampleCallCaption: 'After-hours booking that Ruby would charge premium for · Implenix includes 24/7 at the same fixed price',
+    outcomes: [
+      { number: '24/7', label: 'Coverage included vs Ruby premium after-hours upcharge' },
+      { number: 'live-book', label: 'Real-time calendar booking vs message + book-tomorrow workflow' },
+      { number: '$600+/mo', label: 'Typical savings vs Ruby at moderate volumes' },
     ],
   },
 ];

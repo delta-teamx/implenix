@@ -3,6 +3,8 @@ import { ArrowRight, Check, X } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { DividedStats } from '@/components/common/DividedStats';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -116,6 +118,53 @@ export function CompetitorAlternativePage({ profile }: Props) {
             <p className="mt-6 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               {profile.intro}
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black border-t border-brand-purple/15">
+        <div className="max-w-content mx-auto px-6 py-24">
+          <SectionHeader
+            eyebrow="Hear it"
+            title={`Where Implenix shows up differently`}
+            description={`A representative call demonstrating where the architecture difference lands. The same flow ships in every Implenix deployment.`}
+            badgeVariant="purple"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-8">
+              <CodeWindow
+                title={`vs-${profile.slug}.log`}
+                lines={profile.sampleCall}
+                caption={profile.sampleCallCaption}
+              />
+            </div>
+            <aside className="lg:col-span-4 flex flex-col gap-4">
+              <div className="border border-brand-purple/25 bg-brand-dark p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ The architecture difference
+                </span>
+                <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
+                  {profile.competitorName} is human-anchored — every minute on
+                  the call is billable headcount. Implenix is AI-first — the
+                  same call carries no marginal cost and runs in parallel with
+                  every other call hitting your line.
+                </p>
+              </div>
+              <div className="border border-brand-cyan/25 bg-black p-6">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ Punchline
+                </span>
+                <p className="mt-3 font-heading text-3xl text-white leading-tight">
+                  {profile.punchlineStat}
+                </p>
+                <p className="mt-2 font-body text-white/70 text-sm">
+                  {profile.punchlineLabel}
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div className="mt-16">
+            <DividedStats stats={profile.outcomes} />
           </div>
         </div>
       </section>

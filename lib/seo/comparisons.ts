@@ -15,6 +15,14 @@ export type ComparisonRow = {
 
 export type ComparisonFaq = { question: string; answer: string };
 
+export type SampleCallLine = {
+  ts: string;
+  speaker: 'agent' | 'caller' | 'system';
+  text: string;
+};
+
+export type OutcomeStat = { number: string; label: string };
+
 export type ComparisonProfile = {
   slug: string;
   alternativeName: string; // "Live Answering Service"
@@ -35,6 +43,11 @@ export type ComparisonProfile = {
   whenAlternative: { headline: string; reasons: string[] };
   whenImplenix: { headline: string; reasons: string[] };
   faqs: ComparisonFaq[];
+  // Visual blocks: sample call transcript demonstrating the punchline
+  sampleCall: SampleCallLine[];
+  sampleCallCaption: string;
+  // 3 outcome stats rendered as a DividedStats row
+  outcomes: OutcomeStat[];
 };
 
 export const COMPARISON_PROFILES: ComparisonProfile[] = [
@@ -121,6 +134,22 @@ export const COMPARISON_PROFILES: ComparisonProfile[] = [
           'A live answering service can take messages within 24–48 hours. An AI receptionist takes 7–14 days because we tune the script, voice, and integrations to your business. The trade-off is that day-one quality is much higher.',
       },
     ],
+    sampleCall: [
+      { ts: '23:14', speaker: 'system', text: 'Inbound call · Tuesday 11:14pm · HVAC emergency line' },
+      { ts: '23:14', speaker: 'agent', text: 'Thanks for calling Northside HVAC, this is Avery. Are you experiencing a heating or cooling issue right now?' },
+      { ts: '23:14', speaker: 'caller', text: 'Yeah my furnace just died and the house is at 52 degrees.' },
+      { ts: '23:14', speaker: 'agent', text: "I'm sorry — that qualifies as urgent. I can dispatch an on-call tech to you tonight. Can I get the address and the best callback number?" },
+      { ts: '23:15', speaker: 'caller', text: '4412 Maple, and use this number.' },
+      { ts: '23:15', speaker: 'agent', text: "Got it. Mike is on call tonight, ETA 45 minutes. I've notified him and texted you a confirmation. Anything else?" },
+      { ts: '23:15', speaker: 'caller', text: 'No, thanks.' },
+      { ts: '23:15', speaker: 'system', text: 'Call ended · 1m 04s · Job dispatched · CRM updated · SMS confirmation sent' },
+    ],
+    sampleCallCaption: 'Real call · 11:14pm · Same flow runs at 3am, 6am, or noon at the same fixed cost',
+    outcomes: [
+      { number: '<1 ring', label: '24/7 pickup vs 3–8 rings on a typical answering service' },
+      { number: '$0.00', label: 'Per-minute charge — fixed monthly pricing regardless of volume' },
+      { number: '100%', label: 'Of after-hours emergencies dispatched live, not next-morning email' },
+    ],
   },
 
   {
@@ -204,6 +233,25 @@ export const COMPARISON_PROFILES: ComparisonProfile[] = [
         answer:
           'A VA needs 2–4 weeks of training to know your business. An AI receptionist deploys in 7–14 days with the same depth of business knowledge — and never forgets it.',
       },
+    ],
+    sampleCall: [
+      { ts: '14:02', speaker: 'system', text: 'Three concurrent inbound calls arriving at 2:02pm — VA already on Line 1' },
+      { ts: '14:02', speaker: 'agent', text: 'Coastal Plumbing, this is Riley. How can I help?' },
+      { ts: '14:02', speaker: 'caller', text: "Caller A: I've got a slab leak, can someone come today?" },
+      { ts: '14:02', speaker: 'agent', text: "Yes — Tom is closest, he can be there in about an hour. Let me grab the address. (Caller A booked.)" },
+      { ts: '14:02', speaker: 'agent', text: 'Coastal Plumbing, this is Riley. How can I help?' },
+      { ts: '14:02', speaker: 'caller', text: 'Caller B: Just need to reschedule my Thursday appointment to Friday morning.' },
+      { ts: '14:02', speaker: 'agent', text: "Friday at 9am works — I've moved it. Confirmation text sent. (Caller B booked.)" },
+      { ts: '14:02', speaker: 'agent', text: 'Coastal Plumbing, this is Riley. How can I help?' },
+      { ts: '14:02', speaker: 'caller', text: 'Caller C: Looking for a quote on a tankless water heater install.' },
+      { ts: '14:03', speaker: 'agent', text: "Happy to help. Quick three questions and I'll get a quote out by end of day. (Caller C qualified.)" },
+      { ts: '14:03', speaker: 'system', text: '3 calls handled simultaneously · 0 missed · VA still on Line 1 in parallel' },
+    ],
+    sampleCallCaption: 'Real call · Three callers at once · A VA can answer one at a time',
+    outcomes: [
+      { number: 'unlimited', label: 'Concurrent calls vs 1-at-a-time for a VA' },
+      { number: '24/7', label: 'Coverage included vs 20–40 working hours per VA' },
+      { number: '0 hrs', label: 'Training overhead vs 20–60 hours to onboard a new VA' },
     ],
   },
 
@@ -289,6 +337,27 @@ export const COMPARISON_PROFILES: ComparisonProfile[] = [
           'Most migrations complete in 7–14 days, including script tuning and a parallel-run period where both systems are live before cutover.',
       },
     ],
+    sampleCall: [
+      { ts: '10:31', speaker: 'system', text: 'Side-by-side: same caller, same intent — IVR flow vs AI receptionist flow' },
+      { ts: '10:31', speaker: 'system', text: '── IVR ──' },
+      { ts: '10:31', speaker: 'agent', text: '"Press 1 for sales. Press 2 for service. Press 3 for billing. Press 0 for the operator."' },
+      { ts: '10:31', speaker: 'caller', text: '*presses 2*' },
+      { ts: '10:31', speaker: 'agent', text: '"Press 1 for new service. Press 2 for existing service. Press 3 to schedule a tech."' },
+      { ts: '10:32', speaker: 'caller', text: '*hangs up*' },
+      { ts: '10:32', speaker: 'system', text: '── AI receptionist ──' },
+      { ts: '10:32', speaker: 'agent', text: 'Thanks for calling Brightline Roofing — what can I help with today?' },
+      { ts: '10:32', speaker: 'caller', text: 'I need someone to come look at a leak after the storm last night.' },
+      { ts: '10:32', speaker: 'agent', text: "Sorry to hear that. I have a tech open at 1pm or 4pm — which works?" },
+      { ts: '10:32', speaker: 'caller', text: '4pm please.' },
+      { ts: '10:32', speaker: 'agent', text: "Booked. You'll get a text confirmation in a moment. Anything else?" },
+      { ts: '10:33', speaker: 'system', text: 'IVR: caller hung up at menu 2 · AI: booked in 47 seconds' },
+    ],
+    sampleCallCaption: 'Same caller, same intent — IVR loses them, conversational AI books them',
+    outcomes: [
+      { number: '<5%', label: 'Hangup rate vs 40–60% on typical IVR menus' },
+      { number: '47s', label: 'Average booking time end-to-end vs 90+ seconds in menus' },
+      { number: '0 menus', label: 'Caller never hears "press 1" — straight to conversation' },
+    ],
   },
 
   {
@@ -372,6 +441,25 @@ export const COMPARISON_PROFILES: ComparisonProfile[] = [
         answer:
           '7–14 business days for most businesses. The AI runs on top of your existing phone routing, so the transition is invisible to your callers.',
       },
+    ],
+    sampleCall: [
+      { ts: '18:47', speaker: 'system', text: 'Inbound call · Friday 6:47pm · After-hours window' },
+      { ts: '18:47', speaker: 'system', text: '── On voicemail ──' },
+      { ts: '18:47', speaker: 'agent', text: '"You\'ve reached Sterling Dental. Please leave a message after the tone."' },
+      { ts: '18:47', speaker: 'caller', text: '*hangs up · 75% of callers do this*' },
+      { ts: '18:47', speaker: 'system', text: '── On AI receptionist ──' },
+      { ts: '18:47', speaker: 'agent', text: 'Thanks for calling Sterling Dental, this is Jordan. How can I help?' },
+      { ts: '18:47', speaker: 'caller', text: 'I broke a crown and need to come in as soon as possible.' },
+      { ts: '18:47', speaker: 'agent', text: "Let me check Dr. Patel's emergency slots. I have 8:30am Monday — sooner if anything opens. Want me to book Monday and add you to the cancellation list?" },
+      { ts: '18:48', speaker: 'caller', text: 'Yes please.' },
+      { ts: '18:48', speaker: 'agent', text: "Booked for 8:30am Monday with Dr. Patel. You're on the cancellation list — I'll text you if a sooner slot opens." },
+      { ts: '18:48', speaker: 'system', text: 'Voicemail: lost call · AI: booked appointment + recovery list in 58s' },
+    ],
+    sampleCallCaption: 'Friday 6:47pm — voicemail loses 75% of these callers · AI books them',
+    outcomes: [
+      { number: '75%', label: 'Of callers never leave a voicemail — they call your competitor' },
+      { number: '0 missed', label: 'Calls answered after-hours, weekends, holidays' },
+      { number: '$13k+/wk', label: 'Typical lost pipeline recovered for a service business' },
     ],
   },
 
@@ -458,6 +546,25 @@ export const COMPARISON_PROFILES: ComparisonProfile[] = [
         answer:
           'Yes, this is a common architecture. The AI handles 80–90% of inbound routine work, and a smaller, focused human team takes the remainder via live transfer. Net cost drops, quality goes up.',
       },
+    ],
+    sampleCall: [
+      { ts: '09:14', speaker: 'system', text: 'Storm-season Monday · 47 inbound calls in the first hour · AI handles concurrent surge' },
+      { ts: '09:14', speaker: 'agent', text: 'Thanks for calling Apex Roofing — Casey here. What brings you in today?' },
+      { ts: '09:14', speaker: 'caller', text: 'Hail damage on the roof, need a quote and an inspection.' },
+      { ts: '09:14', speaker: 'agent', text: "Got it. Three quick questions: what city, ballpark when did the damage happen, and is this a homeowner or property manager call?" },
+      { ts: '09:14', speaker: 'caller', text: 'Cedar Park, last night, homeowner.' },
+      { ts: '09:14', speaker: 'agent', text: "Cedar Park is in our zone. I have an inspector with availability Wednesday at 2pm or Thursday at 10am. Which works?" },
+      { ts: '09:15', speaker: 'caller', text: 'Wednesday 2pm.' },
+      { ts: '09:15', speaker: 'agent', text: "Booked. You'll get a confirmation text and a pre-inspection checklist via email. Insurance carrier on file?" },
+      { ts: '09:15', speaker: 'caller', text: 'State Farm.' },
+      { ts: '09:15', speaker: 'agent', text: "Logged. We'll bring documentation formatted for State Farm. Anything else?" },
+      { ts: '09:15', speaker: 'system', text: 'Booked + qualified + CRM updated · 1m 12s · Same script ran for the other 46 callers in parallel' },
+    ],
+    sampleCallCaption: 'Storm-season surge · AI handles 47 concurrent calls without overtime',
+    outcomes: [
+      { number: '70%', label: 'Cost reduction vs a dedicated SMB call center seat' },
+      { number: 'unlimited', label: 'Concurrent capacity vs limited by call-center headcount' },
+      { number: '0 drift', label: 'Script consistency — never varies between operators or shifts' },
     ],
   },
 ];
