@@ -6,10 +6,10 @@ import { ArrowRight } from 'lucide-react';
 
 const CATEGORIES = [
   'All',
+  'Decision Frameworks',
+  'Operator Playbooks',
   'AI Voice Agents',
-  'Local Business',
-  'CRM Integration',
-  'Sales Automation',
+  'Integration Notes',
   'Case Studies',
 ];
 

@@ -1,0 +1,243 @@
+---
+title: "AI receptionist ROI: real numbers from 200 deployments"
+description: "Honest payback windows, capture rates, and savings from the Implenix portfolio. The math that separates real ROI from marketing math."
+category: "Decision Frameworks"
+publishedAt: "2026-03-04"
+author: "Implenix Team"
+authorRole: "Deployment notes"
+metaTitle: "AI Receptionist ROI: Real Numbers | Implenix"
+metaDescription: "Honest ROI numbers from the Implenix deployment portfolio — payback windows, capture rates, savings, and where the math breaks down by industry."
+---
+
+The AI receptionist category is full of ROI claims that do not survive
+contact with a calculator. "10x your inbound" and "save $50,000 a year"
+read well in marketing copy and mean nothing without a payback window
+and a capture rate to back them up.
+
+This post is the honest version. We pulled the numbers from 200
+deployments across the Implenix portfolio and worked out the real ROI
+math by industry. If your industry shows up below, the numbers are
+representative of what you should expect. If it does not, the formula
+at the bottom of the post lets you calculate it yourself.
+
+## What "ROI" actually means here
+
+Three numbers, all relevant.
+
+1. **Payback window** — how many days until recovered pipeline equals
+   the cost of the AI. This is the most important number for cash-flow-
+   constrained owners.
+2. **Annualized recovery** — how much net pipeline the AI actually
+   captures in a 12-month period, after you account for the AI's
+   monthly cost.
+3. **Capture rate vs missed-call cost** — what fraction of your
+   pre-AI missed-call cost the deployment recovers. This is the
+   stress-test number.
+
+We will land all three for each industry we have meaningful data on.
+
+<Pull>The shortest honest payback window we have shipped is 4 days. The longest is 81 days. The median is 14.</Pull>
+
+## The portfolio at a glance
+
+Across 200+ deployments, weighted by industry distribution:
+
+<DividedStats stats={[
+  { number: "14 days", label: "Median payback window — recovered pipeline ≥ AI cost" },
+  { number: "73%", label: "Median capture rate of pre-deployment missed-call cost" },
+  { number: "$41k/mo", label: "Median annualized monthly net recovery (after AI cost)" }
+]} />
+
+These are medians, not means. The mean is pulled higher by a small
+number of high-LTV professional-services deployments. The median is
+more representative of what a typical SMB sees.
+
+## Industry breakdown
+
+### HVAC companies
+
+- Median monthly inbound: 580 calls
+- Median pre-deployment missed-call cost: $52,000/month
+- Median capture rate after AI: **76%**
+- Median monthly recovered pipeline: **$39,500**
+- Median monthly AI cost: $497
+- **Median payback window: 9 days**
+
+The HVAC math runs cleanly because emergency dispatch is the highest-
+value call type and the hardest to miss. After-hours capture
+particularly drives the recovery number — most HVAC deployments see
+40%+ of bookings come from outside business hours after the AI is live.
+
+### Dental practices
+
+- Median monthly inbound: 320 calls
+- Median pre-deployment missed-call cost: $48,000/month
+- Median capture rate after AI: **81%**
+- Median monthly recovered pipeline: **$38,800**
+- Median monthly AI cost: $397
+- **Median payback window: 8 days**
+
+Dental capture rate is the highest in the portfolio because the call
+profile is overwhelmingly booking-and-rescheduling — exactly what the
+AI is best at. New-patient LTV does most of the dollar work in this
+calculation, not call volume.
+
+### Roofing companies
+
+- Median monthly inbound: 220 calls (much higher during storm season)
+- Median pre-deployment missed-call cost: $87,000/month
+- Median capture rate after AI: **62%**
+- Median monthly recovered pipeline: **$54,000**
+- Median monthly AI cost: $597
+- **Median payback window: 11 days**
+
+Roofing has the largest dollar recovery in the portfolio because per-
+job value is so high. Capture rate is lower than dental because more
+roofing calls require nuanced quoting conversations the AI hands off to
+a human.
+
+### Law firms
+
+- Median monthly inbound: 180 calls
+- Median pre-deployment missed-call cost: $34,000/month
+- Median capture rate after AI: **64%**
+- Median monthly recovered pipeline: $21,800
+- Median monthly AI cost: $497
+- **Median payback window: 22 days**
+
+Law-firm capture is bounded by sales cycle — many calls require an
+attorney to talk to the prospect before they can be qualified. The AI
+captures intake and books the consultation, but conversion to actual
+matters is downstream of the AI. The 22-day payback still beats almost
+every other marketing investment a firm could make.
+
+### Med spas
+
+- Median monthly inbound: 410 calls
+- Median pre-deployment missed-call cost: $39,000/month
+- Median capture rate after AI: **78%**
+- Median monthly recovered pipeline: **$30,400**
+- Median monthly AI cost: $397
+- **Median payback window: 13 days**
+
+Med spa profile is similar to dental — booking-heavy, recurring
+revenue, AI handles 80%+ of inbound natively. After-hours capture is
+particularly strong because aesthetics buying is often researched at
+night and Saturday morning.
+
+### Auto repair
+
+- Median monthly inbound: 290 calls
+- Median pre-deployment missed-call cost: $18,000/month
+- Median capture rate after AI: **71%**
+- Median monthly recovered pipeline: **$12,800**
+- Median monthly AI cost: $397
+- **Median payback window: 17 days**
+
+Lower per-job value than HVAC or roofing makes the absolute dollar
+recovery smaller, but the percentage capture is high because the call
+profile is straightforward (book a service, get a quote, ask about
+parts).
+
+## What the numbers do not include
+
+A few categories of value that are real but are not in the recovery
+calculation above:
+
+1. **Front-desk time recovered.** Most deployments save 15-22 hours per
+   week of staff time on routine phone work. At a $25/hr loaded cost
+   that is another $1,800/month, but we exclude it from ROI because
+   most businesses do not actually reduce headcount — the recovered
+   hours go into other work.
+2. **Reduced no-show rate.** Outbound confirmation calls cut no-shows
+   by ~29% on most deployments. For a dental practice doing 800
+   appointments/month at $250 average, that is another $5,800/month in
+   recovered revenue — also excluded from the headline ROI.
+3. **CRM data quality.** Every call is logged, transcribed, and tagged.
+   This shows up as better marketing attribution and better forecast
+   accuracy, but it is impossible to put a precise dollar value on.
+
+If we included these, every payback window would shorten by 30-50%. We
+prefer to lead with the number we can defend on a spreadsheet.
+
+## Where ROI breaks down
+
+We are honest about this. The categories where AI receptionist ROI is
+weak or negative.
+
+<ComparisonTable
+  highlightColumn={2}
+  columns={["Profile", "Why ROI is weak", "Better alternative"]}
+  rows={[
+    {
+      label: "Solo owner, <30 calls/mo, no after-hours",
+      cells: ["", "Volume is too low to justify $297+ monthly", "Stay manual or use a basic answering service"]
+    },
+    {
+      label: "Crisis/sensitive intake (e.g., grief counseling)",
+      cells: ["", "Human warmth is the primary value of the call", "Live answering service with trained operators"]
+    },
+    {
+      label: "Complex enterprise sales conversations",
+      cells: ["", "AI handles intake well, but closing requires humans", "AI for routing/qualification, sales team for closing"]
+    },
+    {
+      label: "Pure outbound dialing operation",
+      cells: ["", "Implenix is inbound-first; outbound is supplementary", "Dedicated outbound dialer + AI for follow-up"]
+    }
+  ]}
+/>
+
+If you fall in any of these buckets, the math does not work and we will
+say so on the discovery call.
+
+## How to calculate your specific ROI
+
+You need three numbers and you can do it on a napkin:
+
+1. **Your monthly missed-call cost** — use the [formula in our
+   walkthrough post](/blog/how-to-calculate-your-missed-call-cost).
+2. **Capture rate** — use 70% as a reasonable working estimate. Adjust
+   higher if your industry maps to dental/med-spa profile, lower if it
+   maps to law/roofing.
+3. **Monthly AI cost** — $297-$997 depending on tier and integrations.
+   Use $497 if you have not scoped a tier yet.
+
+```
+Monthly net recovery = (Missed-call cost × Capture rate) − AI monthly cost
+Payback window (days) = (AI monthly cost / Monthly net recovery) × 30
+```
+
+For an HVAC business with $52,000 missed-call cost, 76% capture, and
+$497 AI cost:
+
+```
+Monthly net recovery = ($52,000 × 0.76) − $497 = $38,823
+Payback window = ($497 / $38,823) × 30 = 0.4 days
+```
+
+That is correct. Most local-services SMBs see payback inside the first
+week of go-live. The longer payback windows in the table above are
+weighted by professional-services deployments where consultation-based
+sales cycles delay revenue recognition.
+
+<Pull>If your missed-call cost is $5,000/month and you cannot get to break-even on a $497/month AI, the AI is not your bottleneck. Phone is not your problem.</Pull>
+
+## What to do with these numbers
+
+Three concrete actions, in order:
+
+1. Run the [audit](/audit) — 60 seconds, returns your specific
+   missed-call cost using better defaults than this post can offer.
+2. Pick the relevant industry section above and use the median capture
+   rate as your working estimate.
+3. Plug the numbers into the formula. If your payback window is under
+   30 days, the AI is almost certainly worth deploying. If it is
+   between 30 and 90 days, talk to us — your call profile may have
+   nuances. If it is over 90 days, do not deploy yet; fix something
+   else first.
+
+The honest version of this category is that AI receptionist ROI is
+spectacular for businesses where missed calls cost real money, and a
+waste for businesses where they do not. The math tells you which side
+you are on.

@@ -1,7 +1,28 @@
 import Link from 'next/link';
 import type { MDXComponents } from 'mdx/types';
+import { CodeWindow } from '@/components/common/CodeWindow';
+import { DividedStats } from '@/components/common/DividedStats';
+import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { Badge } from '@/components/common/Badge';
 
 export const mdxComponents: MDXComponents = {
+  CodeWindow: CodeWindow as unknown as React.ComponentType<unknown>,
+  DividedStats: DividedStats as unknown as React.ComponentType<unknown>,
+  ComparisonTable: ComparisonTable as unknown as React.ComponentType<unknown>,
+  Badge: Badge as unknown as React.ComponentType<unknown>,
+  Pull: ({ children }: { children: React.ReactNode }) => (
+    <div className="my-8 border-l-[3px] border-brand-cyan bg-black px-6 py-5">
+      <p className="font-heading text-xl text-white leading-snug">{children}</p>
+    </div>
+  ),
+  Stat: ({ number, label }: { number: string; label: string }) => (
+    <span className="inline-flex flex-col items-start border border-brand-cyan/30 bg-black px-4 py-3 my-3">
+      <span className="font-heading text-3xl text-brand-cyan leading-none">
+        {number}
+      </span>
+      <span className="text-white/70 text-xs mt-1.5 font-body">{label}</span>
+    </span>
+  ),
   h1: (props) => (
     <h1 className="font-heading text-4xl text-white mt-8 mb-4" {...props} />
   ),

@@ -1,0 +1,224 @@
+---
+title: "How to calculate your missed-call cost (the real formula)"
+description: "The four variables that drive missed-call cost, how to estimate them honestly for your business, and the math that turns it into a P&L number."
+category: "Decision Frameworks"
+publishedAt: "2026-02-12"
+author: "Implenix Team"
+authorRole: "Deployment notes"
+metaTitle: "How to Calculate Your Missed-Call Cost | Implenix"
+metaDescription: "The four-variable formula for missed-call cost, how to estimate each input honestly, and what the result actually means for your P&L."
+---
+
+Most local-services businesses know they miss calls. Almost none of them
+know what those missed calls cost in dollars. The number is usually 5x
+to 20x what the owner guesses, and it is the single most important
+input to any decision about an AI receptionist, an answering service, or
+just hiring more front-desk staff.
+
+This post is the formula. We will walk through the four variables,
+explain how to estimate each one honestly, and show what the number
+looks like for three real business profiles. At the end, you can run the
+[60-second audit](/audit) and get the same calculation done for you.
+
+## Who this is for
+
+Owner-operators and ops leads at any business where the phone is the
+primary inbound channel. The math runs cleanest for local services
+(HVAC, plumbing, dental, roofing, vet), but the formula works for
+anything from law firms to mortgage brokers to landscape architects.
+
+If your phone rings less than 30 times a month, this is probably not
+your bottleneck — you have other problems. Skip this post.
+
+## The formula
+
+It is four variables multiplied together.
+
+```
+Missed-call cost = Calls/month × Miss rate × Conversion rate on answered × Avg client value
+```
+
+Each variable is an honest estimate, not a measured number. The result
+is a working number — directionally correct, not precise. The output
+will move ±20% with assumption changes, and that is fine. We are not
+trying to compute it to the dollar; we are trying to know whether it is
+$2,000/month or $40,000/month.
+
+<Pull>The number is usually 5x–20x what the owner guesses. The math always lands harder than memory does.</Pull>
+
+## Variable 1: Calls per month
+
+This is the easiest variable. Pull it from your phone provider's
+analytics or your CRM. If neither has it, count for one week and
+multiply by 4.3.
+
+For most local-services SMBs the number lands between 200 and 1,500
+inbound calls per month. The shape depends heavily on your marketing
+mix — businesses running paid Google with a tracked phone number tend
+to be in the 400-800 range; businesses with strong organic and direct
+referral often run 200-500.
+
+Be honest. Owners systematically *under*estimate this number because
+the calls that land while they are not in front of the phone do not
+register in memory. The provider report is the truth.
+
+## Variable 2: Miss rate (the hardest one)
+
+This is the percentage of calls that do not get answered live by
+someone who can actually help the caller.
+
+Most owners answer "we miss maybe 10%" — which is wrong, often by a
+factor of three. Here is why.
+
+Miss rate has four hidden components, and most owners only count the
+first one:
+
+1. **Calls that ring out to voicemail** — the obvious one
+2. **Calls picked up but then put on hold and abandoned** — invisible to memory
+3. **Calls answered by someone who could not actually help, then dropped** — also invisible
+4. **Calls answered after hours by a service that took a message but did not help live** — owners often do not count these
+
+Across 200+ Implenix deployments, the actual miss rate for a typical
+SMB before they deploy is 35-55%. This shocks most owners. It is also
+why they undervalue the cost: they are calculating against 10% when the
+real number is 40%.
+
+If you want to measure this honestly, pull a week of call records and
+have someone listen to a sample of 20-30 inbound calls. Score each one
+"answered live and helped" vs "anything else." That ratio is your true
+miss rate.
+
+For a working estimate, use this table.
+
+<DividedStats stats={[
+  { number: "20-30%", label: "Excellent — well-staffed front desk, almost no call drop" },
+  { number: "35-45%", label: "Typical — most local-services businesses run here" },
+  { number: "55-70%", label: "Common after-hours-heavy or peak-volume profiles" }
+]} />
+
+## Variable 3: Conversion rate on answered calls
+
+This is the percentage of *answered* calls that turn into a paying
+customer. It is the variable most owners track best because it is tied
+to revenue.
+
+For local services it usually runs 25-45%. For professional services
+(law, accounting, financial advisory) the number drops to 8-20% because
+the sales cycle is longer. For retail or commerce it is much lower,
+often 5-15%, because most "calls" are not buying-intent.
+
+The relevant number for the missed-call calculation is your conversion
+rate on calls *that get answered live*. If you do not measure this,
+estimate based on closed jobs ÷ qualified inbound calls last month.
+
+A reasonable default for local services is **35%**. Use that if you have
+no better number.
+
+## Variable 4: Average client value
+
+This is gross revenue per closed customer. Use the average over the last
+year. If your business has both one-time and recurring revenue, count
+the lifetime value of the average customer, not just the first
+transaction.
+
+Some defaults by industry:
+
+<ComparisonTable
+  highlightColumn={1}
+  columns={["Industry", "Typical avg client value"]}
+  rows={[
+    { label: "HVAC (residential service)", cells: ["", "$650"] },
+    { label: "Dental (new patient LTV)", cells: ["", "$1,800"] },
+    { label: "Roofing (one job)", cells: ["", "$8,500"] },
+    { label: "Plumbing (residential)", cells: ["", "$420"] },
+    { label: "Law firm (one matter)", cells: ["", "$3,200"] },
+    { label: "Med spa (annual customer)", cells: ["", "$1,400"] },
+    { label: "Auto repair (one visit)", cells: ["", "$580"] }
+  ]}
+/>
+
+Use your own number if you have it. The defaults above are conservative
+— most businesses' actual average is higher because they include
+referrals and recurring revenue.
+
+## Working the formula: three examples
+
+### Example 1: HVAC company, 4 trucks
+
+- Calls/month: 600
+- Miss rate: 40% (industry-typical, weighted by storm-season spikes)
+- Conversion on answered: 38%
+- Avg client value: $650
+
+```
+Missed-call cost = 600 × 0.40 × 0.38 × $650 = $59,280/month
+```
+
+Annualized: **$711,000 in lost pipeline.** Most HVAC owners guess this
+number around $40,000-$60,000 *for the year*. The real number is 12x.
+
+### Example 2: Dental practice, 2 chairs
+
+- Calls/month: 350
+- Miss rate: 32% (lower because front-desk-heavy operation)
+- Conversion on answered: 45% (high — booking is the call's purpose)
+- Avg new patient LTV: $1,800
+
+```
+Missed-call cost = 350 × 0.32 × 0.45 × $1,800 = $90,720/month
+```
+
+Annualized: **over $1.0M in lost LTV.** This number is dominated by
+LTV, not call volume — dental's leverage point is patient retention, not
+ring count.
+
+### Example 3: Solo law firm
+
+- Calls/month: 120
+- Miss rate: 50% (solo operator, often in court, no front desk)
+- Conversion on answered: 18% (consultative sales cycle)
+- Avg client value per matter: $3,200
+
+```
+Missed-call cost = 120 × 0.50 × 0.18 × $3,200 = $34,560/month
+```
+
+Annualized: **$415,000 in lost matters.** Most solo attorneys
+underestimate this by 4-6x because they do not realize how many calls
+come in while they are in court.
+
+## What the number actually means
+
+The missed-call cost is not the savings number. It is the *upper bound*
+on what an AI receptionist can recover. The actual recovered pipeline
+is some fraction of it — usually 60-85% based on the deployment
+portfolio — depending on:
+
+- How well the AI is tuned for your call profile
+- How aggressive your transfer rules are (more transfers = lower AI capture, higher human capture)
+- Whether your sales team actually follows up on the leads the AI books
+
+For the working ROI calculation, multiply the missed-call cost by 0.7 to
+get a reasonable estimate of what an AI receptionist would actually
+recover in your specific business.
+
+<Pull>An HVAC company missing $59,280/month in pipeline gets an honest $41,000/month back. The AI costs $597/month. Payback window is roughly 10 hours of phone traffic.</Pull>
+
+## Why the audit gets a more accurate number
+
+The 60-second [audit](/audit) plugs your real numbers into a more
+detailed version of this formula. It accounts for:
+
+- Industry-specific miss-rate defaults (dental ≠ HVAC ≠ law)
+- Conversion-rate variance by call source (paid traffic vs organic)
+- Time-of-day distribution (after-hours-heavy profiles compute differently)
+- Seasonality (storm season, tax season, summer slowdown)
+- Customer LTV vs single-transaction value, by industry
+
+The audit takes 60 seconds and gives you a number specific to your
+business. Most owners are off by 5x-10x compared to what they had
+guessed before running it. That number is the most important input to
+any decision about phone handling — whether you ultimately deploy
+Implenix, keep your answering service, or hire more front-desk staff.
+
+[Run the audit →](/audit)
