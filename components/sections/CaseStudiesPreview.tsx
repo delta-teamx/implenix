@@ -5,24 +5,24 @@ import { CaseStudyCard } from '@/components/common/CaseStudyCard';
 
 const FEATURED = [
   {
-    industry: 'Law Firm',
-    resultHeadline: '$47,000 in new client revenue captured in 90 days',
-    summary:
-      'Smith & Associates routed every after-hours intake through Implenix. Six-figure pipeline that used to die in voicemail closed inside 90 days.',
-    href: '/case-studies/placeholder-real-estate',
-  },
-  {
     industry: 'HVAC',
-    resultHeadline: '+312% in booked emergency jobs in 30 days',
+    resultHeadline: '+31% booked jobs and every call answered live',
     summary:
-      'A 22-tech HVAC operator deployed Implenix as a 24/7 dispatcher. Inbound capture rate went from 41% to 96% in the first month.',
+      'PA HVAC Experts replaced voicemail with a 24/7 AI dispatcher. Capture rate moved 58% → 97% and pipeline grew 31% in 90 days.',
     href: '/case-studies/placeholder-hvac',
   },
   {
-    industry: 'Dental',
-    resultHeadline: '$22 / week reclaimed × 14 staff · $300K labor saved',
+    industry: 'Real Estate',
+    resultHeadline: '+28% deals closed with AI-run booking + follow-up',
     summary:
-      'A 4-location dental group routed routine reschedules and confirmations through Implenix and put their front desk back on patient care.',
+      'Columbus Property handed inbound qualification and follow-up to Implenix. Closers stay on closing — the AI runs everything before it.',
+    href: '/case-studies/placeholder-real-estate',
+  },
+  {
+    industry: 'Dental',
+    resultHeadline: '+26% new patients and 12 hrs/week per FTE reclaimed',
+    summary:
+      'Ohio Dental was burning 2-3 hours per team member per day on phones. Front desk is back to in-chair patient attention.',
     href: '/case-studies/placeholder-dental',
   },
 ];
@@ -45,7 +45,6 @@ export function CaseStudiesPreview() {
             See all case studies <ArrowRight size={14} />
           </Link>
         </div>
-        {/* LINK TO REAL CASE STUDY SLUGS WHEN PUBLISHED */}
         <div className="mt-12 grid md:grid-cols-3 gap-5">
           {FEATURED.map((cs) => (
             <CaseStudyCard key={cs.href} {...cs} />

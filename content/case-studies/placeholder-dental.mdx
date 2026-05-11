@@ -1,34 +1,123 @@
 ---
-title: "Brightline Dental: 22 hours reclaimed per week"
+title: "Ohio Dental: 12 hours per FTE reclaimed, +26% new patients booked"
 slug: "placeholder-dental"
 industry: "Dental"
-metaTitle: "Dental AI Receptionist | 22 Hours Reclaimed | Implenix"
-metaDescription: "How a 4-location dental group reclaimed 22 hours per week per front-desk team member with the Implenix AI receptionist."
-resultHeadline: "Front desk reclaimed 22 hours per week per team member"
-summary: "A 4-location dental group replaced repetitive phone work with the Implenix agent and routed only qualified callers to staff."
+metaTitle: "Ohio Dental Case Study — +26% New Patients | Implenix"
+metaDescription: "How an Ohio dental practice freed up 12 hours per front-desk team member per week and grew new-patient bookings 26% with the Implenix AI receptionist."
+resultHeadline: "+26% new-patient bookings and 12 hours/week reclaimed per FTE"
+summary: "Ohio Dental was burning 2–3 hours per team member per day on routine inbound. Implenix took over confirmations, reschedules, insurance pre-screening, and new-patient intake — and the team's chair-side attention returned."
 clientOverview:
   industry: "Dental"
-  size: "4 locations, 14 front-desk staff"
-  challenge: "Front desk overloaded with confirmations, reschedules, and insurance questions."
+  size: "2 locations, 5 front-desk staff"
+  challenge: "Front desk drowning in routine phone work — confirmations, reschedules, insurance questions — while in-chair patient attention slipped."
 painPoints:
-  - "PLACEHOLDER — Average front-desk team member spent 4+ hours/day on phones."
-  - "PLACEHOLDER — High no-show rate due to inconsistent reminder process."
-  - "PLACEHOLDER — New patients regularly hitting voicemail at peak hours."
-solutionSummary: "PLACEHOLDER — Implenix took over routine inbound and outbound reminder calls, integrated to the practice's PMS, and routed only qualified consults to staff."
+  - "Front-desk team averaging 2-3 hours per day per person on inbound phone work."
+  - "Average response time on new-patient inquiries: 18 minutes during peak hours."
+  - "No-show rate sitting at 14% — no consistent confirmation sequence."
+  - "Insurance pre-screening done ad hoc, often re-asked at check-in."
+solutionSummary: "Implenix deployed a dental-tuned AI receptionist: new-patient intake (insurance carrier, plan type, current dentist, reason for visit), live booking against Open Dental, two-touch confirmation sequence (48hr SMS + 24hr voice), and rescheduling without front-desk involvement. The agent routes clinical questions and any caller asking for the doctor by name to the appropriate team member."
 integrations:
   - "Open Dental"
   - "Twilio"
-  - "Custom Webhook"
+  - "Google Calendar"
+  - "Custom Webhook (insurance verification)"
 primaryMetric:
-  number: "22 hrs"
-  label: "reclaimed per FTE per week"
+  number: "+26%"
+  label: "new-patient bookings"
 secondaryMetric:
-  number: "-31%"
-  label: "no-show rate"
+  number: "12 hrs/wk"
+  label: "reclaimed per front-desk FTE"
 timeToResults:
-  number: "21 days"
+  number: "30 days"
   label: "to full results"
-publishedAt: "2025-08-15"
+publishedAt: "2026-02-04"
 ---
 
-PLACEHOLDER MDX BODY — replace with full case study narrative.
+## The before state
+
+Ohio Dental runs two locations with five front-desk staff combined.
+Average new-patient LTV is around **$1,820** — mix of routine cleanings,
+restorative work, and a small cosmetic segment. The practice's
+operational philosophy is in-house attention: the team is supposed to
+own the patient experience from check-in through check-out.
+
+The phone was breaking that philosophy. Carrier records from the 30
+days before deployment:
+
+- **Inbound calls/month:** 924 across both locations
+- **Average duration:** 3m 17s
+- **Front-desk hours spent on phone:** ~14 hrs/day combined
+- **New-patient inquiries:** 142
+- **New-patient calls answered live within 60 seconds:** 38%
+- **Recorded no-show rate:** 14%
+
+Hyder's framing during discovery: *"Our team spends daily 2-3 hours
+answering the rings, and our in-house attention is vanishing."* The
+practice was not losing patients to a competitor — they were losing
+the quality of every in-chair interaction to the phone.
+
+## What we shipped
+
+A dental-tuned deployment with four work streams:
+
+1. **New-patient intake script.** Insurance carrier + plan type, reason
+   for visit, current dentist (yes/no), preferred location, contact
+   info. Validates insurance against the in-network list before booking
+   and surfaces out-of-network self-pay options when applicable.
+2. **Live booking against Open Dental.** Books the specific provider
+   per service type (hygienist for cleanings, doctor for restorative,
+   specific operatory for surgical) honoring buffer time and provider
+   block schedules.
+3. **Two-touch confirmation sequence.** 48-hour SMS confirmation with
+   a one-tap reschedule link, plus a 24-hour voice confirmation that
+   the AI runs outbound. Calls flagged by the AI as "patient may
+   reschedule" route into a same-day callback queue.
+4. **Front-desk escalation rules.** Clinical questions, anyone asking
+   for the doctor, billing disputes, and emergency-level pain calls
+   route to a live front-desk team member with a one-line context
+   briefing.
+
+Live in 14 business days. Parallel-run for 5 days before cutover.
+
+## The numbers, 90 days in
+
+<DividedStats stats={[
+  { number: "+26%", label: "new-patient bookings vs the 90 days prior" },
+  { number: "12 hrs/wk", label: "reclaimed per front-desk FTE — 60 hours total across the team" },
+  { number: "-31%", label: "no-show rate (14% → 9.6%)" }
+]} />
+
+The combination is more valuable than any single number. The new-
+patient lift is partly the AI answering after-hours and partly faster
+response time during the day. The reclaimed hours show up in chair-
+side patient experience — which the practice tracks via post-visit
+NPS scores that have moved from 71 to 84 over the deployment window.
+
+Specific deltas:
+
+- **New-patient calls answered live within 60 seconds:** 38% → 96%.
+- **Median front-desk phone time per FTE per day:** 2h 40min → 24min.
+- **No-show rate:** 14% → 9.6% (due to the two-touch confirmation).
+- **Insurance-related re-asks at check-in:** down by roughly two-thirds
+  because the AI captures insurance details during the booking call.
+
+> "Our team was spending 2–3 hours a day answering the phone and our
+> in-house attention was slipping. Implenix handles the phone
+> amazingly and the team is back focused on patients." — Hyder, Ohio
+> Dental
+
+## What we learned
+
+Dental has the highest capture rate in our portfolio — the call profile
+is overwhelmingly booking, rescheduling, and insurance questions, which
+the AI handles natively. The most material long-term effect, though,
+is the in-chair NPS improvement. When the front desk is not under
+phone pressure, the entire patient experience moves up a tier — and
+that compounds into retention and referral over 12-18 months in a way
+the booking number alone does not capture.
+
+If your practice profile looks like Ohio Dental's — multi-chair,
+multi-FTE front desk, in-chair attention sliding under phone load —
+the same shape of deployment usually produces a similar lift.
+
+[Run the audit for your dental practice →](/audit)

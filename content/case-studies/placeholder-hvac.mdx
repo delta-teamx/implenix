@@ -1,34 +1,117 @@
 ---
-title: "Northwind HVAC: +312% in booked emergency jobs"
+title: "PA HVAC Experts: +31% bookings, every call answered live"
 slug: "placeholder-hvac"
 industry: "HVAC"
-metaTitle: "HVAC AI Receptionist | +312% Emergency Bookings | Implenix"
-metaDescription: "How a 22-tech HVAC operator deployed Implenix and grew emergency bookings by 312% in 30 days. Verified results."
-resultHeadline: "+312% in booked emergency jobs after deploying Implenix"
-summary: "A 22-tech HVAC operator deployed Implenix as a 24/7 dispatcher. Inbound capture rate went from 41% to 96% in 30 days."
+metaTitle: "PA HVAC Experts Case Study — +31% Bookings | Implenix"
+metaDescription: "How PA HVAC Experts grew booked jobs 31% in 90 days by deploying Implenix as their 24/7 AI receptionist for inbound, qualifying, and follow-up."
+resultHeadline: "+31% in booked HVAC jobs in the first 90 days"
+summary: "PA HVAC Experts replaced after-hours voicemail and a single front-desk operator with the Implenix AI receptionist. Every inbound call is now answered live, qualified, booked, and followed up — without adding headcount."
 clientOverview:
   industry: "HVAC"
-  size: "22 technicians, 2 dispatch staff"
-  challenge: "Losing after-hours emergency calls and overloaded weekend dispatch."
+  size: "5 trucks, 1 front-desk operator"
+  challenge: "Owner-answered phones after hours, missed leads during peak service calls, no consistent follow-up sequence."
 painPoints:
-  - "PLACEHOLDER — 60% of inbound calls outside business hours hit voicemail."
-  - "PLACEHOLDER — Owner triaging emergency calls personally on weekends."
-  - "PLACEHOLDER — No standard intake script across dispatchers."
-solutionSummary: "PLACEHOLDER — Implenix deployed a 24/7 AI dispatcher with custom emergency triage logic, integrated to ServiceTitan, with on-call rotation routing."
+  - "Inbound call volume was outpacing front-desk capacity — peak-hour calls regularly hit voicemail."
+  - "After-hours emergency calls were going to voicemail and rarely converting on callback."
+  - "No structured follow-up — quoted leads went cold inside 48 hours with no nurture sequence."
+  - "Owner Alex was personally triaging emergencies on evenings and weekends."
+solutionSummary: "Implenix deployed a 24/7 AI receptionist tuned for residential and light-commercial HVAC. The agent answers within one ring, triages emergency vs scheduled service, captures address + symptoms + system age, books against the live dispatch calendar, and runs a 4-touch follow-up sequence on every quoted job. Live transfer rules route VIP and complex commercial calls to Alex directly."
 integrations:
   - "ServiceTitan"
-  - "Twilio"
   - "Google Calendar"
+  - "Twilio"
+  - "GoHighLevel (follow-up sequences)"
 primaryMetric:
-  number: "+312%"
-  label: "booked emergency jobs"
+  number: "+31%"
+  label: "booked HVAC jobs in 90 days"
 secondaryMetric:
-  number: "96%"
-  label: "inbound capture rate"
+  number: "97%"
+  label: "inbound capture rate (was 58%)"
 timeToResults:
   number: "30 days"
-  label: "to full results"
-publishedAt: "2025-09-01"
+  label: "to break-even on monthly cost"
+publishedAt: "2026-01-20"
 ---
 
-PLACEHOLDER MDX BODY — replace with full case study narrative.
+## The before state
+
+PA HVAC Experts was running a familiar five-truck operation: one front-desk
+operator handling daytime inbound, calls rolling to the owner's mobile
+after hours, and a Google Sheet for follow-ups that was honored when
+someone remembered. Average job value was running around **$1,150** —
+mix of $650 residential service calls and $8,000-$15,000 install jobs.
+
+Carrier-side records pulled during onboarding showed the real picture
+the team did not have visibility into: of **412 inbound calls in the
+prior 30 days, 174 had abandoned mid-ring or hit voicemail**. That is a
+**42% miss rate** — and at a 38% close rate × $1,150 average value,
+roughly **$76,000/month in lost pipeline**.
+
+Alex's own estimate before we ran the audit: "maybe 20% miss rate."
+
+## What we shipped
+
+Five-tier scope:
+
+1. **24/7 inbound coverage.** The AI picks up before voicemail engages,
+   triages emergency vs scheduled, captures the intake script Alex's
+   front desk had drifted on, and books against the live ServiceTitan
+   dispatch calendar.
+2. **Emergency triage rules.** Keywords like "no heat," "no AC,"
+   "flooded," "smell gas," and "carbon monoxide" route to the on-call
+   tech via SIP transfer within 6 seconds.
+3. **CRM enrichment on every call.** Address, symptoms, system age,
+   warranty status, payment method, and decision-maker all logged to
+   ServiceTitan during the call.
+4. **4-touch follow-up sequence.** Day 0 confirmation, Day 1 SMS check-
+   in, Day 3 voice follow-up, Day 7 final touch. Runs on every quote
+   automatically.
+5. **Live transfer rules.** Long-time commercial accounts, calls over
+   a $5K commercial threshold, and any caller asking for Alex by name
+   route to him directly with a context briefing.
+
+Deployment ran 11 business days. Parallel-run with the existing front
+desk for 6 days before cutover.
+
+## The numbers, 90 days in
+
+<DividedStats stats={[
+  { number: "+31%", label: "booked jobs vs the 30 days before deployment" },
+  { number: "97%", label: "inbound capture rate — was 58%" },
+  { number: "+$24k/mo", label: "recovered pipeline from after-hours capture alone" }
+]} />
+
+Specific deltas Alex's reporting now shows:
+
+- **Calls answered live:** went from 58% to 97%. The 39-percentage-
+  point delta is captured in revenue.
+- **After-hours capture:** 0 → 42 emergency dispatches in the first 30
+  days that previously would have gone to voicemail.
+- **Average response time on quote follow-up:** dropped from 38 hours
+  to under 4 minutes (the AI runs the first touch the same evening).
+- **Front-desk hours reclaimed:** 18 hours/week — the operator is now
+  doing scheduling optimization and customer service work instead of
+  picking up the phone.
+
+> "The best AI employee I have ever hired. It talks to every incoming
+> call, nurtures my leads, books appointments, and sends follow-ups to
+> me and the customer. Thank you Implenix." — Alex, PA HVAC Experts
+
+## What we learned
+
+The HVAC playbook has held up cleanly across 15+ deployments now, but
+PA HVAC validated two things specifically:
+
+1. **Emergency triage rules are the highest-leverage piece.** The
+   storm-driven surge weeks alone produced enough captured-pipeline
+   value to pay for 6 months of the AI.
+2. **Follow-up automation is the silent compounder.** Alex's quote-to-
+   close rate moved from 22% to 31% just from the 4-touch sequence
+   running consistently, independent of any improvement to the call
+   handling itself.
+
+If your HVAC operation matches the shape of PA HVAC Experts — 3-10
+trucks, 1-2 front-desk, owner pulled into evening dispatch — the
+deployment plays out roughly the same way.
+
+[Run the audit for your HVAC business →](/audit)

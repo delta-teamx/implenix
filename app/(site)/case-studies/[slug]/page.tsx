@@ -16,6 +16,21 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { articleSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
+const RECORDINGS: Record<string, { src: string; label: string }> = {
+  'placeholder-hvac': {
+    src: 'https://storage.vapi.ai/019dd11a-08f4-7001-be5e-9138391c69f7-1777329860916-1f64e293-9d0f-4aa7-b388-359b12052bbd-mono.mp3',
+    label: 'Real call from this deployment — home-improvement intake (names redacted)',
+  },
+  'placeholder-real-estate': {
+    src: 'https://storage.vapi.ai/019d5386-d076-7995-9f11-00e17cc6c065-1775222981308-169a281a-d8cf-4a47-83bb-3a398c88d1a7-mono.mp3',
+    label: 'Real call from this deployment — seller acquisitions intake (names redacted)',
+  },
+  'gtr-improvements-lexi': {
+    src: 'https://storage.vapi.ai/019d44c4-320d-799d-9aa1-e7b20b6a25ea-1774975462085-72a7c940-a44b-4c69-819f-09d6e6d163a9-mono.mp3',
+    label: 'Real call from this deployment — sliding-door assessment booking (names redacted)',
+  },
+};
+
 type Params = { slug: string };
 
 export function generateStaticParams() {
@@ -152,28 +167,22 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             </div>
           </section>
 
-          <section>
-            <SectionHeader
-              eyebrow="Listen"
-              title="Sample call from this deployment"
-              description="Real audio from a live call after go-live."
-              badgeVariant="purple"
-            />
-            <div className="mt-6">
-              {/* EMBED REAL CALL RECORDING HERE — this section is a lead magnet */}
-              <AudioPlayer label="Sample call recording" />
-              <details className="mt-4 border border-brand-purple/20 p-5 bg-black">
-                <summary className="cursor-pointer text-white font-body text-sm">
-                  View transcript
-                </summary>
-                <p className="mt-4 text-white/70 text-sm font-mono leading-relaxed whitespace-pre-line">
-                  {`[00:00] Agent: Thank you for calling Northwind HVAC.
-[00:04] Caller: Hi, my system stopped blowing cold air...
-[PLACEHOLDER TRANSCRIPT — REPLACE WITH REAL TEXT]`}
-                </p>
-              </details>
-            </div>
-          </section>
+          {RECORDINGS[doc.slug] ? (
+            <section>
+              <SectionHeader
+                eyebrow="Listen"
+                title="Real call from this deployment"
+                description="Live recording from post-go-live traffic. Names and addresses redacted in the audio."
+                badgeVariant="purple"
+              />
+              <div className="mt-6">
+                <AudioPlayer
+                  src={RECORDINGS[doc.slug].src}
+                  label={RECORDINGS[doc.slug].label}
+                />
+              </div>
+            </section>
+          ) : null}
 
           <section className="prose-implenix">
             <MDX components={mdxComponents} />

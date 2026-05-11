@@ -1,27 +1,54 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
 
-const PLACEHOLDERS = [
+const TESTIMONIALS = [
   {
-    businessName: 'Northwind HVAC',
-    ownerName: 'Maria L.',
+    businessName: 'PA HVAC Experts',
+    ownerName: 'Alex',
     industry: 'HVAC',
     quote:
-      'We stopped losing after-hours emergency calls overnight. The Implenix agent books before our techs are awake. [PLACEHOLDER]',
+      'The best AI employee I have ever hired. It talks to every incoming call, nurtures my leads, books appointments, and sends follow-ups to me and the customer. Thank you Implenix.',
+    recordingHref: '/case-studies/placeholder-hvac',
   },
   {
-    businessName: 'Brightline Dental',
-    ownerName: 'Dr. Chen',
-    industry: 'Dental',
-    quote:
-      'Front desk went from drowning to caught up. Every call is logged and every booking lands on the right calendar. [PLACEHOLDER]',
-  },
-  {
-    businessName: 'Summit Realty Group',
-    ownerName: 'Jordan K.',
+    businessName: 'Columbus Property',
+    ownerName: 'Yessy',
     industry: 'Real Estate',
     quote:
-      'First-call response time is now under 60 seconds. We win listings that used to slip through. [PLACEHOLDER]',
+      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up — we just close. That is the operation now.',
+    recordingHref: '/case-studies/placeholder-real-estate',
+  },
+  {
+    businessName: 'Ohio Dental',
+    ownerName: 'Hyder',
+    industry: 'Dental',
+    quote:
+      'The team was spending 2–3 hours a day answering the phone and our in-house attention was slipping. Implenix handles the phone amazingly and the team is back focused on patients.',
+    recordingHref: '/case-studies/placeholder-dental',
+  },
+  {
+    businessName: 'GTR Improvements',
+    ownerName: 'Lexi',
+    industry: 'Home Improvements',
+    quote:
+      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath — the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
+    recordingHref: '/case-studies/gtr-improvements-lexi',
+  },
+  {
+    businessName: 'Parnell Motors',
+    ownerName: 'Parnell',
+    industry: 'Auto Dealer',
+    quote:
+      'Very good experience with Implenix. I appreciate the communication and how organized the whole deployment was.',
+    recordingHref: '/case-studies/parnell-motors',
+  },
+  {
+    businessName: 'Franklin Agency',
+    ownerName: 'Franklin',
+    industry: 'Marketing Agency',
+    quote:
+      'Our job is to grow our clients with more leads — but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
+    recordingHref: '/case-studies/franklin-agency',
   },
 ];
 
@@ -32,11 +59,10 @@ export function TestimonialsSection() {
         <SectionHeader
           eyebrow="Verified results"
           title="From real businesses"
-          description="Every quote here is paired with a real call recording. Click play, hear the agent."
+          description="Six clients, six different industries, all still deployed. Every quote links to the case study with real numbers."
         />
-        {/* REPLACE WITH REAL TESTIMONIALS + REAL RECORDING LINKS */}
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
-          {PLACEHOLDERS.map((t) => (
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {TESTIMONIALS.map((t) => (
             <TestimonialCard key={t.businessName} {...t} />
           ))}
         </div>

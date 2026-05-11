@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
 import { CostOfNothingSection } from '@/components/sections/CostOfNothingSection';
+import { LiveCallsSection } from '@/components/sections/LiveCallsSection';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { IndustriesGrid } from '@/components/sections/IndustriesGrid';
 import { IntegrationStrip } from '@/components/sections/IntegrationStrip';
@@ -39,6 +40,7 @@ export default function HomePage() {
       />
       <Hero />
       <CostOfNothingSection />
+      <LiveCallsSection />
       <HowItWorks />
       <ComparisonSection />
       <IndustriesGrid />
