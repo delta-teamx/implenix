@@ -1,15 +1,21 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { allBlogPosts } from 'contentlayer/generated';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { Badge } from '@/components/common/Badge';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { blogPostingSchema } from '@/lib/schema';
+import {
+  blogPostingSchema,
+  howToSchema,
+  speakableSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 type Params = { slug: string };
@@ -25,6 +31,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     title: doc.metaTitle,
     description: doc.metaDescription,
     path: doc.url,
+    ogImage: doc.heroImage,
   });
 }
 
@@ -44,6 +51,10 @@ export default function BlogPostPage({ params }: { params: Params }) {
     .slice(0, 2)
     .toUpperCase();
 
+  const howToSteps = doc.howToSteps as
+    | { name: string; text: string }[]
+    | undefined;
+
   return (
     <>
       <SchemaOrg
@@ -56,10 +67,25 @@ export default function BlogPostPage({ params }: { params: Params }) {
             author: doc.author,
             authorRole: doc.authorRole,
           }),
+          ...(howToSteps && howToSteps.length > 0
+            ? [
+                howToSchema({
+                  name: doc.title,
+                  description: doc.metaDescription,
+                  url: doc.url,
+                  steps: howToSteps,
+                  totalTime: doc.howToTotalTime ?? undefined,
+                }),
+              ]
+            : []),
+          speakableSchema([
+            'h1',
+            'article p:first-of-type',
+            '[data-speakable]',
+          ]),
         ]}
       />
 
-      {/* CONTENT VIA MDX FILES IN /content/blog/ — ASSIGN TO CONTENT TEAM */}
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16">
           <Breadcrumbs
@@ -80,11 +106,29 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <h1 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.08]">
             {doc.title}
           </h1>
-          <p className="mt-5 font-body text-white/75 text-lg leading-relaxed">
+          <p
+            className="mt-5 font-body text-white/75 text-lg leading-relaxed"
+            data-speakable
+          >
             {doc.description}
           </p>
         </div>
       </section>
+
+      {doc.heroImage ? (
+        <div className="max-w-4xl mx-auto px-6 pt-6">
+          <div className="relative w-full aspect-[16/9] border border-brand-purple/25 bg-black overflow-hidden">
+            <Image
+              src={doc.heroImage}
+              alt={doc.heroImageAlt ?? doc.title}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      ) : null}
 
       <article className="max-w-3xl mx-auto px-6 py-12">
         <header className="flex items-center gap-4 border-y border-brand-purple/20 py-5">
@@ -113,21 +157,28 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <MDX components={mdxComponents} />
         </div>
 
-        <aside className="mt-16 border border-brand-purple/30 bg-black p-6 md:p-8 grid sm:grid-cols-[1fr_auto] gap-5 items-center">
+        <aside className="mt-16 border border-brand-cyan/35 bg-black p-6 md:p-8 grid sm:grid-cols-[1fr_auto] gap-5 items-center">
           <div>
-            <Badge label="Want this in your business?" variant="cyan" />
+            <Badge label="Skip the form" variant="cyan" />
             <p className="font-heading text-2xl text-white mt-3 leading-snug">
-              Book a 15-minute Implenix demo.
+              Hear the agent take a real call — or pick a slot.
             </p>
           </div>
-          <Link
-            href="/contact"
-            data-cta-location="blog-inline-cta"
-            data-cta-type="primary"
-            className="inline-flex items-center gap-2 bg-brand-purple text-white font-medium px-5 py-3 rounded-sm hover:opacity-90 self-start"
-          >
-            Book a demo <ArrowRight size={16} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <PhoneCTA
+              ctaLocation={`blog-${doc.slug}-phone`}
+              variant="primary"
+              label="Call agent"
+            />
+            <Link
+              href="/contact"
+              data-cta-location={`blog-${doc.slug}-calendar`}
+              data-cta-type="calendar"
+              className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-5 py-3 rounded-sm hover:bg-brand-cyan/10"
+            >
+              Book slot <ArrowRight size={14} />
+            </Link>
+          </div>
         </aside>
 
         {related.length > 0 && (

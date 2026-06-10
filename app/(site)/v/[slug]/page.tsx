@@ -14,6 +14,7 @@ import {
   faqSchema,
   articleSchema,
   serviceSchema,
+  speakableSchema,
 } from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 import {
@@ -64,6 +65,7 @@ export default function ComparisonPage({ params }: { params: Params }) {
             serviceType: 'AI Receptionist',
             url,
           }),
+          speakableSchema(['h1', '[data-speakable]', '.faq-question', '.faq-answer']),
         ]}
       />
 

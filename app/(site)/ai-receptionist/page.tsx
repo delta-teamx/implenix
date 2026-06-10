@@ -152,7 +152,7 @@ export default function AIReceptionistPage() {
     <>
       <SchemaOrg
         schema={[
-          softwareApplicationSchema(),
+          softwareApplicationSchema({ ratingValue: 5, ratingCount: 6 }),
           faqSchema(FAQS),
           serviceSchema({
             name: 'AI Receptionist',

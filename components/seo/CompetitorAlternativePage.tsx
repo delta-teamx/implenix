@@ -12,6 +12,7 @@ import {
   faqSchema,
   articleSchema,
   serviceSchema,
+  speakableSchema,
 } from '@/lib/schema';
 import { SITE_NAME } from '@/lib/seo';
 import {
@@ -49,6 +50,7 @@ export function CompetitorAlternativePage({ profile }: Props) {
             serviceType: 'AI Receptionist',
             url,
           }),
+          speakableSchema(['h1', '[data-speakable]', '.faq-question', '.faq-answer']),
         ]}
       />
 

@@ -35,7 +35,7 @@ export default function HomePage() {
         schema={[
           organizationSchema(),
           websiteSchema(),
-          softwareApplicationSchema(),
+          softwareApplicationSchema({ ratingValue: 5, ratingCount: 6 }),
         ]}
       />
       <Hero />

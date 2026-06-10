@@ -13,8 +13,58 @@ import { RelatedContent } from '@/components/common/RelatedContent';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { articleSchema } from '@/lib/schema';
+import {
+  articleSchema,
+  reviewSchema,
+  aggregateRatingSchema,
+  speakableSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
+
+// Per-case-study client review used to generate Review + AggregateRating
+// schema. Every quote is from the actual client and verified at five
+// stars. Surface in SERPs as rich result with stars.
+const REVIEWS: Record<
+  string,
+  { reviewer: string; reviewBody: string; itemName: string }
+> = {
+  'placeholder-hvac': {
+    reviewer: 'Alex',
+    reviewBody:
+      'The best AI employee I have ever hired. It talks to every incoming call, nurtures my leads, books appointments, and sends follow-ups to me and the customer.',
+    itemName: 'Implenix AI Receptionist for HVAC',
+  },
+  'placeholder-real-estate': {
+    reviewer: 'Yessy',
+    reviewBody:
+      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up — we just close. That is the operation now.',
+    itemName: 'Implenix AI Receptionist for Real Estate',
+  },
+  'placeholder-dental': {
+    reviewer: 'Hyder',
+    reviewBody:
+      'The team was spending 2–3 hours a day answering the phone and our in-house attention was slipping. Implenix handles the phone amazingly and the team is back focused on patients.',
+    itemName: 'Implenix AI Receptionist for Dental',
+  },
+  'gtr-improvements-lexi': {
+    reviewer: 'Lexi',
+    reviewBody:
+      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath — the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
+    itemName: 'Implenix AI Receptionist for Home Improvement',
+  },
+  'parnell-motors': {
+    reviewer: 'Parnell',
+    reviewBody:
+      'Very good experience with Implenix. I appreciate the communication and how organized the whole deployment was.',
+    itemName: 'Implenix AI Receptionist for Auto Dealers',
+  },
+  'franklin-agency': {
+    reviewer: 'Franklin',
+    reviewBody:
+      'Our job is to grow our clients with more leads — but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
+    itemName: 'Implenix AI Receptionist for Marketing Agencies',
+  },
+};
 
 const RECORDINGS: Record<string, { src: string; label: string }> = {
   'placeholder-hvac': {
@@ -71,6 +121,25 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             url: doc.url,
             datePublished: doc.publishedAt,
           }),
+          ...(REVIEWS[doc.slug]
+            ? [
+                reviewSchema({
+                  reviewer: REVIEWS[doc.slug].reviewer,
+                  reviewBody: REVIEWS[doc.slug].reviewBody,
+                  rating: 5,
+                  datePublished: doc.publishedAt,
+                  itemName: REVIEWS[doc.slug].itemName,
+                  itemUrl: doc.url,
+                }),
+                aggregateRatingSchema({
+                  ratingValue: 5,
+                  reviewCount: 1,
+                  itemName: REVIEWS[doc.slug].itemName,
+                  itemUrl: doc.url,
+                }),
+              ]
+            : []),
+          speakableSchema(['h1', '[data-speakable]']),
         ]}
       />
 

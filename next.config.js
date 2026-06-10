@@ -33,7 +33,8 @@ const nextConfig = {
   images: {
     formats: ['image/webp'],
     remotePatterns: [
-      // Add CDN/image hosts here when assets are ready.
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'plus.unsplash.com' },
     ],
   },
   async redirects() {

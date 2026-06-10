@@ -94,6 +94,10 @@ export const BlogPost = defineDocumentType(() => ({
     authorRole: { type: 'string', required: true },
     metaTitle: { type: 'string', required: true },
     metaDescription: { type: 'string', required: true },
+    heroImage: { type: 'string', required: false },
+    heroImageAlt: { type: 'string', required: false },
+    howToSteps: { type: 'json', required: false },
+    howToTotalTime: { type: 'string', required: false },
   },
   computedFields: {
     slug: {

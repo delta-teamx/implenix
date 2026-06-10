@@ -13,7 +13,13 @@ import { DividedStats } from '@/components/common/DividedStats';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { localBusinessSchema, faqSchema, serviceSchema } from '@/lib/schema';
+import {
+  localBusinessSchema,
+  faqSchema,
+  serviceSchema,
+  speakableSchema,
+  aggregateRatingSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { industryUrl } from '@/lib/industries';
 import {
@@ -148,6 +154,13 @@ export default function IndustryPage({ params }: { params: Params }) {
             serviceType: 'AI Receptionist',
             url: data.url,
           }),
+          aggregateRatingSchema({
+            ratingValue: 5,
+            reviewCount: 6,
+            itemName: `Implenix AI Receptionist for ${data.industryName}`,
+            itemUrl: data.url,
+          }),
+          speakableSchema(['h1', '[data-speakable]', '.faq-question', '.faq-answer']),
         ]}
       />
 

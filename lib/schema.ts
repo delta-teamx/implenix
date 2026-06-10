@@ -233,3 +233,116 @@ export function jsonLdScript(schema: unknown | unknown[]) {
   const value = Array.isArray(schema) ? schema : [schema];
   return value.map((s) => JSON.stringify(s));
 }
+
+// Review schema for a single verified client testimonial. Used on
+// case-study pages alongside aggregateRatingSchema to surface star
+// ratings in SERPs.
+export function reviewSchema({
+  reviewer,
+  reviewBody,
+  rating = 5,
+  datePublished,
+  itemName,
+  itemUrl,
+}: {
+  reviewer: string;
+  reviewBody: string;
+  rating?: number;
+  datePublished: string;
+  itemName: string;
+  itemUrl: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    author: { '@type': 'Person', name: reviewer },
+    reviewBody,
+    datePublished,
+    itemReviewed: {
+      '@type': 'Service',
+      name: itemName,
+      url: `${SITE_URL}${itemUrl}`,
+      provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    },
+  };
+}
+
+// AggregateRating attached to a specific Service (one per case study)
+// or to the overall product (used on homepage / pillar).
+export function aggregateRatingSchema({
+  ratingValue,
+  reviewCount,
+  itemName,
+  itemUrl,
+}: {
+  ratingValue: number;
+  reviewCount: number;
+  itemName: string;
+  itemUrl: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: itemName,
+    url: `${SITE_URL}${itemUrl}`,
+    provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue,
+      reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+}
+
+// HowTo schema for playbook-format posts. Eligible for the rich
+// "how-to" SERP treatment with stepped breakdown.
+export function howToSchema({
+  name,
+  description,
+  url,
+  steps,
+  totalTime,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string; // ISO-8601 duration, e.g. "PT15M"
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    ...(totalTime ? { totalTime } : {}),
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+// Speakable schema marks specific selectors as voice-assistant
+// friendly. Attached to FAQ-heavy pages and pillar pages so Google
+// Assistant / Bixby / Alexa can read those sections aloud.
+export function speakableSchema(cssSelectors: string[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: cssSelectors,
+    },
+  };
+}
