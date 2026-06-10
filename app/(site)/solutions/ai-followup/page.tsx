@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { GhlForm } from '@/components/common/GhlForm';
+import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -267,7 +267,7 @@ export default function AIFollowupPage() {
             description="We will design a follow-up sequence against your funnel and run a live test on your number."
             badgeVariant="purple"
           />
-          <GhlForm formKey="demo" ctaLocation="solutions-ai-followup" height={620} />
+          <CalendlyEmbed ctaLocation="solutions-ai-followup" height={620} />
         </div>
         <div className="max-w-content mx-auto px-6 pb-16">
           <RelatedContent topic="AI Follow-up" type="industry" />

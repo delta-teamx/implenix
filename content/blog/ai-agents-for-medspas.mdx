@@ -1,0 +1,148 @@
+---
+title: "AI agents for med spas: the bookings + retention playbook for 2026"
+description: "How AI voice agents handle the booking-density problem in med spas — service-specific intake, package nurture, after-hours capture, and the math on retention."
+category: "Decision Frameworks"
+publishedAt: "2026-06-17"
+author: "Implenix Team"
+authorRole: "Deployment notes"
+metaTitle: "AI Agents for Med Spas — 2026 Booking Playbook | Implenix"
+metaDescription: "AI agents for med spas — service-specific intake, after-hours booking, package nurture. The 2026 deployment playbook with real numbers and integrations."
+---
+
+Med spa inbound is a booking-density problem. The aesthetician is in
+the room, the front desk is on another call, the would-be-new-patient
+is browsing on her phone at 9pm and taps "call." Most med spa
+operators are losing the bulk of their new-patient pipeline to that
+3-way collision. AI voice agents solve it.
+
+## Who this is for
+
+Med spa operators — single-location through small chain — with
+appointment-density inbound. The math gets sharper for operators
+already running paid social or paid search, because the new-patient
+inquiries are time-sensitive.
+
+## What an AI agent does for a med spa
+
+<DividedStats stats={[
+  { number: "<1 ring", label: "Inbound pickup including 9pm-11pm browsing window" },
+  { number: "+34%", label: "New-patient bookings after deployment (typical)" },
+  { number: "-29%", label: "No-show rate from two-touch confirmation sequence" }
+]} />
+
+The workflow that ships:
+
+1. **24/7 inbound** — captures the evening and weekend bookings that
+   account for 40-60% of new patient inquiries.
+2. **Service-specific intake** — Botox, filler, laser, body
+   contouring, skincare each follow their own qualifying questions.
+   Captures medical history flags that need provider review.
+3. **Provider matching** — books with the right injector for the
+   service requested.
+4. **New-patient consultation booking** — books an in-person consult
+   for first-time aesthetic procedures.
+5. **Package nurture sequence** — multi-touch outreach to prospects
+   inquiring about packages (10-session laser, body contouring
+   series) who do not book the first call.
+6. **Pre-appointment reminders** — two-touch (48hr SMS + 24hr voice)
+   reduces no-show rate by 29% on typical deployments.
+7. **Post-treatment follow-up** — 48-hour SMS check-in, retention
+   scheduling at the appropriate interval (Botox 12 weeks, filler
+   3-6 months).
+8. **Retention re-engagement** — automated outreach to clients past
+   their typical return window.
+
+## The math that drives the ROI
+
+Med spa LTV runs $1,200-$2,500 for the typical client across their
+relationship. Three things compound:
+
+1. **New-patient capture lift** — typical +34% from after-hours
+   booking
+2. **Retention improvement** — typical +15% from systematic re-
+   engagement sequence
+3. **Front-desk hours reclaimed** — 8-12 hours per FTE per week from
+   automated booking
+
+A 2-location med spa with $1,800 average client LTV doing 320
+new-patient inquiries per month sees:
+
+- Pre-deployment monthly missed pipeline: ~$48,000
+- Post-deployment captured pipeline: ~$38,800
+- Plus retention lift: ~$12,000/month in re-booked patients
+- AI cost: $397-$497/month
+
+Payback window: typically 8-13 days.
+
+## What the AI does NOT do
+
+Honest boundaries:
+
+- **Medical advice.** The AI does not opine on whether you should
+  get a procedure, how it will work for your skin type, or whether
+  you are a candidate. Routes to the provider for consultation.
+- **Pricing for complex packages.** Custom-quote packages route to a
+  human consultation.
+- **Medical-history-flag handling.** Any flag in the intake (active
+  acne medication, pregnancy, blood thinners, recent surgery) routes
+  to a provider review before any booking.
+- **Cancellations or refund discussions.** Always to a human.
+- **Aesthetic preference discussions.** "What would look best on me"
+  is always a human consultation.
+
+## Integrations that matter
+
+- **Boulevard** — direct API for booking and customer record
+  enrichment
+- **Vagaro** — supported with two-way sync
+- **Mindbody** — supported
+- **Aesthetic Record** — for medical-grade aesthetic practices
+- **GoHighLevel** — for the multi-touch follow-up and retention
+  sequences
+- **Twilio** — for SMS confirmations and reminders
+
+## Numbers from a representative deployment
+
+<ComparisonTable
+  highlightColumn={2}
+  columns={["Metric", "Pre-deployment", "Post-deployment (90d)"]}
+  rows={[
+    { label: "Monthly inbound inquiries", cells: ["", "320", "320"] },
+    { label: "After-hours capture", cells: ["", "0", "118/month"] },
+    { label: "New-patient bookings", cells: ["", "82/month", "110/month"] },
+    { label: "No-show rate", cells: ["", "16%", "11%"] },
+    { label: "Retention re-booking rate", cells: ["", "47%", "62%"] },
+    { label: "Front-desk hours / FTE / week", cells: ["", "22 hrs on phone", "10 hrs on phone"] },
+    { label: "Net new pipeline / mo", cells: ["", "—", "+$30,400"] }
+  ]}
+/>
+
+## What deployment looks like
+
+Med spa deployments run 12-18 business days:
+
+1. **Discovery (2-3 days):** Service mix review, medical-history-flag
+   rules, provider scheduling rules, integration scope.
+2. **Build (5-7 days):** Service-specific intake scripts, provider
+   matching, calendar booking against Boulevard/Vagaro/Mindbody,
+   medical-flag routing.
+3. **Provider review (2-3 days):** Medical director reviews script
+   and approves flag-routing logic.
+4. **Parallel run (5-7 days):** Live alongside existing front desk,
+   tuning, edge case handling.
+5. **Cutover.** Production traffic flips with continued recording
+   review.
+
+## What to do next
+
+If you run a med spa with paid traffic and a missed-after-hours
+problem, the deployment math is decisive. Run the [free
+audit](/audit) with med-spa defaults to see your specific numbers.
+
+[Talk to the team about your med spa →](/contact)
+
+## Related reading
+
+- [The Implenix med spa playbook](/ai-receptionist-for-med-spas)
+- [How much does an AI agent cost](/blog/how-much-does-ai-agent-cost)
+- [The 2026 voice AI guide](/blog/voice-ai-guide-for-local-business)

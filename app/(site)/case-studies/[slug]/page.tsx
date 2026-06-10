@@ -8,7 +8,7 @@ import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { DividedStats } from '@/components/common/DividedStats';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { GhlForm } from '@/components/common/GhlForm';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { mdxComponents } from '@/components/docs/MdxComponents';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
@@ -199,11 +199,21 @@ export default function CaseStudyPage({ params }: { params: Params }) {
           <p className="text-sm text-white/70 font-body leading-relaxed">
             We will scope a deployment for your team in 15 minutes.
           </p>
-          <GhlForm
-            formKey="caseStudy"
-            ctaLocation={`case-study-${doc.slug}`}
-            height={520}
-          />
+          <div className="flex flex-col gap-3">
+            <PhoneCTA
+              ctaLocation={`case-study-${doc.slug}-phone`}
+              variant="primary"
+              label="Call our agent now"
+            />
+            <Link
+              href="/contact"
+              data-cta-location={`case-study-${doc.slug}-calendar`}
+              data-cta-type="calendar"
+              className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-5 py-3 rounded-sm hover:bg-brand-cyan/10"
+            >
+              Book on calendar <ArrowRight size={14} />
+            </Link>
+          </div>
           <Link
             href="/case-studies"
             data-cta-location="case-study-sidebar"

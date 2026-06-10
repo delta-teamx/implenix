@@ -14,19 +14,28 @@ export const metadata: Metadata = buildMetadata({
   path: '/about',
 });
 
-const PLACEHOLDER_TEAM = Array.from({ length: 10 }, (_, i) => ({
-  initials: `T${i + 1}`,
-  name: 'PLACEHOLDER NAME',
-  role:
-    i % 4 === 0
-      ? 'Voice AI engineer'
-      : i % 4 === 1
-        ? 'Implementation lead'
-        : i % 4 === 2
-          ? 'Customer success'
-          : 'Founding team',
-  bio: 'PLACEHOLDER BIO — replace with one-line bio.',
-}));
+const TEAM_DISCIPLINES = [
+  {
+    title: 'Voice AI engineering',
+    description:
+      'Engineers tuning dialogue models, latency budgets, turn-taking, and barge-in handling on every deployment.',
+  },
+  {
+    title: 'Implementation',
+    description:
+      'Specialists who scope, build, and ship the agent — CRM, calendar, phone routing, integrations, transfer rules.',
+  },
+  {
+    title: 'Customer success',
+    description:
+      'Owners of post-launch tuning — call recordings reviewed, scripts refined, edge cases handled, monthly reports delivered.',
+  },
+  {
+    title: 'Operations',
+    description:
+      'Infrastructure, monitoring, compliance, on-call rotation — the team that keeps every deployment running 24/7.',
+  },
+];
 
 const TIMELINE = [
   {
@@ -177,28 +186,24 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="The team"
-            title="Ten people. One system."
-            description="The full Implenix team. Each member ships customer-facing work."
+            title="One small team. Four disciplines."
+            description="We do not list individual team members publicly — every Implenix deployment is built and operated by the same collective team. Here is what they ship."
             badgeVariant="purple"
           />
-          {/* REPLACE WITH REAL TEAM PHOTOS AND BIOS */}
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {PLACEHOLDER_TEAM.map((member, idx) => (
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {TEAM_DISCIPLINES.map((d) => (
               <article
-                key={idx}
-                className="bg-black border border-brand-purple/20 hover:border-brand-purple transition-colors duration-200 p-5 flex flex-col gap-3"
+                key={d.title}
+                className="bg-black border border-brand-purple/20 hover:border-brand-purple transition-colors p-6 flex flex-col gap-3"
               >
-                <div className="w-12 h-12 bg-brand-purple text-white flex items-center justify-center font-heading text-lg">
-                  {member.initials}
-                </div>
-                <div>
-                  <p className="font-heading text-white">{member.name}</p>
-                  <p className="font-mono text-[10px] text-brand-cyan uppercase tracking-widest mt-1">
-                    {member.role}
-                  </p>
-                </div>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ Discipline
+                </span>
+                <p className="font-heading text-white text-lg leading-snug">
+                  {d.title}
+                </p>
                 <p className="font-body text-sm text-white/65 leading-relaxed">
-                  {member.bio}
+                  {d.description}
                 </p>
               </article>
             ))}

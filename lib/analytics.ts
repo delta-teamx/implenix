@@ -28,6 +28,11 @@ export const GA4_EVENTS = {
   pricingViewed: 'pricing_viewed', // /pricing page view
   industryViewed: 'industry_page_viewed', // /ai-receptionist-for-* view
   comparisonViewed: 'comparison_page_viewed', // vs / alternative pages
+  // Calendly + phone CTAs (no-form lead capture)
+  agentPhoneClicked: 'agent_phone_clicked', // PhoneCTA tap
+  auditRun: 'audit_run', // /audit input step completed
+  auditBookClicked: 'audit_book_clicked', // /audit calendar CTA tap
+  leadPopupBookClicked: 'lead_popup_book_clicked', // popup calendar tap
 } as const;
 
 export type GA4EventName = (typeof GA4_EVENTS)[keyof typeof GA4_EVENTS];

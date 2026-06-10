@@ -5,14 +5,20 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Lock, ShieldCheck, AlertTriangle } from 'lucide-react';
+import {
+  ArrowRight,
+  CalendarCheck,
+  ShieldCheck,
+  AlertTriangle,
+} from 'lucide-react';
 import {
   INDUSTRY_PROFILES,
   formatUsd,
   runAudit,
   type IndustryKey,
 } from '@/lib/audit';
-import { trackLead, submitWebhook, GA4_EVENTS } from '@/lib/analytics';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
+import { trackConversion, GA4_EVENTS } from '@/lib/analytics';
 
 const inputSchema = z.object({
   phone: z
@@ -27,16 +33,10 @@ const inputSchema = z.object({
 });
 type InputValues = z.infer<typeof inputSchema>;
 
-const gateSchema = z.object({
-  name: z.string().min(2, 'Name is required'),
-  email: z.string().email('Enter a valid email'),
-});
-type GateValues = z.infer<typeof gateSchema>;
-
 const inputClass =
   'w-full bg-black border border-brand-purple/30 focus:border-brand-purple text-white px-3 py-2.5 rounded-sm font-body text-sm placeholder:text-white/40';
 
-type Stage = 'input' | 'preview' | 'unlocked';
+type Stage = 'input' | 'result';
 
 export function AuditTool() {
   const [stage, setStage] = useState<Stage>('input');
@@ -57,7 +57,11 @@ export function AuditTool() {
       industry: values.industry as IndustryKey,
       averageClientValue: Number(values.averageClientValue),
     });
-    setStage('preview');
+    setStage('result');
+    trackConversion(GA4_EVENTS.auditRun, {
+      industry: values.industry,
+      averageClientValue: Number(values.averageClientValue),
+    });
   };
 
   const result = useMemo(() => {
@@ -199,122 +203,59 @@ export function AuditTool() {
               />
             </div>
 
-            <GateOrUnlock
-              stage={stage}
-              setStage={setStage}
-              annualLost={result.annualLostRevenue}
-              annualRecoverable={result.annualRecoverableRevenue}
-              monthlyRecoverable={result.monthlyRecoverableRevenue}
-              snapshot={snapshot!}
-            />
+            <div className="border border-brand-cyan/30 bg-brand-dark p-5 flex flex-col gap-3">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
+                ▸ Full breakdown
+              </span>
+              <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm font-body">
+                <span className="text-white/65">Annual lost</span>
+                <span className="text-white font-mono text-right">
+                  {formatUsd(result.annualLostRevenue)}
+                </span>
+                <span className="text-white/65">Recoverable / mo</span>
+                <span className="text-brand-cyan font-mono text-right">
+                  {formatUsd(result.monthlyRecoverableRevenue)}
+                </span>
+                <span className="text-white/65">Recoverable / yr</span>
+                <span className="text-brand-cyan font-mono text-right">
+                  {formatUsd(result.annualRecoverableRevenue)}
+                </span>
+              </div>
+            </div>
+
+            <div className="border border-brand-purple/30 bg-black p-5 flex flex-col gap-3">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
+                ▸ Step 2 · Save these numbers — get on a call
+              </span>
+              <p className="font-body text-sm text-white/80 leading-relaxed">
+                Call our agent now to hear the playbook live, or book a
+                15-minute slot with the team — no email, no form.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 mt-1">
+                <PhoneCTA
+                  ctaLocation="audit-result-phone"
+                  variant="primary"
+                  label="Call our agent now"
+                  className="flex-1"
+                />
+                <a
+                  href="/contact"
+                  data-cta-location="audit-result-calendar"
+                  data-cta-type="calendar"
+                  onClick={() =>
+                    trackConversion(GA4_EVENTS.auditBookClicked, {
+                      industry: snapshot?.industry,
+                    })
+                  }
+                  className="flex-1 inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-5 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  <CalendarCheck size={16} /> Book on calendar
+                </a>
+              </div>
+            </div>
           </motion.aside>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-function GateOrUnlock({
-  stage,
-  setStage,
-  annualLost,
-  annualRecoverable,
-  monthlyRecoverable,
-  snapshot,
-}: {
-  stage: Stage;
-  setStage: (s: Stage) => void;
-  annualLost: number;
-  annualRecoverable: number;
-  monthlyRecoverable: number;
-  snapshot: { phone: string; industry: IndustryKey; averageClientValue: number };
-}) {
-  const form = useForm<GateValues>({ resolver: zodResolver(gateSchema) });
-  const onSubmit = async (data: GateValues) => {
-    await submitWebhook(
-      { ...data, ...snapshot, magnet: 'missed-call-audit' },
-      'audit',
-    );
-    trackLead('audit', GA4_EVENTS.leadAudit, {
-      industry: snapshot.industry,
-      averageClientValue: snapshot.averageClientValue,
-    });
-    setStage('unlocked');
-  };
-
-  if (stage === 'unlocked') {
-    return (
-      <div className="border border-brand-cyan/30 bg-brand-dark p-5 flex flex-col gap-3">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
-          ▸ Full breakdown
-        </span>
-        <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm font-body">
-          <span className="text-white/65">Annual lost</span>
-          <span className="text-white font-mono text-right">{formatUsd(annualLost)}</span>
-          <span className="text-white/65">Recoverable / mo</span>
-          <span className="text-brand-cyan font-mono text-right">
-            {formatUsd(monthlyRecoverable)}
-          </span>
-          <span className="text-white/65">Recoverable / yr</span>
-          <span className="text-brand-cyan font-mono text-right">
-            {formatUsd(annualRecoverable)}
-          </span>
-        </div>
-        <a
-          href="/contact"
-          data-cta-location="audit-unlocked"
-          data-cta-type="primary"
-          className="mt-2 inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-5 py-3 rounded-sm hover:opacity-90"
-        >
-          Book my deployment <ArrowRight size={14} />
-        </a>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative">
-      <div className="border border-brand-purple/30 bg-brand-dark p-5 select-none pointer-events-none opacity-50">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-white/45">
-          ▸ Full breakdown
-        </span>
-        <p className="mt-2 text-sm text-white/70">
-          Annual lost · monthly recoverable · annual recoverable.
-        </p>
-      </div>
-      <div className="absolute inset-0 bg-black/85 flex flex-col items-center justify-center gap-3 p-5 border border-brand-purple/40">
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
-          <Lock size={11} /> Step 2 · Get the full report
-        </span>
-        <form
-          noValidate
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 gap-2"
-        >
-          <input
-            type="text"
-            placeholder="First name"
-            autoComplete="given-name"
-            className={inputClass}
-            {...form.register('name')}
-          />
-          <input
-            type="email"
-            placeholder="Work email"
-            autoComplete="email"
-            className={inputClass}
-            {...form.register('email')}
-          />
-          <button
-            type="submit"
-            data-cta-location="audit-gate"
-            data-cta-type="gate"
-            className="sm:col-span-2 bg-brand-purple text-white font-medium px-5 py-2.5 rounded-sm hover:opacity-90"
-          >
-            Send me the full report
-          </button>
-        </form>
-      </div>
     </div>
   );
 }

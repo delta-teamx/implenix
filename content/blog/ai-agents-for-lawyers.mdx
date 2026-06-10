@@ -1,0 +1,194 @@
+---
+title: "AI agents for lawyers: intake, qualification, and booking in 2026"
+description: "What AI voice agents do for law firms in 2026 — intake, conflict checks, jurisdiction routing, consultation booking — and where they should never be deployed."
+category: "Decision Frameworks"
+publishedAt: "2026-06-10"
+author: "Implenix Team"
+authorRole: "Deployment notes"
+metaTitle: "AI Agents for Lawyers — 2026 Intake Guide | Implenix"
+metaDescription: "AI agents for law firms in 2026 — what they do for intake, qualification, conflict checks, and booking. Honest scope, real numbers, ethical boundaries."
+---
+
+Law firms have a specific operational problem: the partners who close
+the most business are the same people who cannot answer the phone.
+Court, depositions, client meetings — the high-billing-rate work is
+incompatible with first-call response. AI voice agents are a clean
+fit for the layer between the inbound call and the partner.
+
+This is the operator-level guide for solo practitioners through
+mid-sized firms.
+
+## Who this is for
+
+Law firms — solo through ~25 attorneys — running an inbound intake
+problem. If you are 50+ attorneys with a dedicated intake department,
+the math still works but the scoping is different.
+
+## What an AI agent does for a law firm
+
+The intake-side workflow that AI handles end-to-end in 2026:
+
+<DividedStats stats={[
+  { number: "<60s", label: "First-touch response on inbound consultation requests" },
+  { number: "100%", label: "Of intake captured to the case management system live" },
+  { number: "+27%", label: "Booked consultations after deployment (typical)" }
+]} />
+
+1. **24/7 inbound answering** — every call picked up regardless of
+   attorney availability.
+2. **Practice-area triage** — "what kind of legal matter are you
+   calling about?" routes to the correct intake script (PI, family,
+   estate, criminal, business).
+3. **Conflict check intake** — caller name, opposing party, basic
+   matter summary. Captured to your conflict-check system before any
+   substantive conversation.
+4. **Jurisdiction qualification** — confirms the matter is in your
+   practice jurisdiction before booking.
+5. **Consultation booking** — books the attorney's calendar honoring
+   block schedules, court calendar, and consultation-type duration
+   rules (free 15-min vs paid 30-min).
+6. **Intake documentation** — captures matter description, timeline,
+   contact info, source of referral. Writes to your CMS (Clio,
+   MyCase, PracticePanther) during the call.
+7. **Follow-up sequence** — multi-touch nurture on prospective
+   clients who do not book the first call.
+
+## What the AI does NOT do
+
+This list matters more for law firms than for any other vertical.
+
+- **Provide legal advice.** Every Implenix legal deployment includes
+  an explicit "I cannot provide legal advice" guardrail in the
+  script. The agent collects intake and books consultations — it
+  does not opine on the matter.
+- **Discuss confidentiality.** The agent confirms the prospective
+  attorney-client privilege framework and routes substantive
+  conversations to the attorney.
+- **Run discovery or document review.** AI document review is a
+  separate category (Harvey, Casetext, etc.) — not what we do.
+- **Handle calls from existing clients about active matters.**
+  Existing clients with active case numbers route directly to the
+  attorney or paralegal handling the matter.
+- **Engage in fee discussions.** Pricing conversations route to a
+  human.
+
+## The ethical framework that makes it work
+
+Every legal AI deployment we ship operates within four explicit
+boundaries:
+
+1. **No legal advice.** Hard-coded in the script. The agent declines
+   any "what should I do" question and routes to an attorney.
+2. **No attorney-client privilege creation.** The agent explicitly
+   states it cannot establish privilege; substantive discussion is
+   tagged for attorney follow-up.
+3. **No confidentiality promises.** The agent collects intake under
+   the firm's standard data-handling policy, which is disclosed at
+   start of call.
+4. **No engagement decisions.** The agent does not accept or decline
+   representation. Conflict check and qualification happen; the
+   attorney decides whether to take the matter.
+
+These guardrails are not optional — they are how legal AI stays on
+the right side of state bar ethics rules.
+
+## Use cases by practice area
+
+### Personal injury
+
+Highest-volume legal use case. Inbound qualification (mechanism of
+injury, timing, fault, insurance status, medical treatment received,
+prior PI matters) captured to CMS, qualified leads booked into the
+intake attorney's calendar same day. Lifts qualified-consult volume
+by 30-50% on typical deployments.
+
+### Family law
+
+Sensitive but high-volume. Intake (case type, jurisdiction, urgency,
+custody/finance/divorce-only) captured. Crisis-flag rules route
+genuinely emotional calls to human intake immediately. Booking
+conversations qualified for the consultation-type rate (initial,
+emergency, return).
+
+### Estate planning
+
+Lower volume but high LTV. Intake (existing estate documents, family
+structure, business interests, special-needs considerations) captured
+to CMS. Educational follow-up sequence runs for non-booking
+prospects, often re-engages them 6-12 months later when the
+"someday" finally happens.
+
+### Business / corporate
+
+Often referral-driven. AI confirms referral source, captures matter
+type (entity formation, contracts, M&A, disputes), books partner
+consultation directly. Triages routine vs strategic matters.
+
+### Criminal defense
+
+24/7 coverage is the entire value proposition. After-hours arrest
+calls are time-sensitive — AI captures the case posture, court
+appearance dates, and contact info, then routes to the on-call
+attorney via SIP transfer.
+
+## Numbers from a typical solo / small firm deployment
+
+<ComparisonTable
+  highlightColumn={2}
+  columns={["Metric", "Pre-deployment", "Post-deployment (90d)"]}
+  rows={[
+    { label: "Median first-touch response", cells: ["", "3-8 hours", "<60 seconds"] },
+    { label: "Calls answered live", cells: ["", "~45%", "~98%"] },
+    { label: "Inbound-to-consultation rate", cells: ["", "18%", "27%"] },
+    { label: "After-hours capture", cells: ["", "~0%", "100% (with on-call escalation)"] },
+    { label: "Attorney time on intake", cells: ["", "~75 min/day", "~10 min/day"] },
+    { label: "New matters signed (90-day rolling)", cells: ["", "—", "+22%"] }
+  ]}
+/>
+
+For solo practitioners, the 75-minute-per-day time recovery is
+typically as valuable as the matter-volume lift — that hour goes back
+into billable work.
+
+## Integrations that matter
+
+- **Clio** — direct API for intake write-back, contact creation,
+  matter setup
+- **MyCase** — full integration including custom intake forms
+- **PracticePanther** — supported with two-way sync
+- **Lawmatics** — for firms running marketing-automation alongside CMS
+- **Google Calendar / Outlook** — for attorney calendar booking
+- **Calendly** — for consultation scheduling layer
+
+## What deployment looks like
+
+Legal deployments take 14-21 business days (longer than other
+verticals because the script tuning around the ethical guardrails
+requires careful review):
+
+1. **Discovery (2-3 days):** Practice-area mix review, ethical
+   guardrails alignment, conflict-check process, CMS integration
+   scope.
+2. **Build (5-8 days):** Practice-area-specific intake scripts,
+   ethical guardrail testing, integration setup, calendar rules.
+3. **Attorney review (3-5 days):** Senior attorney reviews the full
+   script and approves the guardrails before live deployment.
+4. **Parallel run (5-7 days):** Live alongside existing intake,
+   recordings reviewed, edge cases handled.
+5. **Cutover.** Production traffic flips with continued recording
+   review for the first two weeks.
+
+## What to do next
+
+If you are running a solo practice or small firm and intake is
+eating partner time, the deployment math is decisive. Run the
+[missed-call audit](/audit) — legal-specific defaults — to see your
+current loss.
+
+[Talk to the team about your legal practice →](/contact)
+
+## Related reading
+
+- [The Implenix legal playbook](/ai-receptionist-for-law-firms)
+- [AI receptionist ROI: real numbers](/blog/ai-receptionist-roi-real-numbers)
+- [Best AI voice agent for small business](/blog/best-ai-voice-agent-small-business)

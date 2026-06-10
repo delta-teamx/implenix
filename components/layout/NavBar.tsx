@@ -39,6 +39,7 @@ import {
   PhoneForwarded,
 } from 'lucide-react';
 import { LogoLockup } from '@/components/common/LogoLockup';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 import { COMPARISON_PROFILES } from '@/lib/seo/comparisons';
 import { COMPETITOR_PROFILES } from '@/lib/seo/competitors';
@@ -194,21 +195,14 @@ export function NavBar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          <PhoneCTA ctaLocation="nav" variant="nav" />
           <Link
             href="/contact"
-            data-cta-location="nav"
-            data-cta-type="secondary"
-            className="text-[13px] text-white/85 hover:text-brand-cyan font-body"
-          >
-            Sign in
-          </Link>
-          <Link
-            href="/audit"
-            data-cta-location="nav"
+            data-cta-location="nav-calendar"
             data-cta-type="primary"
             className="inline-flex items-center gap-1 bg-brand-purple text-white font-medium text-[13px] px-4 py-2 rounded-sm hover:opacity-90"
           >
-            Get free audit <ArrowRight size={14} />
+            Book a call <ArrowRight size={14} />
           </Link>
         </div>
 

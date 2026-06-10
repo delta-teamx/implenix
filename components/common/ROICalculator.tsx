@@ -1,14 +1,17 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { LeadForm } from './LeadForm';
-import { Lock } from 'lucide-react';
+import Link from 'next/link';
+import { Lock, ArrowRight, CalendarCheck } from 'lucide-react';
+import { PhoneCTA } from './PhoneCTA';
 
 export function ROICalculator() {
   const [callVolume, setCallVolume] = useState(400);
   const [answerRate, setAnswerRate] = useState(45);
   const [jobValue, setJobValue] = useState(420);
-  const [unlocked, setUnlocked] = useState(false);
+  // Gate stays in place — only path to the full breakdown is the
+  // phone CTA or the calendar booking below.
+  const unlocked = false;
 
   const missedPerMonth = useMemo(
     () => Math.max(0, Math.round(callVolume * (1 - answerRate / 100))),
@@ -86,18 +89,29 @@ export function ROICalculator() {
               <div className="flex items-center gap-2 text-brand-cyan">
                 <Lock size={16} />
                 <span className="text-xs uppercase tracking-widest">
-                  Locked
+                  Get on a call
                 </span>
               </div>
-              <p className="text-white text-center font-body text-sm">
-                Get the full breakdown delivered to your inbox.
+              <p className="text-white text-center font-body text-sm max-w-sm">
+                Hear the AI agent walk you through your specific numbers —
+                or book a 15-minute slot on the calendar. No form.
               </p>
-              <div className="w-full">
-                <LeadForm
-                  variant="gate"
-                  ctaLocation="roi-calculator"
-                  onSuccess={() => setUnlocked(true)}
+              <div className="w-full flex flex-col sm:flex-row gap-2 max-w-sm">
+                <PhoneCTA
+                  ctaLocation="roi-calculator-phone"
+                  variant="primary"
+                  label="Call our agent"
+                  className="flex-1"
                 />
+                <Link
+                  href="/contact"
+                  data-cta-location="roi-calculator-calendar"
+                  data-cta-type="calendar"
+                  className="flex-1 inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-5 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  <CalendarCheck size={14} /> Book slot
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
           )}

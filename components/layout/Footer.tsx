@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
-import { LeadForm } from '@/components/common/LeadForm';
 import { LogoLockup } from '@/components/common/LogoLockup';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
 
 const COLUMNS = [
   {
@@ -101,15 +101,19 @@ export function Footer() {
             <p className="text-white/60 text-sm font-body max-w-xs">
               We Automate the Call. You Close the Deal.
             </p>
-            <div className="border border-brand-purple/20 bg-brand-dark p-4">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan mb-2">
-                ▸ Field notes by email
+            <div className="border border-brand-cyan/30 bg-brand-dark p-4 flex flex-col gap-3">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Skip the form — call the agent
               </p>
-              <p className="font-body text-xs text-white/65 mb-3 leading-relaxed">
-                Operator playbooks, deployment notes, and tuning tips. One
-                email per week. No spam.
+              <p className="font-body text-xs text-white/65 leading-relaxed">
+                Hear the same AI agent that runs on customer phone lines.
+                Live conversation, real qualification, in 60 seconds.
               </p>
-              <LeadForm variant="newsletter" ctaLocation="footer-newsletter" />
+              <PhoneCTA
+                ctaLocation="footer-phone"
+                variant="primary"
+                label="Call our agent"
+              />
             </div>
             <p className="text-xs text-white/45 font-mono uppercase tracking-widest">
               ▸ implenix.net

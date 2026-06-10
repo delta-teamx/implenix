@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { allIndustries } from 'contentlayer/generated';
 import { CaseStudyCard } from '@/components/common/CaseStudyCard';
-import { GhlForm } from '@/components/common/GhlForm';
+import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -329,10 +329,10 @@ export default function IndustryPage({ params }: { params: Params }) {
             description="We will set up a live test against your business and walk you through the agent end to end."
             badgeVariant="purple"
           />
-          <GhlForm
-            formKey="industry"
+          <CalendlyEmbed
             ctaLocation={`industry-${params.slug}`}
             height={620}
+            title={`Book a 15-minute call · ${data.industryName}`}
           />
         </div>
         {MDX ? (

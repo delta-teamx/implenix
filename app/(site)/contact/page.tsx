@@ -1,44 +1,27 @@
 import type { Metadata } from 'next';
-import { Mail, MessageSquare, Clock, ShieldCheck } from 'lucide-react';
+import { Phone, CalendarCheck, Clock, MessageSquare } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
-import { GhlForm } from '@/components/common/GhlForm';
+import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { buildMetadata } from '@/lib/seo';
+import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Talk to Implenix — Book a Demo or Get a Quote',
+  title: 'Book Implenix — Call the AI Agent or Pick a Slot',
   description:
-    'Tell us about your business. The Implenix team responds within one business day. Book a live demo or scope a deployment.',
+    'Call our live AI agent now to hear it run a qualification call, or book a 15-minute slot with the team on the calendar. No form, no email.',
   path: '/contact',
 });
 
 const SAMPLE_LOG = [
-  { ts: '00:00', speaker: 'system' as const, text: 'Implenix audit · contact form submitted' },
-  { ts: '00:03', speaker: 'agent' as const, text: 'Hi — calling back about your inquiry. Got 90 seconds?' },
-  { ts: '00:07', speaker: 'caller' as const, text: 'Sure. We miss about 40% of inbound calls.' },
-  { ts: '00:11', speaker: 'agent' as const, text: 'Walking you through what a deployment looks like for HVAC...' },
-  { ts: '00:18', speaker: 'system' as const, text: 'Demo booked · calendar invite sent' },
-];
-
-const SUPPORT_BLOCKS = [
-  {
-    Icon: MessageSquare,
-    title: 'Sales',
-    body: 'New deployments, demos, scoping calls, and pricing.',
-    detail: 'sales@implenix.net',
-  },
-  {
-    Icon: ShieldCheck,
-    title: 'Support',
-    body: 'Existing customers — agent tuning, integrations, escalations.',
-    detail: 'support@implenix.net',
-  },
-  {
-    Icon: Mail,
-    title: 'Press / Partners',
-    body: 'Media, partner integrations, and analyst inquiries.',
-    detail: 'hello@implenix.net',
-  },
+  { ts: '00:00', speaker: 'system' as const, text: 'Inbound to Implenix · agent picks up in 0 rings' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Thanks for calling Implenix, this is Maya. What kind of business are you running?' },
+  { ts: '00:06', speaker: 'caller' as const, text: 'HVAC, 5 trucks, missing too many after-hours calls.' },
+  { ts: '00:10', speaker: 'agent' as const, text: 'Got it. Three quick questions and I can scope a deployment. Roughly how many inbound calls a month?' },
+  { ts: '00:16', speaker: 'caller' as const, text: 'About 400.' },
+  { ts: '00:20', speaker: 'agent' as const, text: 'Perfect — that profile fits our HVAC playbook. I can book you a 15-minute call with the team Tuesday at 10am or Wednesday at 2pm. Which works?' },
+  { ts: '00:26', speaker: 'system' as const, text: '15-min call booked · calendar invite sent · no form filled' },
 ];
 
 export default function ContactPage() {
@@ -48,68 +31,110 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 flex flex-col gap-6">
-              <Badge label="Talk to Implenix" variant="cyan" />
+              <Badge label="Skip the form" variant="cyan" />
               <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.04]">
-                Tell us about your business.{' '}
-                <span className="text-brand-purple">We will call you back.</span>
+                Two ways to start.{' '}
+                <span className="text-brand-purple">No form, no email.</span>
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
-                Submit the form. We respond within one business day with a
-                quote, a deployment timeline, and a live demo against your
-                current inbound flow.
+                Call our AI agent now to hear it run a real qualification
+                conversation — same agent that lives on customer phone
+                lines — or book a 15-minute call with the team on the
+                calendar below. Either gets you on the table in under a
+                minute.
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <PhoneCTA ctaLocation="contact-hero" variant="primary" />
+                <a
+                  href="#book"
+                  data-cta-location="contact-hero-scroll"
+                  data-cta-type="calendar"
+                  className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
+                >
+                  <CalendarCheck size={16} /> Pick a calendar slot
+                </a>
+              </div>
               <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-mono text-brand-cyan pt-2">
                 <Clock size={14} />
-                <span>Average response: 4 business hours</span>
+                <span>
+                  Agent answers in &lt;1 ring · Calendar slots open 14 days out
+                </span>
               </div>
             </div>
             <div className="lg:col-span-5">
               <CodeWindow
-                title="implenix-callback.log"
+                title="implenix-inbound.log"
                 lines={SAMPLE_LOG}
-                caption="Sample callback flow · form → demo booked"
+                caption="Sample call to our own agent · scope + booking in one call"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-black border-t border-brand-purple/15">
+      <section
+        id="book"
+        className="bg-black border-t border-brand-purple/15 scroll-mt-24"
+      >
         <div className="max-w-content mx-auto px-6 py-24 grid lg:grid-cols-[2fr_1fr] gap-10 items-start">
           <div>
             <span className="text-xs uppercase tracking-widest text-brand-cyan font-mono">
-              ▸ Send a message
+              ▸ Pick a slot
             </span>
             <h2 className="font-heading text-2xl md:text-3xl text-white mt-3 mb-8">
-              We will reach out within one business day.
+              Book a 15-minute call with the team.
             </h2>
-            <GhlForm formKey="contact" ctaLocation="contact" height={680} />
+            <CalendlyEmbed ctaLocation="contact-calendar" height={760} />
           </div>
 
           <aside className="flex flex-col gap-3">
-            {SUPPORT_BLOCKS.map(({ Icon, title, body, detail }) => (
-              <div
-                key={title}
-                className="border border-brand-purple/20 bg-black p-5 flex flex-col gap-2"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="w-9 h-9 border border-brand-cyan/30 bg-brand-dark flex items-center justify-center">
-                    <Icon size={16} className="text-brand-cyan" />
-                  </span>
-                  <h3 className="font-heading text-lg text-white">{title}</h3>
-                </div>
-                <p className="text-sm font-body text-white/65 leading-relaxed">
-                  {body}
-                </p>
-                <p className="text-sm font-mono text-brand-cyan break-all">
-                  {detail}
-                </p>
+            <div className="border border-brand-cyan/40 bg-black p-5 flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 border border-brand-cyan/40 bg-brand-dark flex items-center justify-center">
+                  <Phone size={16} className="text-brand-cyan" />
+                </span>
+                <h3 className="font-heading text-lg text-white">Call our agent</h3>
               </div>
-            ))}
-            <div className="border-l-[3px] border-brand-purple bg-black p-5 mt-2">
-              <p className="font-heading text-white">Office</p>
-              <p className="mt-2 text-sm text-white/65 font-body leading-relaxed">
-                PLACEHOLDER — Implenix HQ, address to be added before launch.
+              <p className="text-sm font-body text-white/70 leading-relaxed">
+                The fastest way to evaluate Implenix is to hear the agent
+                run a live conversation. Same script, same routing, same
+                booking logic that ships in production.
+              </p>
+              <p className="font-mono text-brand-cyan text-base">
+                {HAS_REAL_PHONE
+                  ? AGENT_PHONE_DISPLAY
+                  : 'Live agent phone coming soon'}
+              </p>
+              <PhoneCTA
+                ctaLocation="contact-sidebar-phone"
+                variant="primary"
+                label={HAS_REAL_PHONE ? 'Call now' : 'Live phone coming soon'}
+              />
+            </div>
+            <div className="border border-brand-purple/30 bg-black p-5 flex flex-col gap-2">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 border border-brand-purple/30 bg-brand-dark flex items-center justify-center">
+                  <MessageSquare size={16} className="text-brand-purple" />
+                </span>
+                <h3 className="font-heading text-lg text-white">
+                  What happens on the call
+                </h3>
+              </div>
+              <ul className="mt-2 text-sm font-body text-white/70 leading-relaxed list-disc list-inside space-y-1">
+                <li>We map your inbound profile</li>
+                <li>Quote a deployment timeline</li>
+                <li>Show real customer recordings</li>
+                <li>You get a written scope after</li>
+              </ul>
+            </div>
+            <div className="border-l-[3px] border-brand-cyan bg-black p-5">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Privacy
+              </p>
+              <p className="mt-2 text-xs text-white/65 font-body leading-relaxed">
+                We do not collect emails through this site. Calendar
+                bookings only collect the data your Calendly form asks
+                for — nothing extra.
               </p>
             </div>
           </aside>

@@ -1,6 +1,13 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
 
+const RECORDING_HVAC =
+  'https://storage.vapi.ai/019dd11a-08f4-7001-be5e-9138391c69f7-1777329860916-1f64e293-9d0f-4aa7-b388-359b12052bbd-mono.mp3';
+const RECORDING_REAL_ESTATE =
+  'https://storage.vapi.ai/019d5386-d076-7995-9f11-00e17cc6c065-1775222981308-169a281a-d8cf-4a47-83bb-3a398c88d1a7-mono.mp3';
+const RECORDING_IMPROVEMENT =
+  'https://storage.vapi.ai/019d44c4-320d-799d-9aa1-e7b20b6a25ea-1774975462085-72a7c940-a44b-4c69-819f-09d6e6d163a9-mono.mp3';
+
 const TESTIMONIALS = [
   {
     businessName: 'PA HVAC Experts',
@@ -8,7 +15,8 @@ const TESTIMONIALS = [
     industry: 'HVAC',
     quote:
       'The best AI employee I have ever hired. It talks to every incoming call, nurtures my leads, books appointments, and sends follow-ups to me and the customer. Thank you Implenix.',
-    recordingHref: '/case-studies/placeholder-hvac',
+    recordingSrc: RECORDING_HVAC,
+    caseStudyHref: '/case-studies/placeholder-hvac',
   },
   {
     businessName: 'Columbus Property',
@@ -16,15 +24,8 @@ const TESTIMONIALS = [
     industry: 'Real Estate',
     quote:
       'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up — we just close. That is the operation now.',
-    recordingHref: '/case-studies/placeholder-real-estate',
-  },
-  {
-    businessName: 'Ohio Dental',
-    ownerName: 'Hyder',
-    industry: 'Dental',
-    quote:
-      'The team was spending 2–3 hours a day answering the phone and our in-house attention was slipping. Implenix handles the phone amazingly and the team is back focused on patients.',
-    recordingHref: '/case-studies/placeholder-dental',
+    recordingSrc: RECORDING_REAL_ESTATE,
+    caseStudyHref: '/case-studies/placeholder-real-estate',
   },
   {
     businessName: 'GTR Improvements',
@@ -32,7 +33,16 @@ const TESTIMONIALS = [
     industry: 'Home Improvements',
     quote:
       'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath — the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
-    recordingHref: '/case-studies/gtr-improvements-lexi',
+    recordingSrc: RECORDING_IMPROVEMENT,
+    caseStudyHref: '/case-studies/gtr-improvements-lexi',
+  },
+  {
+    businessName: 'Ohio Dental',
+    ownerName: 'Hyder',
+    industry: 'Dental',
+    quote:
+      'The team was spending 2–3 hours a day answering the phone and our in-house attention was slipping. Implenix handles the phone amazingly and the team is back focused on patients.',
+    caseStudyHref: '/case-studies/placeholder-dental',
   },
   {
     businessName: 'Parnell Motors',
@@ -40,7 +50,7 @@ const TESTIMONIALS = [
     industry: 'Auto Dealer',
     quote:
       'Very good experience with Implenix. I appreciate the communication and how organized the whole deployment was.',
-    recordingHref: '/case-studies/parnell-motors',
+    caseStudyHref: '/case-studies/parnell-motors',
   },
   {
     businessName: 'Franklin Agency',
@@ -48,7 +58,7 @@ const TESTIMONIALS = [
     industry: 'Marketing Agency',
     quote:
       'Our job is to grow our clients with more leads — but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
-    recordingHref: '/case-studies/franklin-agency',
+    caseStudyHref: '/case-studies/franklin-agency',
   },
 ];
 
@@ -59,7 +69,7 @@ export function TestimonialsSection() {
         <SectionHeader
           eyebrow="Verified results"
           title="From real businesses"
-          description="Six clients, six different industries, all still deployed. Every quote links to the case study with real numbers."
+          description="Six clients, six different industries, all still deployed. The first three include the real call recording — tap play to hear the agent live."
         />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t) => (
