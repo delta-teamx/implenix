@@ -73,7 +73,7 @@ export function AuditTool() {
   }, [snapshot]);
 
   return (
-    <div className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
       <form
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}

@@ -76,7 +76,7 @@ export function IndustrySlider() {
         {INDUSTRIES.map((industry) => (
           <li
             key={industry.slug}
-            className="snap-start shrink-0 w-[260px] sm:w-[280px]"
+            className="snap-start shrink-0 w-[240px] sm:w-[280px]"
           >
             <Link
               href={industryUrl(industry.slug)}
@@ -103,7 +103,7 @@ export function IndustrySlider() {
             </Link>
           </li>
         ))}
-        <li className="snap-start shrink-0 w-[260px] sm:w-[280px]">
+        <li className="snap-start shrink-0 w-[240px] sm:w-[280px]">
           <Link
             href="/industries"
             data-cta-location="industries-slider"

@@ -105,6 +105,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen bg-brand-dark text-white antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:bg-brand-purple focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-medium"
+        >
+          Skip to content
+        </a>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -113,7 +119,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        {children}
+        <main id="main">{children}</main>
       </body>
     </html>
   );

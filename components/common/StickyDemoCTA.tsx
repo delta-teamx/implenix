@@ -29,7 +29,7 @@ export function StickyDemoCTA() {
   if (!visible || dismissed) return null;
 
   return (
-    <div className="fixed bottom-4 inset-x-4 lg:left-auto lg:right-6 lg:bottom-6 lg:w-[360px] z-40 bg-black border border-brand-purple p-4 flex flex-col gap-3">
+    <div className="fixed bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-4 lg:left-auto lg:right-6 lg:bottom-6 lg:w-[360px] z-40 bg-black border border-brand-purple p-3 sm:p-4 flex flex-col gap-3">
       <div className="flex items-start gap-3">
         <div className="flex-1 min-w-0">
           <p className="font-heading text-white text-sm">

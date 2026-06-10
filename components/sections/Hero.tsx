@@ -10,7 +10,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col gap-6">
             <Badge label="Implenix · AI Receptionist for Agencies" variant="cyan" />
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.02] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] sm:leading-[1.02] tracking-tight">
               Stop missing calls
               <br />
               that{' '}

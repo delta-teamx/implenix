@@ -91,7 +91,7 @@ export function AnimatedCallTranscript({
       </div>
       <div
         ref={scrollRef}
-        className="font-mono text-[12.5px] leading-6 p-5 overflow-y-auto h-[340px] md:h-[400px] whitespace-pre-wrap text-white/90"
+        className="font-mono text-[11.5px] sm:text-[12.5px] leading-6 p-4 sm:p-5 overflow-y-auto h-[280px] sm:h-[340px] md:h-[400px] whitespace-pre-wrap text-white/90"
         aria-live="polite"
       >
         {lines.map((line, i) => {

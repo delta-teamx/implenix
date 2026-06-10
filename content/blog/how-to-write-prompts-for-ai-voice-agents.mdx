@@ -1,0 +1,267 @@
+---
+title: "How to write prompts for AI voice agents (the operator's playbook)"
+description: "The 7-section prompt structure that produces a production-quality AI voice agent — system role, tone, intake script, transfer rules, escalation, voice and style, edge cases."
+category: "Operator Playbooks"
+publishedAt: "2026-08-12"
+author: "Implenix Team"
+authorRole: "Deployment notes"
+metaTitle: "How to Write Prompts for AI Voice Agents | Implenix"
+metaDescription: "The 7-section prompt structure that produces a production AI voice agent — system role, tone, intake, transfer rules, escalation, voice, edge cases."
+heroImage: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=1600&q=80&auto=format&fit=crop"
+heroImageAlt: "Operator writing on a notebook next to a laptop"
+howToTotalTime: "PT2H"
+howToSteps:
+  - name: "Define the system role"
+    text: "Write a single paragraph that establishes who the agent is, what business it represents, and the primary objective of every call. This is the agent's identity layer."
+  - name: "Set the tone and voice"
+    text: "Specify the speaking style, pace, formality level, and language. Industry-specific tone matters — a HVAC dispatcher sounds different from a dental front desk."
+  - name: "Write the intake script"
+    text: "List every data field the agent needs to capture, in the order it should be asked, with the exact phrasing for each question. The script is the agent's conversation structure."
+  - name: "Define transfer rules"
+    text: "Write explicit conditions that trigger live transfer to a human — VIP allow-list, urgent keywords, sentiment triggers, off-script questions, escalation paths."
+  - name: "Write the escalation flows"
+    text: "For each transfer rule, specify what happens. Who picks up, in what order, with what context briefing. Edge cases for when no human is available."
+  - name: "Specify the response style for edge cases"
+    text: "How does the agent respond to objections, anger, confusion, or attempts to game the system. Each edge case gets a short response template."
+  - name: "Add the do-not-do list"
+    text: "Hard rules: what the agent must never say or do. No legal advice, no medical advice, no pricing commitments, no political opinions, etc."
+---
+
+Prompt engineering for voice AI is the difference between a deployment
+that produces 30% missed-call recovery and one that produces 80%. The
+prompt is the agent's operating system.
+
+This is the operator's playbook from 200+ Implenix deployments. Same
+7-section structure regardless of industry. The content varies; the
+structure does not.
+
+## Who this is for
+
+Operations leads, founders, and product managers writing or reviewing
+the prompts that will power their AI voice agent. If you have already
+deployed and your agent feels generic, the seven-section framework
+below is the diagnostic checklist.
+
+## The 7-section structure
+
+Every production AI voice prompt has these sections in this order:
+
+<DividedStats stats={[
+  { number: "7", label: "Required prompt sections" },
+  { number: "1,500-3,500", label: "Word count for a production-quality prompt" },
+  { number: "30-60", label: "Edge cases addressed in a mature prompt" }
+]} />
+
+1. **System role** — who the agent is
+2. **Tone and voice** — how the agent speaks
+3. **Intake script** — what the agent captures
+4. **Transfer rules** — when the agent escalates
+5. **Escalation flows** — how the agent escalates
+6. **Edge case responses** — how the agent handles surprises
+7. **Do-not-do list** — what the agent must never do
+
+## Section 1: System role
+
+The identity layer. Single paragraph, written in second-person ("You
+are..."). Covers:
+
+- The business name and what it does
+- The agent's name and role
+- The primary objective of every call
+- The boundary of the agent's responsibility
+
+**Example for HVAC:**
+
+> You are Avery, the virtual front-desk dispatcher for Northside HVAC,
+> a five-truck residential and light-commercial HVAC operator serving
+> the metro area. Your primary objective on every call is to qualify
+> the caller's situation, capture full intake data, and either dispatch
+> emergency service immediately or book a scheduled service
+> appointment. You handle inbound from customers and prospective
+> customers. You do NOT handle billing disputes, technical
+> troubleshooting beyond basic, or commercial sales conversations —
+> those route to the appropriate human team member.
+
+The boundary line ("you do NOT handle") is as important as the
+identity line.
+
+## Section 2: Tone and voice
+
+Industry-specific. The HVAC dispatcher sounds different from the
+dental front desk who sounds different from the boutique law firm
+intake person.
+
+Specify:
+
+- **Pace:** "Speak at a measured, professional pace. Do not rush."
+- **Formality:** "Warm but professional. Address callers as 'Mr.' or
+  'Ms.' unless they introduce themselves with a first name."
+- **Empathy markers:** "When a caller describes an emergency,
+  acknowledge it briefly before moving to dispatch logistics. 'I'm
+  sorry that's happening — let me get a tech to you right away.'"
+- **Language:** "Use plain English. Avoid technical HVAC jargon
+  unless the caller introduces it first."
+- **Pauses:** "Pause briefly after asking a question to give the
+  caller time to think."
+
+<Pull>Most prompts skip the tone section. The agent ends up sounding generic. The voice section is where 'feels like a real receptionist' is built.</Pull>
+
+## Section 3: Intake script
+
+The data the agent captures, in the order it should be asked, with
+the exact phrasing.
+
+For a HVAC service call, the script might be:
+
+1. "Are you experiencing a heating or cooling issue right now? If
+   yes — emergency triage path."
+2. "Can I get the address where service is needed?"
+3. "And the best callback number?"
+4. "What's happening with the system? Is it not running at all, or
+   running but not heating/cooling properly?"
+5. "About how old is the unit?"
+6. "Is anyone home now, or will someone be available when our tech
+   arrives?"
+7. "Have we serviced you before? Or is this your first time?"
+
+Each data point feeds the CRM. The script is the agent's structured
+data capture layer.
+
+## Section 4: Transfer rules
+
+Explicit conditions that trigger live transfer to a human. Written as
+"if X, then transfer to Y."
+
+Common transfer rules across industries:
+
+1. **VIP allow-list:** "If the caller's phone number matches the VIP
+   list, transfer immediately to [Name]."
+2. **Urgent keywords:** "If the caller says any of: 'emergency,'
+   'flooding,' 'no heat with kids,' 'no AC with elderly,' 'smell
+   gas,' 'carbon monoxide' — flag as critical and transfer to on-call
+   tech within 6 seconds."
+3. **Sentiment triggers:** "If sentiment analysis detects extended
+   distress, anger, or crying, transfer to a human within 30
+   seconds."
+4. **Off-script questions:** "If the caller asks about pricing for
+   commercial installations over $5,000, transfer to the sales
+   manager."
+5. **Explicit request:** "If the caller says 'I want to talk to a
+   person' or any variant, transfer immediately. Do not push back."
+
+Document each rule precisely. The agent's transfer behavior is only
+as good as your rules.
+
+## Section 5: Escalation flows
+
+For each transfer rule, specify what happens.
+
+**Example escalation flow for emergency keyword:**
+
+1. Agent says: "I'm sorry that's happening. I'm connecting you to our
+   on-call tech right now."
+2. Agent triggers SIP transfer to on-call rotation phone
+3. If first ring fails, agent rolls to backup tech in 8 seconds
+4. If backup fails, agent rolls to owner in 8 more seconds
+5. If all fail, agent says: "I'm having trouble connecting you live —
+   I've sent an urgent text to our team and they'll call you back
+   within 5 minutes. In the meantime, if this is a gas leak or
+   carbon monoxide concern, please leave the house and call 911."
+
+The fallback flow is where prompts fail in production. Always specify
+what happens when the human team does not pick up.
+
+## Section 6: Edge case responses
+
+The 30-60 edge cases that real callers will throw at the agent. A
+short response template for each.
+
+Categories of edge cases:
+
+- **Pricing questions:** "I can't give exact pricing on the call —
+  our tech provides quotes on-site. Want me to book a free
+  assessment?"
+- **Confused callers:** "Let me help you figure out what you need.
+  Are you calling because something in your home stopped working,
+  because you want to make an appointment, or for something else?"
+- **Angry callers:** "I hear you, that's frustrating. Let me get you
+  to someone who can resolve this directly — give me one moment."
+- **Off-topic questions:** "I'm here to help with [Business]'s
+  service — I can't help with [topic]. Is there anything related to
+  [Business] I can help with?"
+- **Repeat callers asking same thing:** "I see we spoke earlier
+  today. Let me pull up the notes — one moment."
+- **Callers gaming the system:** "I'm not able to discuss that — let
+  me connect you to someone who can."
+
+Treat the edge case list as a living document. After every deployment
+month, review recordings and add new edge cases to the prompt.
+
+## Section 7: Do-not-do list
+
+Hard rules. Written as numbered prohibitions.
+
+Examples:
+
+1. Do NOT provide medical, legal, or financial advice under any
+   circumstance.
+2. Do NOT commit to specific pricing on the call.
+3. Do NOT discuss other customers or their accounts.
+4. Do NOT speculate about issues outside the agent's scope.
+5. Do NOT use political, religious, or controversial commentary.
+6. Do NOT promise that a specific human will call back within a
+   specific time unless that human has confirmed availability.
+7. Do NOT make up information when asked something the agent does not
+   know — say "I don't have that information, but I can connect you
+   to someone who does."
+
+The do-not list is the safety layer. Tighter rules produce more
+predictable agents.
+
+## How to maintain consistency in AI agent voice and style
+
+Three practices that keep the agent on-brand over time:
+
+1. **Version-control the prompt.** Every change goes through git.
+   The prompt is code.
+2. **Review 5-10 random recordings per week.** Note where the agent
+   drifted. Update the prompt or the edge case list.
+3. **Run weekly diff against production behavior.** When a vendor
+   updates the underlying model, regression-test the agent against
+   100 saved test calls.
+
+The agent's voice consistency is an operational practice, not a
+one-time setup.
+
+## How AI agents learn processes without code
+
+The natural follow-on question. Modern AI voice agents do not require
+custom code for each business process — they learn from:
+
+1. **The prompt** (the structured 7-section document above)
+2. **Tool definitions** (what APIs the agent can call and what each
+   one does)
+3. **RAG knowledge base** (your business documents, FAQs, pricing
+   sheets — the agent retrieves these at runtime)
+4. **Few-shot examples** (sample successful calls included in the
+   prompt to demonstrate the desired behavior)
+
+Together these four inputs replace what would have been thousands of
+lines of custom code in earlier-generation systems.
+
+## What to do next
+
+If your current AI voice agent feels generic, the diagnostic is to
+audit it against the seven sections above. The gaps are usually in
+sections 2 (tone), 5 (escalation flows), and 6 (edge cases).
+
+If you're starting from scratch, the 7-section framework is the right
+structure to build to.
+
+[Talk to the team about your prompt →](/contact)
+
+## Related reading
+
+- [What is agentic AI](/blog/what-is-agentic-ai)
+- [RAG vs LLM vs MCP architecture](/blog/rag-llm-mcp-ai-agent-architecture)
+- [Can AI handle sensitive conversations](/blog/can-ai-handle-sensitive-conversations)

@@ -177,7 +177,7 @@ export function LeadMagnetPopup() {
               <X size={18} />
             </button>
 
-            <div className="p-7 flex flex-col gap-5">
+            <div className="p-5 sm:p-7 flex flex-col gap-5">
               <Badge label="Skip the form · pick one" variant="cyan" />
               <h2
                 id="lead-magnet-heading"
