@@ -6,20 +6,32 @@ const INTEGRATIONS = [
   'Salesforce',
   'Zoho',
   'Google Calendar',
-  'Calendly',
+  'Google Meet',
   'Twilio',
+  'ServiceTitan',
+  'Housecall Pro',
+  'Jobber',
+  'Open Dental',
+  'Follow Up Boss',
+  'Clio',
+  'Boulevard',
   'Zapier',
   'Make',
-  'Stripe',
 ];
 
 export function IntegrationStrip() {
   return (
     <section className="bg-black border-y border-brand-purple/20">
-      <div className="max-w-content mx-auto px-6 py-14 flex flex-col gap-8 items-center">
-        <p className="text-xs uppercase tracking-widest text-white/55 font-mono text-center">
-          ▸ Connects to your existing CRM, calendar, and automation stack
-        </p>
+      <div className="max-w-content mx-auto px-6 py-12 md:py-14 flex flex-col gap-5 items-center">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-white/55 font-mono">
+            ▸ Connects to the stack you already run on
+          </p>
+          <p className="mt-2 font-body text-white/75 text-sm md:text-base">
+            CRMs, calendars, dispatch software, and industry PMS — deep
+            two-way sync, not one-way email summaries.
+          </p>
+        </div>
         <div className="w-full">
           <LogoMarquee names={INTEGRATIONS} />
         </div>

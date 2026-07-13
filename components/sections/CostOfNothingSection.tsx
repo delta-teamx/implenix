@@ -45,6 +45,16 @@ export function CostOfNothingSection() {
                 Going to whoever answered first.
               </p>
             </div>
+            <div className="mt-auto pt-2">
+              <Link
+                href="/audit"
+                data-cta-location="cost-of-nothing-left"
+                data-cta-type="secondary"
+                className="inline-flex items-center gap-1.5 text-brand-cyan text-xs font-mono uppercase tracking-widest hover:opacity-80"
+              >
+                See what YOUR week costs <ArrowRight size={12} />
+              </Link>
+            </div>
           </div>
 
           <div className="border-l-[3px] border-brand-cyan bg-black p-8 flex flex-col gap-5">

@@ -4,6 +4,11 @@ import { Phone, ArrowRight, Headphones, Clock, ShieldCheck } from 'lucide-react'
 import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
 import { buildMetadata } from '@/lib/seo';
+import {
+  AGENT_PHONE_DISPLAY,
+  AGENT_PHONE_TEL,
+  HAS_REAL_PHONE,
+} from '@/lib/leadCapture';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Hear Implenix Live — Call Our Demo Receptionist | Implenix',
@@ -11,12 +16,6 @@ export const metadata: Metadata = buildMetadata({
     'Skip the video demo. Pick up your phone, dial our demo number, and have a real conversation with the Implenix AI configured as a sample HVAC receptionist.',
   path: '/try-it',
 });
-
-// PLACEHOLDER demo number — replace with provisioned Twilio / SIP DID
-// before launch. Make sure the persona on the other end matches the
-// "Ava · Northwind HVAC" framing used elsewhere on the site.
-const DEMO_NUMBER = '+1 (415) 555-0184';
-const DEMO_HREF = 'tel:+14155550184';
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · demo · Northwind HVAC' },
@@ -65,18 +64,32 @@ export default function TryItPage() {
                 Just talk.
               </p>
 
-              <a
-                href={DEMO_HREF}
-                data-cta-location="try-it-hero"
-                data-cta-type="primary"
-                className="mt-2 group inline-flex items-center gap-3 bg-brand-purple text-white font-heading text-2xl md:text-3xl px-6 py-4 rounded-sm hover:opacity-90 self-start"
-              >
-                <Phone size={22} />
-                <span className="font-mono">{DEMO_NUMBER}</span>
-                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-              </a>
+              {HAS_REAL_PHONE ? (
+                <a
+                  href={`tel:${AGENT_PHONE_TEL}`}
+                  data-cta-location="try-it-hero"
+                  data-cta-type="primary"
+                  className="mt-2 group inline-flex items-center gap-3 bg-brand-purple text-white font-heading text-2xl md:text-3xl px-6 py-4 rounded-sm hover:opacity-90 self-start"
+                >
+                  <Phone size={22} />
+                  <span className="font-mono">{AGENT_PHONE_DISPLAY}</span>
+                  <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+                </a>
+              ) : (
+                <div
+                  data-cta-location="try-it-hero-pending"
+                  data-cta-type="phone-pending"
+                  className="mt-2 inline-flex items-center gap-3 bg-brand-purple/40 text-white/85 font-heading text-2xl md:text-3xl px-6 py-4 rounded-sm self-start cursor-not-allowed"
+                  aria-disabled="true"
+                >
+                  <Phone size={22} />
+                  <span className="font-mono">Live line coming soon</span>
+                </div>
+              )}
               <p className="text-[11px] font-mono uppercase tracking-widest text-white/45">
-                ▸ Tap on mobile to dial · standard carrier rates apply
+                ▸ {HAS_REAL_PHONE
+                  ? 'Tap on mobile to dial · standard carrier rates apply'
+                  : 'The live demo line goes live this week — book a slot in the meantime'}
               </p>
 
               <div className="grid sm:grid-cols-3 gap-3 pt-6 border-t border-brand-purple/15">
@@ -97,13 +110,13 @@ export default function TryItPage() {
               </div>
             </div>
 
-            <aside className="lg:col-span-5">
+            <aside className="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-5">
               <CodeWindow
-                title="northwind-hvac.demo-line.log"
+                title="northwind-hvac.demo"
                 lines={SAMPLE_TRANSCRIPT}
                 caption="Sample of a recent demo call · 18 seconds in"
               />
-              <div className="mt-5 border border-brand-cyan/30 bg-black p-5 flex flex-col gap-3">
+              <div className="border border-brand-cyan/30 bg-black p-5 flex flex-col gap-3">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cyan flex items-center gap-1.5">
                   <ShieldCheck size={11} /> Ava knows
                 </span>
@@ -114,6 +127,17 @@ export default function TryItPage() {
                   <li>· Tech availability</li>
                   <li>· Booking rules</li>
                   <li>· Transfer logic</li>
+                </ul>
+              </div>
+              <div className="border-l-[3px] border-brand-purple bg-black p-5 flex flex-col gap-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-brand-purple">
+                  ▸ What to try
+                </span>
+                <ul className="text-sm font-body text-white/85 flex flex-col gap-1.5 mt-1">
+                  <li>· "My AC just died and I have kids at home."</li>
+                  <li>· "Can I get a quote for a full system replacement?"</li>
+                  <li>· "I need to reschedule tomorrow's appointment."</li>
+                  <li>· "Do you service commercial properties?"</li>
                 </ul>
               </div>
             </aside>

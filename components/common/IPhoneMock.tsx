@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mic, Calendar } from 'lucide-react';
 
@@ -21,6 +22,16 @@ const CONVERSATION: Bubble[] = [
 // Uses Framer Motion for staggered bubble entry. SVG-based frame so it
 // scales cleanly without raster assets.
 export function IPhoneMock() {
+  const [callEnded, setCallEnded] = useState(false);
+
+  useEffect(() => {
+    // Total animation runtime: CONVERSATION.length turns × 400ms + booking
+    // card at +200ms + 800ms safety buffer to let the last bubble land.
+    const totalMs = CONVERSATION.length * 400 + 200 + 1200;
+    const t = setTimeout(() => setCallEnded(true), totalMs);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <div className="relative mx-auto w-full max-w-[340px]">
       <div className="relative rounded-[44px] bg-black border-[10px] border-black shadow-[0_0_0_1px_rgba(187,0,255,0.25)]">
@@ -46,8 +57,12 @@ export function IPhoneMock() {
                 Ava · Implenix Agent
               </p>
               <p className="text-[10px] uppercase tracking-widest text-brand-cyan font-mono mt-1 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse" />
-                Live call
+                <span
+                  className={`w-1.5 h-1.5 rounded-full ${
+                    callEnded ? 'bg-white/40' : 'bg-brand-cyan animate-pulse'
+                  }`}
+                />
+                {callEnded ? 'Call wrapped' : 'Live call'}
               </p>
             </div>
             <Phone size={16} className="text-brand-cyan" />

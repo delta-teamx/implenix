@@ -119,12 +119,12 @@ export default function PricingPage() {
                 key={tier.name}
                 className={`relative bg-black border p-7 flex flex-col gap-5 ${
                   tier.highlight
-                    ? 'border-brand-purple lg:scale-[1.02]'
+                    ? 'border-brand-purple ring-2 ring-brand-purple/40 ring-offset-2 ring-offset-black lg:-translate-y-2'
                     : 'border-brand-purple/20 hover:border-brand-purple/60 transition-colors'
                 }`}
               >
                 {tier.highlight ? (
-                  <span className="absolute -top-3 left-7 inline-flex items-center gap-1 bg-brand-purple text-white text-[10px] uppercase tracking-widest font-mono px-2 py-1">
+                  <span className="inline-flex items-center gap-1 self-start bg-brand-purple text-white text-[10px] uppercase tracking-widest font-mono px-2 py-1 -mt-1 -ml-1">
                     <Sparkles size={10} /> Most picked
                   </span>
                 ) : null}

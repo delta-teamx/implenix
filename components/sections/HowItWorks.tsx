@@ -77,7 +77,7 @@ export function HowItWorks() {
           </p>
         </header>
 
-        <ol className="mt-16 flex flex-col gap-24">
+        <ol className="mt-12 md:mt-16 flex flex-col gap-16 md:gap-24">
           {STEPS.map((step, i) => (
             <StepRow key={step.index} step={step} reversed={i % 2 === 1} />
           ))}
@@ -90,14 +90,14 @@ export function HowItWorks() {
 function StepRow({ step, reversed }: { step: Step; reversed: boolean }) {
   const { Icon, Visual } = step;
   return (
-    <li className="grid lg:grid-cols-12 gap-10 items-center">
+    <li className="grid lg:grid-cols-12 gap-8 md:gap-10 items-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
-        className={`lg:col-span-6 flex flex-col gap-5 ${
-          reversed ? 'lg:order-2' : ''
+        className={`lg:col-span-6 flex flex-col gap-5 order-2 ${
+          reversed ? 'lg:order-2' : 'lg:order-1'
         }`}
       >
         <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ function StepRow({ step, reversed }: { step: Step; reversed: boolean }) {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className={`lg:col-span-6 ${reversed ? 'lg:order-1' : ''}`}
+        className={`lg:col-span-6 order-1 ${reversed ? 'lg:order-1' : 'lg:order-2'}`}
       >
         <Visual />
       </motion.div>

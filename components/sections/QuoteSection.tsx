@@ -12,11 +12,10 @@ export function QuoteSection() {
           />
         </div>
         <div className="lg:col-span-7">
-          {/* REPLACE WITH REAL OWNER QUOTE */}
           <QuoteBlock
-            quote="The phones used to dictate my day. Now they don't. Every call gets answered, every job gets booked, and my team only sees calls that actually need them."
-            author="PLACEHOLDER OWNER"
-            role="Multi-location HVAC operator · 22 techs"
+            quote="The best AI employee I have ever hired. It talks to every incoming call, nurtures my leads, books appointments, and sends follow-ups to me and the customer. Thank you Implenix."
+            author="Alex"
+            role="PA HVAC Experts · 5 trucks, 1 front-desk operator"
           />
         </div>
       </div>

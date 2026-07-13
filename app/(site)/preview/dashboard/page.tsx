@@ -112,7 +112,7 @@ export default function DashboardPreviewPage() {
                 </span>
               </div>
               <span className="hidden md:inline text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
-                ▸ April · live
+                ▸ Current cycle · live
               </span>
             </header>
 
@@ -164,7 +164,7 @@ export default function DashboardPreviewPage() {
           <div className="lg:col-span-7">
             <Badge label="See yours next" variant="purple" />
             <h2 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.05]">
-              The numbers above are mock. Yours can be live in 15 minutes.
+              The numbers above are mock. Yours can be live in 7–14 days.
             </h2>
             <p className="mt-4 font-body text-white/75 max-w-xl">
               Run the audit to see what missed calls cost you, then ship a
@@ -405,14 +405,9 @@ function UpsellRow() {
           surfaced based on usage
         </span>
       </header>
-      <ul className="grid md:grid-cols-3">
-        {items.map((it, i) => (
-          <li
-            key={it.title}
-            className={`p-5 flex flex-col gap-3 ${
-              i > 0 ? 'md:border-l border-brand-purple/15' : ''
-            } ${i > 0 ? 'border-t md:border-t-0 border-brand-purple/15' : ''}`}
-          >
+      <ul className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-brand-purple/15">
+        {items.map((it) => (
+          <li key={it.title} className="p-5 flex flex-col gap-3">
             <p className="font-heading text-white text-sm">{it.title}</p>
             <p className="text-xs font-body text-white/65 leading-relaxed flex-1">
               {it.body}
