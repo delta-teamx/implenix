@@ -5,7 +5,7 @@
 
 export const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  'https://calendly.com/implenix/15min';
+  'https://calendly.com/implenix/consultation-call';
 
 export const AGENT_PHONE_DISPLAY =
   process.env.NEXT_PUBLIC_AGENT_PHONE_DISPLAY ||
