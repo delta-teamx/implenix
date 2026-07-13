@@ -221,6 +221,30 @@ export default function AIReceptionistPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
+          <aside
+            data-answer
+            data-speakable
+            className="max-w-3xl border-l-[3px] border-brand-cyan bg-black p-6 md:p-8 mb-16 flex flex-col gap-3 rounded-r-sm"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+              ▸ Quick answer
+            </span>
+            <p className="font-heading text-white text-xl md:text-2xl leading-snug">
+              What is an AI receptionist?
+            </p>
+            <p className="font-body text-white/85 leading-relaxed text-base md:text-lg">
+              An AI receptionist is a voice-AI agent that answers your business
+              phone 24/7, holds a natural conversation with the caller,
+              qualifies the lead, books appointments live against your
+              calendar, and writes every call to your CRM in real time. It
+              replaces the missed-call cost of voicemail and the per-minute
+              cost of live answering services with fixed monthly pricing —
+              typically $297-$697/month — and handles unlimited concurrent
+              calls without extra headcount. In 2026 it is indistinguishable
+              from a human operator for routine booking, qualification, and
+              intake calls.
+            </p>
+          </aside>
           <div className="max-w-3xl">
             <SectionHeader
               eyebrow="What an AI receptionist actually is"

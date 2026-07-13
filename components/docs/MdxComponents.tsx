@@ -23,6 +23,35 @@ export const mdxComponents: MDXComponents = {
       <span className="text-white/70 text-xs mt-1.5 font-body">{label}</span>
     </span>
   ),
+  // TL;DR / answer block optimized for AI search extraction. Google AI
+  // Overviews, Perplexity, ChatGPT search, and Bing Copilot preferentially
+  // quote from concise structured answer blocks at the top of content.
+  // The `data-answer` attribute is also picked up by the Speakable schema
+  // selector for voice-assistant surfaces.
+  Answer: ({
+    q,
+    children,
+  }: {
+    q: string;
+    children: React.ReactNode;
+  }) => (
+    <aside
+      data-answer
+      data-speakable
+      className="my-8 border-l-[3px] border-brand-cyan bg-brand-dark rounded-r-sm p-6 flex flex-col gap-3"
+    >
+      <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+        ▸ Quick answer
+      </span>
+      <p className="font-heading text-white text-xl leading-snug">{q}</p>
+      <div className="font-body text-white/85 leading-relaxed">{children}</div>
+    </aside>
+  ),
+  Key: ({ children }: { children: React.ReactNode }) => (
+    <span className="bg-brand-purple/25 text-white px-1.5 py-0.5 rounded-sm">
+      {children}
+    </span>
+  ),
   h1: (props) => (
     <h1 className="font-heading text-4xl text-white mt-8 mb-4" {...props} />
   ),

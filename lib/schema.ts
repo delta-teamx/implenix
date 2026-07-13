@@ -335,14 +335,19 @@ export function howToSchema({
 
 // Speakable schema marks specific selectors as voice-assistant
 // friendly. Attached to FAQ-heavy pages and pillar pages so Google
-// Assistant / Bixby / Alexa can read those sections aloud.
-export function speakableSchema(cssSelectors: string[]) {
+// Assistant / Bixby / Alexa can read those sections aloud. The
+// [data-answer] and [data-speakable] selectors are our AEO answer
+// blocks — quoted preferentially by Google AI Overviews, Perplexity,
+// ChatGPT search, and Bing Copilot.
+export function speakableSchema(cssSelectors: string[] = []) {
+  const defaults = ['[data-answer]', '[data-speakable]', 'h1'];
+  const merged = Array.from(new Set([...defaults, ...cssSelectors]));
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: cssSelectors,
+      cssSelector: merged,
     },
   };
 }
