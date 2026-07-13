@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { BookingWidget } from '@/components/common/BookingWidget';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -266,7 +266,7 @@ export default function AIReceptionistPage() {
             description="We will run a live test against your business and walk you through the agent end to end."
             badgeVariant="purple"
           />
-          <CalendlyEmbed ctaLocation="solutions-ai-receptionist" height={620} />
+          <BookingWidget ctaLocation="solutions-ai-receptionist" height={620} />
         </div>
         <div className="max-w-content mx-auto px-6 pb-16">
           <RelatedContent topic="AI Receptionist" type="industry" />

@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { AudioPlayer } from '@/components/common/AudioPlayer';
-import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { BookingWidget } from '@/components/common/BookingWidget';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
@@ -267,7 +267,7 @@ export default function AIFollowupPage() {
             description="We will design a follow-up sequence against your funnel and run a live test on your number."
             badgeVariant="purple"
           />
-          <CalendlyEmbed ctaLocation="solutions-ai-followup" height={620} />
+          <BookingWidget ctaLocation="solutions-ai-followup" height={620} />
         </div>
         <div className="max-w-content mx-auto px-6 pb-16">
           <RelatedContent topic="AI Follow-up" type="industry" />

@@ -1,0 +1,605 @@
+'use client';
+
+import { useEffect, useMemo, useState } from 'react';
+import {
+  ArrowRight,
+  CalendarCheck,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Loader2,
+  Video,
+  ArrowLeft,
+} from 'lucide-react';
+import { trackConversion, GA4_EVENTS } from '@/lib/analytics';
+
+type Slot = { startIso: string; endIso: string; label: string };
+
+type Availability = {
+  date: string;
+  timezone: string;
+  durationMinutes: number;
+  slots: Slot[];
+};
+
+type BookedResponse = {
+  success: true;
+  eventId: string;
+  meetLink: string | null;
+  calendarLink: string;
+  start: string;
+  end: string;
+};
+
+type Props = {
+  ctaLocation: string;
+  height?: number; // kept for API compatibility with CalendlyEmbed callers
+};
+
+type Step = 'date' | 'time' | 'form' | 'confirmed';
+
+// Native booking widget that talks to /api/availability + /api/book.
+// State machine: date → time → form → confirmed. Drop-in replacement
+// for CalendlyEmbed — the ctaLocation prop is the identifier used in
+// analytics conversion events.
+export function BookingWidget({ ctaLocation, height }: Props) {
+  const [step, setStep] = useState<Step>('date');
+  const [monthOffset, setMonthOffset] = useState(0);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
+  const [availability, setAvailability] = useState<Availability | null>(null);
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [slotError, setSlotError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [bookError, setBookError] = useState<string | null>(null);
+  const [booked, setBooked] = useState<BookedResponse | null>(null);
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    notes: '',
+  });
+
+  const monthDate = useMemo(() => {
+    const d = new Date();
+    d.setDate(1);
+    d.setMonth(d.getMonth() + monthOffset);
+    return d;
+  }, [monthOffset]);
+
+  const monthLabel = monthDate.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const days = useMemo(() => buildMonthGrid(monthDate), [monthDate]);
+
+  useEffect(() => {
+    if (!selectedDate) return;
+    let cancelled = false;
+    setLoadingSlots(true);
+    setSlotError(null);
+    setAvailability(null);
+    fetch(`/api/availability?date=${selectedDate}`)
+      .then(async (res) => {
+        if (!res.ok) {
+          const data = (await res.json().catch(() => ({}))) as {
+            error?: string;
+          };
+          throw new Error(data.error ?? `Availability request failed (${res.status})`);
+        }
+        return (await res.json()) as Availability;
+      })
+      .then((data) => {
+        if (cancelled) return;
+        setAvailability(data);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        setSlotError(err instanceof Error ? err.message : 'Failed to load slots');
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingSlots(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedDate]);
+
+  const submitBooking = async () => {
+    if (!selectedSlot) return;
+    setSubmitting(true);
+    setBookError(null);
+    try {
+      const res = await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          notes: form.notes,
+          startIso: selectedSlot.startIso,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as
+        | BookedResponse
+        | { error?: string };
+      if (!res.ok || !('success' in data)) {
+        throw new Error(
+          ('error' in data && data.error) || `Booking failed (${res.status})`,
+        );
+      }
+      setBooked(data);
+      setStep('confirmed');
+      trackConversion(GA4_EVENTS.leadDemo, {
+        source: 'booking-widget',
+        cta_location: ctaLocation,
+      });
+    } catch (err) {
+      setBookError(err instanceof Error ? err.message : 'Booking failed');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div
+      className="bg-black border border-brand-purple/30 flex flex-col"
+      style={height ? { minHeight: height } : undefined}
+    >
+      <div className="flex items-center justify-between border-b border-brand-purple/25 px-4 sm:px-5 py-3 bg-brand-dark">
+        <div className="flex items-center gap-2.5">
+          <span className="w-8 h-8 border border-brand-cyan/40 bg-black flex items-center justify-center rounded-full">
+            <CalendarCheck size={14} className="text-brand-cyan" />
+          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="font-body text-white text-[13px] font-medium">
+              Book with Implenix
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan/80">
+              15-minute call · Google Meet
+            </span>
+          </div>
+        </div>
+        {step !== 'date' && step !== 'confirmed' ? (
+          <button
+            type="button"
+            onClick={() => {
+              if (step === 'form') setStep('time');
+              else if (step === 'time') setStep('date');
+            }}
+            className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={12} /> Back
+          </button>
+        ) : null}
+      </div>
+
+      <div className="p-4 sm:p-6 flex-1 flex flex-col gap-5">
+        {step === 'date' ? (
+          <DateStep
+            monthLabel={monthLabel}
+            days={days}
+            selectedDate={selectedDate}
+            onSelect={(d) => {
+              setSelectedDate(d);
+              setStep('time');
+            }}
+            onPrev={() => setMonthOffset((n) => Math.max(0, n - 1))}
+            onNext={() => setMonthOffset((n) => n + 1)}
+            canGoBack={monthOffset > 0}
+          />
+        ) : null}
+
+        {step === 'time' ? (
+          <TimeStep
+            date={selectedDate!}
+            loading={loadingSlots}
+            error={slotError}
+            availability={availability}
+            onSelect={(slot) => {
+              setSelectedSlot(slot);
+              setStep('form');
+            }}
+          />
+        ) : null}
+
+        {step === 'form' && selectedSlot ? (
+          <FormStep
+            slot={selectedSlot}
+            form={form}
+            setForm={setForm}
+            error={bookError}
+            submitting={submitting}
+            onSubmit={submitBooking}
+          />
+        ) : null}
+
+        {step === 'confirmed' && booked ? (
+          <ConfirmedStep booked={booked} form={form} />
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Steps
+// ---------------------------------------------------------------------------
+
+function DateStep({
+  monthLabel,
+  days,
+  selectedDate,
+  onSelect,
+  onPrev,
+  onNext,
+  canGoBack,
+}: {
+  monthLabel: string;
+  days: { iso: string; day: number; disabled: boolean; inMonth: boolean }[];
+  selectedDate: string | null;
+  onSelect: (iso: string) => void;
+  onPrev: () => void;
+  onNext: () => void;
+  canGoBack: boolean;
+}) {
+  return (
+    <>
+      <div className="flex items-center justify-between">
+        <button
+          type="button"
+          onClick={onPrev}
+          disabled={!canGoBack}
+          className="w-9 h-9 border border-brand-purple/30 hover:border-brand-purple disabled:opacity-30 flex items-center justify-center transition-colors"
+          aria-label="Previous month"
+        >
+          <ChevronLeft size={14} className="text-brand-cyan" />
+        </button>
+        <span className="font-heading text-white text-lg">{monthLabel}</span>
+        <button
+          type="button"
+          onClick={onNext}
+          className="w-9 h-9 border border-brand-purple/30 hover:border-brand-purple flex items-center justify-center transition-colors"
+          aria-label="Next month"
+        >
+          <ChevronRight size={14} className="text-brand-cyan" />
+        </button>
+      </div>
+      <div className="grid grid-cols-7 gap-1 text-center">
+        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
+          <span
+            key={i}
+            className="font-mono text-[10px] uppercase tracking-widest text-white/45 pb-2"
+          >
+            {d}
+          </span>
+        ))}
+        {days.map((d) => (
+          <button
+            key={d.iso}
+            type="button"
+            onClick={() => !d.disabled && onSelect(d.iso)}
+            disabled={d.disabled}
+            className={`aspect-square flex items-center justify-center font-body text-sm transition-colors ${
+              !d.inMonth
+                ? 'text-white/15'
+                : d.disabled
+                  ? 'text-white/25 cursor-not-allowed'
+                  : selectedDate === d.iso
+                    ? 'bg-brand-purple text-white'
+                    : 'border border-brand-purple/20 text-white/85 hover:border-brand-purple hover:bg-brand-purple/10'
+            }`}
+          >
+            {d.day}
+          </button>
+        ))}
+      </div>
+      <p className="font-body text-xs text-white/55 leading-relaxed">
+        Pick a day to see open times. Working days only. All times shown in your
+        booking timezone.
+      </p>
+    </>
+  );
+}
+
+function TimeStep({
+  date,
+  loading,
+  error,
+  availability,
+  onSelect,
+}: {
+  date: string;
+  loading: boolean;
+  error: string | null;
+  availability: Availability | null;
+  onSelect: (slot: Slot) => void;
+}) {
+  const readable = new Date(date).toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
+  return (
+    <>
+      <div className="flex items-center gap-2">
+        <Clock size={14} className="text-brand-cyan" />
+        <span className="font-heading text-white text-base">{readable}</span>
+      </div>
+      {loading ? (
+        <div className="flex flex-col items-center justify-center py-10 gap-2 text-white/60">
+          <Loader2 className="animate-spin text-brand-cyan" size={18} />
+          <span className="font-mono text-[10px] uppercase tracking-widest">
+            Loading times
+          </span>
+        </div>
+      ) : error ? (
+        <p className="border-l-[3px] border-brand-purple bg-black p-4 text-sm text-white/80">
+          {error}
+        </p>
+      ) : availability && availability.slots.length === 0 ? (
+        <p className="font-body text-sm text-white/70">
+          No open times on this day. Pick another day.
+        </p>
+      ) : availability ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {availability.slots.map((slot) => (
+            <button
+              key={slot.startIso}
+              type="button"
+              onClick={() => onSelect(slot)}
+              className="border border-brand-cyan/30 hover:border-brand-cyan hover:bg-brand-cyan/10 py-2.5 font-body text-sm text-white transition-colors"
+            >
+              {slot.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+function FormStep({
+  slot,
+  form,
+  setForm,
+  error,
+  submitting,
+  onSubmit,
+}: {
+  slot: Slot;
+  form: { name: string; email: string; phone: string; notes: string };
+  setForm: (f: {
+    name: string;
+    email: string;
+    phone: string;
+    notes: string;
+  }) => void;
+  error: string | null;
+  submitting: boolean;
+  onSubmit: () => void;
+}) {
+  const slotLabel = new Date(slot.startIso).toLocaleString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+  const inputClass =
+    'w-full bg-black border border-brand-purple/30 focus:border-brand-purple text-white px-3 py-2.5 rounded-sm font-body text-sm placeholder:text-white/40';
+
+  return (
+    <form
+      noValidate
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit();
+      }}
+      className="flex flex-col gap-4"
+    >
+      <div className="border-l-[3px] border-brand-cyan bg-brand-dark px-4 py-3">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+          ▸ Booking
+        </span>
+        <p className="font-body text-white text-sm mt-1">{slotLabel}</p>
+      </div>
+      <Field label="Your name" htmlFor="bk-name">
+        <input
+          id="bk-name"
+          type="text"
+          required
+          autoComplete="name"
+          className={inputClass}
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+      </Field>
+      <Field label="Email" htmlFor="bk-email">
+        <input
+          id="bk-email"
+          type="email"
+          required
+          autoComplete="email"
+          placeholder="you@company.com"
+          className={inputClass}
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
+      </Field>
+      <Field label="Phone (optional)" htmlFor="bk-phone">
+        <input
+          id="bk-phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="(555) 555-1234"
+          className={inputClass}
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        />
+      </Field>
+      <Field label="What should we cover? (optional)" htmlFor="bk-notes">
+        <textarea
+          id="bk-notes"
+          rows={3}
+          className={`${inputClass} resize-none`}
+          placeholder="Industry, current call volume, biggest inbound pain point…"
+          value={form.notes}
+          onChange={(e) => setForm({ ...form, notes: e.target.value })}
+        />
+      </Field>
+      {error ? (
+        <p className="border-l-[3px] border-brand-purple bg-black p-3 text-sm text-white/85">
+          {error}
+        </p>
+      ) : null}
+      <button
+        type="submit"
+        disabled={submitting || !form.name || !form.email}
+        data-cta-type="primary"
+        className="inline-flex items-center justify-center gap-2 bg-brand-purple text-white font-medium px-6 py-3 rounded-sm hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {submitting ? (
+          <>
+            <Loader2 size={16} className="animate-spin" /> Booking…
+          </>
+        ) : (
+          <>
+            Book my slot <ArrowRight size={16} />
+          </>
+        )}
+      </button>
+      <p className="font-mono text-[10px] uppercase tracking-widest text-white/45 text-center">
+        ▸ We do not send marketing email. The invite goes to Google Calendar only.
+      </p>
+    </form>
+  );
+}
+
+function ConfirmedStep({
+  booked,
+  form,
+}: {
+  booked: BookedResponse;
+  form: { name: string; email: string };
+}) {
+  const slotLabel = new Date(booked.start).toLocaleString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+  return (
+    <div className="flex flex-col gap-5 py-4">
+      <div className="flex items-center gap-3">
+        <span className="w-10 h-10 bg-brand-cyan/20 border border-brand-cyan flex items-center justify-center">
+          <Check size={18} className="text-brand-cyan" />
+        </span>
+        <div>
+          <p className="font-heading text-white text-lg">You're booked.</p>
+          <p className="font-body text-sm text-white/65">
+            Calendar invite on the way to {form.email}
+          </p>
+        </div>
+      </div>
+      <div className="border border-brand-cyan/30 bg-brand-dark p-4 flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+          ▸ When
+        </span>
+        <p className="font-body text-white">{slotLabel}</p>
+      </div>
+      {booked.meetLink ? (
+        <div className="border border-brand-purple/30 bg-black p-4 flex flex-col gap-3">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+            ▸ Google Meet
+          </span>
+          <a
+            href={booked.meetLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-purple text-white font-medium px-4 py-2.5 rounded-sm hover:opacity-90 self-start"
+          >
+            <Video size={14} /> Join meeting link
+          </a>
+          <p className="font-body text-xs text-white/55 break-all">
+            {booked.meetLink}
+          </p>
+        </div>
+      ) : null}
+      <a
+        href={booked.calendarLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-brand-cyan text-sm font-mono uppercase tracking-widest hover:opacity-80"
+      >
+        Open in Google Calendar <ArrowRight size={12} />
+      </a>
+    </div>
+  );
+}
+
+function Field({
+  label,
+  htmlFor,
+  children,
+}: {
+  label: string;
+  htmlFor: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <label htmlFor={htmlFor} className="flex flex-col gap-1.5">
+      <span className="text-[10px] uppercase tracking-widest text-white/65 font-mono">
+        {label}
+      </span>
+      {children}
+    </label>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Calendar grid helpers
+// ---------------------------------------------------------------------------
+
+function buildMonthGrid(monthDate: Date) {
+  const year = monthDate.getFullYear();
+  const month = monthDate.getMonth();
+  const firstOfMonth = new Date(year, month, 1);
+  const startOffset = firstOfMonth.getDay();
+  const gridStart = new Date(year, month, 1 - startOffset);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const cells: {
+    iso: string;
+    day: number;
+    disabled: boolean;
+    inMonth: boolean;
+  }[] = [];
+  for (let i = 0; i < 42; i++) {
+    const d = new Date(gridStart);
+    d.setDate(gridStart.getDate() + i);
+    const iso = toIsoDate(d);
+    const inMonth = d.getMonth() === month;
+    const past = d.getTime() < today.getTime();
+    cells.push({
+      iso,
+      day: d.getDate(),
+      disabled: past || !inMonth,
+      inMonth,
+    });
+  }
+  return cells;
+}
+
+function toIsoDate(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}

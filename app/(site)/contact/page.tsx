@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Phone, CalendarCheck, Clock, MessageSquare } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
-import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { BookingWidget } from '@/components/common/BookingWidget';
 import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { buildMetadata } from '@/lib/seo';
 import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
@@ -84,7 +84,7 @@ export default function ContactPage() {
             <h2 className="font-heading text-2xl md:text-3xl text-white mt-3 mb-8">
               Book a 15-minute call with the team.
             </h2>
-            <CalendlyEmbed ctaLocation="contact-calendar" height={760} />
+            <BookingWidget ctaLocation="contact-calendar" height={760} />
           </div>
 
           <aside className="flex flex-col gap-3">

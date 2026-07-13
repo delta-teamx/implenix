@@ -1,5 +1,5 @@
 import { SectionHeader } from '@/components/common/SectionHeader';
-import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { BookingWidget } from '@/components/common/BookingWidget';
 import { PhoneCTA } from '@/components/common/PhoneCTA';
 
 export function DemoCTASection() {
@@ -23,7 +23,7 @@ export function DemoCTASection() {
           </div>
         </div>
         <div className="lg:col-span-7">
-          <CalendlyEmbed
+          <BookingWidget
             ctaLocation="homepage-demo-calendar"
             height={680}
           />

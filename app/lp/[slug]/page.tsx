@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Play, ShieldCheck } from 'lucide-react';
-import { CalendlyEmbed } from '@/components/common/CalendlyEmbed';
+import { BookingWidget } from '@/components/common/BookingWidget';
 import { StatCard } from '@/components/common/StatCard';
 import { TestimonialCard } from '@/components/common/TestimonialCard';
 import { Badge } from '@/components/common/Badge';
@@ -155,7 +155,7 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
                 15-minute walkthrough.
               </p>
             </div>
-            <CalendlyEmbed ctaLocation={`lp-${cfg.slug}-top`} height={620} />
+            <BookingWidget ctaLocation={`lp-${cfg.slug}-top`} height={620} />
           </aside>
         </div>
       </section>
@@ -171,7 +171,7 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
               30 seconds. We will call you back today.
             </p>
           </div>
-          <CalendlyEmbed ctaLocation={`lp-${cfg.slug}-bottom`} height={620} />
+          <BookingWidget ctaLocation={`lp-${cfg.slug}-bottom`} height={620} />
         </div>
       </section>
     </>
@@ -224,7 +224,7 @@ function VariantB({ cfg }: { cfg: LandingConfig }) {
             We will call you back within one business hour.
           </h2>
           <div className="w-full max-w-md">
-            <CalendlyEmbed ctaLocation={`lp-${cfg.slug}`} height={620} />
+            <BookingWidget ctaLocation={`lp-${cfg.slug}`} height={620} />
           </div>
         </div>
       </section>
