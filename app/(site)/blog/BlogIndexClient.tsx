@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -62,12 +63,18 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
                 key={p.url}
                 href={p.url}
                 data-cta-location="blog-card"
-                className="group flex flex-col bg-black border border-brand-purple/20 hover:border-brand-purple transition-colors"
+                className="group flex flex-col bg-black border border-brand-purple/20 hover:border-brand-purple transition-colors overflow-hidden"
               >
-                <div
-                  className="aspect-[16/9] bg-brand-dark grid-bg border-b border-brand-purple/20"
-                  aria-hidden
-                />
+                <div className="relative aspect-[16/9] bg-brand-dark border-b border-brand-purple/20 overflow-hidden">
+                  <Image
+                    src={`${p.url}/opengraph-image`}
+                    alt={p.title}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <span className="self-start bg-brand-purple text-white text-[10px] uppercase tracking-widest font-medium px-2 py-1">
                     {p.category}

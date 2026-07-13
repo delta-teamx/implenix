@@ -6,9 +6,11 @@ export const alt = 'Implenix blog post';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Per-blog-post OG image generator. Renders the post title on the
-// Implenix brand background so the social card matches the post —
-// gives a real CTR lift vs the generic default image.
+// Branded per-blog cover — matches the reference design:
+// dark navy background, subtle radial glow, purple BLOGS pill badge,
+// large heading, description line, purple footer bar with the domain
+// and handle. Used for OG social cards AND rendered inline on the
+// blog list + blog post pages via <img src="/blog/<slug>/opengraph-image">.
 export default function BlogOgImage({
   params,
 }: {
@@ -16,7 +18,10 @@ export default function BlogOgImage({
 }) {
   const doc = allBlogPosts.find((p) => p.slug === params.slug);
   const title = doc?.title ?? 'Implenix Blog';
-  const category = doc?.category ?? 'AI Voice Agents';
+  const description =
+    doc?.description ?? 'Field-tested operator playbooks from Implenix.';
+
+  const titleFontSize = title.length > 90 ? 60 : title.length > 55 ? 76 : 92;
 
   return new ImageResponse(
     (
@@ -24,16 +29,27 @@ export default function BlogOgImage({
         style={{
           width: '100%',
           height: '100%',
-          background: '#070538',
+          background: '#0a0d3f',
           display: 'flex',
           flexDirection: 'column',
-          padding: '64px',
+          padding: '56px 64px 0 64px',
           color: '#ffffff',
           fontFamily: 'sans-serif',
           position: 'relative',
         }}
       >
-        {/* grid background */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-140px',
+            right: '-140px',
+            width: '560px',
+            height: '560px',
+            borderRadius: '50%',
+            background:
+              'radial-gradient(circle, rgba(187,0,255,0.28) 0%, rgba(187,0,255,0) 65%)',
+          }}
+        />
         <div
           style={{
             position: 'absolute',
@@ -51,20 +67,7 @@ export default function BlogOgImage({
                 bottom: 0,
                 left: `${(i + 1) * 100}px`,
                 width: '1px',
-                background: 'rgba(61,250,255,0.06)',
-              }}
-            />
-          ))}
-          {Array.from({ length: 7 }).map((_, i) => (
-            <div
-              key={`h${i}`}
-              style={{
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                top: `${(i + 1) * 90}px`,
-                height: '1px',
-                background: 'rgba(61,250,255,0.06)',
+                background: 'rgba(61,250,255,0.04)',
               }}
             />
           ))}
@@ -75,75 +78,116 @@ export default function BlogOgImage({
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
-            height: '100%',
+            gap: 36,
+            flex: 1,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              background: '#bb00ff',
+              color: '#ffffff',
+              padding: '10px 26px 10px 26px',
+              borderRadius: 40,
+              alignSelf: 'flex-start',
+              fontSize: 30,
+              fontWeight: 900,
+              letterSpacing: '0.02em',
+            }}
+          >
+            BLOGS
             <span
               style={{
-                fontSize: 32,
-                color: '#ffffff',
-                fontWeight: 800,
-                letterSpacing: '-0.02em',
-                display: 'flex',
+                display: 'inline-block',
+                width: 22,
+                height: 22,
+                borderRadius: '50%',
+                border: '3px solid #ffffff',
+                marginLeft: 6,
               }}
-            >
-              <span style={{ color: '#3dfaff' }}>i</span>mplenix
-            </span>
-            <span
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                fontSize: 14,
-                color: '#bb00ff',
-                textTransform: 'uppercase',
-                letterSpacing: '0.2em',
-                border: '1px solid rgba(187,0,255,0.5)',
-                padding: '4px 10px',
-              }}
-            >
-              <span style={{ width: 6, height: 6, background: '#bb00ff' }} />
-              {category}
-            </span>
+            />
           </div>
 
           <div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 16,
+              fontSize: titleFontSize,
+              fontWeight: 900,
+              lineHeight: 1.02,
+              letterSpacing: '-0.02em',
               maxWidth: 1000,
+              color: '#ffffff',
+              display: 'flex',
             }}
           >
+            {title}
+          </div>
+
+          <div
+            style={{
+              fontSize: 26,
+              fontWeight: 700,
+              color: 'rgba(255,255,255,0.92)',
+              lineHeight: 1.35,
+              maxWidth: 980,
+              display: 'flex',
+            }}
+          >
+            {description}
+          </div>
+        </div>
+
+        <div
+          style={{
+            position: 'relative',
+            marginLeft: -64,
+            marginRight: -64,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <div
+            style={{
+              height: 4,
+              background: 'rgba(255,255,255,0.9)',
+              margin: '0 64px',
+            }}
+          />
+          <div style={{ display: 'flex' }}>
             <div
               style={{
-                fontSize: title.length > 60 ? 56 : 68,
+                flex: 1,
+                background: '#bb00ff',
+                color: '#ffffff',
+                padding: '24px 40px',
+                fontSize: 22,
                 fontWeight: 900,
-                lineHeight: 1.08,
-                letterSpacing: '-0.02em',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              {title}
+              IMPLENIX.NET
             </div>
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              fontSize: 16,
-              color: 'rgba(255,255,255,0.55)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.18em',
-              borderTop: '1px solid rgba(187,0,255,0.25)',
-              paddingTop: 24,
-            }}
-          >
-            <span>implenix.net/blog</span>
-            <span>We Automate the Call. You Close the Deal.</span>
+            <div style={{ width: 4, background: '#ffffff' }} />
+            <div
+              style={{
+                flex: 1,
+                background: '#bb00ff',
+                color: '#ffffff',
+                padding: '24px 40px',
+                fontSize: 22,
+                fontWeight: 900,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              @IMPLENIX.AI
+            </div>
           </div>
         </div>
       </div>
