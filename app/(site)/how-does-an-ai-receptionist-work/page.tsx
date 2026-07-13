@@ -143,7 +143,7 @@ export default function HowDoesAnAIReceptionistWorkPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               {
                 label: 'How It Works',
                 href: '/how-does-an-ai-receptionist-work',
@@ -175,7 +175,7 @@ export default function HowDoesAnAIReceptionistWorkPage() {
                   Hear it on a real number <ArrowRight size={16} />
                 </Link>
                 <Link
-                  href="/ai-receptionist"
+                  href="/"
                   data-cta-location="how-does-hero"
                   data-cta-type="secondary"
                   className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"
@@ -380,7 +380,7 @@ export default function HowDoesAnAIReceptionistWorkPage() {
             type="resource"
             links={[
               { href: '/what-is-an-ai-receptionist', label: 'What is an AI receptionist?' },
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               { href: '/preview/dashboard', label: 'Inside the Implenix dashboard' },
             ]}
           />

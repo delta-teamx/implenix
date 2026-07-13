@@ -41,7 +41,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
       'Fixed monthly cost regardless of call volume',
     ],
     related: [
-      { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+      { href: '/', label: 'AI Receptionist — main pillar' },
       { href: '/what-is-an-ai-receptionist', label: 'What is an AI receptionist?' },
       { href: '/how-does-an-ai-receptionist-work', label: 'How does an AI receptionist work?' },
     ],
@@ -121,7 +121,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
       'Reduces friction (no menus) and improves accuracy vs traditional IVR',
     ],
     related: [
-      { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+      { href: '/', label: 'AI Receptionist — main pillar' },
       {
         href: '/ai-receptionist-vs-ivr-system',
         label: 'AI Receptionist vs IVR System',
@@ -210,7 +210,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
       'Critical for service-business conversion',
     ],
     related: [
-      { href: '/ai-receptionist', label: 'AI Receptionist' },
+      { href: '/', label: 'AI Receptionist' },
       {
         href: '/ai-receptionist-vs-answering-service',
         label: 'vs Answering Service (booking comparison)',
@@ -433,7 +433,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         label: 'AI Receptionist vs IVR',
       },
       { href: '/glossary/call-routing', label: 'Call routing' },
-      { href: '/ai-receptionist', label: 'AI Receptionist' },
+      { href: '/', label: 'AI Receptionist' },
     ],
     faqs: [
       {

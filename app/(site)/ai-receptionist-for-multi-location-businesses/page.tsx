@@ -131,7 +131,7 @@ export default function AIReceptionistForMultiLocationPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               {
                 label: 'For Multi-Location',
                 href: '/ai-receptionist-for-multi-location-businesses',
@@ -314,7 +314,7 @@ export default function AIReceptionistForMultiLocationPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               {
                 href: '/ai-receptionist-for-small-business',
                 label: 'AI Receptionist for Small Business',

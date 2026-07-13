@@ -131,7 +131,7 @@ export default function AIReceptionistForStartupsPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               {
                 label: 'For Startups',
                 href: '/ai-receptionist-for-startups',

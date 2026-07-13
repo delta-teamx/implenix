@@ -111,7 +111,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               { label: '24/7 Coverage', href: '/24-7-ai-receptionist' },
             ]}
             className="mb-8"
@@ -341,7 +341,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               {
                 href: '/ai-receptionist-vs-answering-service',
                 label: 'AI Receptionist vs Answering Service',

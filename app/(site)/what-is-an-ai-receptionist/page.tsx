@@ -89,7 +89,7 @@ export default function WhatIsAnAIReceptionistPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               { label: 'What Is an AI Receptionist', href: '/what-is-an-ai-receptionist' },
             ]}
             className="mb-8"
@@ -375,7 +375,7 @@ export default function WhatIsAnAIReceptionistPage() {
               Get my audit <ArrowRight size={16} />
             </Link>
             <Link
-              href="/ai-receptionist"
+              href="/"
               data-cta-location="what-is-bottom"
               data-cta-type="secondary"
               className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"

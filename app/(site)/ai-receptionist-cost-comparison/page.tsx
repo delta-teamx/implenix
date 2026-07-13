@@ -145,7 +145,7 @@ export default function AIReceptionistCostComparisonPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               {
                 label: 'Cost Comparison',
                 href: '/ai-receptionist-cost-comparison',

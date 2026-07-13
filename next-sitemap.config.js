@@ -21,13 +21,10 @@ module.exports = {
     let changefreq = 'weekly';
 
     if (path === '/') {
-      // Home page — top priority.
+      // Home page — top priority. This IS the "AI Receptionist"
+      // keyword target after the /ai-receptionist pillar consolidation.
       priority = 1.0;
       changefreq = 'daily';
-    } else if (path === '/ai-receptionist') {
-      // Primary keyword pillar — second-highest priority.
-      priority = 0.95;
-      changefreq = 'weekly';
     } else if (
       path.startsWith('/ai-receptionist-for-') ||
       path.startsWith('/ai-receptionist-vs-') ||

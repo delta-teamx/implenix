@@ -115,7 +115,7 @@ export default function GlossaryIndexPage() {
               Get my audit <ArrowRight size={16} />
             </Link>
             <Link
-              href="/ai-receptionist"
+              href="/"
               data-cta-location="glossary-bottom"
               data-cta-type="secondary"
               className="inline-flex items-center justify-center gap-2 border border-brand-cyan text-brand-cyan font-medium px-6 py-3 rounded-sm hover:bg-brand-cyan/10"

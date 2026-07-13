@@ -176,7 +176,7 @@ export default function BenefitsOfAIReceptionistPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               {
                 label: 'Benefits',
                 href: '/benefits-of-ai-receptionist',

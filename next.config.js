@@ -48,7 +48,18 @@ const nextConfig = {
       destination: `/ai-receptionist-for-${to}`,
       permanent: true,
     }));
-    return [...fromBusinesses, ...fromIndustries];
+    // Consolidate the AI Receptionist keyword target on the homepage.
+    // The old /ai-receptionist pillar page is retired and 301s here so
+    // any existing backlinks or bookmarks flow to the primary landing
+    // page without content duplication.
+    const pillarConsolidation = [
+      {
+        source: '/ai-receptionist',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+    return [...fromBusinesses, ...fromIndustries, ...pillarConsolidation];
   },
   // Next.js does not support partially-dynamic directory names like
   // `ai-receptionist-for-[slug]`. The dynamic page lives at /i/[slug]

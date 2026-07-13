@@ -142,7 +142,7 @@ export default function AIReceptionistForSmallBusinessPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               { label: 'For Small Business', href: '/ai-receptionist-for-small-business' },
             ]}
             className="mb-8"
@@ -437,7 +437,7 @@ export default function AIReceptionistForSmallBusinessPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               { href: '/ai-receptionist-vs-voicemail', label: 'AI Receptionist vs Voicemail' },
               { href: '/pricing', label: 'AI Receptionist pricing' },
             ]}

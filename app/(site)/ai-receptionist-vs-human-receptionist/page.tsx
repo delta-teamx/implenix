@@ -497,7 +497,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               {
                 href: '/ai-receptionist-vs-answering-service',
                 label: 'AI Receptionist vs Answering Service',

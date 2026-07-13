@@ -110,7 +110,7 @@ export default function VirtualAIReceptionistPage() {
           <Breadcrumbs
             crumbs={[
               { label: 'Home', href: '/' },
-              { label: 'AI Receptionist', href: '/ai-receptionist' },
+              { label: 'AI Receptionist', href: '/' },
               { label: 'Virtual AI Receptionist', href: '/virtual-ai-receptionist' },
             ]}
             className="mb-8"
@@ -375,7 +375,7 @@ export default function VirtualAIReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/ai-receptionist', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist — main pillar' },
               {
                 href: '/ai-receptionist-vs-virtual-assistant',
                 label: 'AI Receptionist vs Virtual Assistant',
