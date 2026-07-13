@@ -13,6 +13,7 @@ import { DemoCTASection } from '@/components/sections/DemoCTASection';
 import { ROICalculator } from '@/components/common/ROICalculator';
 import { StickyDemoCTA } from '@/components/common/StickyDemoCTA';
 import { SectionHeader } from '@/components/common/SectionHeader';
+import { AIReceptionistFlow } from '@/components/common/AIReceptionistFlow';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import {
   organizationSchema,
@@ -86,31 +87,60 @@ export default function HomePage() {
       <Hero />
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
-        <div className="max-w-content mx-auto px-6 py-16 md:py-20">
-          <aside
-            data-answer
-            data-speakable
-            className="max-w-3xl border-l-[3px] border-brand-cyan bg-black p-6 md:p-8 flex flex-col gap-3 rounded-r-sm"
-          >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
-              ▸ Quick answer
-            </span>
-            <p className="font-heading text-white text-xl md:text-2xl leading-snug">
-              What is an AI receptionist?
-            </p>
-            <p className="font-body text-white/85 leading-relaxed text-base md:text-lg">
-              An AI receptionist is a voice-AI agent that answers your
-              business phone 24/7, holds a natural conversation with the
-              caller, qualifies the lead, books appointments live against
-              your calendar, and writes every call to your CRM in real
-              time. Implenix replaces the missed-call cost of voicemail
-              and the per-minute cost of live answering services with
-              fixed monthly pricing — typically $297-$697/month — and
-              handles unlimited concurrent calls without extra headcount.
-              In 2026 it is indistinguishable from a human operator for
-              routine booking, qualification, and intake calls.
-            </p>
-          </aside>
+        <div className="max-w-content mx-auto px-6 py-16 md:py-24">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-5 flex flex-col gap-5">
+              <span
+                data-speakable
+                className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan flex items-center gap-1.5"
+              >
+                <span className="w-1.5 h-1.5 bg-brand-cyan" /> Quick answer
+              </span>
+              <h2
+                data-answer
+                data-speakable
+                className="font-heading text-2xl md:text-3xl lg:text-4xl text-white leading-[1.1]"
+              >
+                What is an AI receptionist?
+              </h2>
+              <p
+                data-answer
+                data-speakable
+                className="font-body text-white/85 leading-relaxed text-base md:text-lg"
+              >
+                A voice-AI agent that answers your business phone{' '}
+                <span className="text-brand-cyan">24/7</span>, holds a
+                natural conversation with the caller, qualifies the lead,
+                books appointments{' '}
+                <span className="text-brand-cyan">live against your
+                calendar</span>, and writes every call to your CRM in
+                real time.
+              </p>
+              <p className="font-body text-white/70 leading-relaxed text-sm md:text-base">
+                Implenix replaces the missed-call cost of voicemail and
+                the per-minute cost of live answering services with{' '}
+                <span className="text-white font-medium">fixed monthly
+                pricing — $297-$697/month</span> — and handles unlimited
+                concurrent calls without extra headcount. In 2026 it is
+                indistinguishable from a human operator for routine
+                booking, qualification, and intake calls.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="inline-flex items-center gap-1.5 border border-brand-cyan/40 text-brand-cyan text-[10px] font-mono uppercase tracking-widest px-3 py-1.5">
+                  Fixed monthly pricing
+                </span>
+                <span className="inline-flex items-center gap-1.5 border border-brand-purple/40 text-brand-purple text-[10px] font-mono uppercase tracking-widest px-3 py-1.5">
+                  Live CRM sync
+                </span>
+                <span className="inline-flex items-center gap-1.5 border border-brand-cyan/40 text-brand-cyan text-[10px] font-mono uppercase tracking-widest px-3 py-1.5">
+                  Unlimited concurrent
+                </span>
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <AIReceptionistFlow />
+            </div>
+          </div>
         </div>
       </section>
 
