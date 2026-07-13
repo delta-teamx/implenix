@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { allResources } from 'contentlayer/generated';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  collectionPageSchema,
+  itemListSchema,
+  breadcrumbListSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { ResourcesClient, type ResourceItem } from './ResourcesClient';
 
@@ -29,8 +35,34 @@ export default function ResourcesPage() {
       description: r.description,
     }));
 
+  const allItems = [...guides, ...playbooks];
+
   return (
     <>
+      <SchemaOrg
+        schema={[
+          collectionPageSchema({
+            name: 'Implenix Resources — Guides + Playbooks',
+            description:
+              'Long-form guides and deployment playbooks for teams shipping voice AI in local business.',
+            url: '/resources',
+          }),
+          itemListSchema({
+            name: 'Implenix Guides + Playbooks',
+            description: 'Field-tested resources from the Implenix team.',
+            url: '/resources',
+            items: allItems.map((r) => ({
+              name: r.title,
+              url: r.url,
+              description: r.description,
+            })),
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Resources', href: '/resources' },
+          ]),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="max-w-3xl flex flex-col gap-5">

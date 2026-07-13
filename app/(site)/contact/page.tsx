@@ -4,8 +4,18 @@ import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
 import { BookingWidget } from '@/components/common/BookingWidget';
 import { PhoneCTA } from '@/components/common/PhoneCTA';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  contactPageSchema,
+  breadcrumbListSchema,
+  speakableSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
-import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
+import {
+  AGENT_PHONE_DISPLAY,
+  AGENT_PHONE_TEL,
+  HAS_REAL_PHONE,
+} from '@/lib/leadCapture';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Book Implenix — Call the AI Agent or Pick a Slot',
@@ -27,6 +37,19 @@ const SAMPLE_LOG = [
 export default function ContactPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          contactPageSchema({
+            url: '/contact',
+            telephone: HAS_REAL_PHONE ? AGENT_PHONE_TEL : undefined,
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Contact', href: '/contact' },
+          ]),
+          speakableSchema(),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="grid lg:grid-cols-12 gap-10 items-start">

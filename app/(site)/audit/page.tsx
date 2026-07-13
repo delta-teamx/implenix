@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { ShieldCheck, Clock, BarChart } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  webApplicationSchema,
+  speakableSchema,
+  breadcrumbListSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { AuditTool } from './AuditTool';
 
@@ -32,6 +38,21 @@ const STEPS = [
 export default function AuditPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          webApplicationSchema({
+            name: 'Missed-Call Audit — Implenix',
+            description:
+              'Free interactive tool that estimates monthly lost revenue from missed inbound calls using industry medians and your business profile.',
+            url: '/audit',
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Free missed-call audit', href: '/audit' },
+          ]),
+          speakableSchema(),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="max-w-3xl flex flex-col gap-5">

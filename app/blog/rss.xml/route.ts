@@ -21,6 +21,11 @@ export function GET() {
   const items = posts
     .map((post) => {
       const url = `${SITE_URL}${post.url}`;
+      const heroImage = post.heroImage
+        ? `\n      <media:content url="${escape(
+            post.heroImage,
+          )}" medium="image" />`
+        : '';
       return `    <item>
       <title>${escape(post.title)}</title>
       <link>${url}</link>
@@ -28,13 +33,19 @@ export function GET() {
       <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
       <description>${escape(post.description)}</description>
       <category>${escape(post.category)}</category>
-      <author>${escape(post.author)}</author>
+      <dc:creator>${escape(post.author)}</dc:creator>${heroImage}
     </item>`;
     })
     .join('\n');
 
+  // RSS 2.0 with Dublin Core (dc:creator — spec-compliant author) and
+  // Media RSS (media:content — per-item hero image for reader thumbnails)
+  // namespaces declared on the root <rss> element.
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>${escape(SITE_NAME)} Blog</title>
     <link>${SITE_URL}/blog</link>

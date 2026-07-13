@@ -33,6 +33,10 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     description: doc.metaDescription,
     path: doc.url,
     ogImage: doc.heroImage,
+    ogType: 'article',
+    publishedTime: new Date(doc.publishedAt).toISOString(),
+    author: doc.author,
+    tags: [doc.category],
   });
 }
 
@@ -140,14 +144,17 @@ export default function BlogPostPage({ params }: { params: Params }) {
             <p className="text-white/55 text-xs">{doc.authorRole}</p>
           </div>
           <div className="hidden sm:flex items-center gap-3 text-xs font-mono text-white/55 uppercase tracking-widest">
-            <span className="flex items-center gap-1.5">
+            <time
+              dateTime={new Date(doc.publishedAt).toISOString()}
+              className="flex items-center gap-1.5"
+            >
               <Calendar size={12} />
               {new Date(doc.publishedAt).toLocaleDateString('en-US', {
                 month: 'short',
                 day: 'numeric',
                 year: 'numeric',
               })}
-            </span>
+            </time>
             <span>·</span>
             <span>{doc.readTime}</span>
           </div>

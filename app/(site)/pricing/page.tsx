@@ -4,6 +4,13 @@ import { ArrowRight, Check, ShieldCheck, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { ComparisonTable } from '@/components/common/ComparisonTable';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  productWithOffersSchema,
+  breadcrumbListSchema,
+  faqSchema,
+  speakableSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -83,6 +90,26 @@ const WHITE_GLOVE = {
 export default function PricingPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          productWithOffersSchema({
+            name: 'Implenix AI Receptionist',
+            description:
+              'AI Receptionist for local business — three tiers with fixed monthly pricing. Solo Operator, Growing Agency, Established Firm.',
+            url: '/pricing',
+            offers: TIERS.map((t) => ({
+              name: t.name,
+              price: String(t.price),
+              description: t.target,
+            })),
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Pricing', href: '/pricing' },
+          ]),
+          speakableSchema(),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="max-w-3xl flex flex-col gap-5">

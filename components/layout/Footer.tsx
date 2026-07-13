@@ -70,8 +70,7 @@ const COLUMNS = [
       { href: '/benefits-of-ai-receptionist', label: 'Benefits' },
       { href: '/24-7-ai-receptionist', label: '24/7 coverage' },
       { href: '/virtual-ai-receptionist', label: 'Virtual receptionist' },
-      { href: '/ai-call-answering-service', label: 'AI call answering' },
-      { href: '/ai-phone-answering-service', label: 'AI phone answering' },
+      { href: '/ai-phone-answering-service', label: 'AI phone answering service' },
       { href: '/ai-receptionist-cost-comparison', label: 'Cost comparison' },
     ],
   },
@@ -160,7 +159,7 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10">
           <div className="max-w-content mx-auto px-6 py-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-white/50 font-mono uppercase tracking-widest">
-            <span>© 2025 Implenix. All rights reserved.</span>
+            <span>© 2026 Implenix. All rights reserved.</span>
             <span>We Automate the Call. You Close the Deal.</span>
           </div>
         </div>

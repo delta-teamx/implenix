@@ -58,6 +58,14 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        // /ai-call-answering-service was near-duplicate content vs
+        // /ai-phone-answering-service — same keyword family. 301
+        // consolidates the ranking signal on the phone version.
+        source: '/ai-call-answering-service',
+        destination: '/ai-phone-answering-service',
+        permanent: true,
+      },
     ];
     return [...fromBusinesses, ...fromIndustries, ...pillarConsolidation];
   },

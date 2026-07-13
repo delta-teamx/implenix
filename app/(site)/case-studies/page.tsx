@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { allCaseStudies } from 'contentlayer/generated';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  collectionPageSchema,
+  itemListSchema,
+  breadcrumbListSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { CaseStudiesClient } from './CaseStudiesClient';
 
@@ -27,6 +33,31 @@ export default function CaseStudiesPage() {
 
   return (
     <>
+      <SchemaOrg
+        schema={[
+          collectionPageSchema({
+            name: 'Implenix Case Studies',
+            description:
+              'Verified Implenix deployments across HVAC, dental, real estate, home improvement, auto, and marketing agencies.',
+            url: '/case-studies',
+          }),
+          itemListSchema({
+            name: 'Implenix Case Studies',
+            description:
+              'Verified customer deployments with real numbers from the Implenix portfolio.',
+            url: '/case-studies',
+            items: studies.map((s) => ({
+              name: s.resultHeadline,
+              url: `/case-studies/${s.slug}`,
+              description: s.summary,
+            })),
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Case studies', href: '/case-studies' },
+          ]),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="max-w-3xl flex flex-col gap-5">

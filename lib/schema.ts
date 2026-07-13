@@ -395,6 +395,186 @@ export function collectionPageSchema({
   };
 }
 
+// AboutPage schema — attach on /about. Establishes the page as an
+// entity page for the Organization, which helps entity queries and
+// knowledge-graph inclusion.
+export function aboutPageSchema({
+  name,
+  description,
+  url,
+}: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+// ContactPage schema — attach on /contact. Signals contact intent to
+// Google, gets picked up by contact-info knowledge-panel surfaces.
+export function contactPageSchema({
+  url,
+  telephone,
+}: {
+  url: string;
+  telephone?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${SITE_URL}${url}`,
+    name: `Contact ${SITE_NAME}`,
+    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+    mainEntity: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      ...(telephone ? { telephone } : {}),
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        areaServed: 'US',
+        availableLanguage: ['English', 'Spanish'],
+        ...(telephone ? { telephone } : {}),
+      },
+    },
+  };
+}
+
+// Generic WebPage schema — attach on utility pages like /privacy-policy
+// and /terms that don't fit Article or specific page types. Ensures
+// Google understands the page's role.
+export function webPageSchema({
+  name,
+  description,
+  url,
+  breadcrumb,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  breadcrumb?: BreadcrumbCrumb[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
+    ...(breadcrumb
+      ? {
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumb.map((c, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              name: c.label,
+              item: `${SITE_URL}${c.href}`,
+            })),
+          },
+        }
+      : {}),
+  };
+}
+
+// WebApplication schema — attach on interactive tools like /audit
+// (the missed-call audit calculator). Google surfaces this as an app
+// listing in some SERPs.
+export function webApplicationSchema({
+  name,
+  description,
+  url,
+  applicationCategory = 'BusinessApplication',
+}: {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    applicationCategory,
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+// Product schema with Offers — for the pricing page. Emits three
+// tier Offers so Google sees the price range. Combined with the
+// AggregateRating from softwareApplicationSchema, this lifts pricing-
+// page rich-result eligibility.
+export function productWithOffersSchema({
+  name,
+  description,
+  url,
+  offers,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  offers: {
+    name: string;
+    price: string;
+    priceCurrency?: string;
+    description?: string;
+  }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    brand: { '@type': 'Brand', name: SITE_NAME },
+    offers: offers.map((o) => ({
+      '@type': 'Offer',
+      name: o.name,
+      price: o.price,
+      priceCurrency: o.priceCurrency ?? 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}${url}`,
+      ...(o.description ? { description: o.description } : {}),
+    })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: 5,
+      reviewCount: 6,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+}
+
 // Speakable schema marks specific selectors as voice-assistant
 // friendly. Attached to FAQ-heavy pages and pillar pages so Google
 // Assistant / Bixby / Alexa can read those sections aloud. The

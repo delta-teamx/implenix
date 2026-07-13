@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { Phone, ArrowRight, Headphones, Clock, ShieldCheck } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { CodeWindow } from '@/components/common/CodeWindow';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  serviceSchema,
+  breadcrumbListSchema,
+  speakableSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import {
   AGENT_PHONE_DISPLAY,
@@ -47,6 +53,22 @@ const STEPS = [
 export default function TryItPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          serviceSchema({
+            name: 'Implenix AI Receptionist — Live Demo',
+            description:
+              'Live phone demo of the Implenix AI voice agent configured as a sample HVAC receptionist. No signup — just call and try it.',
+            serviceType: 'AI Receptionist',
+            url: '/try-it',
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Hear it live', href: '/try-it' },
+          ]),
+          speakableSchema(),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="grid lg:grid-cols-12 gap-10 items-start">

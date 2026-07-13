@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { webPageSchema, breadcrumbListSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
 
@@ -17,6 +19,24 @@ const LAST_UPDATED = 'January 8, 2026';
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          webPageSchema({
+            name: 'Privacy Policy | Implenix',
+            description:
+              'Implenix privacy policy — what data we collect, how we use it, GDPR/CCPA rights, and contact for privacy requests.',
+            url: '/privacy-policy',
+            breadcrumb: [
+              { label: 'Home', href: '/' },
+              { label: 'Privacy Policy', href: '/privacy-policy' },
+            ],
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Privacy Policy', href: '/privacy-policy' },
+          ]),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16">
           <Badge label="Legal · Privacy" variant="cyan" />

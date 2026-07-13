@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import { webPageSchema, breadcrumbListSchema } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -16,6 +18,24 @@ const LAST_UPDATED = 'January 8, 2026';
 export default function TermsPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          webPageSchema({
+            name: 'Terms & Conditions | Implenix',
+            description:
+              'Implenix Terms & Conditions — the agreement governing your use of implenix.net and Implenix AI voice deployment services.',
+            url: '/terms',
+            breadcrumb: [
+              { label: 'Home', href: '/' },
+              { label: 'Terms', href: '/terms' },
+            ],
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Terms', href: '/terms' },
+          ]),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-3xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16">
           <Badge label="Legal · Terms" variant="cyan" />

@@ -5,6 +5,13 @@ import { Badge } from '@/components/common/Badge';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { MetricGrid } from '@/components/common/MetricGrid';
 import { Timeline } from '@/components/common/Timeline';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  aboutPageSchema,
+  breadcrumbListSchema,
+  speakableSchema,
+  organizationSchema,
+} from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -86,6 +93,22 @@ const TIMELINE = [
 export default function AboutPage() {
   return (
     <>
+      <SchemaOrg
+        schema={[
+          aboutPageSchema({
+            name: 'About Implenix',
+            description:
+              'Implenix designs and deploys AI voice agents for local business. The team, principles, and operator commitment.',
+            url: '/about',
+          }),
+          organizationSchema(),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'About', href: '/about' },
+          ]),
+          speakableSchema(),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="max-w-4xl flex flex-col gap-6">

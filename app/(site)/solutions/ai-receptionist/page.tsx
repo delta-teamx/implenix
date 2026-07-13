@@ -97,9 +97,9 @@ const FAQS = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist for Local Businesses | Implenix',
+  title: 'AI Receptionist Product Details — Features | Implenix',
   description:
-    'The Implenix AI receptionist answers every inbound call, qualifies leads, and books appointments — 24/7, with custom scripts per industry.',
+    'Deep dive on the Implenix inbound AI receptionist — features, integrations, script scope, live-transfer rules, and how a deployment ships.',
   path: '/solutions/ai-receptionist',
 });
 

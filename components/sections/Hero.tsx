@@ -11,18 +11,17 @@ export function Hero() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <Badge label="Implenix · AI Receptionist for Local Business" variant="cyan" />
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] sm:leading-[1.02] tracking-tight">
-              Stop missing calls
+              The <span className="text-brand-cyan">AI Receptionist</span>
               <br />
-              that{' '}
-              <span className="text-brand-purple">cost you</span>
+              that stops missing
               <br />
-              <span className="text-brand-cyan">clients</span>.
+              <span className="text-brand-purple">client calls</span>.
             </h1>
             <p className="font-body text-white/80 text-lg max-w-xl leading-relaxed">
               Every missed call is a client who hired your competitor.
-              Implenix answers them all — 24/7, like a senior receptionist
-              who never sleeps. Booked, qualified, and synced to your CRM
-              before you wake up.
+              Implenix is the AI receptionist that answers them all — 24/7,
+              like a senior front-desk operator who never sleeps. Booked,
+              qualified, and synced to your CRM before you wake up.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link
