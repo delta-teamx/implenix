@@ -190,50 +190,83 @@ export default function HowDoesAnAIReceptionistWorkPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="At a glance"
-              title="The call lifecycle, end to end"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
-              <p>
-                An AI receptionist runs as a deployed service sitting between
-                your phone routing and your business systems. When a call
-                lands on your number, telephony infrastructure (typically a
-                SIP trunk) routes it to the voice agent. The agent answers
-                immediately, listens to the caller, classifies intent in
-                real time, walks through your defined script, books or
-                routes the call as needed, and writes everything back to
-                your CRM and calendar before the call ends. The whole
-                lifecycle takes 30 seconds to two minutes for routine calls
-                and writes structured data your team can act on.
-              </p>
-              <p>
-                The technology is layered. At the bottom is telephony — your
-                phone provider routes inbound calls to the AI's SIP
-                endpoint. Above that, the voice layer streams audio in both
-                directions: speech-to-text converts the caller's voice to
-                text in real time, and text-to-speech synthesizes the
-                agent's responses back. The intelligence layer combines a
-                language model for intent classification with your tuned
-                script for the dialogue flow — the agent does not freelance
-                answers, it follows a defined branch tree. The integration
-                layer makes API calls during the conversation: calendar
-                lookups for booking, CRM writes for contact updates, SMS
-                sends for confirmations.
-              </p>
-              <p>
-                Configurable handoff rules check on every conversational
-                turn. If the caller's intent or sentiment matches a defined
-                trigger — VIP allow-list, urgent keywords like "emergency"
-                or "lawsuit," frustration detected via tone, or a question
-                the script does not cover — the agent transfers the call
-                live to your team or a backup human service. Transfers
-                happen via SIP, take seconds, and the receiving human gets
-                a context briefing so they pick up mid-conversation, not
-                from scratch.
-              </p>
+          <SectionHeader
+            eyebrow="At a glance"
+            title="The call lifecycle, end to end"
+            description="Five layers stacked between your phone line and your business systems. Every inbound call walks the stack top-to-bottom in under 2 minutes."
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-7 flex flex-col gap-2">
+              <ArchLayer
+                number="01"
+                title="Telephony (SIP trunk)"
+                body="Your phone provider routes every inbound call to the AI's SIP endpoint. The agent picks up in under one ring."
+                color="cyan"
+              />
+              <ArchLayer
+                number="02"
+                title="Voice I/O (STT + TTS)"
+                body="Speech-to-text streams the caller's voice to text in real time; text-to-speech synthesizes the agent's replies back."
+                color="purple"
+              />
+              <ArchLayer
+                number="03"
+                title="Intelligence (LLM + script)"
+                body="A language model classifies intent and follows your tuned dialogue tree. No freelance answers — the agent walks defined branches."
+                color="cyan"
+              />
+              <ArchLayer
+                number="04"
+                title="Integration (CRM + calendar + SMS)"
+                body="Live API calls during the conversation — calendar lookups, CRM writes, SMS confirmations. Everything happens before the call ends."
+                color="purple"
+              />
+              <ArchLayer
+                number="05"
+                title="Handoff rules"
+                body="Every turn checks VIP allow-list, urgent keywords, sentiment, off-script triggers. Matches route via SIP transfer with a live context briefing."
+                color="cyan"
+                highlight
+              />
             </div>
+            <aside className="lg:col-span-5 flex flex-col gap-4">
+              <div className="border border-brand-cyan/30 bg-black p-5 flex flex-col gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ Typical call length
+                </span>
+                <p className="font-heading text-3xl md:text-4xl text-brand-cyan leading-none">
+                  30s – 2 min
+                </p>
+                <p className="font-body text-sm text-white/70 leading-relaxed">
+                  For routine booking, qualification, and intake. Longer
+                  for emergency triage with handoff.
+                </p>
+              </div>
+              <div className="border border-brand-purple/30 bg-black p-5 flex flex-col gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ What lands in your CRM
+                </span>
+                <ul className="font-body text-sm text-white/85 flex flex-col gap-1.5 mt-1">
+                  <li>· Full call recording + transcript</li>
+                  <li>· Structured intake fields</li>
+                  <li>· Classified intent + confidence</li>
+                  <li>· Booking (if any) with time + provider</li>
+                  <li>· Next-action tag for your team</li>
+                </ul>
+              </div>
+              <div className="border-l-[3px] border-brand-cyan bg-black p-5">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ Handoff SLA
+                </span>
+                <p className="font-body text-sm text-white/75 leading-relaxed mt-2">
+                  Live SIP transfer to your team in{' '}
+                  <span className="text-brand-cyan font-mono">under 8s</span>{' '}
+                  when a handoff rule fires. Receiving human gets a
+                  one-line context briefing so they pick up mid-
+                  conversation, not from scratch.
+                </p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -407,5 +440,48 @@ function StackCard({
       <p className="font-heading text-white text-base">{label}</p>
       <p className="text-xs font-body text-white/65 leading-relaxed">{note}</p>
     </article>
+  );
+}
+
+function ArchLayer({
+  number,
+  title,
+  body,
+  color,
+  highlight,
+}: {
+  number: string;
+  title: string;
+  body: string;
+  color: 'cyan' | 'purple';
+  highlight?: boolean;
+}) {
+  const isCyan = color === 'cyan';
+  return (
+    <div
+      className={`relative flex items-start gap-4 p-4 md:p-5 border ${
+        highlight
+          ? 'border-brand-cyan ring-1 ring-brand-cyan/25'
+          : isCyan
+            ? 'border-brand-cyan/25 bg-brand-cyan/[0.04]'
+            : 'border-brand-purple/25 bg-brand-purple/[0.04]'
+      }`}
+    >
+      <span
+        className={`font-heading text-3xl md:text-4xl leading-none shrink-0 ${
+          isCyan ? 'text-brand-cyan' : 'text-brand-purple'
+        }`}
+      >
+        {number}
+      </span>
+      <div className="flex-1 min-w-0">
+        <p className="font-heading text-white text-base md:text-lg leading-snug">
+          {title}
+        </p>
+        <p className="font-body text-sm text-white/70 leading-relaxed mt-1.5">
+          {body}
+        </p>
+      </div>
+    </div>
   );
 }

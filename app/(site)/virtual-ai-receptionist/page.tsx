@@ -154,46 +154,69 @@ export default function VirtualAIReceptionistPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="What it is"
-              title="A cloud-hosted alternative to in-office or virtual-assistant phone handling"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+          <SectionHeader
+            eyebrow="What it is"
+            title="A cloud-hosted alternative to in-office or virtual-assistant phone handling"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-5 flex flex-col gap-4 font-body text-white/80 text-base leading-relaxed">
               <p>
                 The phrase "virtual receptionist" historically meant a
-                remote human worker — a virtual assistant who handled
-                phones from a different location. That model still
-                exists, with the constraints any single human role has:
-                limited working hours, single-call concurrency, training
-                overhead, turnover risk. A virtual AI receptionist is
-                the same idea taken to its logical conclusion: a remote
-                phone-handling service that runs continuously at fixed
-                cost, never has a bad day, and integrates with your
-                business systems live.
+                remote human worker with{' '}
+                <span className="text-brand-purple">limited hours,
+                single-call concurrency, training overhead, turnover
+                risk</span>. A virtual AI receptionist is the same idea
+                taken to its logical conclusion.
               </p>
               <p>
                 Implenix hosts the entire agent in our cloud. Your
-                business number forwards (or ports) to our SIP trunk;
-                from there the call flows through speech-to-text, the
-                tuned dialogue model, calendar and CRM API calls, and
-                back to text-to-speech for the response — with sub-
-                800ms turn-taking. Setup is configuration only. No
-                hardware install, no PBX changes, no IT project. Most
-                deployments go live in 7-14 business days, parallel-
-                tested for a week, then routed to real traffic.
+                business number forwards to our SIP trunk; the call
+                flows through STT → tuned dialogue model → CRM API →
+                TTS, with{' '}
+                <span className="text-brand-cyan">sub-800ms turn-taking</span>.
               </p>
               <p>
-                The cloud-hosted model brings every advantage you would
-                expect: instant scaling for peak hours, multi-region
-                redundancy, continuous updates without re-provisioning,
-                and integration with any cloud-based CRM or calendar
-                via API. For businesses replacing an in-office or
-                virtual-assistant phone setup, the upgrade path is
-                low-friction and the operating economics shift
-                dramatically in your favor.
+                Setup is <span className="text-white font-medium">configuration
+                only</span> — no hardware install, no PBX changes, no
+                IT project. Most deployments go live in 7-14 business
+                days, parallel-tested for a week, then routed to real
+                traffic.
               </p>
             </div>
+            <aside className="lg:col-span-7 border border-brand-cyan/25 bg-black p-5 md:p-6 flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                  ▸ Cloud call path
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-white/50">
+                  &lt;800ms end-to-end
+                </span>
+              </div>
+              <ol className="flex flex-col gap-2">
+                <PathStep index="1" label="Caller's phone" note="Any inbound number" color="cyan" />
+                <PathStep index="2" label="Your business number" note="Forwards or ports to Implenix" color="cyan" />
+                <PathStep index="3" label="Implenix SIP trunk" note="Cloud endpoint · unlimited concurrent" color="purple" />
+                <PathStep index="4" label="Speech-to-text (streaming)" note="Real-time caller audio → text" color="purple" />
+                <PathStep index="5" label="Tuned dialogue model" note="Intent + your script + business context" color="cyan" />
+                <PathStep index="6" label="Live CRM + calendar APIs" note="Booking, contact write, availability check" color="cyan" />
+                <PathStep index="7" label="Text-to-speech" note="Agent response synthesized back" color="purple" />
+                <PathStep index="8" label="Caller hears reply" note="Full round-trip in under 800ms" color="purple" last />
+              </ol>
+              <div className="border-t border-brand-purple/15 pt-4 grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <p className="font-heading text-2xl text-brand-cyan leading-none">0</p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 mt-1.5">Hardware</p>
+                </div>
+                <div>
+                  <p className="font-heading text-2xl text-brand-cyan leading-none">0</p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 mt-1.5">PBX changes</p>
+                </div>
+                <div>
+                  <p className="font-heading text-2xl text-brand-cyan leading-none">7-14d</p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-white/50 mt-1.5">Deploy</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -386,5 +409,44 @@ export default function VirtualAIReceptionistPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function PathStep({
+  index,
+  label,
+  note,
+  color,
+  last,
+}: {
+  index: string;
+  label: string;
+  note: string;
+  color: 'cyan' | 'purple';
+  last?: boolean;
+}) {
+  const isCyan = color === 'cyan';
+  return (
+    <li className="relative flex items-start gap-3">
+      <span
+        className={`w-7 h-7 rounded-full flex items-center justify-center font-mono text-[11px] font-bold shrink-0 border ${
+          isCyan
+            ? 'border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan'
+            : 'border-brand-purple/40 bg-brand-purple/10 text-brand-purple'
+        }`}
+      >
+        {index}
+      </span>
+      <div
+        className={`flex-1 min-w-0 flex items-center justify-between gap-3 px-3 py-2 border ${
+          isCyan ? 'border-brand-cyan/20' : 'border-brand-purple/20'
+        } ${last ? '' : 'mb-1'}`}
+      >
+        <span className="font-body text-white text-sm">{label}</span>
+        <span className="font-mono text-[10px] uppercase tracking-widest text-white/50 hidden sm:inline">
+          {note}
+        </span>
+      </div>
+    </li>
   );
 }

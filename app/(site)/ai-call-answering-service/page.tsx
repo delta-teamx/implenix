@@ -175,42 +175,49 @@ export default function AICallAnsweringServicePage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="What it is"
-              title="The AI alternative to a traditional call answering service"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
-              <p>
-                A call answering service handles your inbound business
-                phone — picking up calls, taking messages, routing the
-                ones that need a human. Traditional answering services
-                use human operators reading from your script, billed per
-                call or per minute. They work, within constraints: cost
-                rises with volume, after-hours coverage is premium-priced
-                or absent, integrations are usually one-way email
-                summaries, and operator quality drifts over time.
-              </p>
-              <p>
-                An AI call answering service is the same job — answer,
-                qualify, take a message or book, transfer when needed —
-                with different operating economics. Implenix runs as a
-                deployed AI agent on your business number, picks up every
-                call within one ring, follows your defined script, and
-                writes the outcome back to your CRM during the call.
-                Coverage is continuous. Concurrency is unbounded. Cost is
-                fixed at $297-$997/month regardless of call volume.
-              </p>
-              <p>
-                For most local businesses replacing or augmenting a
-                traditional answering service, the AI delivers the same
-                practical outcomes (every call answered, intake captured,
-                bookings made, urgent calls routed) at a fraction of the
-                cost — and adds capability the traditional service did not
-                have, like real-time CRM sync, live calendar booking, and
-                no premium for after-hours.
-              </p>
+          <SectionHeader
+            eyebrow="What it is"
+            title="The AI alternative to a traditional call answering service"
+          />
+          <div className="mt-12 grid md:grid-cols-2 gap-5">
+            <div className="border border-white/10 bg-black p-6 flex flex-col gap-4">
+              <span className="inline-flex items-center gap-2 self-start font-mono text-[10px] uppercase tracking-widest text-white/55 border border-white/15 px-2 py-1">
+                Traditional answering service
+              </span>
+              <ul className="flex flex-col gap-3 mt-1">
+                <ModelRow label="Operators" value="Humans on rotating shifts" bad />
+                <ModelRow label="Billing" value="Per call or per minute" bad />
+                <ModelRow label="After-hours" value="Premium-priced or absent" bad />
+                <ModelRow label="Integration" value="One-way email summaries" bad />
+                <ModelRow label="Quality" value="Drifts between operators" bad />
+                <ModelRow label="Coverage" value="Business hours + limited overflow" bad />
+              </ul>
             </div>
+            <div className="border-l-[3px] border-brand-cyan bg-black p-6 flex flex-col gap-4">
+              <span className="inline-flex items-center gap-2 self-start font-mono text-[10px] uppercase tracking-widest text-brand-cyan border border-brand-cyan/40 px-2 py-1">
+                Implenix AI answering
+              </span>
+              <ul className="flex flex-col gap-3 mt-1">
+                <ModelRow label="Operators" value="Deployed AI agent, tuned to your script" good />
+                <ModelRow label="Billing" value="Fixed $297-$997/month regardless of volume" good />
+                <ModelRow label="After-hours" value="Included at the same price" good />
+                <ModelRow label="Integration" value="Live two-way CRM + calendar sync" good />
+                <ModelRow label="Quality" value="Identical every call, every shift" good />
+                <ModelRow label="Coverage" value="24/7 with unlimited concurrent calls" good />
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 max-w-3xl border-l-[3px] border-brand-purple bg-black p-6">
+            <p className="font-body text-white/85 text-base leading-relaxed">
+              For most local businesses replacing or augmenting a
+              traditional answering service, the AI delivers{' '}
+              <span className="text-white font-medium">the same
+              practical outcomes at a fraction of the cost</span> — every
+              call answered, intake captured, bookings made, urgent
+              calls routed — and adds capability the traditional service
+              did not have (real-time CRM sync, live calendar booking,
+              no after-hours premium).
+            </p>
           </div>
         </div>
       </section>
@@ -359,5 +366,39 @@ export default function AICallAnsweringServicePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function ModelRow({
+  label,
+  value,
+  good,
+  bad,
+}: {
+  label: string;
+  value: string;
+  good?: boolean;
+  bad?: boolean;
+}) {
+  return (
+    <li className="flex items-start gap-3 pb-2 border-b border-white/5 last:border-b-0 last:pb-0">
+      <span
+        className={`mt-1 w-1.5 h-1.5 shrink-0 ${
+          good ? 'bg-brand-cyan' : bad ? 'bg-white/25' : 'bg-white/40'
+        }`}
+      />
+      <div className="flex-1 min-w-0">
+        <p className="font-mono text-[9px] uppercase tracking-widest text-white/45">
+          {label}
+        </p>
+        <p
+          className={`font-body text-sm mt-0.5 leading-snug ${
+            good ? 'text-white' : bad ? 'text-white/55' : 'text-white/80'
+          }`}
+        >
+          {value}
+        </p>
+      </div>
+    </li>
   );
 }

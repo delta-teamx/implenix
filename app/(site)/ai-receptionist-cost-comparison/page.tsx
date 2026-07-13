@@ -192,39 +192,75 @@ export default function AIReceptionistCostComparisonPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="The framing"
-              title="The cheapest option on paper is rarely the cheapest in practice"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
-              <p>
-                Comparing the cost of phone-handling options is more
-                complicated than the headline price suggests. Voicemail is
-                "free" only if you exclude the lost pipeline it creates —
-                which for most local businesses is the largest dollar
-                number on the page. A part-time hire is "cheap" only if
-                you ignore that 20 hours of coverage leaves the other 148
-                uncovered. A live answering service is "manageable" only
-                until volume scales and per-minute billing creeps past
-                $1,500/month.
+          <SectionHeader
+            eyebrow="The framing"
+            title="The cheapest option on paper is rarely the cheapest in practice"
+          />
+          <div className="mt-12 grid md:grid-cols-3 gap-4">
+            <div className="border-l-[3px] border-brand-purple bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                ▸ Hidden cost 1
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-purple leading-none">
+                $5-30k
               </p>
-              <p>
-                The honest comparison runs on three dimensions: the
-                explicit subscription or labor cost, the hidden cost each
-                option creates (lost pipeline, hangup rate, turnover, HR
-                overhead), and the coverage actually delivered for that
-                cost. The table below ranks every common option a local
-                business considers — voicemail, IVR, live answering
-                service, AI receptionist, part-time hire, full-time hire,
-                outsourced call center — on all three. The verdict is
-                consistent for most businesses: the AI receptionist
-                delivers the best per-hour cost, the lowest hidden cost,
-                and the highest coverage. Voicemail and full-time human
-                hires are typically the most expensive options once you
-                account for what they actually cost.
+              <p className="font-body text-sm text-white/80 leading-tight">
+                Lost pipeline per month
+              </p>
+              <p className="font-body text-xs text-white/60 leading-relaxed">
+                Voicemail is "free" until you count the pipeline it
+                leaks. Roughly 75% of callers hang up without leaving a
+                message and call the next business on Google.
               </p>
             </div>
+            <div className="border-l-[3px] border-brand-purple bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                ▸ Hidden cost 2
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-purple leading-none">
+                148 hrs
+              </p>
+              <p className="font-body text-sm text-white/80 leading-tight">
+                Uncovered per week
+              </p>
+              <p className="font-body text-xs text-white/60 leading-relaxed">
+                Part-time hire = 20 hrs of coverage. That leaves 148
+                hrs/week with the phone answered by voicemail, an
+                after-hours service, or nobody.
+              </p>
+            </div>
+            <div className="border-l-[3px] border-brand-purple bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                ▸ Hidden cost 3
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-purple leading-none">
+                +$1,500
+              </p>
+              <p className="font-body text-sm text-white/80 leading-tight">
+                Per-minute creep
+              </p>
+              <p className="font-body text-xs text-white/60 leading-relaxed">
+                Live answering service "manageable" — until volume
+                scales and per-minute billing crosses $1,500/month with
+                the same call volume you started at.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 max-w-3xl border-l-[3px] border-brand-cyan bg-black p-6">
+            <p className="font-body text-white/85 text-base lg:text-lg leading-relaxed">
+              The honest comparison runs on{' '}
+              <span className="text-brand-cyan">three dimensions</span>:
+              explicit subscription/labor cost, the hidden cost each
+              option creates (lost pipeline, hangup rate, turnover, HR
+              overhead), and the coverage actually delivered for that
+              cost. The table below ranks every common option on all
+              three. The verdict is consistent:{' '}
+              <span className="text-white font-medium">AI receptionist
+              delivers the best per-hour cost, the lowest hidden cost,
+              and the highest coverage</span> for most businesses.
+              Voicemail and full-time hires are usually the most
+              expensive once you count what they actually cost.
+            </p>
           </div>
         </div>
       </section>

@@ -222,48 +222,79 @@ export default function AIPhoneAnsweringServicePage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="What it actually is"
-              title="A 24/7 voice agent that replaces your answering service"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+          <SectionHeader
+            eyebrow="What it actually is"
+            title="A 24/7 voice agent that replaces your answering service"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-7 flex flex-col gap-4 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
-                An AI phone answering service is a voice agent that answers
-                your inbound business calls in real time, follows your script,
-                and writes the outcome to your business systems. Where a
-                traditional answering service uses human operators reading
-                from a script and billing per call or per minute, an AI phone
-                answering service runs continuously at a fixed cost, handles
-                unlimited concurrent calls, and integrates directly with your
-                calendar and CRM rather than emailing a summary the next
-                morning.
+                An AI phone answering service is a voice agent that
+                answers your inbound business calls in real time, follows
+                your script, and writes the outcome to your business
+                systems. Traditional answering services bill{' '}
+                <span className="text-brand-purple">per call or per
+                minute</span>. AI phone answering runs continuously at{' '}
+                <span className="text-brand-cyan">fixed cost</span>,
+                handles unlimited concurrent calls, and integrates
+                directly with your CRM instead of emailing a summary the
+                next morning.
               </p>
               <p>
-                The use cases overlap closely with what businesses already buy
-                from live answering services — after-hours coverage, overflow
-                during peak hours, qualification and intake, appointment
-                booking — but the operating economics are different. A live
-                answering service handling 400 calls a month typically costs
-                $600-$1,500. The same volume on Implenix is fixed at
-                $297-$597. The cost gap widens with volume because traditional
-                services bill on usage. For any business with meaningful call
-                volume or growth ambitions, the math eventually runs heavily
-                toward AI.
-              </p>
-              <p>
-                The trade-off is real: human operators handle nuanced
-                emotionally complex calls in ways AI does not — yet. Most
-                deployments solve this with live-transfer rules: the AI
-                handles 80-90% of routine inbound at fixed cost, and
-                a smaller live team (or your in-house staff) takes the
-                remaining calls flagged for human handling. For most
-                businesses replacing or augmenting an answering service,
-                Implenix delivers the same practical outcomes at a fraction
-                of the cost, with deeper integration and no usage-based
-                billing surprises.
+                The trade-off is real: human operators handle nuanced,
+                emotionally complex calls in ways AI does not — yet.
+                Most deployments solve this with{' '}
+                <span className="text-white">live-transfer rules</span>:
+                the AI handles 80-90% of routine inbound at fixed cost,
+                and a smaller live team takes the remaining calls
+                flagged for human handling.
               </p>
             </div>
+            <aside className="lg:col-span-5 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Same volume · different math
+              </span>
+              <div className="border border-brand-purple/25 bg-black flex flex-col divide-y divide-brand-purple/15">
+                <div className="p-4 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="font-heading text-sm text-white">
+                      Live answering service
+                    </p>
+                    <p className="font-body text-[11px] text-white/55 mt-0.5">
+                      400 calls/mo · per-minute billing
+                    </p>
+                  </div>
+                  <span className="font-mono text-lg text-white/50 line-through decoration-white/30">
+                    $600-1,500
+                  </span>
+                </div>
+                <div className="p-4 flex items-center justify-between gap-4 bg-brand-cyan/8">
+                  <div>
+                    <p className="font-heading text-sm text-brand-cyan">
+                      Implenix AI answering
+                    </p>
+                    <p className="font-body text-[11px] text-white/60 mt-0.5">
+                      Same 400 calls/mo · fixed price
+                    </p>
+                  </div>
+                  <span className="font-mono text-lg text-brand-cyan">
+                    $297-597
+                  </span>
+                </div>
+              </div>
+              <div className="border-l-[3px] border-brand-purple bg-black p-4 mt-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                  ▸ Coverage
+                </span>
+                <p className="font-heading text-lg text-white mt-1 leading-tight">
+                  80-90% AI · 10-20% live human
+                </p>
+                <p className="font-body text-xs text-white/60 mt-1.5 leading-relaxed">
+                  Routine inbound stays with AI. Sensitive / complex
+                  calls route to your team via live transfer.
+                </p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
