@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { Phone } from 'lucide-react';
 
 type Line = {
   speaker: 'agent' | 'caller';
@@ -19,13 +20,13 @@ type Props = {
   restartPauseMs?: number;
 };
 
-// Animated call transcript that types each turn out character-by-
-// character, advances to the next turn after a pause, and loops back
-// to the start once the full conversation has rendered. Designed to
-// sit inline in a section without auto-scrolling the page — only the
-// transcript container scrolls.
+// Chat-thread style animated call transcript. Bubbles appear one
+// turn at a time with a per-character typing animation, and the
+// scroll container follows the newest bubble without scrolling the
+// page. Loops back to start after finishing the last turn. Designed
+// to feel like a messaging app (WhatsApp / iMessage), not a terminal.
 export function AnimatedCallTranscript({
-  title = 'live-call.log',
+  title = 'Live sample call',
   caption,
   lines,
   typingSpeedMs = 22,
@@ -35,7 +36,6 @@ export function AnimatedCallTranscript({
   const [turnIndex, setTurnIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const current = lines[turnIndex];
@@ -46,7 +46,6 @@ export function AnimatedCallTranscript({
       return () => clearTimeout(t);
     }
 
-    // Finished typing this turn — pause, then advance.
     const isLast = turnIndex === lines.length - 1;
     const wait = isLast ? restartPauseMs : turnPauseMs;
     const t = setTimeout(() => {
@@ -61,8 +60,6 @@ export function AnimatedCallTranscript({
     return () => clearTimeout(t);
   }, [turnIndex, charIndex, lines, typingSpeedMs, turnPauseMs, restartPauseMs]);
 
-  // Auto-scroll within the transcript container — but only the
-  // container, not the page.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -70,61 +67,79 @@ export function AnimatedCallTranscript({
   }, [turnIndex, charIndex]);
 
   return (
-    <div
-      ref={containerRef}
-      className="bg-black border border-brand-cyan/25 rounded-sm overflow-hidden"
-    >
-      <div className="flex items-center gap-2 border-b border-brand-cyan/20 px-4 py-2.5 bg-black">
-        <span className="w-2.5 h-2.5 bg-brand-purple rounded-full" />
-        <span className="w-2.5 h-2.5 bg-brand-cyan rounded-full" />
-        <span className="w-2.5 h-2.5 bg-white/40 rounded-full" />
-        <span className="ml-3 font-mono text-[11px] text-white/50 uppercase tracking-widest flex-1">
-          {title}
-        </span>
+    <div className="bg-black border border-brand-cyan/25 overflow-hidden">
+      <div className="flex items-center justify-between gap-3 border-b border-brand-cyan/20 px-5 py-3 bg-brand-dark">
+        <div className="flex items-center gap-2.5">
+          <span className="w-8 h-8 border border-brand-cyan/40 bg-black flex items-center justify-center rounded-full shrink-0">
+            <Phone size={13} className="text-brand-cyan" />
+          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="font-body text-white text-[13px] font-medium">
+              Implenix agent · live
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan/80">
+              {title}
+            </span>
+          </div>
+        </div>
         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-70" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan" />
           </span>
           Live
         </span>
       </div>
+
       <div
         ref={scrollRef}
-        className="font-mono text-[11.5px] sm:text-[12.5px] leading-6 p-4 sm:p-5 overflow-y-auto h-[280px] sm:h-[340px] md:h-[400px] whitespace-pre-wrap text-white/90"
+        className="flex flex-col gap-3 p-4 sm:p-6 overflow-y-auto h-[320px] sm:h-[380px] md:h-[440px]"
         aria-live="polite"
       >
         {lines.map((line, i) => {
           if (i > turnIndex) return null;
           const text =
             i < turnIndex ? line.text : line.text.slice(0, charIndex);
+          const isAgent = line.speaker === 'agent';
+          const isTyping = i === turnIndex && charIndex < line.text.length;
+
           return (
-            <div key={i} className="flex gap-3 mb-3">
-              <span className="text-white/30 select-none shrink-0">
-                {String(i + 1).padStart(2, '0')}
-              </span>
+            <div
+              key={i}
+              className={`flex flex-col gap-1 max-w-[85%] ${
+                isAgent ? 'items-start self-start' : 'items-end self-end'
+              }`}
+            >
               <span
-                className={`shrink-0 ${
-                  line.speaker === 'agent'
-                    ? 'text-brand-cyan'
-                    : 'text-brand-purple'
+                className={`px-1 font-mono text-[10px] uppercase tracking-widest ${
+                  isAgent ? 'text-brand-cyan' : 'text-brand-purple'
                 }`}
               >
-                {line.speaker === 'agent' ? 'AGENT' : 'CALLER'}
+                {isAgent ? 'Implenix' : 'Caller'}
               </span>
-              <span className="flex-1">
+              <div
+                className={`px-4 py-2.5 font-body text-sm leading-relaxed ${
+                  isAgent
+                    ? 'bg-brand-cyan/10 border border-brand-cyan/30 text-white rounded-r-lg rounded-tl-lg rounded-bl-sm'
+                    : 'bg-brand-purple/12 border border-brand-purple/35 text-white rounded-l-lg rounded-tr-lg rounded-br-sm'
+                }`}
+              >
                 {text}
-                {i === turnIndex && charIndex < line.text.length ? (
+                {isTyping ? (
                   <span className="inline-block w-2 h-4 bg-brand-cyan align-middle ml-0.5 animate-pulse" />
                 ) : null}
-              </span>
+              </div>
             </div>
           );
         })}
       </div>
+
       {caption ? (
-        <div className="border-t border-brand-cyan/20 px-4 py-2 text-[11px] font-mono text-white/50 uppercase tracking-widest">
-          {caption}
+        <div className="border-t border-brand-cyan/15 px-5 py-3 bg-brand-dark flex items-center gap-2">
+          <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full shrink-0" />
+          <span className="font-body text-[12px] text-white/75 leading-snug">
+            {caption}
+          </span>
         </div>
       ) : null}
     </div>
