@@ -333,6 +333,68 @@ export function howToSchema({
   };
 }
 
+// ItemList schema for index / listing pages. Google surfaces this as
+// "list of X" carousels in some SERPs. Used on /blog and /industries
+// so search engines understand the collection structure.
+export function itemListSchema({
+  name,
+  description,
+  url,
+  items,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url: string; description?: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    numberOfItems: items.length,
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE_URL}${it.url}`,
+      name: it.name,
+      ...(it.description ? { description: it.description } : {}),
+    })),
+  };
+}
+
+// CollectionPage schema — pairs with ItemList on hub / topic / index
+// pages so Google recognizes these as collection endpoints rather
+// than isolated articles.
+export function collectionPageSchema({
+  name,
+  description,
+  url,
+}: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url: `${SITE_URL}${url}`,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
 // Speakable schema marks specific selectors as voice-assistant
 // friendly. Attached to FAQ-heavy pages and pillar pages so Google
 // Assistant / Bixby / Alexa can read those sections aloud. The

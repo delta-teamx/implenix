@@ -32,7 +32,11 @@ import { SectionHeader } from '@/components/common/SectionHeader';
 import { RelatedContent } from '@/components/common/RelatedContent';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { articleSchema } from '@/lib/schema';
+import {
+  articleSchema,
+  itemListSchema,
+  collectionPageSchema,
+} from '@/lib/schema';
 import { buildMetadata, SITE_NAME } from '@/lib/seo';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
@@ -139,6 +143,23 @@ export default function IndustriesIndexPage() {
     <>
       <SchemaOrg
         schema={[
+          collectionPageSchema({
+            name: 'AI Receptionist Industries',
+            description:
+              'Browse 25 tuned industry playbooks for the Implenix AI receptionist.',
+            url: '/industries',
+          }),
+          itemListSchema({
+            name: 'AI Receptionist by Industry',
+            description:
+              '25 industry-specific AI receptionist playbooks with real deployment case studies.',
+            url: '/industries',
+            items: INDUSTRIES.map((i) => ({
+              name: `AI Receptionist for ${i.name}`,
+              url: industryUrl(i.slug),
+              description: i.painPoint,
+            })),
+          }),
           articleSchema({
             title: 'AI Receptionist Industries',
             description:

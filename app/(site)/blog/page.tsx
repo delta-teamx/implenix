@@ -4,6 +4,12 @@ import { Rss } from 'lucide-react';
 import { allBlogPosts } from 'contentlayer/generated';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
+import { SchemaOrg } from '@/components/seo/SchemaOrg';
+import {
+  itemListSchema,
+  collectionPageSchema,
+  breadcrumbListSchema,
+} from '@/lib/schema';
 import { buildMetadata, SITE_URL } from '@/lib/seo';
 import { TOPICS } from '@/lib/blogTopics';
 import { BlogIndexClient } from './BlogIndexClient';
@@ -45,6 +51,31 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <SchemaOrg
+        schema={[
+          collectionPageSchema({
+            name: 'Implenix Blog',
+            description:
+              'Operator playbooks, agent tuning notes, and verified case studies for AI voice agents in local business.',
+            url: '/blog',
+          }),
+          itemListSchema({
+            name: 'Implenix Blog Posts',
+            description:
+              'Every published Implenix blog post covering AI voice agents, industry deployments, decision frameworks, and operator playbooks.',
+            url: '/blog',
+            items: posts.slice(0, 30).map((p) => ({
+              name: p.title,
+              url: p.url,
+              description: p.description,
+            })),
+          }),
+          breadcrumbListSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Blog', href: '/blog' },
+          ]),
+        ]}
+      />
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-24">
           <div className="max-w-3xl flex flex-col gap-5">

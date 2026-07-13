@@ -22,6 +22,17 @@ const COLUMNS = [
       { href: '/ai-receptionist-for-dentists', label: 'Dental' },
       { href: '/ai-receptionist-for-real-estate', label: 'Real Estate' },
       { href: '/ai-receptionist-for-law-firms', label: 'Law Firms' },
+      { href: '/industries', label: 'All 25 industries' },
+    ],
+  },
+  {
+    heading: 'By business size',
+    links: [
+      { href: '/ai-receptionist-for-solopreneurs', label: 'Solopreneurs' },
+      { href: '/ai-receptionist-for-small-business', label: 'Small Business' },
+      { href: '/ai-receptionist-for-startups', label: 'Startups' },
+      { href: '/ai-receptionist-for-agencies', label: 'Agencies' },
+      { href: '/ai-receptionist-for-multi-location-businesses', label: 'Multi-location' },
     ],
   },
   {
@@ -47,13 +58,21 @@ const COLUMNS = [
     ],
   },
   {
-    heading: 'Tools',
+    heading: 'Learn',
     links: [
       { href: '/audit', label: 'Free missed-call audit' },
       { href: '/try-it', label: 'Hear it live' },
       { href: '/blog', label: 'Blog' },
       { href: '/resources', label: 'Guides & Playbooks' },
       { href: '/glossary', label: 'Voice AI glossary' },
+      { href: '/what-is-an-ai-receptionist', label: 'What is an AI receptionist?' },
+      { href: '/how-does-an-ai-receptionist-work', label: 'How does it work?' },
+      { href: '/benefits-of-ai-receptionist', label: 'Benefits' },
+      { href: '/24-7-ai-receptionist', label: '24/7 coverage' },
+      { href: '/virtual-ai-receptionist', label: 'Virtual receptionist' },
+      { href: '/ai-call-answering-service', label: 'AI call answering' },
+      { href: '/ai-phone-answering-service', label: 'AI phone answering' },
+      { href: '/ai-receptionist-cost-comparison', label: 'Cost comparison' },
     ],
   },
 ];
@@ -95,7 +114,7 @@ export function Footer() {
       </section>
 
       <div className="bg-black border-t border-brand-purple/20">
-        <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-7 gap-10">
+        <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-2 lg:grid-cols-8 gap-8">
           <div className="col-span-2 lg:col-span-2 flex flex-col gap-5">
             <LogoLockup size="md" />
             <p className="text-white/60 text-sm font-body max-w-xs">

@@ -34,7 +34,14 @@ export const metadata: Metadata = {
     template: DEFAULT_SEO.titleTemplate,
   },
   description: DEFAULT_SEO.description,
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    types: {
+      'application/rss+xml': [
+        { url: `${SITE_URL}/blog/rss.xml`, title: 'Implenix Blog RSS' },
+      ],
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -74,6 +81,18 @@ export default function RootLayout({
     >
       <head>
         <SchemaOrg schema={[organizationSchema(), websiteSchema()]} />
+        {/* DNS prefetch + preconnect for the third-party origins the
+            site actually talks to. Shaves 100-200ms off first render
+            when GTM/analytics/audio need to fire. */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link
+          rel="preconnect"
+          href="https://connect.facebook.net"
+          crossOrigin=""
+        />
+        <link rel="dns-prefetch" href="https://storage.vapi.ai" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* GTM: REPLACE GTM-XXXXXXX WITH YOUR CONTAINER ID */}
         <Script id="gtm-init" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

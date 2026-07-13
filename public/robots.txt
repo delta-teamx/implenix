@@ -5,9 +5,32 @@ Disallow: /lp/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /preview/
+Disallow: /i/
+Disallow: /v/
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# CCBot
+User-agent: CCBot
+Allow: /
 
 # Host
 Host: https://implenix.net
 
 # Sitemaps
 Sitemap: https://implenix.net/sitemap.xml
+Sitemap: https://implenix.net/blog/rss.xml
