@@ -229,7 +229,7 @@ export function AuditTool() {
               </span>
               <p className="font-body text-sm text-white/80 leading-relaxed">
                 Call our agent now to hear the playbook live, or book a
-                15-minute slot with the team — no email, no form.
+                30-minute slot with the team — no email, no form.
               </p>
               <div className="flex flex-col sm:flex-row gap-2 mt-1">
                 <PhoneCTA

@@ -92,7 +92,7 @@ const FAQS = [
   {
     question: 'How is pricing structured?',
     answer:
-      'Custom pricing based on call volume and industry. We will quote after a 15-minute discovery call.',
+      'Custom pricing based on call volume and industry. We will quote after a 30-minute discovery call.',
   },
 ];
 

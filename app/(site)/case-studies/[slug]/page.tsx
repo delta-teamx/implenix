@@ -266,7 +266,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             Run this playbook for your business
           </h3>
           <p className="text-sm text-white/70 font-body leading-relaxed">
-            We will scope a deployment for your team in 15 minutes.
+            We will scope a deployment for your team in 30 minutes.
           </p>
           <div className="flex flex-col gap-3">
             <PhoneCTA

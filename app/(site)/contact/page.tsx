@@ -10,7 +10,7 @@ import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
 export const metadata: Metadata = buildMetadata({
   title: 'Book Implenix — Call the AI Agent or Pick a Slot',
   description:
-    'Call our live AI agent now to hear it run a qualification call, or book a 15-minute slot with the team on the calendar. No form, no email.',
+    'Call our live AI agent now to hear it run a qualification call, or book a 30-minute slot with the team on the calendar. No form, no email.',
   path: '/contact',
 });
 
@@ -20,8 +20,8 @@ const SAMPLE_LOG = [
   { ts: '00:06', speaker: 'caller' as const, text: 'HVAC, 5 trucks, missing too many after-hours calls.' },
   { ts: '00:10', speaker: 'agent' as const, text: 'Got it. Three quick questions and I can scope a deployment. Roughly how many inbound calls a month?' },
   { ts: '00:16', speaker: 'caller' as const, text: 'About 400.' },
-  { ts: '00:20', speaker: 'agent' as const, text: 'Perfect — that profile fits our HVAC playbook. I can book you a 15-minute call with the team Tuesday at 10am or Wednesday at 2pm. Which works?' },
-  { ts: '00:26', speaker: 'system' as const, text: '15-min call booked · calendar invite sent · no form filled' },
+  { ts: '00:20', speaker: 'agent' as const, text: 'Perfect — that profile fits our HVAC playbook. I can book you a 30-minute call with the team Tuesday at 10am or Wednesday at 2pm. Which works?' },
+  { ts: '00:26', speaker: 'system' as const, text: '30-min call booked · calendar invite sent · no form filled' },
 ];
 
 export default function ContactPage() {
@@ -39,7 +39,7 @@ export default function ContactPage() {
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Call our AI agent now to hear it run a real qualification
                 conversation — same agent that lives on customer phone
-                lines — or book a 15-minute call with the team on the
+                lines — or book a 30-minute call with the team on the
                 calendar below. Either gets you on the table in under a
                 minute.
               </p>
@@ -82,7 +82,7 @@ export default function ContactPage() {
               ▸ Pick a slot
             </span>
             <h2 className="font-heading text-2xl md:text-3xl text-white mt-3 mb-8">
-              Book a 15-minute call with the team.
+              Book a 30-minute call with the team.
             </h2>
             <BookingWidget ctaLocation="contact-calendar" height={760} />
           </div>
@@ -133,8 +133,8 @@ export default function ContactPage() {
               </p>
               <p className="mt-2 text-xs text-white/65 font-body leading-relaxed">
                 We do not collect emails through this site. Calendar
-                bookings only collect the data your Calendly form asks
-                for — nothing extra.
+                bookings capture only your name, email, phone, and any
+                notes you add — nothing else.
               </p>
             </div>
           </aside>

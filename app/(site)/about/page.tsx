@@ -219,7 +219,7 @@ export default function AboutPage() {
               Want Implenix on your phones?
             </h2>
             <p className="mt-4 font-body text-white/75 max-w-xl">
-              Book a 15-minute call. We will quote a deployment timeline and
+              Book a 30-minute call. We will quote a deployment timeline and
               run a live audit on your current inbound flow.
             </p>
           </div>

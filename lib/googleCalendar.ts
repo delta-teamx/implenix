@@ -33,14 +33,14 @@ export const BOOKING_CONFIG = {
   calendarId: optionalEnv('GOOGLE_CALENDAR_ID', 'primary'),
   hostEmail: optionalEnv('GOOGLE_BOOKING_HOST_EMAIL', ''),
   durationMinutes: Number(
-    optionalEnv('GOOGLE_BOOKING_DURATION_MINUTES', '15'),
+    optionalEnv('GOOGLE_BOOKING_DURATION_MINUTES', '30'),
   ),
   timezone: optionalEnv('GOOGLE_BOOKING_TIMEZONE', 'America/New_York'),
   workingHoursStart: Number(
     optionalEnv('GOOGLE_BOOKING_WORKING_HOURS_START', '9'),
   ),
   workingHoursEnd: Number(
-    optionalEnv('GOOGLE_BOOKING_WORKING_HOURS_END', '17'),
+    optionalEnv('GOOGLE_BOOKING_WORKING_HOURS_END', '18'),
   ),
   // 0=Sun, 1=Mon, ..., 6=Sat. Default: Mon-Fri.
   workingDays: optionalEnv('GOOGLE_BOOKING_WORKING_DAYS', '1,2,3,4,5')

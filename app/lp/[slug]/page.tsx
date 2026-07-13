@@ -49,7 +49,7 @@ const variantB: LandingConfig[] = [
     hookHeadline: 'You missed 6 calls today. We can fix that.',
     headline: 'You missed 6 calls today. We can fix that.',
     subhead:
-      'Implenix deploys an AI voice agent that answers every inbound call for your business. Free 15-minute audit.',
+      'Implenix deploys an AI voice agent that answers every inbound call for your business. Free 30-minute audit.',
   },
 ];
 
@@ -146,13 +146,13 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
             className="lg:col-span-5 lg:sticky lg:top-6 flex flex-col gap-4"
           >
             <div className="border border-brand-purple/30 bg-black p-6 flex flex-col gap-4">
-              <Badge label="Free audit · 15 min" variant="purple" />
+              <Badge label="Free audit · 30 min" variant="purple" />
               <h2 className="font-heading text-2xl text-white leading-snug">
                 Get a free audit
               </h2>
               <p className="text-sm text-white/70 font-body leading-relaxed">
                 We will run an Implenix audit on your inbound calls and book a
-                15-minute walkthrough.
+                30-minute walkthrough.
               </p>
             </div>
             <BookingWidget ctaLocation={`lp-${cfg.slug}-top`} height={620} />
