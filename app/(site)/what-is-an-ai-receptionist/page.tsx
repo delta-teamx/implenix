@@ -133,48 +133,70 @@ export default function WhatIsAnAIReceptionistPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="Definition"
-              title="An AI receptionist, defined"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+          <SectionHeader
+            eyebrow="Definition"
+            title="An AI receptionist, defined"
+          />
+          <div className="mt-10 grid lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-7 flex flex-col gap-4 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
                 An <strong className="text-white">AI receptionist</strong> is
-                purpose-built phone infrastructure for a business. It answers
-                inbound calls in real time using conversational voice AI,
-                follows a custom script tuned for the business, qualifies
-                callers against defined rules, books appointments against the
-                business's actual calendar, and writes everything back to
-                the CRM during the call. It runs continuously — 24 hours a
-                day, 7 days a week — and handles unlimited concurrent calls
-                without staffing constraints.
+                purpose-built phone infrastructure for a business. It
+                answers inbound calls in real time using conversational
+                voice AI, follows a custom script tuned for the business,
+                qualifies callers against defined rules,{' '}
+                <span className="text-brand-cyan">books appointments
+                against the business's actual calendar</span>, and writes
+                everything back to the CRM during the call. It runs 24/7
+                and handles unlimited concurrent calls.
               </p>
               <p>
-                The category exists because most businesses lose meaningful
-                pipeline to missed calls. Voicemail is silently expensive —
-                roughly 75% of callers do not leave a message and instead
-                call the next business on Google. Hiring a receptionist
-                solves part of the problem at significant cost: a full-time
-                hire runs $3,500-$5,000/month for 40 hours of coverage, and
-                concurrent calls still get one answered and the rest routed
-                to voicemail. Live answering services bridge the gap but
-                bill per call or per minute, so cost rises with growth in
-                exactly the wrong direction. AI receptionists fill the niche
-                that none of those options cover: continuous coverage,
-                unlimited concurrency, real-time integration, fixed cost.
+                The category exists because most businesses lose
+                meaningful pipeline to missed calls.{' '}
+                <span className="text-brand-purple">Roughly 75% of
+                callers do not leave voicemail</span> and call the next
+                business on Google. Hiring a receptionist runs
+                $3,500-$5,000/month for 40 hours. Live answering services
+                bill per minute — cost rises with growth. AI receptionists
+                fill the niche none of those cover:{' '}
+                <span className="text-white font-medium">continuous
+                coverage, unlimited concurrency, real-time integration,
+                fixed cost</span>.
               </p>
-              <p>
-                Underneath, the technology combines several components:
-                conversational voice AI for the spoken interaction, natural
-                language understanding for caller intent, telephony
-                infrastructure (typically SIP) for the actual call routing,
-                two-way integration with the business's CRM and calendar,
-                and configurable rules for live transfer to a human when
-                the call calls for it. The result is an agent that practically
-                replaces the front-desk role for routine inbound work, while
-                still routing the calls that genuinely need human attention
-                to a real person in real time.
+            </div>
+            <div className="lg:col-span-5 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Alternatives · monthly cost
+              </span>
+              <div className="border border-brand-purple/25 bg-black flex flex-col divide-y divide-brand-purple/15">
+                <CostRow
+                  label="Voicemail"
+                  cost="0"
+                  note="~75% hangup rate"
+                  bad
+                />
+                <CostRow
+                  label="Full-time hire"
+                  cost="3,500-5,000"
+                  note="40 hrs only, 1 concurrent"
+                  bad
+                />
+                <CostRow
+                  label="Answering service"
+                  cost="300-1,500"
+                  note="Per-minute · scales up"
+                  bad
+                />
+                <CostRow
+                  label="AI Receptionist"
+                  cost="297-697"
+                  note="24/7 · unlimited · fixed"
+                  good
+                />
+              </div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-white/45 pt-1">
+                ▸ Under the hood: SIP · voice AI · NLU · CRM/calendar
+                sync · live-transfer rules
               </p>
             </div>
           </div>
@@ -410,6 +432,52 @@ function DistinctionCard({ label, note }: { label: string; note: string }) {
         {label}
       </span>
       <p className="font-body text-sm text-white/80 leading-relaxed">{note}</p>
+    </div>
+  );
+}
+
+function CostRow({
+  label,
+  cost,
+  note,
+  good,
+  bad,
+}: {
+  label: string;
+  cost: string;
+  note: string;
+  good?: boolean;
+  bad?: boolean;
+}) {
+  return (
+    <div
+      className={`p-4 flex items-center justify-between gap-4 ${
+        good ? 'bg-brand-cyan/8' : ''
+      }`}
+    >
+      <div className="flex-1 min-w-0">
+        <p
+          className={`font-heading text-sm ${
+            good ? 'text-brand-cyan' : 'text-white'
+          }`}
+        >
+          {label}
+        </p>
+        <p className="font-body text-[11px] text-white/60 mt-0.5 leading-tight">
+          {note}
+        </p>
+      </div>
+      <span
+        className={`font-mono text-sm shrink-0 ${
+          good
+            ? 'text-brand-cyan'
+            : bad
+              ? 'text-white/45 line-through decoration-white/25'
+              : 'text-white'
+        }`}
+      >
+        ${cost}/mo
+      </span>
     </div>
   );
 }

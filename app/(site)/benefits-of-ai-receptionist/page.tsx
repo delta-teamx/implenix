@@ -224,46 +224,69 @@ export default function BenefitsOfAIReceptionistPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="The summary"
-              title="What an AI receptionist actually moves on the P&L"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
-              <p>
-                The benefits of an AI receptionist break into four buckets,
-                and the relative size of each varies by industry. The first
-                bucket is recovered pipeline — the missed-call cost that
-                stops happening once every inbound is answered. For most
-                local businesses this is the biggest dollar number on the
-                page, often $5,000-$30,000/month in lost revenue that
+          <SectionHeader
+            eyebrow="The summary"
+            title="What an AI receptionist actually moves on the P&L"
+            description="Four buckets — three of them show up in dollars, one shows up in ops quality. The numbers below are conservative across the Implenix portfolio."
+          />
+          <div className="mt-12 grid md:grid-cols-2 gap-4">
+            <div className="border-l-[3px] border-brand-cyan bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Bucket 1 · Recovered pipeline
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-cyan leading-none">
+                $5-30k
+              </p>
+              <p className="font-body text-sm text-white/80 leading-relaxed">
+                Per month, per typical local SMB. This is the biggest
+                dollar number on the page — missed-call cost that
                 returns to the business inside the first month of go-live.
-                The second bucket is labor — front-desk, dispatcher, and
-                owner hours that stop being spent on routine phone work and
-                go back into the business.
               </p>
-              <p>
-                The third bucket is capability you did not have before: 24/7
-                coverage, unlimited concurrent calls, multi-language
-                support, real-time CRM sync, configurable handoff rules.
-                These are not just cost savings — they are net-new
-                operating capacity. The fourth bucket is compliance and
-                consistency: every call recorded and transcribed, every
-                lead captured the same way, no operator drift between
-                shifts, no training overhead. For regulated industries
-                this bucket is large; for everyone else it shows up as
-                fewer "I forgot to log that one" losses.
+            </div>
+            <div className="border-l-[3px] border-brand-purple bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                ▸ Bucket 2 · Labor recovered
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-purple leading-none">
+                15-22 hrs
               </p>
-              <p>
-                The numbers below are conservative across the Implenix
-                portfolio. They hold across local services, professional
-                services, health and wellness, beauty, and home services —
-                the industries that account for most of our deployments.
-                Magnitudes vary; the direction does not. Run the audit at
-                the bottom of the page to see your specific numbers.
+              <p className="font-body text-sm text-white/80 leading-relaxed">
+                Per week, per FTE — front-desk, dispatcher, and owner
+                hours that stop being spent on routine phone work and go
+                back into the business.
+              </p>
+            </div>
+            <div className="border-l-[3px] border-brand-cyan bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Bucket 3 · Net-new capability
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-cyan leading-none">
+                24/7
+              </p>
+              <p className="font-body text-sm text-white/80 leading-relaxed">
+                Coverage. Plus unlimited concurrent calls, multi-language,
+                real-time CRM sync, configurable handoff. Operating
+                capacity you did not have before.
+              </p>
+            </div>
+            <div className="border-l-[3px] border-brand-purple bg-black p-6 flex flex-col gap-3">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-purple">
+                ▸ Bucket 4 · Consistency + compliance
+              </span>
+              <p className="font-heading text-4xl md:text-5xl text-brand-purple leading-none">
+                100%
+              </p>
+              <p className="font-body text-sm text-white/80 leading-relaxed">
+                Of calls recorded, transcribed, and logged. Zero operator
+                drift between shifts, zero training overhead, HIPAA-ready
+                for regulated verticals.
               </p>
             </div>
           </div>
+          <p className="mt-8 font-body text-sm text-white/60 leading-relaxed max-w-2xl">
+            Magnitudes vary by industry; the direction does not. Run the
+            audit at the bottom of the page to see your specific numbers.
+          </p>
         </div>
       </section>
 

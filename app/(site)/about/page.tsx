@@ -179,55 +179,116 @@ export default function AboutPage() {
               badgeVariant="purple"
             />
           </div>
-          <div className="lg:col-span-7 flex flex-col gap-5 font-body text-white/80 leading-relaxed text-base">
-            <p>
-              Local businesses are the backbone of the call economy. They
-              run on phones — and most of them quietly lose deals every
-              single day to a missed inbound. That is the problem worth
-              solving.
-            </p>
-            <p>
-              Implenix is the team that solves it. We design industry-
-              specific voice agents, deploy them on real phone lines, and
-              integrate them into your CRM, calendar, and dispatch. We do
-              one thing. We do it well.
-            </p>
-            <p>
-              We are a focused team of specialists. We do not aspire to be
-              a platform, a marketplace, or a horizontal SaaS. We deploy.
-              We tune. We ship.
-            </p>
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            <div className="grid sm:grid-cols-3 gap-3">
+              <div className="border-l-[3px] border-brand-cyan bg-black p-4 flex flex-col gap-2">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-brand-cyan">
+                  ▸ The problem
+                </span>
+                <p className="font-heading text-2xl text-white leading-none">
+                  40-60%
+                </p>
+                <p className="font-body text-xs text-white/65 leading-relaxed">
+                  of inbound calls missed at typical local SMBs before
+                  deployment
+                </p>
+              </div>
+              <div className="border-l-[3px] border-brand-purple bg-black p-4 flex flex-col gap-2">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-brand-purple">
+                  ▸ What we do
+                </span>
+                <p className="font-heading text-2xl text-white leading-none">
+                  Deploy
+                </p>
+                <p className="font-body text-xs text-white/65 leading-relaxed">
+                  industry-tuned voice agents on real phone lines with
+                  live CRM sync
+                </p>
+              </div>
+              <div className="border-l-[3px] border-brand-cyan bg-black p-4 flex flex-col gap-2">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-brand-cyan">
+                  ▸ What we don't
+                </span>
+                <p className="font-heading text-2xl text-white leading-none">
+                  Platform
+                </p>
+                <p className="font-body text-xs text-white/65 leading-relaxed">
+                  We do one thing well. Not a marketplace, not horizontal
+                  SaaS.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 font-body text-white/80 leading-relaxed text-base">
+              <p>
+                Local businesses are the backbone of the call economy.
+                They run on phones — and most of them quietly lose deals
+                every single day to a missed inbound. <span className="text-brand-cyan">That is the problem worth solving.</span>
+              </p>
+              <p>
+                Implenix is the team that solves it. We design industry-
+                specific voice agents, deploy them on real phone lines,
+                and integrate them into your CRM, calendar, and dispatch.
+                <span className="text-white font-medium"> We deploy. We tune. We ship.</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-black border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-24">
-          <aside
-            data-answer
-            data-speakable
-            className="max-w-3xl border-l-[3px] border-brand-cyan bg-brand-dark rounded-r-sm p-6 md:p-8 flex flex-col gap-3"
-          >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
-              ▸ Origin
-            </span>
-            <p className="font-heading text-white text-xl md:text-2xl leading-snug">
-              Why Implenix exists
-            </p>
-            <p className="font-body text-white/85 leading-relaxed text-base md:text-lg">
-              The Implenix team spent years watching local operators —
-              contractors, dentists, brokers, agencies — lose the majority
-              of their inbound to voicemail, understaffed front desks, and
-              per-minute answering services that couldn't keep up. In 2024
-              the underlying voice AI became genuinely deployable in
-              production. In early 2026 we launched Implenix to ship it
-              specifically to the local-business operators who need it
-              most. Every deployment we ship follows the same operator
-              philosophy: verified numbers only, honest scope, AI-first
-              but human-supervised, and integration depth that keeps every
-              call in your CRM and every booking on your real calendar.
-            </p>
-          </aside>
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <aside
+              data-answer
+              data-speakable
+              className="lg:col-span-7 border-l-[3px] border-brand-cyan bg-brand-dark rounded-r-sm p-6 md:p-8 flex flex-col gap-3"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ Origin
+              </span>
+              <p className="font-heading text-white text-xl md:text-2xl leading-snug">
+                Why Implenix exists
+              </p>
+              <p className="font-body text-white/85 leading-relaxed text-base">
+                The Implenix team spent years watching local operators —
+                contractors, dentists, brokers, agencies — lose the
+                majority of their inbound to voicemail, understaffed
+                front desks, and per-minute answering services that
+                couldn't keep up. In 2024 the underlying voice AI became
+                genuinely deployable in production. In early 2026 we
+                launched Implenix to ship it specifically to the
+                local-business operators who need it most.
+              </p>
+              <p className="font-body text-white/70 leading-relaxed text-sm">
+                Every deployment we ship follows the same operator
+                philosophy: <span className="text-white">verified
+                numbers only, honest scope, AI-first but human-supervised,
+                and integration depth</span> that keeps every call in
+                your CRM and every booking on your real calendar.
+              </p>
+            </aside>
+            <ol className="lg:col-span-5 flex flex-col gap-3">
+              <TimelineItem
+                year="2019-2023"
+                title="The problem"
+                body="Local operators losing 40-60% of inbound to voicemail and per-minute answering services."
+                color="purple"
+              />
+              <TimelineItem
+                year="2024"
+                title="The tipping point"
+                body="Voice AI latency drops under 800ms. Turn-taking becomes indistinguishable from human."
+                color="cyan"
+              />
+              <TimelineItem
+                year="Early 2026"
+                title="Implenix launches"
+                body="Team ships production-ready deployments across 25 industries with fixed monthly pricing."
+                color="purple"
+                highlight
+              />
+            </ol>
+          </div>
         </div>
       </section>
 
@@ -390,5 +451,50 @@ export default function AboutPage() {
         </div>
       </section>
     </>
+  );
+}
+
+function TimelineItem({
+  year,
+  title,
+  body,
+  color,
+  highlight,
+}: {
+  year: string;
+  title: string;
+  body: string;
+  color: 'cyan' | 'purple';
+  highlight?: boolean;
+}) {
+  const isCyan = color === 'cyan';
+  return (
+    <li
+      className={`relative bg-black p-5 flex flex-col gap-2 border ${
+        highlight
+          ? 'border-brand-cyan ring-1 ring-brand-cyan/30'
+          : isCyan
+            ? 'border-brand-cyan/25'
+            : 'border-brand-purple/25'
+      }`}
+    >
+      <span
+        className={`font-mono text-[10px] uppercase tracking-widest ${
+          isCyan ? 'text-brand-cyan' : 'text-brand-purple'
+        }`}
+      >
+        ▸ {year}
+      </span>
+      <p className="font-heading text-white text-base md:text-lg leading-snug">
+        {title}
+      </p>
+      <p className="font-body text-sm text-white/70 leading-relaxed">{body}</p>
+      {highlight ? (
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-widest text-brand-cyan">
+          <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse" />
+          Live
+        </span>
+      ) : null}
+    </li>
   );
 }

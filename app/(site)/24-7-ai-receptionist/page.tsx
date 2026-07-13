@@ -154,34 +154,37 @@ export default function TwentyFourSevenAIReceptionistPage() {
 
       <section className="bg-brand-dark border-t border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 py-20">
-          <div className="max-w-3xl">
-            <SectionHeader
-              eyebrow="Why 24/7 matters"
-              title="The hours your business does not cover are the hours pipeline disappears"
-            />
-            <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
+          <SectionHeader
+            eyebrow="Why 24/7 matters"
+            title="The hours your business does not cover are the hours pipeline disappears"
+          />
+          <div className="mt-12 grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-5 flex justify-center">
+              <CoverageDial />
+            </div>
+            <div className="lg:col-span-7 flex flex-col gap-4 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
-                A typical local business covers 40-50 hours of phone time
-                a week with their staff or owner answering. The other
-                118-128 hours go to voicemail or get screened by an
-                answering service that charges premium rates for after-
-                hours work. The economics never quite work — voicemail
-                loses callers outright, and after-hours premium billing
-                makes a $300/month service feel like $900/month by
-                month-end.
+                A typical local business covers{' '}
+                <span className="text-brand-cyan">40-50 hours</span> of
+                phone time a week with staff or owner. The other{' '}
+                <span className="text-brand-purple">118-128 hours</span>{' '}
+                go to voicemail or get screened by an answering service
+                that charges premium rates for after-hours work.
               </p>
               <p>
-                A 24/7 AI receptionist runs continuously at fixed monthly
-                cost. The same agent handles a 9 AM booking call, a
-                Saturday quote inquiry, an 11 PM emergency dispatch, and
-                a Sunday morning reschedule — without any time-of-day
-                surcharge. For local-services businesses where after-
-                hours emergencies dominate the inbound profile (HVAC,
-                plumbing, electrical, roofing, vet), 24/7 coverage stops
-                being a nice-to-have and becomes the entire reason to
-                deploy. For everyone else, it is the difference between
-                booking that 8 PM lead before they call your competitor
-                and watching the lead disappear.
+                The economics never quite work — voicemail loses callers
+                outright, and after-hours premium billing makes a{' '}
+                $300/month service feel like $900/month by month-end.
+              </p>
+              <p>
+                A 24/7 AI receptionist runs continuously at{' '}
+                <span className="text-white font-medium">fixed monthly
+                cost</span>. Same agent handles a 9 AM booking, a
+                Saturday quote, an 11 PM emergency dispatch, a Sunday
+                morning reschedule — no time-of-day surcharge. For HVAC,
+                plumbing, electrical, roofing, and vet operators where
+                after-hours dominates the profile, 24/7 stops being
+                nice-to-have and becomes the entire reason to deploy.
               </p>
             </div>
           </div>
@@ -355,5 +358,76 @@ export default function TwentyFourSevenAIReceptionistPage() {
         </div>
       </section>
     </>
+  );
+}
+
+// Coverage dial — SVG donut showing the 40 vs 128 hour split (typical
+// SMB covered hours vs uncovered hours in a week). Cyan slice = covered
+// by staff, purple slice = uncovered by staff (where AI takes over).
+function CoverageDial() {
+  const covered = 45;
+  const total = 168;
+  const uncovered = total - covered;
+  const coveredPct = (covered / total) * 100;
+  const uncoveredPct = (uncovered / total) * 100;
+
+  const radius = 80;
+  const circumference = 2 * Math.PI * radius;
+  const coveredDash = (coveredPct / 100) * circumference;
+  const uncoveredDash = (uncoveredPct / 100) * circumference;
+
+  return (
+    <div className="relative w-full max-w-[300px] aspect-square">
+      <svg viewBox="0 0 200 200" className="w-full h-full -rotate-90">
+        <circle
+          cx="100"
+          cy="100"
+          r={radius}
+          fill="none"
+          stroke="rgba(255,255,255,0.08)"
+          strokeWidth="24"
+        />
+        <circle
+          cx="100"
+          cy="100"
+          r={radius}
+          fill="none"
+          stroke="#3dfaff"
+          strokeWidth="24"
+          strokeDasharray={`${coveredDash} ${circumference}`}
+          strokeLinecap="butt"
+        />
+        <circle
+          cx="100"
+          cy="100"
+          r={radius}
+          fill="none"
+          stroke="#bb00ff"
+          strokeWidth="24"
+          strokeDasharray={`${uncoveredDash} ${circumference}`}
+          strokeDashoffset={-coveredDash}
+          strokeLinecap="butt"
+          opacity="0.75"
+        />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 pointer-events-none">
+        <span className="font-mono text-[10px] uppercase tracking-widest text-white/50">
+          Hours per week
+        </span>
+        <span className="font-heading text-5xl text-white leading-none">
+          168
+        </span>
+      </div>
+      <div className="absolute -bottom-2 left-0 right-0 flex justify-between gap-3 font-mono text-[10px] uppercase tracking-widest">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 bg-brand-cyan" />
+          <span className="text-brand-cyan">45 hrs staff</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 bg-brand-purple opacity-75" />
+          <span className="text-brand-purple">123 hrs AI</span>
+        </div>
+      </div>
+    </div>
   );
 }
