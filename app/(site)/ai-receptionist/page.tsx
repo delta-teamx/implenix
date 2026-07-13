@@ -534,7 +534,7 @@ export default function AIReceptionistPage() {
             </Link>
           </div>
         </div>
-        <div className="max-w-content mx-auto px-6 pb-16">
+        <div className="max-w-content mx-auto px-6 pb-16 grid md:grid-cols-2 gap-8">
           <RelatedContent
             topic="Keep reading"
             type="resource"
@@ -542,6 +542,18 @@ export default function AIReceptionistPage() {
               { href: '/pricing', label: 'AI Receptionist pricing' },
               { href: '/preview/dashboard', label: 'Inside the Implenix dashboard' },
               { href: '/case-studies', label: 'Verified case studies' },
+            ]}
+          />
+          <RelatedContent
+            topic="Deep-dive by topic"
+            type="blog"
+            links={[
+              { href: '/blog/what-is-agentic-ai', label: 'What is agentic AI?' },
+              { href: '/blog/best-ai-voice-agent-small-business', label: 'Best AI voice agent for small business' },
+              { href: '/blog/how-much-does-ai-agent-cost', label: 'How much does an AI agent cost?' },
+              { href: '/blog/hvac-ai-agent-guide', label: 'HVAC AI agent buyer\'s guide' },
+              { href: '/blog/ai-receptionist-roi-real-numbers', label: 'AI receptionist ROI — real numbers' },
+              { href: '/blog/topics/decision-frameworks', label: 'Explore all decision frameworks →' },
             ]}
           />
         </div>

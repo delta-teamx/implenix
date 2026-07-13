@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
-import { allIndustries } from 'contentlayer/generated';
+import { allIndustries, allBlogPosts } from 'contentlayer/generated';
 import { CaseStudyCard } from '@/components/common/CaseStudyCard';
 import { BookingWidget } from '@/components/common/BookingWidget';
 import { RelatedContent } from '@/components/common/RelatedContent';
@@ -22,6 +22,7 @@ import {
 } from '@/lib/schema';
 import { buildMetadata } from '@/lib/seo';
 import { industryUrl } from '@/lib/industries';
+import { getBlogLinksForIndustry } from '@/lib/industryToBlog';
 import {
   INDUSTRY_PROFILES,
   INDUSTRY_PROFILE_SLUGS,
@@ -354,6 +355,23 @@ export default function IndustryPage({ params }: { params: Params }) {
             </div>
           </div>
         ) : null}
+        {(() => {
+          const blogLinks = getBlogLinksForIndustry(params.slug)
+            .map((bl) => {
+              const post = allBlogPosts.find((p) => p.slug === bl.slug);
+              return post ? { href: post.url, label: bl.label } : null;
+            })
+            .filter(Boolean) as { href: string; label: string }[];
+          return blogLinks.length > 0 ? (
+            <div className="max-w-content mx-auto px-6 pb-16">
+              <RelatedContent
+                topic={`Deeper reading for ${data.industryName}`}
+                type="blog"
+                links={blogLinks}
+              />
+            </div>
+          ) : null;
+        })()}
         <div className="max-w-content mx-auto px-6 pb-16">
           <RelatedContent
             topic={`More for ${data.industryName}`}

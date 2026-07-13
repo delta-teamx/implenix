@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Rss } from 'lucide-react';
 import { allBlogPosts } from 'contentlayer/generated';
+import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/common/Badge';
 import { buildMetadata, SITE_URL } from '@/lib/seo';
+import { TOPICS } from '@/lib/blogTopics';
 import { BlogIndexClient } from './BlogIndexClient';
 
 const baseMetadata = buildMetadata({
@@ -62,6 +64,33 @@ export default function BlogIndexPage() {
             >
               <Rss size={12} /> Subscribe via RSS
             </Link>
+          </div>
+        </div>
+      </section>
+      <section className="bg-brand-dark border-t border-brand-purple/20">
+        <div className="max-w-content mx-auto px-6 py-10 md:py-14">
+          <span className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+            ▸ Browse by topic hub
+          </span>
+          <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {TOPICS.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/blog/topics/${t.slug}`}
+                data-cta-location="blog-index-topics"
+                className="group border-l-[3px] border-brand-purple bg-black p-4 flex flex-col gap-1.5 hover:border-brand-cyan transition-colors"
+              >
+                <span className="font-heading text-white text-base leading-snug">
+                  {t.name}
+                </span>
+                <span className="text-xs text-white/55 font-body">
+                  {t.postSlugs.length} posts
+                </span>
+                <span className="inline-flex items-center gap-1 text-brand-cyan text-[10px] font-mono uppercase tracking-widest mt-1">
+                  Explore <ArrowRight size={10} />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

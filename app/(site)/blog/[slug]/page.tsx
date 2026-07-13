@@ -9,6 +9,7 @@ import { mdxComponents } from '@/components/docs/MdxComponents';
 import { Badge } from '@/components/common/Badge';
 import { PhoneCTA } from '@/components/common/PhoneCTA';
 import { RelatedContent } from '@/components/common/RelatedContent';
+import { TopicalLinks } from '@/components/common/TopicalLinks';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import {
@@ -179,6 +180,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
             </Link>
           </div>
         </aside>
+
+        <TopicalLinks postSlug={doc.slug} />
 
         {related.length > 0 && (
           <RelatedContent

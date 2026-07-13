@@ -61,6 +61,11 @@ module.exports = {
       // Information-stage cluster pages.
       priority = 0.75;
       changefreq = 'monthly';
+    } else if (path.startsWith('/blog/topics/')) {
+      // Topical hub pages — Google 2026 topical-authority signal.
+      // Higher priority than individual blog posts.
+      priority = 0.8;
+      changefreq = 'weekly';
     } else if (path.startsWith('/blog') || path.startsWith('/resources')) {
       priority = 0.6;
     } else if (path.startsWith('/glossary')) {
