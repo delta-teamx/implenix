@@ -1,0 +1,235 @@
+---
+title: "Who invented AI agents? A short, honest history"
+description: "The history of AI agents from 1956 research to modern LLM-based systems — the people, papers, and companies that actually shaped the field."
+category: "AI Voice Agents"
+publishedAt: "2026-11-04"
+author: "Tashfeen Ahmad"
+authorRole: "Founder, Implenix · Voice AI deployment lead"
+authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
+metaTitle: "Who Invented AI Agents? A Short History | Implenix"
+metaDescription: "The real history of AI agents — from 1956 research through Rodney Brooks, the Russell-Norvig framework, and modern LLM-based systems."
+heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&q=80&auto=format&fit=crop"
+heroImageAlt: "Abstract representation of AI research through the decades"
+---
+
+<Answer q="Who invented AI agents?">
+No single person invented AI agents — the concept evolved over 70 years of research. The foundational ideas trace back to the 1956 Dartmouth Summer Research Project on Artificial Intelligence, where John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon coined the term "artificial intelligence." The specific concept of "intelligent agents" as software that perceives its environment and takes actions to achieve goals was formalized by Stuart Russell and Peter Norvig in their 1995 textbook "Artificial Intelligence: A Modern Approach." Rodney Brooks pioneered agent architectures at MIT in the 1980s and 90s. Modern LLM-based AI agents were shaped by teams at OpenAI, Anthropic, Google DeepMind, and other labs beginning around 2020-2023.
+</Answer>
+
+The question "who invented AI agents" comes up in a lot of
+introductory articles, and most answers are wrong or
+oversimplified. The reality is that AI agents were not invented
+by any one person or year — they are the product of seventy
+years of accumulated research, with several pivotal moments
+along the way. This is the honest short history, from someone
+who ships modern AI agents for a living and reads the primary
+research when the marketing gets loud.
+
+## The foundational moment: Dartmouth, 1956
+
+In the summer of 1956, four researchers organized a workshop
+at Dartmouth College that historically marks the beginning of
+AI as a field.
+
+- **John McCarthy** (Dartmouth, later Stanford), who coined
+  the term "artificial intelligence."
+- **Marvin Minsky** (Harvard, later MIT).
+- **Nathaniel Rochester** (IBM).
+- **Claude Shannon** (Bell Labs, foundational to information
+  theory).
+
+The workshop did not produce AI agents as we understand them
+today, but it established the field and its aspirations. Every
+subsequent development in the space traces back to this
+moment.
+
+## The 1960s-70s: symbolic AI and early agents
+
+Early AI research focused on symbolic reasoning — programs
+that manipulated logical symbols to solve problems. Notable
+work included:
+
+- **ELIZA (1966).** Joseph Weizenbaum at MIT built the first
+  chatbot, a conversational program that simulated a
+  Rogerian psychotherapist. It was not intelligent — it used
+  pattern matching — but it demonstrated something important
+  about human interaction with conversational software.
+- **SHRDLU (1970).** Terry Winograd's MIT dissertation project.
+  A program that could hold a natural-language conversation
+  about a blocks world, manipulating virtual objects based on
+  instructions.
+
+These systems are ancestors of modern agents but bear little
+resemblance to what we call agents today.
+
+## The 1980s-90s: behavior-based robotics and Rodney Brooks
+
+Rodney Brooks at MIT changed the game with a fundamentally
+different approach. His 1986 paper "A Robust Layered Control
+System for a Mobile Robot" introduced the subsumption
+architecture — an approach where intelligent behavior emerges
+from layered simple behaviors rather than central symbolic
+reasoning.
+
+Brooks argued that intelligence is grounded in interaction with
+the physical world. His MIT robots (Genghis, Herbert, and
+later commercial robots like the Roomba) proved that agents
+could be capable and useful without symbolic reasoning.
+
+This work shaped modern thinking about agents as systems that
+sense their environment and act to accomplish goals, rather
+than as pure symbolic reasoners.
+
+## The 1990s: Russell and Norvig formalize "intelligent agents"
+
+Stuart Russell (UC Berkeley) and Peter Norvig (Google) wrote
+"Artificial Intelligence: A Modern Approach" in 1995. This
+textbook, now in its fourth edition, became the standard
+reference for AI education worldwide.
+
+Russell and Norvig formalized the concept of an "intelligent
+agent" as a system that perceives its environment through
+sensors, reasons about that environment, and takes actions
+through effectors to achieve goals. They defined the taxonomy
+that persists in academic AI education today (simple reflex,
+model-based, goal-based, utility-based, learning agents).
+
+This textbook framework is why "AI agent" has the meaning it
+has in current usage.
+
+## The 2000s-2010s: machine learning takes over
+
+The 2000s and 2010s saw AI move from symbolic reasoning to
+statistical machine learning. Notable milestones:
+
+- **IBM Watson (2011)** won Jeopardy! and showed what
+  question-answering systems could do at scale.
+- **AlphaGo (2016)** by DeepMind defeated Lee Sedol in Go,
+  demonstrating reinforcement learning's power on complex
+  tasks.
+- **BERT (2018)** by Google showed transformer language models
+  could achieve state-of-the-art on many NLP tasks.
+
+These were not agents in the modern sense, but the techniques
+they developed became foundational for what came next.
+
+## The 2020s: LLM-based agents
+
+The current era of AI agents began with the widespread adoption
+of large language models.
+
+- **GPT-3 (2020)** by OpenAI showed that transformer language
+  models could generalize across tasks with minimal fine-
+  tuning.
+- **ChatGPT (November 2022)** brought conversational AI to
+  mass consumer use.
+- **AutoGPT and BabyAGI (early 2023)** were viral open-source
+  demonstrations of LLM-powered agents that could pursue
+  multi-step goals autonomously.
+- **Anthropic's Claude, Google's Gemini, Meta's Llama** and
+  other labs advanced the state of the art through 2023-2026.
+
+The modern conception of "AI agent" — a system that uses an
+LLM for reasoning, has tool access, and pursues goals across
+multiple steps — coalesced in this window. It was not invented
+by any single company; it emerged from the combined work of
+many labs and developer communities.
+
+## The specific inventors of the pieces
+
+If you want specific credit for the pieces of modern AI agent
+architecture:
+
+- **Chain-of-thought reasoning** was popularized by Jason Wei
+  and colleagues at Google Research in the 2022 paper "Chain-
+  of-Thought Prompting Elicits Reasoning in Large Language
+  Models."
+- **Tool use in language models** was formalized in multiple
+  papers, notably the ReAct paper (Shunyu Yao et al., 2022)
+  and Toolformer (Timo Schick et al., 2023).
+- **Retrieval-augmented generation (RAG)** was introduced by
+  Patrick Lewis et al. at Facebook AI Research in 2020.
+- **Model Context Protocol (MCP)** was open-sourced by
+  Anthropic in November 2024 as a standardized way for AI to
+  connect to external tools.
+- **Agent2Agent (A2A)** protocol emerged from Google and
+  partners in 2024-2025 for agent-to-agent communication.
+
+Each of these is a component of what makes modern agents
+possible. No one of them "invented" the agent.
+
+## The applied inventors: who shipped agents first at scale
+
+The academic history is one thing. The commercial deployment
+of AI agents in real business operations is another. Some
+important early adopters:
+
+- **Amazon Alexa (2014)** was one of the first mass-market
+  voice AI products, though its capabilities in 2014 were
+  narrow.
+- **Google Duplex (2018)** demonstrated AI making phone calls
+  on behalf of users — a controversial demo that raised
+  questions about disclosure.
+- **A wave of voice AI startups** including Retell, Vapi,
+  Bland, and Synthflow emerged in 2022-2024, providing the
+  infrastructure for the current generation of production
+  voice agents.
+
+## What is likely to be the next chapter
+
+The history is not finished. Areas actively evolving in 2026:
+
+- **Multi-agent systems** where specialized agents cooperate.
+- **Long-horizon agents** that pursue goals across days or
+  weeks rather than single conversations.
+- **Embodied agents** connecting AI reasoning to physical
+  robotics.
+- **Agent-to-agent commerce** where agents transact on behalf
+  of humans.
+- **Standardized protocols** (MCP, A2A) for interoperability.
+
+Whoever advances these will be the answer to "who invented"
+in the next generation of the same question.
+
+## Frequently asked questions
+
+**When was the term "AI agent" first used?**
+The concept traces to 1956 Dartmouth, but the specific term
+"intelligent agent" as we use it today was popularized by
+Russell and Norvig's 1995 textbook.
+
+**Did OpenAI invent AI agents?**
+No. OpenAI's ChatGPT and GPT models catalyzed the current
+LLM-based agent era but did not invent the concept. Agents
+existed in academic and commercial contexts for decades before.
+
+**Was ELIZA an AI agent?**
+Not in the modern sense. ELIZA was a chatbot using pattern
+matching. It did not have goals, tools, or a decision loop.
+
+**Who is the most influential person in modern AI agents?**
+No single person. In terms of foundational academic work,
+Russell and Norvig. In terms of the LLM revolution enabling
+current agents, teams at OpenAI, Anthropic, Google DeepMind,
+Meta, and Mistral.
+
+**Is there a patent on AI agents?**
+No general patent on the concept. Many patents on specific
+implementations. The core ideas are broadly considered public
+knowledge.
+
+## Where to go from here
+
+The history is useful context but not what determines whether
+AI agents work for your business today. What matters is what
+current systems actually do, where they succeed, and where
+they fail. That is covered across the rest of the pieces on
+this blog — start with /blog/what-is-agentic-ai for a plain-
+English explainer.
+
+<Pull>
+AI agents were not invented in a moment. They are seventy
+years of research finally reaching production quality in the
+last three years — and the next chapters are being written
+right now.
+</Pull>
