@@ -164,6 +164,28 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <MDX components={mdxComponents} />
         </div>
 
+        {doc.authorBio && (
+          <aside className="mt-14 border border-brand-purple/30 bg-brand-dark p-6 md:p-7 flex flex-col sm:flex-row gap-5 items-start">
+            <div className="w-14 h-14 bg-brand-purple text-white flex items-center justify-center font-heading rounded-sm shrink-0 text-lg">
+              {initials}
+            </div>
+            <div className="flex-1">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
+                ▸ About the author
+              </p>
+              <p className="mt-2 font-heading text-white text-xl">
+                {doc.author}
+              </p>
+              <p className="mt-1 text-white/60 text-sm font-body">
+                {doc.authorRole}
+              </p>
+              <p className="mt-3 text-white/80 text-sm font-body leading-relaxed">
+                {doc.authorBio}
+              </p>
+            </div>
+          </aside>
+        )}
+
         <aside className="mt-16 border border-brand-cyan/35 bg-black p-6 md:p-8 grid sm:grid-cols-[1fr_auto] gap-5 items-center">
           <div>
             <Badge label="Skip the form" variant="cyan" />
