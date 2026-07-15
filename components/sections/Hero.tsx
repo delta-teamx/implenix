@@ -18,10 +18,11 @@ export function Hero() {
               <span className="text-brand-purple">client calls</span>.
             </h1>
             <p className="font-body text-white/80 text-lg max-w-xl leading-relaxed">
-              Every missed call is a client who hired your competitor.
-              Implenix is the AI receptionist that answers them all — 24/7,
-              like a senior front-desk operator who never sleeps. Booked,
-              qualified, and synced to your CRM before you wake up.
+              Every missed call is revenue that walked to a competitor
+              within twelve minutes. Implenix is the AI receptionist that
+              answers within one ring, 24/7 — qualified, booked against
+              your live calendar, and written back to your CRM before
+              the caller hangs up.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link

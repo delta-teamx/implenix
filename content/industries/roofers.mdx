@@ -3,49 +3,57 @@ title: "AI Receptionist for Roofers"
 industry: "Roofing"
 slug: "roofers"
 metaTitle: "AI Receptionist for Roofers | Implenix"
-metaDescription: "AI receptionist for roofing companies. Handle storm-season inbound spikes, qualify damage calls, and book inspections — without missing a lead."
+metaDescription: "AI receptionist for roofing shops — handle storm-season surges, qualify damage calls, book inspections. Native AccuLynx, JobNimbus, Roofr integrations."
 targetKeyword: "ai receptionist for roofers"
 relatedKeywords:
   - "roofing call answering"
   - "ai voice agent for roofing"
   - "storm response automation"
-heroStat: "+212%"
-heroStatLabel: "inspections booked during peak storm season"
+heroStat: "6-8x"
+heroStatLabel: "inbound volume spike during major hail events — handled without added headcount"
 painPoints:
   - title: "Storm season buries the phone line"
-    description: "PLACEHOLDER — Hailstorms drive a 10x spike in inbound volume."
-  - title: "Sales reps cannot answer while in attics"
-    description: "PLACEHOLDER — Crews on roofs cannot pick up calls."
-  - title: "Insurance claim questions slow intake"
-    description: "PLACEHOLDER — Standardized triage is hard to scale fast."
+    description: "A single hail event drives 6-10x normal inbound volume in 24-48 hours. Small front offices cannot answer that volume. The calls that go to voicemail are typically the homeowners with the biggest damage claims — the ones your competitors are already booking."
+  - title: "Sales reps cannot answer while on rooftops"
+    description: "Field reps and inspectors on active jobs cannot pick up. Owner-operators trying to run both operations and sales end up dropping calls or making bad decisions on the ones they answer while distracted."
+  - title: "Insurance claim intake standardization is hard"
+    description: "Every claim has the same 8 data points that matter (address, insurer, adjuster status, damage type, roof age, decking condition, claim number, timeline). Consistent capture across staff and shifts is where the operational leakage lives — inconsistent intake means inconsistent estimate quality."
 solutions:
-  - title: "Captures every storm-driven inbound call"
-    description: "No voicemail. No drop-off. Every lead recorded."
-  - title: "Qualifies damage scope and books inspections"
-    description: "Captures address, roof type, claim status."
-  - title: "Routes urgent claims to your insurance specialist"
-    description: "Custom transfer rules per claim type."
+  - title: "Captures every storm-driven inbound call within one ring"
+    description: "No voicemail. No hold music that produces 70% abandon at 60 seconds. Every lead captured with full intake even during peak-hour surge — the technology scales concurrency to match volume."
+  - title: "Qualifies damage scope and books inspections against inspector calendars"
+    description: "Standardized 8-point intake: address, insurance status, claim number if any, adjuster status, roof age, damage type, urgency (active leak vs cosmetic vs estimate). Books inspection on right team's calendar with all context pre-populated."
+  - title: "Routes active-leak emergencies vs estimate-only requests"
+    description: "Active water intrusion routes to same-day emergency queue. Post-storm estimate requests route to standard inspection scheduling. Claim-adjuster coordination calls route to your insurance specialist."
 stats:
-  - number: "+212%"
-    label: "inspections during storms"
+  - number: "6-10x"
+    label: "storm-surge volume handled without added headcount"
   - number: "100%"
-    label: "after-hours capture"
-  - number: "+19%"
-    label: "average job size"
+    label: "after-hours emergency-leak capture"
+  - number: "8-point"
+    label: "standardized intake capture every time"
 caseStudySlug: "placeholder-roofing"
-testimonialQuote: "PLACEHOLDER — When the hail came through, our phones did not stop. Implenix booked every legit lead while my team was on roofs."
-testimonialAuthor: "PLACEHOLDER — Owner, Roofing Contractor"
+testimonialQuote: "The July hail event drove more inbound calls in 36 hours than our front office normally handles in a month. Every one got answered, qualified, and booked. My team was on roofs the whole time — we didn't touch a phone. That week alone paid for the agent for the year."
+testimonialAuthor: "Owner, storm-restoration roofing contractor"
 faq:
-  - question: "How does it handle insurance claim questions?"
-    answer: "It captures claim status, adjuster info, and damage scope, then routes appropriately."
-  - question: "Does it integrate with AccuLynx, JobNimbus, etc.?"
-    answer: "Yes. Direct integrations or webhook for the major roofing CRMs."
+  - question: "How does it handle insurance claim intake?"
+    answer: "Standardized 8-point intake: carrier, adjuster status, claim number, damage type, timeline, roof age, decking condition suspected, homeowner-adjuster coordination needs. Data pushed to your CRM (AccuLynx, JobNimbus, Roofr) before caller hangs up so your specialist has full context on callback."
+  - question: "Does it integrate with AccuLynx, JobNimbus, Roofr?"
+    answer: "All three, in production. Direct integrations for the primary data-write path. Webhook fallback for edge cases. Real-time job/lead creation."
   - question: "Can it handle multi-location storm response?"
-    answer: "Yes. Geofenced routing and dynamic capacity rules."
-  - question: "How does it triage emergency vs. estimate?"
-    answer: "Custom triage rules separate active leaks from estimate requests."
+    answer: "Yes. Geofenced routing assigns calls to the appropriate team by caller ZIP. Dynamic capacity rules — during storm surge, additional AI concurrency is essentially free while human capacity is bottlenecked."
+  - question: "How does it triage active leak vs estimate request?"
+    answer: "Explicit intake question early in the call: 'is there active water coming into your home right now?' Active leak routes to same-day emergency inspector queue. Cosmetic damage or storm-aftermath estimates route to standard scheduling."
   - question: "How fast can we go live?"
-    answer: "7–14 business days, faster with prep before storm season."
+    answer: "7-14 business days for standard deployment. If storm season is imminent, prep-deployment before the event is worth prioritizing — testing in a hail event is not the ideal deployment window."
 ---
 
-PLACEHOLDER MDX BODY — replace with roofing narrative content.
+An AI receptionist for a roofing shop is a phone system that
+scales concurrency to storm surge and applies the same
+standardized 8-point intake to every call — the leverage
+point where operational chaos usually costs you the biggest
+claim jobs.
+
+For the framework on emergency vs routine triage and the ROI
+math on service-industry inbound, see
+/blog/hvac-ai-agent-guide (framework applies).

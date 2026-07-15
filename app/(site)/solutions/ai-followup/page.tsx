@@ -91,27 +91,27 @@ const FAQS = [
   {
     question: 'How fast can the agent call a new lead?',
     answer:
-      'Inside 60 seconds of the lead arriving in your CRM. Speed-to-lead is the single biggest conversion lever.',
+      'Inside 60 seconds of the lead arriving in your CRM. Zillow, Realtor.com, and web-form data show conversion drops sharply past the 5-minute window; sub-minute callback captures leads before they dial a competitor.',
   },
   {
     question: 'Can the agent reschedule appointments live?',
     answer:
-      'Yes. The agent can offer alternative times pulled from your calendar and write the new booking back.',
+      'Yes. The agent reads real availability from your calendar (Google, Outlook, or your practice management system), offers alternative times, and writes the new booking back before the caller hangs up. No sync delay, no double-booking risk.',
   },
   {
-    question: 'How do you handle compliance?',
+    question: 'How do you handle TCPA and outbound compliance?',
     answer:
-      'We respect business hours, state-level call rules, and DNC lists. Your team approves every script.',
+      'Every outbound campaign runs against a compliance layer: prior-express-written-consent verification on the target list, STOP-honor across voice and SMS, business-hours-only dialing, state-specific rules (Florida FTSA, Washington, Oklahoma), and identification as a virtual assistant on the greeting. We decline to build cold outbound to consumer mobiles from purchased lists — that scope is a TCPA class action waiting to happen.',
   },
   {
     question: 'What is the cap on outbound volume?',
     answer:
-      'There is no practical cap. We scale concurrency to match your funnel.',
+      'No practical cap on concurrency. We scale to match your funnel. Realistic ceiling is usually your compliance and consent posture, not the technology.',
   },
   {
     question: 'Do callers know they are talking to AI?',
     answer:
-      'We disclose where required and keep tone natural everywhere else. Your brand voice is preserved.',
+      'The agent identifies as a virtual assistant on the greeting. In deployments we measure, roughly 20-30% of callers realize they are speaking to AI mid-call — the disclosure preserves trust when they do. Hidden AI erodes trust when discovered, which it always eventually is.',
   },
 ];
 

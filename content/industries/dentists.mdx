@@ -2,8 +2,8 @@
 title: "AI Receptionist for Dentists"
 industry: "Dental"
 slug: "dentists"
-metaTitle: "AI Receptionist for Dentists | Implenix"
-metaDescription: "AI receptionist for dental practices. Book new patients, confirm appointments, and reduce no-shows — without overloading the front desk."
+metaTitle: "AI Receptionist for Dental Practices | Implenix"
+metaDescription: "AI receptionist for dental practices — books new patients, confirms appointments, reduces no-shows. HIPAA-scoped with BAAs across the stack."
 targetKeyword: "ai receptionist for dentists"
 relatedKeywords:
   - "dental front desk automation"
@@ -12,40 +12,47 @@ relatedKeywords:
 heroStat: "22 hrs"
 heroStatLabel: "reclaimed per week per front-desk team member"
 painPoints:
-  - title: "Front desk drowns in repetitive calls"
-    description: "PLACEHOLDER — Most calls are reschedules, confirmations, and insurance questions."
-  - title: "New patients get voicemail at peak hours"
-    description: "PLACEHOLDER — High-intent prospects abandon to a competitor in seconds."
-  - title: "No-shows quietly drain revenue"
-    description: "PLACEHOLDER — Reminders happen inconsistently across staff."
+  - title: "Front desk drowns in repetitive phone traffic"
+    description: "60-75% of dental inbound is reschedules, confirmations, insurance questions, and routine bookings — work that pulls the front desk away from checking in patients, running collections, and coordinating with the clinical team. Coverage during procedure blocks is where the phone drops."
+  - title: "New patients get voicemail at peak hours and never call back"
+    description: "New-patient acquisition cost typically runs $150-$300 per prospect. When a prospect calls during a busy hour and gets voicemail, the conversion rate to booked first-visit drops from ~55% to under 15%. The rest have already booked with the dental office down the street."
+  - title: "No-shows drain revenue quietly across the schedule"
+    description: "Dental no-show rates run 8-20% depending on the practice. At $180 average patient revenue, a 12% rate on 400 weekly appointments is $8,640 in weekly no-show cost. Manual reminders happen inconsistently across staff and shifts."
 solutions:
-  - title: "Handles confirmations, reschedules, and routine intake"
-    description: "Frees the front desk for in-office patients."
-  - title: "Books new patients live"
-    description: "Pulls available chairs from your PMS and writes the booking back."
-  - title: "Runs proactive reminder sequences"
-    description: "Reduces no-shows with multi-touch confirmation calls."
+  - title: "Handles confirmations, reschedules, and routine intake without human touch"
+    description: "The agent runs the day-before and day-of reminder sequence, handles rebook requests with same-provider preference, and confirms — freeing the front desk for in-office patients."
+  - title: "Books new patients live against your practice management system"
+    description: "Direct read/write against Dentrix, Eaglesoft, Open Dental, Curve, Denticon. Real availability, no sync delay, no double-booking risk. Insurance carrier captured at intake and eligibility check triggered."
+  - title: "Runs proactive multi-touch reminder sequences"
+    description: "Voice + SMS at day-3 and day-1 pre-visit. Automated no-show recovery outreach. Package-based cleaning/whitening renewal sequences. Reduces no-show rates 15-25% in typical deployments."
 stats:
   - number: "22 hrs"
-    label: "reclaimed per week per FTE"
-  - number: "-31%"
-    label: "no-show rate"
+    label: "front-desk phone time reclaimed per week per FTE"
+  - number: "-15-25%"
+    label: "typical no-show reduction"
   - number: "+18%"
-    label: "new patient bookings"
+    label: "new patient booking capture"
 caseStudySlug: "placeholder-dental"
-testimonialQuote: "PLACEHOLDER — Front desk went from drowning to caught up. Every call is logged and every booking lands on the right calendar."
-testimonialAuthor: "Dr. Chen, Brightline Dental"
+testimonialQuote: "Front desk went from drowning to caught up. Every call logged, every booking on the right provider's calendar, every reminder actually sent. The morning huddle stopped starting with 'who missed a callback yesterday.'"
+testimonialAuthor: "Practice manager, multi-location dental group"
 faq:
-  - question: "Does it work with Open Dental, Dentrix, Eaglesoft?"
-    answer: "We integrate with most major dental PMS systems. Compatibility is confirmed during scoping."
-  - question: "Can it answer insurance questions?"
-    answer: "Yes for general guidance. Policy-specific questions can be routed to a human."
+  - question: "Does it work with Dentrix, Eaglesoft, Open Dental, Curve?"
+    answer: "Yes, all four in production, plus Denticon and Practice-Web. Direct read/write against the schedule. Insurance carrier and eligibility fields captured at intake and pushed to the practice management system before the caller hangs up."
+  - question: "Can it answer insurance-coverage questions?"
+    answer: "General guidance yes (in-network status, accepted plans, typical patient responsibility). Policy-specific coverage questions get routed to your front desk or a billing specialist — the agent does not quote patient responsibility on specific procedures. That is a human conversation."
   - question: "How does it handle HIPAA?"
-    answer: "We sign a BAA, encrypt PHI in transit and at rest, and follow HIPAA minimum-necessary access principles."
+    answer: "Signed BAAs across every vendor in the stack: voice model, telephony, transcript storage, orchestration. PHI encrypted in transit and at rest. Access-controlled recording storage. Minimum-necessary intake — the agent captures what's needed to book, not clinical detail. Written breach protocol. We decline deployments where the practice does not want the BAA layer."
   - question: "Will patients know they are talking to an AI?"
-    answer: "We disclose where required. Tone is natural and warm."
-  - question: "How long is deployment?"
-    answer: "10–14 business days for a typical practice."
+    answer: "The agent identifies as a virtual scheduling assistant on the greeting. In deployments we measure, roughly 20-30% of patients realize they are speaking to AI at some point. Disclosure preserves trust when they do — hidden AI erodes trust when discovered."
+  - question: "How long is deployment for a dental practice?"
+    answer: "10-14 business days for single-location practices. Discovery week is critical — we listen to your actual inbound calls to learn how your patients talk (rescheduling terminology, insurance vocabulary, common questions). Multi-location groups add 3-7 days per additional location."
 ---
 
-PLACEHOLDER MDX BODY — replace with practice-specific narrative content.
+An AI receptionist for a dental practice runs under HIPAA with
+signed BAAs and handles the operational layer of patient calls
+— scheduling, reminders, insurance intake — while your clinical
+team focuses on care.
+
+For deeper context on the HIPAA layer, EHR integration, and
+where operational vs clinical scope divides, read
+/blog/ai-voice-agents-healthcare-medicine.

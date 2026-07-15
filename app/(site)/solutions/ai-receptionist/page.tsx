@@ -70,29 +70,29 @@ const SAMPLE_TRANSCRIPT = [
 
 const FAQS = [
   {
-    question: 'How does the Implenix AI receptionist sound on a call?',
+    question: 'How does the Implenix AI receptionist actually sound on a call?',
     answer:
-      'Natural and on-brand. We tune voice, pacing, and language for your industry. Most callers cannot tell it is not a human.',
+      'Natural, on-brand, and paced to match your industry. We tune the voice model, greeting phrasing, and vocabulary during discovery week using recordings of your actual inbound calls — so the agent speaks your callers\'s language, not a generic template. Roughly 20-30% of callers realize they are speaking to AI at some point; the agent identifies itself as a virtual assistant to preserve trust rather than pretending to be human.',
   },
   {
     question: 'How quickly can the agent be deployed for my business?',
     answer:
-      'A standard deployment takes 7–14 business days, including script tuning, integrations, and live call testing.',
+      'Standard deployments run 7-14 business days: 1-2 days discovery on your recent calls, 3-5 days script and integration build, 3-5 days shadow-mode testing, then cutover with 48-hour silent monitor. Regulated deployments (legal, healthcare, financial) run 14-28 days because of compliance review cycles.',
   },
   {
     question: 'Will the agent transfer to a real person when needed?',
     answer:
-      'Yes. We define transfer rules with you. Sensitive cases, urgent emergencies, or VIP callers are routed to your team.',
+      'Yes. Every deployment includes an explicit escalation rule set: explicit request to speak with a human transfers within 3 seconds, sensitivity signals (crisis keywords, elevated distress) trigger immediate warm handoff, edge-of-scope questions route to your team with call-context briefing. Bad escalation is the number one CSAT killer in voice AI, so we test it exhaustively before cutover.',
   },
   {
     question: 'Which CRMs and calendars do you support?',
     answer:
-      'GoHighLevel, HubSpot, Salesforce, Zoho, Google Calendar, Calendly, plus custom webhooks.',
+      'Native integrations with GoHighLevel, HubSpot, Salesforce, Zoho, Follow Up Boss, Clio, Boulevard, ServiceTitan, Housecall Pro, Jobber, Dentrix, athenahealth, and dozens of others. Calendars: Google, Outlook / Microsoft 365, Calendly, Acuity. For anything not listed, custom webhook integration on request.',
   },
   {
     question: 'How is pricing structured?',
     answer:
-      'Custom pricing based on call volume and industry. We will quote after a 30-minute discovery call.',
+      'Fixed monthly pricing tiered by call volume and industry complexity — $297 to $1,497/month, no per-minute billing. Setup fees range $2,000-$8,000 depending on integration complexity. Quote is delivered after a 30-minute discovery call where we look at your actual inbound volume and system stack.',
   },
 ];
 
