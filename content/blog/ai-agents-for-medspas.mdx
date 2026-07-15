@@ -1,13 +1,13 @@
 ---
 title: "AI agents for medspas: booking density, HIPAA, and what actually works"
-description: "Field notes on AI voice agents in medspa operations — service-specific intake, after-hours booking capture, HIPAA-safe transcript handling, and package retention."
+description: "Field notes on AI voice agents in medspa operations, service-specific intake, after-hours booking capture, HIPAA-safe transcript handling, and package retention."
 category: "Industry Guides"
 publishedAt: "2026-06-17"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "AI Agents for Medspas: Booking + HIPAA Guide | Implenix"
-metaDescription: "How AI voice agents handle medspa booking density, service intake, and HIPAA-safe transcripts — from live deployments in aesthetic practices."
+metaDescription: "How AI voice agents handle medspa booking density, service intake, and HIPAA-safe transcripts, from live deployments in aesthetic practices."
 heroImage: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Modern med spa treatment room with aesthetic equipment"
 ---
@@ -23,7 +23,7 @@ the night. That one missed call is a booked appointment lost to the
 medspa down the street with a real-time booking widget. I have
 shipped voice agents into aesthetic practices in Miami, Los Angeles,
 Dallas, and three suburbs of Chicago. The pattern that pays for the
-deployment is the same everywhere — after-hours booking capture and
+deployment is the same everywhere, after-hours booking capture and
 service-specific intake, not any of the flashy stuff.
 
 ## The medspa call log I usually see
@@ -44,7 +44,7 @@ service-specific intake, not any of the flashy stuff.
 ## What an AI agent actually does for a medspa
 
 - **Answer every inbound within one ring.** The greeting matches
-  the practice voice — warm, aesthetic-industry appropriate, no
+  the practice voice, warm, aesthetic-industry appropriate, no
   medical-office coldness.
 - **Match the caller's service request to the practice catalog.**
   This is the highest-value behavior. Callers say "I want lip
@@ -66,7 +66,7 @@ service-specific intake, not any of the flashy stuff.
   sessions do I have left on my laser package?" The agent looks up
   and answers.
 - **Post-treatment follow-up.** Two-touch sequence 48 hours and
-  10 days after treatment — check-in on comfort, book the next
+  10 days after treatment, check-in on comfort, book the next
   session or the package renewal.
 
 ## What I explicitly do not build into a medspa agent
@@ -75,7 +75,7 @@ service-specific intake, not any of the flashy stuff.
   laser hair removal on darker skin?" is an in-person conversation
   with a licensed provider.
 - Contraindication screening. The agent can note "you mentioned
-  pregnancy — the provider will confirm during your visit" but
+  pregnancy, the provider will confirm during your visit" but
   does not clear or reject on the phone.
 - Off-label discussion of any product.
 - Pricing on treatments where the practice does not publish list
@@ -88,13 +88,13 @@ service-specific intake, not any of the flashy stuff.
   title="medspa-after-hours-booking.call"
   lines={[
     { ts: "00:00", speaker: "system", text: "Inbound · Wednesday 20:14 · after hours · existing client match" },
-    { ts: "00:02", speaker: "agent", text: "Hi, this is Ava at Willow Aesthetics. I see you are calling from a number on file — is this Danielle?" },
+    { ts: "00:02", speaker: "agent", text: "Hi, this is Ava at Willow Aesthetics. I see you are calling from a number on file, is this Danielle?" },
     { ts: "00:09", speaker: "caller", text: "Yes, hi. I need to book my next Botox appointment." },
     { ts: "00:14", speaker: "agent", text: "Perfect. Your last visit with Dr. Marín was 11 weeks ago. Would you like to stay on the same 12-week cadence?" },
     { ts: "00:22", speaker: "caller", text: "Yes, whatever works." },
     { ts: "00:25", speaker: "agent", text: "Dr. Marín has openings next Tuesday at 11:15, Thursday at 2:45, or Saturday at 10 AM. What works?" },
     { ts: "00:33", speaker: "caller", text: "Saturday at 10." },
-    { ts: "00:36", speaker: "agent", text: "Booked. I am sending a text confirmation. Your $75 deposit is on file from last time — nothing else to do." },
+    { ts: "00:36", speaker: "agent", text: "Booked. I am sending a text confirmation. Your $75 deposit is on file from last time, nothing else to do." },
     { ts: "00:44", speaker: "system", text: "Booked · Boulevard slot held · SMS sent · appointment confirmed" }
   ]}
   caption="Existing-client rebook · 44 seconds · same-cadence booking, deposit reused"
@@ -217,8 +217,7 @@ does not publish, the agent books a complimentary consultation
 and defers pricing to the provider.
 
 **Can the agent take payment for the deposit?**
-Yes, over SMS via a Stripe or Square terminal link. Not by voice —
-card-not-present PCI compliance for voice is a headache I decline
+Yes, over SMS via a Stripe or Square terminal link. Not by voice, card-not-present PCI compliance for voice is a headache I decline
 to inherit.
 
 **What about existing clients calling for medication questions or
@@ -243,12 +242,11 @@ consultation on the appropriate provider's calendar.
 
 Call the number in the site header and ask the agent to book
 a hypothetical Botox appointment for you. It is the same agent
-running on customer practices — the flow will tell you more about
+running on customer practices, the flow will tell you more about
 fit than any vendor demo can.
 
 <Pull>
 The medspa agent that pays for itself is the one that answers a
-Wednesday-night rebook request and closes it in under a minute —
-before your client remembers she was also thinking about the
+Wednesday-night rebook request and closes it in under a minute, before your client remembers she was also thinking about the
 medspa down the street.
 </Pull>

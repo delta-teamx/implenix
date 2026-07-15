@@ -79,11 +79,11 @@ const USE_CASES = [
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Outbound · new lead · 38s after CRM creation' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Hi Sam — calling from Summit Realty about the listing on Cedar.' },
-  { ts: '00:07', speaker: 'caller' as const, text: 'Yeah — is it still available?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Hi Sam, calling from Summit Realty about the listing on Cedar.' },
+  { ts: '00:07', speaker: 'caller' as const, text: 'Yeah, is it still available?' },
   { ts: '00:09', speaker: 'agent' as const, text: 'It is. Want to book a showing this week?' },
   { ts: '00:13', speaker: 'caller' as const, text: 'Saturday morning works.' },
-  { ts: '00:17', speaker: 'agent' as const, text: 'Booked — 10am Saturday. Confirmation incoming.' },
+  { ts: '00:17', speaker: 'agent' as const, text: 'Booked, 10am Saturday. Confirmation incoming.' },
   { ts: '00:21', speaker: 'system' as const, text: 'Showing booked · agent assigned · CRM updated' },
 ];
 
@@ -101,7 +101,7 @@ const FAQS = [
   {
     question: 'How do you handle TCPA and outbound compliance?',
     answer:
-      'Every outbound campaign runs against a compliance layer: prior-express-written-consent verification on the target list, STOP-honor across voice and SMS, business-hours-only dialing, state-specific rules (Florida FTSA, Washington, Oklahoma), and identification as a virtual assistant on the greeting. We decline to build cold outbound to consumer mobiles from purchased lists — that scope is a TCPA class action waiting to happen.',
+      'Every outbound campaign runs against a compliance layer: prior-express-written-consent verification on the target list, STOP-honor across voice and SMS, business-hours-only dialing, state-specific rules (Florida FTSA, Washington, Oklahoma), and identification as a virtual assistant on the greeting. We decline to build cold outbound to consumer mobiles from purchased lists, that scope is a TCPA class action waiting to happen.',
   },
   {
     question: 'What is the cap on outbound volume?',
@@ -111,14 +111,14 @@ const FAQS = [
   {
     question: 'Do callers know they are talking to AI?',
     answer:
-      'The agent identifies as a virtual assistant on the greeting. In deployments we measure, roughly 20-30% of callers realize they are speaking to AI mid-call — the disclosure preserves trust when they do. Hidden AI erodes trust when discovered, which it always eventually is.',
+      'The agent identifies as a virtual assistant on the greeting. In deployments we measure, roughly 20-30% of callers realize they are speaking to AI mid-call, the disclosure preserves trust when they do. Hidden AI erodes trust when discovered, which it always eventually is.',
   },
 ];
 
 export const metadata: Metadata = buildMetadata({
   title: 'AI Follow-up Calls That Close While You Work | Implenix',
   description:
-    'Implenix AI follow-up calls qualify new leads, confirm appointments, and re-engage no-shows — automatically, on your CRM.',
+    'Implenix AI follow-up calls qualify new leads, confirm appointments, and re-engage no-shows, automatically, on your CRM.',
   path: '/solutions/ai-followup',
 });
 

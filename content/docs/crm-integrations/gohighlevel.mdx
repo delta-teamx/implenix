@@ -1,12 +1,72 @@
 ---
-title: "GoHighLevel"
-description: "Integrate Implenix with your GoHighLevel sub-account."
+title: "GoHighLevel Integration"
+description: "How the Implenix agent integrates with GoHighLevel for service business automation."
 section: "CRM Integrations"
-order: 1
+order: 3
 ---
 
-# GoHighLevel
+# GoHighLevel Integration
 
-PLACEHOLDER DOC CONTENT — replace with verified GHL integration steps.
+GoHighLevel is widely used in service industries and marketing agencies. The integration ships in the standard 7 to 14 day deployment window. Well-documented API surface, straightforward OAuth flow.
 
-Implenix integrates natively with GoHighLevel sub-accounts. Calls, leads, and bookings sync into the contact record.
+## What the integration does
+
+**Read scope.**
+- Contact lookup by phone or email.
+- Existing conversation history.
+- Pipeline stage and opportunity status.
+- Custom field values for personalization.
+- Assigned user (for warm-transfer routing).
+
+**Write scope.**
+- Create contact when no match found.
+- Update contact fields captured during the call.
+- Add note or SMS message with call summary.
+- Move opportunity through pipeline based on call outcome.
+- Trigger workflows for downstream automation.
+- Book appointments against the calendar system.
+
+## Authentication
+
+OAuth 2.0 with a Marketplace app or Location API key depending on your GHL account structure. Agency-level access lets us deploy across multiple sub-accounts efficiently.
+
+## Sub-account and multi-location support
+
+GHL's sub-account structure fits multi-location businesses naturally. The agent can be configured to write to the correct sub-account based on caller location or dialed number, so each location's data stays in its own workspace.
+
+## Pipeline and opportunity management
+
+The agent can move opportunities through your pipeline stages based on call outcome. Common patterns:
+
+- New inbound lead lands in "Untouched" stage.
+- Qualified call moves to "Discovery Booked".
+- Booked appointment moves to "Consultation Scheduled".
+- Unqualified caller marked as "Disqualified" with reason.
+
+## Workflow integration
+
+GHL workflows trigger normally on agent writes. Common workflows we integrate with:
+
+- New contact welcome sequence.
+- Appointment confirmation SMS.
+- Reminder cadence before appointments.
+- Post-appointment follow-up sequence.
+- Nurture sequence for unqualified leads.
+
+## SMS and email through GHL
+
+For deployments where SMS follow-up should originate from your GHL number rather than a separate Twilio number, the agent can trigger GHL's native SMS through the API. This keeps all communication in one thread visible to your team.
+
+## Calendar integration
+
+GHL calendars work directly for appointment booking. Real-time availability read, direct write, calendar sync with associated user calendars.
+
+## Common issues
+
+**Rate limits.** GHL API has rate limits per location. For high-volume deployments, we implement request queuing.
+
+**Workflow trigger delays.** Some workflows fire on a delay rather than immediately. Verify trigger timing during testing.
+
+**Custom field visibility.** New custom fields we create may need to be added to relevant forms and pipelines manually.
+
+**Multi-tenant confusion.** If the account has many sub-accounts, verify the agent is writing to the correct one before go-live.

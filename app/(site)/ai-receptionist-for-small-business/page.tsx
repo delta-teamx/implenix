@@ -44,12 +44,12 @@ const FAQS = [
   {
     question: 'Will it work for my industry?',
     answer:
-      'We have shipped tuned playbooks for 25 industries — HVAC, plumbing, dental, real estate, law firms, salons, contractors, accountants, and more. Each one ships with industry-specific intake, transfer rules, and integrations.',
+      'We have shipped tuned playbooks for 25 industries, HVAC, plumbing, dental, real estate, law firms, salons, contractors, accountants, and more. Each one ships with industry-specific intake, transfer rules, and integrations.',
   },
   {
     question: 'I am a solo operator. Will this work for me?',
     answer:
-      'Yes. Solo operators are one of our most-served customer profiles — owners who are on a roof, in a chair, in a meeting, or otherwise unable to pick up. The Solo Operator plan starts at $297/month and includes 24/7 coverage and CRM sync.',
+      'Yes. Solo operators are one of our most-served customer profiles, owners who are on a roof, in a chair, in a meeting, or otherwise unable to pick up. The Solo Operator plan starts at $297/month and includes 24/7 coverage and CRM sync.',
   },
   {
     question: 'How long does deployment take?',
@@ -113,9 +113,9 @@ const FEATURES = [
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · owner on a job site · 4:42 PM' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Greenleaf Plumbing — thanks for calling. How can I help?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Greenleaf Plumbing, thanks for calling. How can I help?' },
   { ts: '00:06', speaker: 'caller' as const, text: 'My water heater stopped working. Can someone come tomorrow?' },
-  { ts: '00:10', speaker: 'agent' as const, text: 'Yes — what is the address, and what time window works?' },
+  { ts: '00:10', speaker: 'agent' as const, text: 'Yes, what is the address, and what time window works?' },
   { ts: '00:14', speaker: 'caller' as const, text: '882 Pine St, anytime morning works.' },
   { ts: '00:18', speaker: 'agent' as const, text: 'Booked you for 9–11 AM tomorrow. Confirmation by text now.' },
   { ts: '00:22', speaker: 'system' as const, text: 'Job created · CRM updated · owner notified' },
@@ -158,7 +158,7 @@ export default function AIReceptionistForSmallBusinessPage() {
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 You can't be on a job and on the phone at the same time.
                 Implenix answers every inbound call inside one ring, books
-                appointments live, and syncs your CRM — so you keep working
+                appointments live, and syncs your CRM, so you keep working
                 while your phone keeps closing.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -195,7 +195,7 @@ export default function AIReceptionistForSmallBusinessPage() {
                 </p>
                 <p className="mt-3 font-body text-white/80 max-w-xs">
                   monthly pipeline a typical local-services SMB loses to
-                  unanswered calls — recoverable in 14 days.
+                  unanswered calls, recoverable in 14 days.
                 </p>
               </div>
             </aside>
@@ -208,7 +208,7 @@ export default function AIReceptionistForSmallBusinessPage() {
           <div className="max-w-3xl">
             <SectionHeader
               eyebrow="The small-business phone problem"
-              title="You can't be on a roof, in a chair, and on the phone — at once"
+              title="You can't be on a roof, in a chair, and on the phone, at once"
             />
             <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
@@ -216,7 +216,7 @@ export default function AIReceptionistForSmallBusinessPage() {
                 A plumber is in a basement. A salon owner is mid-color. A
                 contractor is on a roof. A solo accountant is in a client
                 meeting. The phone rings during exactly the hours the owner
-                cannot pick up — and the next caller goes to the next business
+                cannot pick up, and the next caller goes to the next business
                 on Google. Studies put the local-services missed-call rate at
                 40-60% during business hours, and after hours it climbs near
                 100%. Voicemail looks free; in practice it costs most SMBs
@@ -254,7 +254,7 @@ export default function AIReceptionistForSmallBusinessPage() {
           <SectionHeader
             eyebrow="What it does"
             title="A working receptionist that costs less than part-time"
-            description="Booking, qualification, after-hours coverage, CRM sync, urgent transfer — all included."
+            description="Booking, qualification, after-hours coverage, CRM sync, urgent transfer, all included."
             badgeVariant="purple"
           />
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-4 gap-5">
@@ -276,7 +276,7 @@ export default function AIReceptionistForSmallBusinessPage() {
               Customer calls about a broken water heater at 4:42 PM while
               the owner is finishing a kitchen remodel. The agent triages,
               books a 9-11 AM window for the next day, sends a confirmation
-              text, and notifies the owner — without interrupting the work.
+              text, and notifies the owner, without interrupting the work.
             </p>
           </div>
           <div className="lg:col-span-5">
@@ -437,7 +437,7 @@ export default function AIReceptionistForSmallBusinessPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               { href: '/ai-receptionist-vs-voicemail', label: 'AI Receptionist vs Voicemail' },
               { href: '/pricing', label: 'AI Receptionist pricing' },
             ]}

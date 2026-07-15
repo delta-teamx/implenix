@@ -1,22 +1,71 @@
 ---
-title: "Custom Webhook"
-description: "Send Implenix call data to any system via webhook."
+title: "Custom Webhook Integration"
+description: "How to integrate the Implenix agent with a custom or legacy system via webhook."
 section: "CRM Integrations"
 order: 5
 ---
 
-# Custom Webhook
+# Custom Webhook Integration
 
-PLACEHOLDER DOC CONTENT — replace with the verified webhook spec.
+If your CRM or business system is not in our native integrations list, we integrate via HTTP webhook. This works for any system that can expose or consume HTTP endpoints.
 
-Every call event can be POSTed to a custom HTTPS endpoint. Payload includes caller, transcript, intent, booking, and recording URL.
+## The two webhook directions
 
-```json
-{
-  "callId": "string",
-  "callerPhone": "string",
-  "intent": "string",
-  "transcript": "string",
-  "bookedAt": "ISO-8601 datetime"
-}
-```
+**Outbound webhook (agent to your system).** After every call, the agent posts structured call data to your endpoint. This is the standard pattern for creating leads, logging activities, or triggering downstream automation in a system we do not integrate with natively.
+
+**Inbound webhook (your system to agent).** Your system posts to an Implenix endpoint to trigger an outbound call, update the agent's knowledge, or push context for an upcoming inbound. Less common but supported for advanced workflows.
+
+## Outbound webhook payload
+
+Standard JSON payload posted to your endpoint. Example fields:
+
+- call_id (unique identifier)
+- direction (inbound or outbound)
+- from_number and to_number
+- start_time, end_time, duration_seconds
+- caller_name (if captured)
+- caller_email (if captured)
+- caller_address (if captured)
+- intent (booking, inquiry, complaint, other)
+- outcome (booked, transferred, escalated, resolved)
+- appointment_details (if booked)
+- transcript (full call transcript)
+- audio_url (signed URL to recording)
+- custom_fields (whatever we captured based on your intake script)
+
+We customize the payload structure to match what your system expects.
+
+## Authentication for your webhook
+
+We support standard auth patterns on outbound webhooks:
+
+- API key in header
+- Bearer token
+- HMAC signature verification (recommended for production)
+- Basic auth
+
+## Retry and error handling
+
+If your endpoint returns a non-2xx response, the agent retries with exponential backoff up to 3 times. If all retries fail, the call is queued to a fallback log and your operations team gets an alert. We do not silently drop failed writes.
+
+## Idempotency
+
+Every webhook payload includes a unique call_id. If you retry processing on your side, using the call_id as an idempotency key prevents duplicate lead creation.
+
+## Rate limiting
+
+Standard rate is up to 10 requests per second per deployment. For higher throughput, we can adjust. Notify your endpoint owner if your infrastructure needs specific rate handling.
+
+## Testing before go-live
+
+We provide a test endpoint you can point to during development. Send yourself synthetic webhook payloads to verify your endpoint parses correctly and creates the right records on your side.
+
+## Common patterns
+
+**CRM proxy.** Your webhook receives the payload, translates to your CRM's API format, and posts to your CRM. Common when you want abstraction between us and your CRM.
+
+**Data warehouse ingest.** Payload lands in your data warehouse for analytics. Common for enterprise deployments with BI needs.
+
+**Multi-system fan-out.** Payload triggers writes to multiple systems (CRM, marketing automation, analytics). Your webhook handles the fan-out logic.
+
+**Message queue.** Payload lands in Kafka, RabbitMQ, or SQS for asynchronous processing.

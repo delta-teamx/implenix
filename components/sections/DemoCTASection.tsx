@@ -13,7 +13,7 @@ export function DemoCTASection() {
           <SectionHeader
             eyebrow="See it live"
             title="See the Implenix agent work in real time"
-            description="Pick a 15-minute slot on the calendar — or call our agent right now and hear it run a live conversation. No form, no email."
+            description="Pick a 15-minute slot on the calendar, or call our agent right now and hear it run a live conversation. No form, no email."
           />
           <div className="mt-8 flex flex-col gap-3">
             <PhoneCTA ctaLocation="homepage-demo-phone" variant="primary" />

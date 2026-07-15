@@ -13,7 +13,7 @@ type Props = { postSlug: string };
 //   1. Which topic hubs the post belongs to (linked)
 //   2. Up to 4 related posts from the same hub (linked)
 // This drives the internal-linking density that Google 2026 uses to
-// identify topical authority. Server component — no client JS.
+// identify topical authority. Server component, no client JS.
 export function TopicalLinks({ postSlug }: Props) {
   const topics = getTopicsForPost(postSlug);
   const related = getRelatedPosts(postSlug, 4);

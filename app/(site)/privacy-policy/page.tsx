@@ -9,7 +9,7 @@ import { AGENT_PHONE_DISPLAY, HAS_REAL_PHONE } from '@/lib/leadCapture';
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy | Implenix',
   description:
-    'Implenix privacy policy — what data we collect, how we use it, your rights under GDPR and CCPA, and how to contact us about privacy.',
+    'Implenix privacy policy, what data we collect, how we use it, your rights under GDPR and CCPA, and how to contact us about privacy.',
   path: '/privacy-policy',
 });
 
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
           webPageSchema({
             name: 'Privacy Policy | Implenix',
             description:
-              'Implenix privacy policy — what data we collect, how we use it, GDPR/CCPA rights, and contact for privacy requests.',
+              'Implenix privacy policy, what data we collect, how we use it, GDPR/CCPA rights, and contact for privacy requests.',
             url: '/privacy-policy',
             breadcrumb: [
               { label: 'Home', href: '/' },
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
               paths
             </li>
             <li>
-              Interactions with specific elements — for example, clicking
+              Interactions with specific elements, for example, clicking
               the phone-agent CTA, submitting a booking, or opening the
               audit tool
             </li>
@@ -171,32 +171,32 @@ export default function PrivacyPolicyPage() {
 
           <ol>
             <li>
-              <strong>Deliver the consultation</strong> — send calendar
+              <strong>Deliver the consultation</strong>, send calendar
               invites, Meet links, reminders, and (where you have opted in)
               follow-up communications about our services.
             </li>
             <li>
-              <strong>Operate the AI voice agent</strong> — respond to your
+              <strong>Operate the AI voice agent</strong>, respond to your
               call, capture intake, route escalations to a human, and log
               the interaction for our internal records.
             </li>
             <li>
-              <strong>Improve the product</strong> — analyze aggregate
+              <strong>Improve the product</strong>, analyze aggregate
               website usage and (with call recordings) improve the quality
               of the AI voice agent's script and responses.
             </li>
             <li>
-              <strong>Provide customer support</strong> — respond to
+              <strong>Provide customer support</strong>, respond to
               questions, troubleshoot issues, and resolve disputes.
             </li>
             <li>
-              <strong>Comply with legal obligations</strong> — respond to
+              <strong>Comply with legal obligations</strong>, respond to
               lawful requests from regulators, comply with tax and
               accounting requirements, and enforce our Terms &amp;
               Conditions.
             </li>
             <li>
-              <strong>Prevent fraud and abuse</strong> — detect and prevent
+              <strong>Prevent fraud and abuse</strong>, detect and prevent
               unauthorized access, security threats, and abuse of our
               services.
             </li>
@@ -212,20 +212,20 @@ export default function PrivacyPolicyPage() {
 
           <ul>
             <li>
-              <strong>Consent</strong> — when you actively book a call,
+              <strong>Consent</strong>, when you actively book a call,
               call our agent, or interact with cookie-enabled tracking.
             </li>
             <li>
-              <strong>Contract</strong> — when we need to deliver services
+              <strong>Contract</strong>, when we need to deliver services
               you have signed up for.
             </li>
             <li>
-              <strong>Legitimate interest</strong> — for operating and
+              <strong>Legitimate interest</strong>, for operating and
               improving our website and services in ways that do not
               override your privacy rights.
             </li>
             <li>
-              <strong>Legal obligation</strong> — where we are required to
+              <strong>Legal obligation</strong>, where we are required to
               retain records for tax or compliance reasons.
             </li>
           </ul>
@@ -378,28 +378,27 @@ export default function PrivacyPolicyPage() {
 
           <ul>
             <li>
-              <strong>Access</strong> — request a copy of the personal
+              <strong>Access</strong>, request a copy of the personal
               information we hold about you.
             </li>
             <li>
-              <strong>Correction</strong> — request that we correct
+              <strong>Correction</strong>, request that we correct
               inaccurate or incomplete information.
             </li>
             <li>
-              <strong>Deletion</strong> ("right to be forgotten") —
-              request that we delete your personal information, subject to
+              <strong>Deletion</strong> ("right to be forgotten"), request that we delete your personal information, subject to
               legal retention requirements.
             </li>
             <li>
-              <strong>Restriction of processing</strong> — request that we
+              <strong>Restriction of processing</strong>, request that we
               stop or limit our use of your data.
             </li>
             <li>
-              <strong>Data portability</strong> — request that we provide
+              <strong>Data portability</strong>, request that we provide
               your data in a portable, machine-readable format.
             </li>
             <li>
-              <strong>Objection</strong> — object to processing based on
+              <strong>Objection</strong>, object to processing based on
               legitimate interest, including for direct marketing.
             </li>
             <li>
@@ -413,7 +412,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               <strong>Lodge a complaint</strong> with a data protection
-              authority in your jurisdiction (e.g., ICO in the UK, CNIL in
+              authority in your jurisdiction (e.g. ICO in the UK, CNIL in
               France, state attorneys general in the US).
             </li>
           </ul>
@@ -457,8 +456,7 @@ export default function PrivacyPolicyPage() {
 
           <p>
             We implement commercially reasonable technical and
-            organizational measures to protect your personal information —
-            including encryption in transit (TLS), encryption at rest,
+            organizational measures to protect your personal information, including encryption in transit (TLS), encryption at rest,
             role-based access controls, and audit logging. No security
             measure is perfect, and we cannot guarantee absolute security
             of any information transmitted over the internet.
@@ -469,8 +467,7 @@ export default function PrivacyPolicyPage() {
           <p>
             Our AI voice agent uses automated processing to respond to
             callers, capture intake, and route calls. This processing does
-            not produce legal or similarly significant effects on you —
-            it is intake and routing infrastructure. Any decisions
+            not produce legal or similarly significant effects on you, it is intake and routing infrastructure. Any decisions
             requiring human judgment (accepting your business, quoting
             services, deciding on next steps) are made by our human team,
             not the AI.
@@ -494,7 +491,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <address style={{ fontStyle: 'normal', marginTop: '1rem' }}>
-            <strong>Implenix — Attn: Privacy</strong>
+            <strong>Implenix, Attn: Privacy</strong>
             <br />
             Website:{' '}
             <a href="https://implenix.net/contact">implenix.net/contact</a>

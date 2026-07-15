@@ -144,7 +144,7 @@ export default function ComparisonPage({ params }: { params: Params }) {
           <SectionHeader
             eyebrow="Hear it"
             title={`Same call, AI vs ${profile.alternativeName.toLowerCase()}`}
-            description={`A real example of where the difference shows up. The transcript below is illustrative — the underlying flow ships in every Implenix deployment.`}
+            description={`A real example of where the difference shows up. The transcript below is illustrative, the underlying flow ships in every Implenix deployment.`}
             badgeVariant="purple"
           />
           <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
@@ -212,7 +212,7 @@ export default function ComparisonPage({ params }: { params: Params }) {
           <SectionHeader
             eyebrow={`What ${profile.alternativeName.toLowerCase()} does well`}
             title={`The honest case for a ${profile.alternativeShort}`}
-            description={`Not every business needs an AI receptionist. Here is where a ${profile.alternativeShort} is the right answer — and where it falls short.`}
+            description={`Not every business needs an AI receptionist. Here is where a ${profile.alternativeShort} is the right answer, and where it falls short.`}
           />
           <div className="mt-12 grid md:grid-cols-2 gap-5">
             <div className="border border-brand-cyan/30 bg-black p-6 flex flex-col gap-3">

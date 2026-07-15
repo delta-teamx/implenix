@@ -28,7 +28,7 @@ import { buildMetadata, SITE_NAME } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: '12 Benefits of AI Receptionist (Real Numbers) | Implenix',
   description:
-    '12 measurable benefits of an AI receptionist — cost savings, capture rate, after-hours coverage, real ROI math, with backing numbers from deployments.',
+    '12 measurable benefits of an AI receptionist, cost savings, capture rate, after-hours coverage, real ROI math, with backing numbers from deployments.',
   path: '/benefits-of-ai-receptionist',
 });
 
@@ -49,14 +49,14 @@ const FAQS = [
       'Especially small businesses. Solo operators and small teams gain the most because their bottleneck is their own phone time. The AI runs the routine work so the owner can do the actual job.',
   },
   {
-    question: 'What about the human element — does that get lost?',
+    question: 'What about the human element, does that get lost?',
     answer:
       'Live transfer rules route the calls that genuinely need human warmth to a real person in real time. The AI handles the 80–90% of routine inbound where speed and consistency matter more than empathy.',
   },
   {
     question: 'How do these benefits compare across industries?',
     answer:
-      'The shape is consistent: lost-pipeline recovery, after-hours capture, reduced labor on phone, faster response time. The magnitude varies — high-ticket industries (law, mortgage, real estate) see larger dollar gains; high-volume industries (HVAC, dental, salons) see larger time savings.',
+      'The shape is consistent: lost-pipeline recovery, after-hours capture, reduced labor on phone, faster response time. The magnitude varies, high-ticket industries (law, mortgage, real estate) see larger dollar gains; high-volume industries (HVAC, dental, salons) see larger time savings.',
   },
 ];
 
@@ -115,7 +115,7 @@ const BENEFITS = [
     headline: 'Live transfer in seconds',
     title: 'Route the right calls to a real person',
     description:
-      'Configurable rules — VIP allow-list, urgent keywords, sentiment, off-script questions — trigger SIP-based warm transfers with context briefing for the human picking up.',
+      'Configurable rules, VIP allow-list, urgent keywords, sentiment, off-script questions, trigger SIP-based warm transfers with context briefing for the human picking up.',
   },
   {
     Icon: Globe2,
@@ -155,7 +155,7 @@ export default function BenefitsOfAIReceptionistPage() {
           articleSchema({
             title: '12 Benefits of an AI Receptionist',
             description:
-              'The 12 measurable benefits of an AI receptionist with real numbers — capture rate, savings, after-hours coverage, no-show reduction.',
+              'The 12 measurable benefits of an AI receptionist with real numbers, capture rate, savings, after-hours coverage, no-show reduction.',
             url: '/benefits-of-ai-receptionist',
             datePublished: new Date().toISOString().slice(0, 10),
             author: SITE_NAME,
@@ -189,14 +189,12 @@ export default function BenefitsOfAIReceptionistPage() {
               <Badge label="Guide · Benefits" variant="cyan" />
               <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
                 12 benefits of an{' '}
-                <span className="text-brand-purple">AI receptionist</span> —
-                with real numbers.
+                <span className="text-brand-purple">AI receptionist</span>, with real numbers.
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Generic "save time" copy is not useful. This is the
-                measurable list — recovered pipeline, capture rate,
-                annualized savings, no-show reduction, hours reclaimed —
-                with real magnitudes that hold up across the deployments we
+                measurable list, recovered pipeline, capture rate,
+                annualized savings, no-show reduction, hours reclaimed, with real magnitudes that hold up across the deployments we
                 ship.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -227,7 +225,7 @@ export default function BenefitsOfAIReceptionistPage() {
           <SectionHeader
             eyebrow="The summary"
             title="What an AI receptionist actually moves on the P&L"
-            description="Four buckets — three of them show up in dollars, one shows up in ops quality. The numbers below are conservative across the Implenix portfolio."
+            description="Four buckets, three of them show up in dollars, one shows up in ops quality. The numbers below are conservative across the Implenix portfolio."
           />
           <div className="mt-12 grid md:grid-cols-2 gap-4">
             <div className="border-l-[3px] border-brand-cyan bg-black p-6 flex flex-col gap-3">
@@ -239,7 +237,7 @@ export default function BenefitsOfAIReceptionistPage() {
               </p>
               <p className="font-body text-sm text-white/80 leading-relaxed">
                 Per month, per typical local SMB. This is the biggest
-                dollar number on the page — missed-call cost that
+                dollar number on the page, missed-call cost that
                 returns to the business inside the first month of go-live.
               </p>
             </div>
@@ -251,7 +249,7 @@ export default function BenefitsOfAIReceptionistPage() {
                 15-22 hrs
               </p>
               <p className="font-body text-sm text-white/80 leading-relaxed">
-                Per week, per FTE — front-desk, dispatcher, and owner
+                Per week, per FTE, front-desk, dispatcher, and owner
                 hours that stop being spent on routine phone work and go
                 back into the business.
               </p>
@@ -295,7 +293,7 @@ export default function BenefitsOfAIReceptionistPage() {
           <SectionHeader
             eyebrow="Hear it"
             title="What three of those benefits look like in one call"
-            description="Captured pipeline, after-hours coverage, and live calendar booking — all firing on the same 58-second call."
+            description="Captured pipeline, after-hours coverage, and live calendar booking, all firing on the same 58-second call."
             badgeVariant="purple"
           />
           <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">

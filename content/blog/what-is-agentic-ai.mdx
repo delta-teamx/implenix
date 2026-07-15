@@ -1,13 +1,13 @@
 ---
 title: "What is agentic AI? A plain-English explainer with real examples"
-description: "Agentic AI explained without jargon — what it is, how it differs from generative AI and traditional automation, and where it actually works in production."
+description: "Agentic AI explained without jargon, what it is, how it differs from generative AI and traditional automation, and where it actually works in production."
 category: "AI Voice Agents"
 publishedAt: "2026-05-27"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "What is Agentic AI? Plain-English Explainer | Implenix"
-metaDescription: "Agentic AI in plain English — what it is, how it differs from ChatGPT-style AI, and the production use cases where it actually works today."
+metaDescription: "Agentic AI in plain English, what it is, how it differs from ChatGPT-style AI, and the production use cases where it actually works today."
 heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Abstract neural network visualization representing agentic AI"
 ---
@@ -45,7 +45,7 @@ in a loop: **decide → act → observe → decide again**. A voice
 agent that answers a call, decides the caller wants to book a
 dentist appointment, calls the practice management system's API
 to check availability, books a slot, sends a confirmation SMS,
-and updates the CRM — that is agentic AI.
+and updates the CRM, that is agentic AI.
 
 The generative model is still there under the hood. It just is
 not the whole system anymore.
@@ -74,7 +74,7 @@ Slack bot that just replies with a joke does not.
 
 Traditional automation follows a pre-written script. If X, do Y.
 If A, do B. Every branch is explicitly programmed. Voice IVR
-trees, Zapier zaps, robotic process automation — all traditional.
+trees, Zapier zaps, robotic process automation, all traditional.
 
 Agentic AI does not need every branch pre-written. The model
 figures out what to do based on the goal and the tools available.
@@ -105,11 +105,11 @@ Here is the same interaction two ways.
   title="dental-rebook.call"
   lines={[
     { ts: "00:00", speaker: "system", text: "Inbound · established patient · calling from number on file" },
-    { ts: "00:02", speaker: "agent", text: "Hi, this is Ellie at Riverwood Dental. I see you are calling from Karen's number — how can I help today?" },
+    { ts: "00:02", speaker: "agent", text: "Hi, this is Ellie at Riverwood Dental. I see you are calling from Karen's number, how can I help today?" },
     { ts: "00:09", speaker: "caller", text: "Yeah, my daughter is sick, can we push tomorrow's cleaning?" },
     { ts: "00:15", speaker: "agent", text: "Of course. Hope she feels better. Your cleaning was tomorrow at 3 PM. Want a different day this week or next?" },
     { ts: "00:23", speaker: "caller", text: "Whenever the same slot is open next week." },
-    { ts: "00:27", speaker: "agent", text: "Same day next week — Thursday the 24th at 3 PM works." },
+    { ts: "00:27", speaker: "agent", text: "Same day next week, Thursday the 24th at 3 PM works." },
     { ts: "00:32", speaker: "caller", text: "Perfect." },
     { ts: "00:34", speaker: "agent", text: "Done. Text confirmation on the way. Hope your daughter is better soon." },
     { ts: "00:39", speaker: "system", text: "Rescheduled · Dentrix updated · SMS sent · goal accomplished" }
@@ -142,7 +142,7 @@ anything. Reality is narrower.
 - Anything requiring long-horizon planning across days.
 - Multi-party coordination where humans need to be brought into
   the loop asynchronously.
-- Physical-world action (robots, driving, manipulation) — that
+- Physical-world action (robots, driving, manipulation), that
   is a different research area.
 - Fully autonomous decision-making with high-stakes financial
   implications. Humans still approve.
@@ -154,7 +154,7 @@ agent) you deploy, know these four layers.
 
 1. **The model.** The underlying LLM (GPT-4o, Claude, Gemini,
    or an open model). Provides the reasoning and language ability.
-2. **The tools layer.** Concrete integrations — REST APIs,
+2. **The tools layer.** Concrete integrations, REST APIs,
    database writes, messaging endpoints. What the agent can
    actually do in the world.
 3. **The orchestrator.** The runtime that manages the decide-act-
@@ -180,7 +180,7 @@ The reasoning goes something like:
 - Ask before acting. Confirm which the caller actually wants.
 
 A traditional automation would just cancel the appointment on the
-keyword "cancel." An agentic system pauses and asks — because it
+keyword "cancel." An agentic system pauses and asks, because it
 holds both goals as possibilities and is not scripted to jump
 directly to action.
 
@@ -228,14 +228,14 @@ are single-agent for now.
 **Does agentic AI hallucinate?**
 The underlying model can. Good agentic systems constrain the
 model by giving it tools with typed inputs and structured outputs
-— which reduces free-form hallucination in the action layer even
+which reduces free-form hallucination in the action layer even
 when the language layer might drift.
 
 ## Where to go from here
 
 If you want to see an agentic voice AI in action, the demo line
 at the top of this page is exactly what has been described here
-— voice model plus tools plus orchestrator plus telephony
+voice model plus tools plus orchestrator plus telephony
 interface, pursuing the goal of booking your call. Call it and
 listen for the moments where it makes a real decision rather
 than reading a script.

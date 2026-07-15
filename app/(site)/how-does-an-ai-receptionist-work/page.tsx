@@ -35,12 +35,12 @@ const FAQS = [
   {
     question: 'What technology does it use?',
     answer:
-      'Conversational voice AI (text-to-speech and speech-to-text), natural language understanding for intent and entity extraction, telephony (SIP) for call routing, and APIs for two-way integration with your CRM and calendar. Modern systems use streaming audio so latency feels natural — under 800ms turn-taking.',
+      'Conversational voice AI (text-to-speech and speech-to-text), natural language understanding for intent and entity extraction, telephony (SIP) for call routing, and APIs for two-way integration with your CRM and calendar. Modern systems use streaming audio so latency feels natural, under 800ms turn-taking.',
   },
   {
     question: 'How does it know what to say?',
     answer:
-      'During onboarding, your team works with us to tune the call script, voice, qualification logic, and transfer rules. The agent follows that defined dialogue tree at runtime — it does not freelance answers. For questions outside the defined script, it transfers to a human or follows a fallback rule.',
+      'During onboarding, your team works with us to tune the call script, voice, qualification logic, and transfer rules. The agent follows that defined dialogue tree at runtime, it does not freelance answers. For questions outside the defined script, it transfers to a human or follows a fallback rule.',
   },
   {
     question: 'How does it book appointments live?',
@@ -55,7 +55,7 @@ const FAQS = [
   {
     question: 'How does live transfer work?',
     answer:
-      'Defined rules trigger transfers — VIP allow-list, urgent keywords, frustration detection (sentiment + tone), or specific intent classes. The agent says "let me get the right person" and warm-transfers the call to your team or backup human service via SIP within seconds.',
+      'Defined rules trigger transfers, VIP allow-list, urgent keywords, frustration detection (sentiment + tone), or specific intent classes. The agent says "let me get the right person" and warm-transfers the call to your team or backup human service via SIP within seconds.',
   },
   {
     question: 'What happens after the call ends?',
@@ -85,12 +85,12 @@ const PIPELINE_STEPS = [
   {
     title: 'Call hits your business number',
     description:
-      'Your existing number forwards (or ports) to the Implenix SIP trunk. From the caller\'s side, nothing has changed — they dial the same number they always did.',
+      'Your existing number forwards (or ports) to the Implenix SIP trunk. From the caller\'s side, nothing has changed, they dial the same number they always did.',
   },
   {
     title: 'Voice AI picks up within one ring',
     description:
-      'The audio stream opens, speech-to-text initializes, and the agent plays the greeting from your tuned script. Latency is under 800ms turn-taking — natural conversation pace.',
+      'The audio stream opens, speech-to-text initializes, and the agent plays the greeting from your tuned script. Latency is under 800ms turn-taking, natural conversation pace.',
   },
   {
     title: 'Caller intent gets classified',
@@ -105,7 +105,7 @@ const PIPELINE_STEPS = [
   {
     title: 'Transfer rules check on every turn',
     description:
-      'Throughout the call, the agent evaluates transfer triggers — VIP allow-list, urgent keywords, sentiment, frustration, off-script questions. When triggered, it warm-transfers to your team or backup service.',
+      'Throughout the call, the agent evaluates transfer triggers, VIP allow-list, urgent keywords, sentiment, frustration, off-script questions. When triggered, it warm-transfers to your team or backup service.',
   },
   {
     title: 'CRM and downstream systems update',
@@ -212,13 +212,13 @@ export default function HowDoesAnAIReceptionistWorkPage() {
               <ArchLayer
                 number="03"
                 title="Intelligence (LLM + script)"
-                body="A language model classifies intent and follows your tuned dialogue tree. No freelance answers — the agent walks defined branches."
+                body="A language model classifies intent and follows your tuned dialogue tree. No freelance answers, the agent walks defined branches."
                 color="cyan"
               />
               <ArchLayer
                 number="04"
                 title="Integration (CRM + calendar + SMS)"
-                body="Live API calls during the conversation — calendar lookups, CRM writes, SMS confirmations. Everything happens before the call ends."
+                body="Live API calls during the conversation, calendar lookups, CRM writes, SMS confirmations. Everything happens before the call ends."
                 color="purple"
               />
               <ArchLayer
@@ -384,7 +384,7 @@ export default function HowDoesAnAIReceptionistWorkPage() {
             </h2>
             <p className="mt-4 font-body text-white/75 max-w-xl">
               We run a live demo number configured as a sample HVAC
-              receptionist. Try emergencies, quotes, reschedules — see how
+              receptionist. Try emergencies, quotes, reschedules, see how
               the pipeline above handles each one in real time.
             </p>
           </div>
@@ -413,7 +413,7 @@ export default function HowDoesAnAIReceptionistWorkPage() {
             type="resource"
             links={[
               { href: '/what-is-an-ai-receptionist', label: 'What is an AI receptionist?' },
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               { href: '/preview/dashboard', label: 'Inside the Implenix dashboard' },
             ]}
           />

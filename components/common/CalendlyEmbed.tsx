@@ -6,7 +6,7 @@ import { CALENDLY_URL } from '@/lib/leadCapture';
 import { trackLead, GA4_EVENTS } from '@/lib/analytics';
 
 type Props = {
-  /** Where this embed lives — used in analytics events. */
+  /** Where this embed lives, used in analytics events. */
   ctaLocation: string;
   /** Pixel height of the embedded calendar. */
   height?: number;

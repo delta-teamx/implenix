@@ -1,14 +1,76 @@
 ---
 title: "Call Scripts"
-description: "Define and tune the dialog the agent runs on each call."
+description: "How Implenix builds and maintains your agent call scripts."
 section: "Agent Configuration"
-order: 1
+order: 2
 ---
 
 # Call Scripts
 
-PLACEHOLDER DOC CONTENT — replace with the official call-script schema.
+The call script is the structured conversation template the agent follows on inbound and outbound calls. Every deployment gets a custom script built during discovery week. This page explains how scripts are structured and maintained.
 
-A call script is structured as: **greeting → intent detection → qualification → action**.
+## Script components
 
-Each section can be tuned independently, A/B tested, or branched by caller type.
+**Greeting.** The opening beat. Business name, agent identification as virtual assistant, opening question.
+
+**Intent classification.** The first two or three questions that determine which branch of the script runs next.
+
+**Intake questions.** Field-by-field data capture, in a specific order, with exact phrasing for each question.
+
+**Booking / action logic.** The steps the agent takes once intent is understood, checking calendar availability, offering slots, creating records, sending confirmations.
+
+**Escalation triggers.** Conditions that transfer the call to a human.
+
+**Closing.** How the agent wraps up successful calls.
+
+## The 7-section structure
+
+Our standard script format has 7 sections. See the operator playbook at /blog/how-to-write-prompts-for-ai-voice-agents for the full breakdown. Quick summary:
+
+1. System role
+2. Tone and voice
+3. Intake script
+4. Transfer rules
+5. Escalation flows
+6. Edge case responses
+7. Hard-stop list
+
+## How scripts are built
+
+**Discovery week.** We listen to 20 to 40 of your recent inbound recordings and read your existing scripts if any. We capture your callers' vocabulary and your team's hard-stops.
+
+**Draft script.** We produce a first-draft script covering all common intent branches. You review, mark up, and return.
+
+**Iteration.** We revise. Usually 1 to 3 iteration cycles before the script is ready to test.
+
+**Test-call battery.** 30 to 50 mock calls exercise the script. Adjustments happen live.
+
+**Go-live and tuning.** Post-cutover, the script continues to be tuned based on flagged calls.
+
+## Multi-intent scripts
+
+Most business phone lines get more than one call type. Standard multi-intent script structure:
+
+- Booking calls (most common)
+- Existing customer support (rebook, cancellation, question)
+- New customer intake
+- Sales inquiry
+- Emergency (industry-specific)
+- Vendor / other
+
+Each intent has its own branch. The classification happens on the first exchange.
+
+## Language variants
+
+For deployments serving multilingual populations, scripts are built in each language rather than translated. Native-language scripts read better than translations.
+
+## Ongoing maintenance
+
+Scripts are not one-and-done. Every deployment we run has ongoing tuning:
+
+- Monthly review of flagged calls.
+- Prompt adjustments based on real caller patterns.
+- New intent branches added as your business evolves.
+- Compliance updates as regulations change.
+
+Post-deployment script changes are included in your monthly retainer at Tier 2 and above. Solo-operator (Tier 1) deployments can request changes for a per-change fee.

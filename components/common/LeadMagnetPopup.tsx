@@ -34,7 +34,7 @@ function shouldShow(): boolean {
   return true;
 }
 
-// Lead-capture popup. No form, no email — direct conversion CTAs only:
+// Lead-capture popup. No form, no email, direct conversion CTAs only:
 // (1) call the AI agent now, (2) book on the calendar. Both are
 // one-tap actions so the popup converts without any data entry.
 export function LeadMagnetPopup() {
@@ -188,7 +188,7 @@ export function LeadMagnetPopup() {
               <p className="font-body text-sm text-white/75 leading-relaxed">
                 Call our AI agent live and hear it run a real qualification
                 conversation, or book a 15-minute call with the team on the
-                calendar. No form, no email — just one tap.
+                calendar. No form, no email, just one tap.
               </p>
 
               <div className="flex flex-col gap-3 mt-1">

@@ -1,4 +1,4 @@
-// Centralized lead-capture config — Calendly URL + agent phone number.
+// Centralized lead-capture config, Calendly URL + agent phone number.
 // Both use env vars when set (NEXT_PUBLIC_CALENDLY_URL,
 // NEXT_PUBLIC_AGENT_PHONE, NEXT_PUBLIC_AGENT_PHONE_DISPLAY) and fall
 // back to the production defaults hardcoded here.

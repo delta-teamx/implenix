@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Terms & Conditions | Implenix',
   description:
-    'Implenix Terms & Conditions — the agreement governing your use of implenix.net and Implenix AI voice agent deployment services.',
+    'Implenix Terms & Conditions, the agreement governing your use of implenix.net and Implenix AI voice agent deployment services.',
   path: '/terms',
 });
 
@@ -23,7 +23,7 @@ export default function TermsPage() {
           webPageSchema({
             name: 'Terms & Conditions | Implenix',
             description:
-              'Implenix Terms & Conditions — the agreement governing your use of implenix.net and Implenix AI voice deployment services.',
+              'Implenix Terms & Conditions, the agreement governing your use of implenix.net and Implenix AI voice deployment services.',
             url: '/terms',
             breadcrumb: [
               { label: 'Home', href: '/' },
@@ -87,26 +87,26 @@ export default function TermsPage() {
 
           <ul>
             <li>
-              <strong>Website content</strong> — educational and marketing
+              <strong>Website content</strong>, educational and marketing
               content, blog posts, case studies, glossary, and industry
               guides.
             </li>
             <li>
-              <strong>Free tools</strong> — the missed-call audit tool and
+              <strong>Free tools</strong>, the missed-call audit tool and
               related calculators, provided for informational purposes.
             </li>
             <li>
-              <strong>AI voice agent consultations</strong> — a phone
+              <strong>AI voice agent consultations</strong>, a phone
               number connected to our AI voice agent for prospective
               customers to hear a live demonstration.
             </li>
             <li>
-              <strong>Booking service</strong> — a calendar widget for
+              <strong>Booking service</strong>, a calendar widget for
               scheduling human consultation calls with the Implenix team.
             </li>
             <li>
               <strong>Contracted AI voice agent deployment services</strong>{' '}
-              — for customers who enter into a separate written services
+for customers who enter into a separate written services
               agreement, deployment and operation of a customized AI voice
               agent for their business.
             </li>
@@ -115,8 +115,8 @@ export default function TermsPage() {
           <h2>3. Nature of the Website content</h2>
 
           <p>
-            Content on the Website — including blog posts, case studies,
-            calculators, industry guides, and audit tools — is provided for
+            Content on the Website, including blog posts, case studies,
+            calculators, industry guides, and audit tools, is provided for
             informational purposes only. It does not constitute legal,
             financial, medical, or professional advice. Numbers cited in
             case studies and audit calculators are drawn from actual
@@ -192,8 +192,8 @@ export default function TermsPage() {
 
           <p>
             The Website and its original content, features, and
-            functionality — including logos, trademarks, copy, blog posts,
-            case study numbers, diagrams, and AI voice agent scripts — are
+            functionality, including logos, trademarks, copy, blog posts,
+            case study numbers, diagrams, and AI voice agent scripts, are
             owned by Implenix and are protected by copyright, trademark,
             trade secret, and other intellectual property laws. You may not
             reproduce, redistribute, or create derivative works from this
@@ -248,8 +248,7 @@ export default function TermsPage() {
             Implenix does not warrant that the Website will be
             uninterrupted, error-free, secure, or that defects will be
             corrected. Implenix does not warrant the accuracy,
-            completeness, or reliability of any content on the Website —
-            including case study numbers, industry averages, or audit
+            completeness, or reliability of any content on the Website, including case study numbers, industry averages, or audit
             calculator outputs.
           </p>
 
@@ -325,10 +324,8 @@ export default function TermsPage() {
           </p>
 
           <p>
-            Sections that by their nature should survive termination —
-            including Intellectual Property, Warranties and Disclaimers,
-            Limitation of Liability, Indemnification, and Governing Law —
-            will survive termination.
+            Sections that by their nature should survive termination, including Intellectual Property, Warranties and Disclaimers,
+            Limitation of Liability, Indemnification, and Governing Law, will survive termination.
           </p>
 
           <h2>13. Governing law and dispute resolution</h2>
@@ -397,7 +394,7 @@ export default function TermsPage() {
           <p>For questions about these Terms, contact Implenix at:</p>
 
           <address style={{ fontStyle: 'normal', marginTop: '1rem' }}>
-            <strong>Implenix — Attn: Legal</strong>
+            <strong>Implenix, Attn: Legal</strong>
             <br />
             Website:{' '}
             <a href="https://implenix.net/contact">implenix.net/contact</a>

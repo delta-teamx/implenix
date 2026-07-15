@@ -1,19 +1,19 @@
 ---
 title: "AI agents for lawyers: intake, qualification, and the ethics line"
-description: "Field notes on AI voice agents in law firm intake — what they handle for PI, family, immigration, and small business practices, and what belongs only with an attorney."
+description: "Field notes on AI voice agents in law firm intake, what they handle for PI, family, immigration, and small business practices, and what belongs only with an attorney."
 category: "Industry Guides"
 publishedAt: "2026-06-10"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "AI Agents for Lawyers: Intake + Ethics Guide | Implenix"
-metaDescription: "How AI voice agents handle law firm intake — qualification, conflict flags, consultation booking — plus the ethics rules I never let them cross."
+metaDescription: "How AI voice agents handle law firm intake, qualification, conflict flags, consultation booking, plus the ethics rules I never let them cross."
 heroImage: "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Law books and gavel representing legal practice intake"
 ---
 
 <Answer q="What do AI agents do for lawyers?">
-An AI agent for lawyers handles first-touch intake on new-matter phone calls — capturing name, matter type, jurisdiction, incident date, opposing party, and urgency — while flagging potential conflicts against the firm's client database. It books qualified prospects onto the attorney's consultation calendar and declines or refers cases outside the firm's practice areas. It never offers legal advice, never quotes fees on retainer, and never discusses the merits of a matter.
+An AI agent for lawyers handles first-touch intake on new-matter phone calls, capturing name, matter type, jurisdiction, incident date, opposing party, and urgency, while flagging potential conflicts against the firm's client database. It books qualified prospects onto the attorney's consultation calendar and declines or refers cases outside the firm's practice areas. It never offers legal advice, never quotes fees on retainer, and never discusses the merits of a matter.
 </Answer>
 
 The firms I have shipped voice agents into range from four-partner
@@ -104,7 +104,7 @@ that includes any of the following.
 - **Prompt disclosure that it is an AI.** The agent identifies as
   a virtual intake assistant on the greeting, not later. In some
   state bars, this disclosure is either explicit or trending
-  toward explicit — I default to on regardless.
+  toward explicit, I default to on regardless.
 
 Every firm I deploy for gets a "hard stop" list that includes any
 practice-area-specific things the local bar has warned about. That
@@ -154,7 +154,7 @@ Clio is the most common request and it is the fastest to
 integrate. Its API is well-documented and its webhook behavior is
 predictable. MyCase and PracticePanther both work but the
 webhook layer is quirkier. Filevine is heavier to integrate but
-worth it for personal injury firms — its intake field structure
+worth it for personal injury firms, its intake field structure
 matches how PI matters actually flow.
 
 For calendar, most attorneys live in Google Calendar or Outlook.
@@ -171,7 +171,7 @@ feature that saves firms from real trouble.
 
 The agent takes the opposing party name during intake and runs
 a fuzzy match against the case management system. If a match
-returns, the agent does not surface it to the caller — that would
+returns, the agent does not surface it to the caller, that would
 be a confidentiality violation. It simply routes the call to the
 intake supervisor or paralegal with a flag: "possible conflict,
 opposing party X matches prior client Y, please verify before
@@ -228,7 +228,7 @@ review take more time.
   jurisdiction gates, conflict-check logic, transfer conditions.
 - **Days 9–12:** CRM integration, calendar wiring, conflict-check
   webhook.
-- **Days 13–15:** Test calls. Full mock-caller battery — I run 40
+- **Days 13–15:** Test calls. Full mock-caller battery, I run 40
   to 60 calls including hostile callers, callers seeking advice,
   callers with obvious conflicts.
 - **Days 16–21:** Cutover. Silent monitor for 72 hours minimum.
@@ -277,7 +277,7 @@ preferred language.
 ## Where to go from here
 
 Call the number in the header of this site and pose a
-hypothetical intake — a car accident, a divorce filing, an
+hypothetical intake, a car accident, a divorce filing, an
 immigration question. Watch how the agent triages without
 crossing into advice territory. That interaction is the fastest
 sanity check for whether the scope fits your firm.

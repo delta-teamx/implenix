@@ -27,7 +27,7 @@ const FAQS = [
   {
     question: 'Why is the AI fixed-cost when other options bill per minute?',
     answer:
-      'Concurrency is unbounded — one virtual agent can handle a hundred calls at once at the same compute cost as one. Live human services bill per minute or per call because human labor scales linearly with usage.',
+      'Concurrency is unbounded, one virtual agent can handle a hundred calls at once at the same compute cost as one. Live human services bill per minute or per call because human labor scales linearly with usage.',
   },
   {
     question: 'What is the real cost of voicemail?',
@@ -52,7 +52,7 @@ const FAQS = [
   {
     question: 'Are there hidden costs in the AI option?',
     answer:
-      'No. The plan price is what you pay monthly — no per-minute charges, no after-hours upcharges, no overage fees. Optional white-glove setup ($497 one-time) and custom voice cloning (premium tier) are clearly priced.',
+      'No. The plan price is what you pay monthly, no per-minute charges, no after-hours upcharges, no overage fees. Optional white-glove setup ($497 one-time) and custom voice cloning (premium tier) are clearly priced.',
   },
 ];
 
@@ -85,7 +85,7 @@ const COSTS = [
     label: 'Implenix · AI Receptionist',
     monthly: '$297–$997',
     annual: '$3,564–$11,964',
-    hiddenCost: 'None — fixed price',
+    hiddenCost: 'None, fixed price',
     coverage: '24/7 unlimited concurrent',
     realRanking: 'Best per-hour cost',
     highlight: true,
@@ -159,12 +159,12 @@ export default function AIReceptionistCostComparisonPage() {
               <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
                 AI receptionist{' '}
                 <span className="text-brand-purple">cost comparison</span>{' '}
-                — every option, real numbers.
+every option, real numbers.
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Voicemail looks free. Hiring looks expensive. Live services
                 look manageable. The honest annualized math tells a
-                different story — including the hidden costs each option
+                different story, including the hidden costs each option
                 hides on the P&L.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -240,7 +240,7 @@ export default function AIReceptionistCostComparisonPage() {
                 Per-minute creep
               </p>
               <p className="font-body text-xs text-white/60 leading-relaxed">
-                Live answering service "manageable" — until volume
+                Live answering service "manageable", until volume
                 scales and per-minute billing crosses $1,500/month with
                 the same call volume you started at.
               </p>
@@ -340,9 +340,9 @@ export default function AIReceptionistCostComparisonPage() {
               </span>
               <ul className="flex flex-col gap-2.5 mt-2">
                 {[
-                  'Implenix AI Receptionist — best per-hour cost, no hidden cost',
-                  'Outsourced call center — for businesses with complex sales ops only',
-                  'Part-time hire — only if call volume is genuinely low',
+                  'Implenix AI Receptionist, best per-hour cost, no hidden cost',
+                  'Outsourced call center, for businesses with complex sales ops only',
+                  'Part-time hire, only if call volume is genuinely low',
                 ].map((line, i) => (
                   <li
                     key={line}
@@ -362,9 +362,9 @@ export default function AIReceptionistCostComparisonPage() {
               </span>
               <ul className="flex flex-col gap-2.5 mt-2">
                 {[
-                  'Voicemail — silently $5K-$30K/month in lost pipeline',
-                  'Full-time receptionist — $50K-$82K/year, 40-hour ceiling',
-                  'IVR-only — cheap on invoice, 40-60% hangup rate',
+                  'Voicemail, silently $5K-$30K/month in lost pipeline',
+                  'Full-time receptionist, $50K-$82K/year, 40-hour ceiling',
+                  'IVR-only, cheap on invoice, 40-60% hangup rate',
                 ].map((line, i) => (
                   <li
                     key={line}

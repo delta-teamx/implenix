@@ -4,7 +4,7 @@ type Props = {
   title?: string;
 };
 
-// The Implenix mark — two stair-step gamma shapes in cyan. Used at any
+// The Implenix mark, two stair-step gamma shapes in cyan. Used at any
 // size; the SVG scales cleanly. Accepts a className so the parent can
 // control color via currentColor when needed.
 export function LogoMark({

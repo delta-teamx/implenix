@@ -9,7 +9,7 @@ const fadeUp = {
   viewport: { once: true, amount: 0.4 },
 };
 
-// Step 1: Incoming call interface — phone ringing pulse, accept/decline,
+// Step 1: Incoming call interface, phone ringing pulse, accept/decline,
 // "AI answering" status. The pulsing rings communicate the "<1 ring"
 // answer time at a glance.
 export function StepOneVisual() {
@@ -72,7 +72,7 @@ export function StepOneVisual() {
   );
 }
 
-// Step 2: Calendar booking — day grid with a slot animating into the
+// Step 2: Calendar booking, day grid with a slot animating into the
 // booked state.
 export function StepTwoVisual() {
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
@@ -148,7 +148,7 @@ export function StepTwoVisual() {
   );
 }
 
-// Step 3: CRM update — record fields populating in sequence with a
+// Step 3: CRM update, record fields populating in sequence with a
 // "synced" stamp at the end.
 export function StepThreeVisual() {
   const fields = [

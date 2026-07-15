@@ -22,7 +22,7 @@ type LandingConfig = {
   hookHeadline?: string;
 };
 
-// PRIMARY KEYWORD-MATCHED LANDING PAGES (Variant A — Google Search Ad)
+// PRIMARY KEYWORD-MATCHED LANDING PAGES (Variant A, Google Search Ad)
 const variantA: LandingConfig[] = INDUSTRIES.map((i) => ({
   slug: `ai-receptionist-${i.slug}`,
   variant: 'a' as const,
@@ -36,7 +36,7 @@ const variantA: LandingConfig[] = INDUSTRIES.map((i) => ({
     'Live transfer to your team when needed',
   ],
   testimonialQuote:
-    'PLACEHOLDER — We stopped losing after-hours calls overnight. The agent books while we sleep.',
+    'PLACEHOLDER, We stopped losing after-hours calls overnight. The agent books while we sleep.',
   stat: { number: '<60s', label: 'average pickup time' },
 }));
 
@@ -80,17 +80,17 @@ export default function LandingPage({ params }: { params: Params }) {
 
 const SAMPLE_LP_CALL = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · Implenix agent' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Thanks for calling — how can I help?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Thanks for calling, how can I help?' },
   { ts: '00:05', speaker: 'caller' as const, text: 'I need a quote and the soonest opening.' },
   { ts: '00:08', speaker: 'agent' as const, text: 'Booking you in now. Confirmation by text.' },
   { ts: '00:12', speaker: 'system' as const, text: 'Booking confirmed · CRM updated' },
 ];
 
-// Variant A — Google Search Ad: form above the fold, single focused CTA.
+// Variant A, Google Search Ad: form above the fold, single focused CTA.
 function VariantA({ cfg }: { cfg: LandingConfig }) {
   return (
     <>
-      {/* META PIXEL: REPLACE 000000000000000 — fires PageView automatically. */}
+      {/* META PIXEL: REPLACE 000000000000000, fires PageView automatically. */}
       {/* GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX/CONVERSION_LABEL on lead submit */}
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-16 pb-16 md:pt-20 md:pb-20 grid lg:grid-cols-12 gap-10 items-start">
@@ -165,7 +165,7 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
           <div>
             <Badge label="Last chance" variant="purple" />
             <h2 className="font-heading text-2xl md:text-4xl mt-5">
-              One more time — let’s book it.
+              One more time, let’s book it.
             </h2>
             <p className="mt-3 text-white/70 font-body">
               30 seconds. We will call you back today.
@@ -178,11 +178,11 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
   );
 }
 
-// Variant B — Meta Awareness: hook headline + minimal form.
+// Variant B, Meta Awareness: hook headline + minimal form.
 function VariantB({ cfg }: { cfg: LandingConfig }) {
   return (
     <>
-      {/* META PIXEL: REPLACE 000000000000000 — fires PageView automatically. */}
+      {/* META PIXEL: REPLACE 000000000000000, fires PageView automatically. */}
       <section className="grid-bg border-b border-brand-purple/15">
         <div className="max-w-content mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-24 text-center flex flex-col items-center gap-6">
           <Badge label="Implenix · 60-second pitch" variant="purple" />

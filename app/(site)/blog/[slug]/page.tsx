@@ -71,8 +71,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             datePublished: doc.publishedAt,
             author: doc.author,
             authorRole: doc.authorRole,
-          }),
-          ...(howToSteps && howToSteps.length > 0
+          }), ...(howToSteps && howToSteps.length > 0
             ? [
                 howToSchema({
                   name: doc.title,
@@ -190,7 +189,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
           <div>
             <Badge label="Skip the form" variant="cyan" />
             <p className="font-heading text-2xl text-white mt-3 leading-snug">
-              Hear the agent take a real call — or pick a slot.
+              Hear the agent take a real call, or pick a slot.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2">

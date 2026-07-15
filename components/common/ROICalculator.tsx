@@ -9,7 +9,7 @@ export function ROICalculator() {
   const [callVolume, setCallVolume] = useState(400);
   const [answerRate, setAnswerRate] = useState(45);
   const [jobValue, setJobValue] = useState(420);
-  // Gate stays in place — only path to the full breakdown is the
+  // Gate stays in place, only path to the full breakdown is the
   // phone CTA or the calendar booking below.
   const unlocked = false;
 
@@ -93,8 +93,7 @@ export function ROICalculator() {
                 </span>
               </div>
               <p className="text-white text-center font-body text-sm max-w-sm">
-                Hear the AI agent walk you through your specific numbers —
-                or book a 15-minute slot on the calendar. No form.
+                Hear the AI agent walk you through your specific numbers, or book a 15-minute slot on the calendar. No form.
               </p>
               <div className="w-full flex flex-col sm:flex-row gap-2 max-w-sm">
                 <PhoneCTA

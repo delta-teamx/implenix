@@ -192,7 +192,7 @@ export default function TopicHubPage({ params }: { params: Params }) {
               links={[
                 { href: '/audit', label: 'Free missed-call audit' },
                 { href: '/contact', label: 'Book a 30-min consultation' },
-                { href: '/', label: 'AI Receptionist — main pillar' },
+                { href: '/', label: 'AI Receptionist, main pillar' },
               ]}
             />
           </div>

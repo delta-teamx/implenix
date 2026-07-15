@@ -1,12 +1,54 @@
 ---
 title: "Business Hours"
-description: "Configure operating windows for the agent."
+description: "How to configure business hours, holidays, and after-hours routing for your Implenix agent."
 section: "Agent Configuration"
-order: 3
+order: 1
 ---
 
 # Business Hours
 
-PLACEHOLDER DOC CONTENT — replace with the official scheduling reference.
+The Implenix agent runs 24/7 by default, but many deployments want different behavior during and outside business hours. Here is how to configure the schedule.
 
-Business hours control which calls are routed live, which go to voicemail, and which trigger after-hours scripts.
+## Business hours model
+
+**Standard hours.** Days of the week and time ranges when your business is normally open. Standard example: Monday to Friday 8am to 6pm, Saturday 9am to 2pm, closed Sunday.
+
+**Extended hours.** Sometimes an operation runs different schedules for different services (dispatch line 24/7, front office 9 to 5). Each schedule is configured independently.
+
+**Holidays.** Federal holidays plus any business-specific closures. The agent respects these automatically and applies after-hours behavior on holiday dates.
+
+## What changes at business-hour transitions
+
+**Greeting.** The agent can use different greetings during and outside hours. Example: "Good morning, thanks for calling. How can I help?" during hours vs "This is the after-hours line, how can I help?" outside hours.
+
+**Escalation targets.** Different on-call rotations for after-hours vs business-hours calls. Emergency triage routes to the on-call tech at 3am, to the front desk at 2pm.
+
+**Available services.** Some services only book during business hours (like a dental cleaning that requires a hygienist available). Others (like emergency dispatch) run 24/7. The agent respects these constraints.
+
+**Tone.** Some deployments use slightly warmer tone during business hours and more efficient / direct tone after hours.
+
+## Time zone handling
+
+Every schedule is defined in your business's local time zone. Callers from other time zones see your schedule, not theirs. If your business spans multiple time zones (multi-location), each location's schedule uses its own time zone.
+
+## Overriding hours for specific days
+
+- **Extended hours for special events.** Configure a one-time override for a specific date.
+- **Early closures.** Same mechanism, closes at a specific time on a specific date.
+- **Emergency closures.** For unforeseen closures (weather, power outage), we can push an emergency override same-day. Contact support.
+
+## What happens outside business hours
+
+Depending on your configuration:
+
+**Full agent handling.** Agent answers and handles the call the same way it would during business hours. Standard for 24/7 operations.
+
+**Emergency-only handling.** Agent answers, triages, and handles only emergency intake. Non-emergency callers are told hours and offered to schedule a callback.
+
+**Message-taking mode.** Agent answers, takes a message, promises callback in a specific window. Suitable for lower-volume operations.
+
+**Complete forward to voicemail.** Rare, but supported if you want AI answering only during specific windows.
+
+## Configuring hours
+
+Business hours are configured during discovery week. Post-deployment changes require a support ticket and take 24 to 48 hours to apply, primarily because we test the change against your active flows before pushing to production.

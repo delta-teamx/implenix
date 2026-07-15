@@ -1,28 +1,38 @@
 ---
 title: "Quick Start"
-description: "Go from kickoff to a live AI receptionist in under 14 days."
+description: "Kickoff to a live AI receptionist in 7 to 14 business days."
 section: "Getting Started"
 order: 1
 ---
 
 # Quick Start
 
-PLACEHOLDER DOC CONTENT — replace with the official deployment quick-start.
+An Implenix deployment ships in 7 to 14 business days for most operations, 14 to 28 for regulated industries. This page is the compressed version of what happens in each phase.
 
-The Implenix deployment process has four phases: **discovery**, **agent build**, **integration**, and **go-live**.
+## Phase 1, Discovery (days 1 to 2)
 
-## Step 1 — Discovery call
+We listen to 20 to 40 of your recent inbound call recordings and read your existing intake script if one exists. Output: a call-category map, a caller-vocabulary catalog, and a written "hard-stop" list of things the agent should never say or do.
 
-We map your current call flow, top intents, and CRM integrations.
+## Phase 2, Agent build (days 3 to 5)
 
-## Step 2 — Agent build
+We draft the 7-section prompt (system role, tone, intake script, transfer rules, escalation flows, edge cases, hard-stops). You review and approve section by section. This is the phase where operator judgment matters most.
 
-We assemble your call script, voice, and qualification logic.
+## Phase 3, Integration wiring (days 6 to 9)
 
-## Step 3 — Integration
+CRM connection with read and write scopes. Calendar integration with real availability read. Twilio SMS provisioning. Warm-transfer bridge configuration. Every integration verified end-to-end with a test write appearing in your source system.
 
-We connect to your CRM, calendar, and phone routing.
+## Phase 4, Test-call battery (days 10 to 12)
 
-## Step 4 — Go-live
+We run 30 to 50 mock calls against a shadow number. Standard bookings, edge cases, adversarial calls, hostile callers, unusual accents. The owner listens to every one. Anything unexpected gets tuned before cutover.
 
-We test against your business in a staging window, then route real traffic.
+## Phase 5, Go-live (days 13 to 14)
+
+Port your inbound number or forward it. Silent-monitor for the first 48 hours minimum, a human is available to catch a bad transfer. After 72 hours of clean operation, the deployment is production.
+
+## What determines whether it takes 7 or 14 days
+
+- 7 days: single-location shop, common CRM (HubSpot, Follow Up Boss, GoHighLevel), Google Calendar, unregulated industry.
+- 10 to 14 days: ServiceTitan or complex ERP integration, multi-location, medspa with practice management system.
+- 14 to 28 days: regulated industries (HIPAA healthcare, legal with conflict-check integration, financial services with licensing gates).
+
+For a full week-by-week breakdown, see /docs/implementation-guide/timeline.

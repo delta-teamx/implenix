@@ -51,7 +51,7 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
       </div>
 
       <div className="max-w-content mx-auto px-6 py-12">
-        {/* CONTENT VIA MDX FILES IN /content/blog/ — ASSIGN TO CONTENT TEAM */}
+        {/* CONTENT VIA MDX FILES IN /content/blog/, ASSIGN TO CONTENT TEAM */}
         {filtered.length === 0 ? (
           <div className="border border-brand-purple/20 p-10 text-center text-white/70 font-body">
             No posts in this category yet.

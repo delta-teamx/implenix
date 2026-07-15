@@ -1,25 +1,25 @@
 ---
 title: "How AI agents recognize human emotions on a phone call"
-description: "What emotion recognition actually does in production AI voice agents — the signals, the accuracy limits, and how deployments use it responsibly."
+description: "What emotion recognition actually does in production AI voice agents, the signals, the accuracy limits, and how deployments use it responsibly."
 category: "AI Voice Agents"
 publishedAt: "2026-10-21"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "How AI Agents Recognize Human Emotions on Calls | Implenix"
-metaDescription: "What emotion recognition actually does in production AI voice agents — signals, accuracy limits, and how deployments use it responsibly."
+metaDescription: "What emotion recognition actually does in production AI voice agents, signals, accuracy limits, and how deployments use it responsibly."
 heroImage: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Person on a phone call showing an emotional expression"
 ---
 
 <Answer q="How do AI agents recognize human emotions?">
-AI agents recognize human emotions on phone calls by analyzing three signal layers: acoustic features in the voice (pitch, tempo, energy, speaking rate), linguistic content (word choice, sentiment of what was said), and conversational patterns (interruptions, repetitions, silences). In production, these signals combine to detect roughly four to eight discrete states — neutral, frustrated, distressed, angry, confused. Accuracy is decent on strong signals and unreliable on subtle ones. Well-designed deployments use emotion recognition to trigger escalation rather than to simulate empathy back.
+AI agents recognize human emotions on phone calls by analyzing three signal layers: acoustic features in the voice (pitch, tempo, energy, speaking rate), linguistic content (word choice, sentiment of what was said), and conversational patterns (interruptions, repetitions, silences). In production, these signals combine to detect roughly four to eight discrete states, neutral, frustrated, distressed, angry, confused. Accuracy is decent on strong signals and unreliable on subtle ones. Well-designed deployments use emotion recognition to trigger escalation rather than to simulate empathy back.
 </Answer>
 
 Emotion recognition is one of the most misunderstood AI voice
 features. Vendors imply the agent can "understand feelings" the
 way a person does. What actually happens in production is
-narrower and more useful — a statistical classifier that flags
+narrower and more useful, a statistical classifier that flags
 likely emotional states, which the deployment uses to trigger
 escalation to a human. Real skill is not the recognition itself;
 it is what the deployment does with it.
@@ -76,13 +76,13 @@ disengagement than for specific emotions.
 
 ## What accuracy looks like in production
 
-On strong, unambiguous emotional signals — anger with raised
+On strong, unambiguous emotional signals, anger with raised
 voice and negative keywords, distress with sobbing and slow
-speech — emotion recognition classifies correctly around 85-92
+speech, emotion recognition classifies correctly around 85-92
 percent of the time.
 
-On subtle signals — mildly frustrated versus neutral, mildly
-sad versus tired — accuracy drops to 60-70 percent. This is not
+On subtle signals, mildly frustrated versus neutral, mildly
+sad versus tired, accuracy drops to 60-70 percent. This is not
 better than human interpretation, but it is available on every
 call at scale, which humans are not.
 
@@ -147,7 +147,7 @@ connect you with our care team right now." Warm transfer to
 on-call staff, who receive the flagged transcript context.
 
 Total time from crisis detection to human on the phone: 12
-seconds. That is emotion recognition doing its job — routing
+seconds. That is emotion recognition doing its job, routing
 the call to the human who can actually help.
 
 ## The privacy and consent considerations

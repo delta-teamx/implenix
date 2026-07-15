@@ -20,7 +20,7 @@ export function AudioPlayer({ src, label }: Props) {
   const toggle = () => {
     const el = audioRef.current;
     if (!el) {
-      // No real audio attached yet — placeholder behavior.
+      // No real audio attached yet, placeholder behavior.
       setPlaying((p) => !p);
       return;
     }

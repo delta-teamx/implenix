@@ -15,7 +15,7 @@ import { TOPICS } from '@/lib/blogTopics';
 import { BlogIndexClient } from './BlogIndexClient';
 
 const baseMetadata = buildMetadata({
-  title: 'Implenix Blog — AI Voice Agents and Local Business',
+  title: 'Implenix Blog, AI Voice Agents and Local Business',
   description:
     'Field notes, operator playbooks, and case studies from teams that run on calls. The Implenix blog.',
   path: '/blog',
@@ -86,7 +86,7 @@ export default function BlogIndexPage() {
             </h1>
             <p className="font-body text-white/75 text-lg max-w-2xl leading-relaxed">
               Operator playbooks, agent tuning notes, and verified case
-              studies — published by the team deploying voice AI for local
+              studies, published by the team deploying voice AI for local
               business.
             </p>
             <Link

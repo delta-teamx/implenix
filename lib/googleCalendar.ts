@@ -42,7 +42,7 @@ export const BOOKING_CONFIG = {
   workingHoursEnd: Number(
     optionalEnv('GOOGLE_BOOKING_WORKING_HOURS_END', '18'),
   ),
-  // 0=Sun, 1=Mon, ..., 6=Sat. Default: Mon-Fri.
+  // 0=Sun, 1=Mon... 6=Sat. Default: Mon-Fri.
   workingDays: optionalEnv('GOOGLE_BOOKING_WORKING_DAYS', '1,2,3,4,5')
     .split(',')
     .map((n) => Number(n.trim()))
@@ -52,7 +52,7 @@ export const BOOKING_CONFIG = {
 };
 
 // ---------------------------------------------------------------------------
-// OAuth flow — start URL + callback code exchange
+// OAuth flow, start URL + callback code exchange
 // ---------------------------------------------------------------------------
 
 export function redirectUri(): string {
@@ -139,7 +139,7 @@ export async function getAccessToken(): Promise<string> {
 }
 
 // ---------------------------------------------------------------------------
-// Calendar API — freeBusy + create event
+// Calendar API, freeBusy + create event
 // ---------------------------------------------------------------------------
 
 type BusyRange = { start: string; end: string };
@@ -213,8 +213,7 @@ export async function createBookingEvent(
     start: { dateTime: input.startIso, timeZone: BOOKING_CONFIG.timezone },
     end: { dateTime: input.endIso, timeZone: BOOKING_CONFIG.timezone },
     attendees: [
-      { email: input.attendeeEmail, displayName: input.attendeeName },
-      ...(BOOKING_CONFIG.hostEmail
+      { email: input.attendeeEmail, displayName: input.attendeeName }, ...(BOOKING_CONFIG.hostEmail
         ? [{ email: BOOKING_CONFIG.hostEmail, organizer: true }]
         : []),
     ],
@@ -278,7 +277,7 @@ export async function createBookingEvent(
 }
 
 // ---------------------------------------------------------------------------
-// Slot computation — pure function, no network calls
+// Slot computation, pure function, no network calls
 // ---------------------------------------------------------------------------
 
 export type Slot = { startIso: string; endIso: string; label: string };

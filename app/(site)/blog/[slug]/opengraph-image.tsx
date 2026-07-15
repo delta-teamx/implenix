@@ -6,7 +6,7 @@ export const alt = 'Implenix blog post';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Branded per-blog cover — matches the reference design:
+// Branded per-blog cover, matches the reference design:
 // dark navy background, subtle radial glow, purple BLOGS pill badge,
 // large heading, description line, purple footer bar with the domain
 // and handle. Used for OG social cards AND rendered inline on the

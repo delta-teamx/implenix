@@ -47,7 +47,7 @@ const FEATURES = [
   {
     Icon: RefreshCw,
     title: 'Full CRM sync',
-    description: 'Lead, transcript, recording, and outcome — written back automatically.',
+    description: 'Lead, transcript, recording, and outcome, written back automatically.',
     span: 'lg' as const,
     accent: 'purple' as const,
   },
@@ -60,7 +60,7 @@ const FEATURES = [
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · plumbing emergency' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Riverstone Plumbing — this is Eli. How can I help?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Riverstone Plumbing, this is Eli. How can I help?' },
   { ts: '00:06', speaker: 'caller' as const, text: 'My basement is flooding. I need someone now.' },
   { ts: '00:09', speaker: 'agent' as const, text: 'I can dispatch a tech immediately. Address?' },
   { ts: '00:13', speaker: 'caller' as const, text: '47 Birch Avenue, apartment 3B.' },
@@ -72,7 +72,7 @@ const FAQS = [
   {
     question: 'How does the Implenix AI receptionist actually sound on a call?',
     answer:
-      'Natural, on-brand, and paced to match your industry. We tune the voice model, greeting phrasing, and vocabulary during discovery week using recordings of your actual inbound calls — so the agent speaks your callers\'s language, not a generic template. Roughly 20-30% of callers realize they are speaking to AI at some point; the agent identifies itself as a virtual assistant to preserve trust rather than pretending to be human.',
+      'Natural, on-brand, and paced to match your industry. We tune the voice model, greeting phrasing, and vocabulary during discovery week using recordings of your actual inbound calls, so the agent speaks your callers\'s language, not a generic template. Roughly 20-30% of callers realize they are speaking to AI at some point; the agent identifies itself as a virtual assistant to preserve trust rather than pretending to be human.',
   },
   {
     question: 'How quickly can the agent be deployed for my business?',
@@ -92,14 +92,14 @@ const FAQS = [
   {
     question: 'How is pricing structured?',
     answer:
-      'Fixed monthly pricing tiered by call volume and industry complexity — $297 to $1,497/month, no per-minute billing. Setup fees range $2,000-$8,000 depending on integration complexity. Quote is delivered after a 30-minute discovery call where we look at your actual inbound volume and system stack.',
+      'Fixed monthly pricing tiered by call volume and industry complexity, $297 to $1,497/month, no per-minute billing. Setup fees range $2,000-$8,000 depending on integration complexity. Quote is delivered after a 30-minute discovery call where we look at your actual inbound volume and system stack.',
   },
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist Product Details — Features | Implenix',
+  title: 'AI Receptionist Product Details, Features | Implenix',
   description:
-    'Deep dive on the Implenix inbound AI receptionist — features, integrations, script scope, live-transfer rules, and how a deployment ships.',
+    'Deep dive on the Implenix inbound AI receptionist, features, integrations, script scope, live-transfer rules, and how a deployment ships.',
   path: '/solutions/ai-receptionist',
 });
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const POPULAR_PAGES = [
-  { href: '/', label: 'AI Receptionist — the pillar' },
+  { href: '/', label: 'AI Receptionist, the pillar' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/audit', label: 'Free missed-call audit' },
   { href: '/case-studies', label: 'Verified case studies' },
@@ -38,7 +38,7 @@ export default function NotFound() {
           </h1>
           <p className="text-white/80 font-body text-lg leading-relaxed">
             The page you are looking for does not exist or has moved.
-            Below are the highest-traffic pages on the site — one of
+            Below are the highest-traffic pages on the site, one of
             them probably has what you need.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">

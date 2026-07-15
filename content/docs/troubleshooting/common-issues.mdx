@@ -1,16 +1,83 @@
 ---
 title: "Common Issues"
-description: "Quick fixes for the most common deployment issues."
+description: "Troubleshooting guide for common issues that appear in production AI voice deployments."
 section: "Troubleshooting"
 order: 1
 ---
 
 # Common Issues
 
-PLACEHOLDER DOC CONTENT — replace with the verified runbook.
+Every production deployment encounters issues occasionally. Here are the most common ones and how to resolve them.
 
-| Issue | Fix |
-| --- | --- |
-| Agent missing intents | Update the script with new caller phrases |
-| CRM not syncing | Re-authenticate the integration |
-| Calendar conflicts | Check capacity rules |
+## Agent is not answering calls
+
+**First check:** Is call forwarding still active on your existing carrier? Log into your carrier admin and verify the forwarding rule is in place with the correct Twilio destination.
+
+**Second check:** Is your Twilio account funded? If auto-recharge is off and balance ran to zero, calls will not route. Check Twilio dashboard.
+
+**Third check:** Is your agent's deployment status "active" in the Implenix admin dashboard? If not, contact support.
+
+## Callers reporting agent hung up on them
+
+**Common causes:**
+- Extended silence from caller (agent has silence-tolerance limits).
+- Agent misinterpreted an escalation trigger and transferred to a target that dropped.
+- Network issue on the caller's end.
+
+**How to investigate:** Pull the specific call recording from the dashboard. Listen to what happened just before the hangup. Report to support with call ID.
+
+## Booking not appearing in calendar
+
+**First check:** Is the calendar integration still authenticated? OAuth tokens can expire; re-authorization may be needed.
+
+**Second check:** Did the booking write to the correct calendar? Multi-calendar setups sometimes have routing issues.
+
+**Third check:** Is there a validation rule in your calendar system blocking the write? Check calendar app logs.
+
+**Common cause:** Time zone mismatch. If the agent shows one time and calendar shows another, verify time zone configuration.
+
+## Duplicate contacts in CRM
+
+**Common cause:** Phone number fuzzy match not catching variations. "555-1234" and "(555) 123-4" are the same number but may not match without normalization.
+
+**Resolution:** We can tune the match confidence threshold. Report to support with example duplicates.
+
+## Calls transferring too often
+
+**Common cause:** Escalation triggers too loose. Sensitivity detection may be firing on false positives.
+
+**Resolution:** Monthly review of transfer patterns. We adjust thresholds during regular tuning cadence. For urgent adjustment, request via support.
+
+## Calls not transferring when they should
+
+**Common cause:** Escalation triggers too tight, or transfer target unavailable.
+
+**Resolution:** Review the specific calls that should have transferred. Adjust rules or fallback logic. Verify transfer target phone numbers are current.
+
+## Voice quality issues
+
+**Common cause:** Network congestion on caller side, or codec mismatch on carrier side.
+
+**Investigation:** Check if issue is with all callers or specific ones. If all, contact support for infrastructure check. If specific callers, likely a network issue on their side.
+
+## Agent speaking wrong language
+
+**Common cause:** Language detection misfired on unusual accent or phrasing.
+
+**Resolution:** Verify language configuration for the deployment. Add explicit language override rules if needed.
+
+## Custom fields not populating in CRM
+
+**Common cause:** Field name mismatch or write permission missing.
+
+**Resolution:** Verify field internal name matches what the agent expects. Check integration user has write access to the field.
+
+## Reporting numbers seem off
+
+**Common cause:** Reporting time zone vs your local time zone mismatch, or reporting filter excluding certain call types.
+
+**Resolution:** Verify reporting filters. Cross-reference with CRM records for specific date range.
+
+## Emergency
+
+For active production issues affecting call handling (agent completely down, wrong routing on high-stakes calls), contact support directly at the priority support number provided in your deployment package. Standard response time: 30 minutes during business hours, 2 hours after hours.

@@ -1,8 +1,171 @@
 ---
-title: "Placeholder Playbook"
-description: "PLACEHOLDER — replace with the first published Implenix playbook."
+title: "The 90-Day AI Receptionist Deployment Playbook"
+description: "Operator playbook for the first 90 days of AI voice deployment, week-by-week tasks, KPIs to track, and calibration points that determine success."
 kind: "playbook"
-publishedAt: "2025-09-01"
+publishedAt: "2026-11-04"
 ---
 
-PLACEHOLDER PLAYBOOK BODY — replace with full content.
+# The 90-Day AI Receptionist Deployment Playbook
+
+Every AI receptionist deployment follows the same 90-day arc. This playbook covers the operator's side of that arc, week by week, with the tasks, KPIs, and calibration points that determine whether the deployment stays healthy or drifts.
+
+## Weeks 1 to 2, Discovery through go-live
+
+Covered in depth in the implementation guide. Quick recap:
+
+- Week 1: discovery call, recording review, script draft.
+- Week 2: script iteration, integration wiring, test-call battery, go-live.
+
+**Your side tasks:**
+- Attend kickoff and discovery calls.
+- Provide call recordings and CRM access.
+- Review and approve script drafts within 24 to 48 hours.
+- Run test calls during the client test window.
+
+## Week 3, Silent-monitoring and initial tuning
+
+The agent is live. First-week production behavior sets the tone.
+
+**What we do:**
+- Silent-monitor 100 percent of calls first 48 hours.
+- Review flagged calls daily.
+- Push minor prompt adjustments as needed.
+- Weekly performance report to you.
+
+**Your side tasks:**
+- Listen to 10 to 20 calls yourself. Not to catch problems, to build intuition for how the agent is handling.
+- Notify us of any callers who complained or reported issues.
+- Verify CRM records are landing correctly.
+- Confirm bookings are appearing on the right calendars.
+
+**KPIs to watch:**
+- Answer rate (should be 95 percent plus).
+- Capture rate (calls with defined outcome / total answered).
+- Transfer rate (percentage transferring to humans).
+- Booking count vs prior period.
+
+## Week 4, First monthly review
+
+End of month 1. First full performance report.
+
+**What we cover in the 30-minute review:**
+- Total call volume and capture rate.
+- Transfer patterns by reason.
+- Any escalation issues or complaints.
+- 5 to 10 flagged calls for joint listening.
+- Prompt tuning proposals.
+- Any scope adjustments you want.
+
+**Your side tasks:**
+- Attend the review.
+- Approve prompt tuning changes.
+- Flag any operational shifts in your business we should reflect.
+
+## Weeks 5 to 8, Steady-state ramp
+
+Deployment is in production; tuning is incremental.
+
+**What we do:**
+- Weekly QA on flagged calls (5 to 10 per week).
+- Push tuning adjustments through canary.
+- Track KPI trends.
+
+**Your side tasks:**
+- Continue listening to a sample of calls (5 to 10 per week is enough after week 4).
+- Report any patterns you notice.
+- Verify any downstream workflows are firing correctly.
+
+**KPIs to watch:**
+- Capture rate should trend up 3 to 8 points from week 3.
+- Transfer rate should stabilize.
+- Booking-to-close conversion (if you track it) should hold.
+
+## Week 8, Second monthly review
+
+**Focus for month 2:**
+- Trend analysis on all KPIs.
+- Deployment health assessment.
+- Any scope expansion opportunities identified.
+- Detailed review of 10 to 15 flagged calls.
+- Team feedback: how is your staff experiencing the deployment.
+
+## Weeks 9 to 12, Optimization and scope evaluation
+
+Deployment is stable. Focus shifts to optimization.
+
+**What we do:**
+- Continue weekly QA.
+- Identify patterns for prompt improvement.
+- Assess whether additional integrations or features would benefit.
+
+**Your side tasks:**
+- Evaluate whether the deployment is delivering the ROI you projected.
+- Consider scope expansion (outbound sequences, additional integrations, additional locations).
+- Provide feedback for the quarterly review.
+
+## Week 12, First quarterly review
+
+End of month 3. Comprehensive deployment health review.
+
+**What we cover in the 60-minute review:**
+- 90-day KPI report vs baseline.
+- Actual ROI vs projected ROI.
+- Deployment strengths and weaknesses.
+- Recommended next-quarter improvements.
+- Scope expansion discussion.
+- Contract renewal or continuation discussion.
+
+**Your side tasks:**
+- Attend with any stakeholders (finance if ROI decisions involved).
+- Bring specific questions and requests.
+- Provide honest feedback on the vendor relationship.
+
+## KPIs to establish baseline for
+
+Before deployment, capture baseline numbers:
+
+- Monthly inbound call volume.
+- Miss rate (percentage of calls not helped live).
+- After-hours capture rate.
+- Booking rate (bookings per inbound qualified call).
+- No-show rate (if applicable).
+- Front-desk hours spent on phone.
+- Average response time on new-lead calls.
+
+Post-deployment, compare against these baselines monthly.
+
+## Common issues in the first 90 days
+
+**Weeks 1 to 2:** callers uncertain about the AI, some hangups when they realize. Fades as tone gets tuned.
+
+**Weeks 3 to 4:** unusual caller patterns not covered in initial script. Standard tuning territory.
+
+**Weeks 5 to 8:** integration edge cases surface. Rare CRM patterns need mapping adjustment.
+
+**Weeks 9 to 12:** scope creep temptation. Resist adding features until steady-state is solid.
+
+## What determines a successful 90-day arc
+
+- Aggressive monitoring in weeks 1 to 4.
+- Fast iteration on identified issues.
+- Clear ownership on your side.
+- Willingness to invest in ongoing tuning.
+- Honest KPI tracking against baseline.
+
+Deployments with all five characteristics reliably produce transformational results by day 90. Deployments missing any of the five tend to underperform.
+
+## What to do at day 90
+
+If the deployment is meeting or exceeding your ROI targets: renew, potentially expand scope.
+
+If the deployment is underperforming: honest conversation with your vendor about why. Fixable issues get fixed. Fundamentally wrong-tier deployments get restructured.
+
+If the deployment is a complete miss: leave without penalty (any vendor requiring long-term lock-in without an exit is a bad vendor). Try a different vendor at the right tier next time.
+
+## Where to go from here
+
+If you are still evaluating: read the buyer's guide at /resources/guides.
+
+If you have signed and are in deployment: this playbook lives on the wall of your ops team. Reference weekly through the first 90 days.
+
+If you are past day 90 and successful: consider scope expansion. Outbound sequences, additional integrations, additional locations, or the full follow-up product typically deliver additional 20 to 40 percent gains on top of the initial deployment.

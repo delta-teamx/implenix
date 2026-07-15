@@ -1,13 +1,13 @@
 ---
 title: "How to write prompts for AI voice agents (7-section playbook)"
-description: "The 7-section prompt structure I use for every production voice AI deployment — system role, tone, intake script, transfer rules, escalation, edge cases, hard stops."
+description: "The 7-section prompt structure I use for every production voice AI deployment, system role, tone, intake script, transfer rules, escalation, edge cases, hard stops."
 category: "Operator Playbooks"
 publishedAt: "2026-08-12"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "How to Write Prompts for AI Voice Agents | Implenix"
-metaDescription: "The 7-section prompt structure I use for every voice AI deployment — system role, tone, intake, transfer rules, escalation, edge cases, hard stops."
+metaDescription: "The 7-section prompt structure I use for every voice AI deployment, system role, tone, intake, transfer rules, escalation, edge cases, hard stops."
 heroImage: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Operator writing prompt structure on a notebook next to a laptop"
 howToTotalTime: "PT2H"
@@ -19,7 +19,7 @@ howToSteps:
   - name: "Write the intake script"
     text: "List every data field the agent captures, in the order it asks, with exact phrasing for each question. The script is the agent's conversation structure."
   - name: "Define transfer rules"
-    text: "Explicit conditions that trigger live transfer — VIP allow-list, urgent keywords, sentiment triggers, off-script questions, escalation paths."
+    text: "Explicit conditions that trigger live transfer, VIP allow-list, urgent keywords, sentiment triggers, off-script questions, escalation paths."
   - name: "Write the escalation flows"
     text: "For each transfer rule, specify what happens next. Who picks up, in what order, with what context briefing. Edge cases when no human is available."
   - name: "Specify edge case responses"
@@ -56,7 +56,7 @@ The identity layer. One paragraph establishing:
 - Who the agent is (name, role).
 - What business it represents.
 - The primary objective on every call.
-- The disclosure — that it is a virtual assistant.
+- The disclosure, that it is a virtual assistant.
 
 **Example (HVAC after-hours):**
 
@@ -99,7 +99,7 @@ every functional detail is correct.
 ## Section 3: intake script
 
 The structured field-by-field question sequence. Not free-form
-conversation — a defined intake with exact phrasing for each
+conversation, a defined intake with exact phrasing for each
 question.
 
 **Example (dental new-patient intake):**
@@ -111,7 +111,7 @@ question.
 4. "And your date of birth?"
 5. "Do you have dental insurance you would like us to check?"
 6. If yes: "Which insurance carrier?"
-7. "What brings you in — a checkup, a specific concern, or
+7. "What brings you in, a checkup, a specific concern, or
    something else?"
 8. If specific concern: "Can you tell me a little more about
    what's going on?"
@@ -210,7 +210,7 @@ Not every conversation goes to plan. Edge cases include:
   appropriate team.
 
 Each edge case gets a short response template. Not a
-scripted paragraph — a starting phrase and a routing
+scripted paragraph, a starting phrase and a routing
 decision.
 
 ## Section 7: hard-stop list
@@ -302,7 +302,7 @@ Templates capture the structure but not the specific vocabulary,
 compliance layer, or transfer logic your business needs.
 
 **How long should the prompt be?**
-As long as it needs to be — usually 1,500-4,000 words. Too
+As long as it needs to be, usually 1,500-4,000 words. Too
 short means missing edge cases. Too long can slow the model.
 Test the actual latency impact if length gets extreme.
 

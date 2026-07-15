@@ -11,7 +11,7 @@ import { buildMetadata } from '@/lib/seo';
 import { AuditTool } from './AuditTool';
 
 export const metadata: Metadata = buildMetadata({
-  title: "Free Missed-Call Audit — See What You're Losing | Implenix",
+  title: "Free Missed-Call Audit, See What You're Losing | Implenix",
   description:
     'Find out how much revenue you are losing to missed calls. Free audit, no software install, runs on industry-grade data and your business profile.',
   path: '/audit',
@@ -41,7 +41,7 @@ export default function AuditPage() {
       <SchemaOrg
         schema={[
           webApplicationSchema({
-            name: 'Missed-Call Audit — Implenix',
+            name: 'Missed-Call Audit, Implenix',
             description:
               'Free interactive tool that estimates monthly lost revenue from missed inbound calls using industry medians and your business profile.',
             url: '/audit',

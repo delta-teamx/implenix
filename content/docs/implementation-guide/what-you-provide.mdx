@@ -1,17 +1,98 @@
 ---
-title: "What You Need to Provide"
-description: "Inputs Implenix needs from your team during onboarding."
+title: "What You Provide"
+description: "The list of information, access, and decisions Implenix needs from you during implementation."
 section: "Implementation Guide"
 order: 3
 ---
 
-# What You Need to Provide
+# What You Provide
 
-PLACEHOLDER DOC CONTENT — replace with the official onboarding checklist.
+For a smooth deployment, we need specific things from you at specific points. Here is the complete list.
 
-To deploy on schedule we need:
+## Before kickoff
 
-- CRM admin access
-- Calendar credentials
-- A list of intents and FAQs
-- Approved scripts and tone guide
+**Signed engagement.** Statement of work, mutual NDA if requested, BAA for HIPAA-covered deployments, DPA for GDPR-covered deployments.
+
+**Payment method on file.** For your first monthly invoice at go-live.
+
+## Day 1, Kickoff call
+
+**Attendees:** deployment owner, ops lead, IT contact.
+
+**Information:**
+- Business description and target customers.
+- Current phone setup (carrier, number, forwarding capability).
+- CRM in use and access level of the person who can provide credentials.
+- Calendar system in use.
+- Current call volume rough estimate.
+- Business hours.
+- Key holidays and closures.
+
+## Days 1 to 2, Discovery
+
+**Call recordings.** 20 to 40 recent inbound calls, ideally spanning different times of day and intent types. Export from your carrier or call recording tool.
+
+**Existing script or FAQ.** If your front desk uses one, share it. If not, no problem.
+
+**"Hard-stop" list starter.** Things you already know the agent should never do or say. We build on this list.
+
+**Business voice guidelines.** If you have any brand voice documentation, share it.
+
+## Days 3 to 5, Script build
+
+**Script review turnarounds.** We ask for 24 to 48 hour turnaround on script reviews. Delays here push the whole timeline.
+
+**Access to a decision-maker for scope questions.** Sometimes the script build uncovers questions we did not anticipate at discovery. Fast answers keep the build moving.
+
+## Days 6 to 9, Integration wiring
+
+**CRM API access.**
+- HubSpot: OAuth admin approval.
+- Salesforce: connected app installation, integration user provisioned.
+- GoHighLevel: API key or OAuth approval.
+- Zoho: OAuth approval.
+- Custom: webhook endpoint and authentication method.
+
+**Calendar API access.**
+- Google Calendar: OAuth approval.
+- Outlook: OAuth approval.
+- Calendly / Acuity: API key.
+
+**Phone system access.**
+- If forwarding: admin access to configure the forward.
+- If porting: signed Letter of Authorization plus recent phone bill.
+- If SIP: SIP credentials and endpoint details.
+
+**Any other integrations:** SMS provider, payment processor, custom systems.
+
+## Days 10 to 12, Testing
+
+**Client tester availability.** Your deployment owner and any team members you want to include should be available to run test calls.
+
+**Test scenarios you want run.** Anything specific to your business we should verify.
+
+## Day 13, Go-live
+
+**Confirmation to cut over.** Written or verbal sign-off from the deployment owner.
+
+**Team notification.** Your team should know the agent is going live. Especially important for teams that answer the phone today, so they understand the workflow change.
+
+## Ongoing (post go-live)
+
+**Availability for monthly reviews.** 30 minutes per month for QA and tuning discussion.
+
+**Timely responses to flag notifications.** If we flag something requiring your decision (a caller complaint, a scope question), fast response keeps the deployment healthy.
+
+**Updates to your business.** If your team, hours, services, or systems change, tell us so the agent stays current.
+
+## What we handle so you do not have to
+
+- All prompt engineering and script writing.
+- All integration technical work.
+- Twilio account setup and management.
+- A2P 10DLC registration (we handle paperwork, you provide business info).
+- Voice model selection.
+- Test-call battery execution.
+- Silent-monitoring on cutover.
+- Ongoing script tuning and optimization.
+- Monthly performance reporting.

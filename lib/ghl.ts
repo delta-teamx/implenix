@@ -22,7 +22,7 @@ export const GHL_FORM_IDS = {
 export type GhlFormKey = keyof typeof GHL_FORM_IDS;
 
 // GHL form embed URL pattern. Adjust if your account uses a different
-// hostname (e.g., regional or white-labeled sub-account).
+// hostname (e.g. regional or white-labeled sub-account).
 export function ghlEmbedUrl(formId: string): string {
   return `https://api.leadconnectorhq.com/widget/form/${formId}`;
 }

@@ -1,16 +1,71 @@
 ---
 title: "Transfer Rules"
-description: "Decide when the agent hands off to a human."
+description: "How to configure transfer rules that route calls from the agent to a human when needed."
 section: "Agent Configuration"
-order: 2
+order: 3
 ---
 
 # Transfer Rules
 
-PLACEHOLDER DOC CONTENT — replace with the verified rules schema.
+Transfer rules determine when the agent hands the call to a human. Every deployment includes a standard set of transfer rules plus custom rules for your business. Well-designed transfer logic is the single most important CSAT factor in AI voice deployments.
 
-Transfer rules define **who**, **when**, and **how** a call is routed to a human operator.
+## Standard transfer rules (every deployment)
 
-- Caller type (VIP, repeat customer, complex case)
-- Time of day and day of week
-- Topic detection (legal, sensitive, escalation)
+**1. Explicit request to speak with a human.** Trigger: caller says "let me talk to a person," "get me a human," "transfer me to your manager," or equivalent. Action: transfer within 3 seconds, no retention attempt.
+
+**2. Crisis keywords.** Trigger: caller mentions emergency, dying, suicide, safety concern, medical crisis. Action: immediate transfer with context flag to designated crisis handler.
+
+**3. Sensitivity escalation.** Trigger: sentiment turns negative twice, or caller cries, or acoustic signals indicate distress. Action: warm handoff with brief empathetic bridge line from the agent.
+
+**4. Out-of-scope questions.** Trigger: caller asks about something outside the agent's knowledge or scope. Action: transfer to appropriate team with the question flagged for the human.
+
+**5. Comprehension failure.** Trigger: agent asks the same question twice due to unclear caller response. Action: transfer to a human who can hear the accent, understand the phrasing, or clarify context.
+
+## Custom transfer rules
+
+Every deployment adds custom rules based on the specific business. Examples:
+
+**VIP customer rules.** Callers on your VIP list route to their designated account manager immediately.
+
+**High-value opportunity rules.** Callers meeting specific criteria (major donor threshold, enterprise lead size, custom qualification) route to a senior team member.
+
+**Complex-request rules.** Certain intent patterns known to require human judgment (multi-part questions, unusual service requests) route to a specialist.
+
+**Time-based rules.** Different transfer targets for business-hours vs after-hours calls.
+
+**Team-based rules.** Round-robin, first-available, or skill-based routing across your team.
+
+## What happens on transfer
+
+**Warm handoff.** The agent briefly bridges the caller, provides context to the receiving human ("I have Sarah on the line calling about a leaking heater at 412 Cross Street"), and hands the call over. Standard for most transfers.
+
+**Cold transfer.** Agent transfers immediately with no bridge. Used for time-sensitive emergencies where speed matters more than context.
+
+**Message with callback.** If no human is available, agent takes a message with promised callback window. Used as a fallback when transfer targets do not answer.
+
+**Callback booking.** Agent offers to book a specific callback slot on the appropriate person's calendar rather than transferring live. Used for non-urgent transfers where scheduling beats waiting.
+
+## Fallback logic
+
+Every transfer target needs a fallback. If the primary target does not answer within X seconds, the rule specifies the fallback:
+
+- Ring backup person
+- Offer callback booking
+- Take a message
+- Route to voicemail
+
+Untested fallback logic fails in production. Test every one during pre-deployment.
+
+## Transfer analytics
+
+Every transfer is logged with reason, target, outcome (answered, missed, resolved). Monthly review of transfer analytics tells you whether the deployment is drifting or improving.
+
+## Common issues
+
+**Transfers happening too often.** Escalation rules too loose. Tune during monthly review.
+
+**Transfers happening too rarely.** Escalation rules too tight. Callers reaching the wrong scope. Tune.
+
+**Warm handoff feels awkward.** Bridge phrasing needs adjustment. Common tuning target.
+
+**Fallback not firing.** Configuration issue. Test the fallback path specifically.

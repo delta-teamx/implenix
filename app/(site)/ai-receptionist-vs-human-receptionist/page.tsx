@@ -39,10 +39,10 @@ const FAQS = [
   {
     question: 'Can an AI replace a real human at the front desk?',
     answer:
-      'For routine calls — booking, qualification, intake, recurring requests — yes. For nuanced emotional calls or premium-brand human-warmth requirements, a human still has an edge. Most businesses run a hybrid: AI handles 80–90% of inbound, a smaller in-house role handles the rest.',
+      'For routine calls, booking, qualification, intake, recurring requests, yes. For nuanced emotional calls or premium-brand human-warmth requirements, a human still has an edge. Most businesses run a hybrid: AI handles 80–90% of inbound, a smaller in-house role handles the rest.',
   },
   {
-    question: 'What about the human element — does it matter?',
+    question: 'What about the human element, does it matter?',
     answer:
       "It matters in specific contexts. If your competitive positioning depends on a human voice answering, keep one. If your customers care that the call gets answered fast and the booking gets made, the AI wins on every measurable dimension and the human element doesn't move the needle.",
   },
@@ -54,17 +54,17 @@ const FAQS = [
   {
     question: 'What happens when the AI hits a call it cannot handle?',
     answer:
-      'Live transfer rules route the call to a human in real time — you, your team, or a backup human service. We define the transfer triggers during onboarding (urgent keywords, frustration detection, VIP allow-list).',
+      'Live transfer rules route the call to a human in real time, you, your team, or a backup human service. We define the transfer triggers during onboarding (urgent keywords, frustration detection, VIP allow-list).',
   },
   {
-    question: 'Can I run both — AI for volume and a part-time human for premium calls?',
+    question: 'Can I run both, AI for volume and a part-time human for premium calls?',
     answer:
       'Yes. This is the most common pattern. The AI takes 80-90% of inbound at fixed cost; a smaller part-time role handles the calls flagged for human attention. Net cost still drops dramatically vs full-time hire.',
   },
   {
     question: 'How long does an AI take to deploy vs hiring a human?',
     answer:
-      'AI deployment runs 7-14 business days end-to-end. Hiring a receptionist runs 2-6 weeks plus 4-8 weeks of training. The AI is faster to live and stays consistent — no ramp.',
+      'AI deployment runs 7-14 business days end-to-end. Hiring a receptionist runs 2-6 weeks plus 4-8 weeks of training. The AI is faster to live and stays consistent, no ramp.',
   },
   {
     question: 'Will my callers know the difference?',
@@ -76,17 +76,17 @@ const FAQS = [
 const ANNUAL_COSTS = [
   {
     label: 'Salary',
-    ai: '—',
+    ai: ', ',
     human: '$36,000 – $54,000',
   },
   {
     label: 'Payroll taxes + benefits',
-    ai: '—',
+    ai: ', ',
     human: '$8,000 – $14,000',
   },
   {
     label: 'Recruiting & training',
-    ai: '—',
+    ai: ', ',
     human: '$3,000 – $6,000',
   },
   {
@@ -102,7 +102,7 @@ const ANNUAL_COSTS = [
   {
     label: 'Implenix subscription',
     ai: '$3,564 – $11,964',
-    human: '—',
+    human: ', ',
   },
 ];
 
@@ -123,7 +123,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
           serviceSchema({
             name: 'AI Receptionist',
             description:
-              'AI receptionist as an alternative to hiring a human receptionist — 24/7, fixed cost, no HR overhead.',
+              'AI receptionist as an alternative to hiring a human receptionist, 24/7, fixed cost, no HR overhead.',
             serviceType: 'AI Receptionist',
             url: '/ai-receptionist-vs-human-receptionist',
           }),
@@ -202,7 +202,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
             <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
                 Hiring a receptionist is the default move for any business
-                that has outgrown answering its own phones. It works — within
+                that has outgrown answering its own phones. It works, within
                 tight constraints. A full-time receptionist covers 40 hours
                 a week at $3,500-$5,000/month plus benefits and HR overhead.
                 They take vacation, get sick, eventually leave. Concurrent
@@ -213,8 +213,8 @@ export default function AIReceptionistVsHumanReceptionistPage() {
               </p>
               <p>
                 An AI receptionist replaces the routine majority of front-desk
-                work — booking, qualification, intake, recurring customer
-                requests, after-hours coverage, concurrent peaks — at a fixed
+                work, booking, qualification, intake, recurring customer
+                requests, after-hours coverage, concurrent peaks, at a fixed
                 monthly cost typically below 10% of a full-time hire. There
                 are no sick days, no turnover, no HR overhead, and no
                 concurrent-call ceiling. Coverage is 24/7. Where the AI does
@@ -227,8 +227,8 @@ export default function AIReceptionistVsHumanReceptionistPage() {
               <p>
                 The honest answer for most businesses is a hybrid. The AI
                 handles 80-90% of inbound at fixed cost. A smaller human role
-                — part-time, in-house, or on a small live answering service
-                block — handles the calls our routing rules flag for human
+part-time, in-house, or on a small live answering service
+                block, handles the calls our routing rules flag for human
                 attention. Net cost vs a full-time hire still drops 60-80%,
                 and quality goes up because the human now spends their hours
                 on the calls that actually need them, not on confirming
@@ -243,7 +243,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="The cost math"
-            title="Real annual cost — Implenix vs full-time hire"
+            title="Real annual cost, Implenix vs full-time hire"
             description="Conservative US-market figures for a single front-desk role. Numbers vary by region and seniority but the gap is consistent."
             badgeVariant="purple"
           />
@@ -304,7 +304,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
           <SectionHeader
             eyebrow="At a glance"
             title="AI Receptionist vs Human Receptionist: Key Differences"
-            description="The dimensions that drive a real buying decision — beyond just cost."
+            description="The dimensions that drive a real buying decision, beyond just cost."
           />
           <div className="mt-12">
             <ComparisonTable
@@ -352,7 +352,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
               <ul className="flex flex-col gap-2.5 mt-2">
                 {[
                   '24/7 coverage including nights and weekends, no premium',
-                  'Concurrent peaks — surge volume handled without staffing',
+                  'Concurrent peaks, surge volume handled without staffing',
                   'Routine booking, qualification, and intake at fixed cost',
                   'Industries with industry-specific intake (HVAC, dental, law)',
                   'Multi-location operations where consistency matters',
@@ -400,7 +400,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
           <SectionHeader
             eyebrow="The hybrid pattern"
             title="What most growing businesses end up running"
-            description="80% of inbound goes to the AI at fixed cost. The remaining 20% — the calls that actually need human attention — go to your in-house team or a small live block."
+            description="80% of inbound goes to the AI at fixed cost. The remaining 20%, the calls that actually need human attention, go to your in-house team or a small live block."
           />
           <div className="mt-12 grid md:grid-cols-3 gap-5">
             <HybridCard
@@ -411,7 +411,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
             <HybridCard
               Icon={Users}
               title="20% to a smaller human role"
-              description="Premium-brand calls, sensitive intake, complex sales, long-term VIP relationships — flagged by transfer rules and routed live."
+              description="Premium-brand calls, sensitive intake, complex sales, long-term VIP relationships, flagged by transfer rules and routed live."
             />
             <HybridCard
               Icon={Clock}
@@ -465,7 +465,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
           <div className="lg:col-span-7">
             <Badge label="Run the math on your business" variant="purple" />
             <h2 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.05]">
-              See your real numbers before you hire — or before you don't.
+              See your real numbers before you hire, or before you don't.
             </h2>
             <p className="mt-4 font-body text-white/75 max-w-xl">
               60-second audit. We estimate the missed-call cost for your
@@ -497,7 +497,7 @@ export default function AIReceptionistVsHumanReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               {
                 href: '/ai-receptionist-vs-answering-service',
                 label: 'AI Receptionist vs Answering Service',

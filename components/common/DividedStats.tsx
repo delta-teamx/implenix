@@ -7,7 +7,7 @@ type Props = {
   stats: Stat[];
 };
 
-// Koyeb-style horizontal stat row — large numerals with thin vertical
+// Koyeb-style horizontal stat row, large numerals with thin vertical
 // dividers between cells. Stacks on mobile.
 export function DividedStats({ stats }: Props) {
   return (

@@ -1,5 +1,5 @@
 // Topical hub definitions. Each hub is a cluster of blog posts around
-// a theme keyword. Google 2026 rewards topical authority — hub pages
+// a theme keyword. Google 2026 rewards topical authority, hub pages
 // that link to every post in the cluster and receive backlinks from
 // each post in return create the internal-linking web Google uses to
 // identify subject-matter expertise.
@@ -25,10 +25,10 @@ export const TOPICS: BlogTopic[] = [
     name: 'Agentic AI',
     heading: 'Agentic AI: what it is, how it works, where it fits',
     intro:
-      'Everything Implenix has published about agentic AI — what the category actually means in 2026, the seven types of agents, how RAG + LLM + MCP fit together, how agents learn from feedback loops, and the ethical + workplace implications.',
-    metaTitle: 'Agentic AI Hub — Explained + Deployed | Implenix',
+      'Everything Implenix has published about agentic AI, what the category actually means in 2026, the seven types of agents, how RAG + LLM + MCP fit together, how agents learn from feedback loops, and the ethical + workplace implications.',
+    metaTitle: 'Agentic AI Hub, Explained + Deployed | Implenix',
     metaDescription:
-      'Agentic AI explained plainly — types of agents, RAG + LLM + MCP architecture, feedback loops, and workplace impact. Implenix operator notes.',
+      'Agentic AI explained plainly, types of agents, RAG + LLM + MCP architecture, feedback loops, and workplace impact. Implenix operator notes.',
     primaryKeyword: 'agentic ai',
     postSlugs: [
       'what-is-agentic-ai',
@@ -46,10 +46,10 @@ export const TOPICS: BlogTopic[] = [
     name: 'Industry guides',
     heading: 'AI voice agent guides by industry',
     intro:
-      'Vertical-specific playbooks from the Implenix deployment portfolio — HVAC, real estate, dental, law, med spa, finance, healthcare, and retail. Each guide covers the intake script, integration stack, transfer rules, and real ROI math for that industry.',
-    metaTitle: 'AI Agent Guides by Industry — Implenix',
+      'Vertical-specific playbooks from the Implenix deployment portfolio, HVAC, real estate, dental, law, med spa, finance, healthcare, and retail. Each guide covers the intake script, integration stack, transfer rules, and real ROI math for that industry.',
+    metaTitle: 'AI Agent Guides by Industry, Implenix',
     metaDescription:
-      'Industry AI voice playbooks — HVAC, real estate, legal, medspa, finance, healthcare, retail. Real numbers, integrations, deployment scope.',
+      'Industry AI voice playbooks, HVAC, real estate, legal, medspa, finance, healthcare, retail. Real numbers, integrations, deployment scope.',
     primaryKeyword: 'ai agent by industry',
     postSlugs: [
       'hvac-ai-agent-guide',
@@ -66,10 +66,10 @@ export const TOPICS: BlogTopic[] = [
     name: 'Operator playbooks',
     heading: 'Operator playbooks for shipping AI voice',
     intro:
-      'Step-by-step deployment playbooks — how to calculate your missed-call cost, how to write prompts for AI voice agents, how to create an agent for your nonprofit, how to automate sales forecasting, and the research on why callers hang up.',
+      'Step-by-step deployment playbooks, how to calculate your missed-call cost, how to write prompts for AI voice agents, how to create an agent for your nonprofit, how to automate sales forecasting, and the research on why callers hang up.',
     metaTitle: 'AI Voice Operator Playbooks | Implenix',
     metaDescription:
-      'Step-by-step operator playbooks for deploying AI voice — missed-call math, prompt writing, nonprofit deployments, sales forecasting, hang-up research.',
+      'Step-by-step operator playbooks for deploying AI voice, missed-call math, prompt writing, nonprofit deployments, sales forecasting, hang-up research.',
     primaryKeyword: 'ai voice operator playbook',
     postSlugs: [
       'how-to-calculate-your-missed-call-cost',
@@ -85,10 +85,10 @@ export const TOPICS: BlogTopic[] = [
     name: 'Decision frameworks',
     heading: 'Decision frameworks: evaluating AI voice agents',
     intro:
-      'For buyers researching AI voice agents — real ROI numbers from the deployment portfolio, pricing tiers with hidden costs called out, comparisons vs human agents and chatbots, sensitive-conversation scope, integration depth, and vendor selection frameworks.',
+      'For buyers researching AI voice agents, real ROI numbers from the deployment portfolio, pricing tiers with hidden costs called out, comparisons vs human agents and chatbots, sensitive-conversation scope, integration depth, and vendor selection frameworks.',
     metaTitle: 'AI Voice Agent Decision Frameworks | Implenix',
     metaDescription:
-      'Decision frameworks for buying AI voice agents — ROI math, pricing tiers, chatbot vs human, integration depth, and sensitive-call scope.',
+      'Decision frameworks for buying AI voice agents, ROI math, pricing tiers, chatbot vs human, integration depth, and sensitive-call scope.',
     primaryKeyword: 'ai voice agent buyer guide',
     postSlugs: [
       'ai-receptionist-roi-real-numbers',

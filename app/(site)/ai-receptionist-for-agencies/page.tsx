@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'Will the agent screen out cold vendor pitches?',
     answer:
-      'Yes. We define your screening rules during scoping. Common patterns ("we can do your SEO," white-label development outreach, lead-gen vendor pitches) route to a callback queue your ops team reviews weekly — never to a founder.',
+      'Yes. We define your screening rules during scoping. Common patterns ("we can do your SEO," white-label development outreach, lead-gen vendor pitches) route to a callback queue your ops team reviews weekly, never to a founder.',
   },
   {
     question: 'Can it qualify RFPs against our minimum project size?',
@@ -50,7 +50,7 @@ const FAQS = [
   {
     question: 'How does it handle existing client calls?',
     answer:
-      'Caller verification (name + project number) routes existing clients to their account team\'s line — out of the new-business queue. Routine status, billing, and scope-change questions resolve without disrupting strategy work.',
+      'Caller verification (name + project number) routes existing clients to their account team\'s line, out of the new-business queue. Routine status, billing, and scope-change questions resolve without disrupting strategy work.',
   },
   {
     question: 'Does it integrate with HubSpot, Salesforce, our agency CRM?',
@@ -69,7 +69,7 @@ const FEATURES = [
     Icon: ListChecks,
     title: 'RFP qualification before a founder sees it',
     description:
-      'Industry, budget range, timeline, decision-makers, anti-fit signals — captured up front. Below-bar inquiries get a polite no-thanks.',
+      'Industry, budget range, timeline, decision-makers, anti-fit signals, captured up front. Below-bar inquiries get a polite no-thanks.',
     span: 'lg' as const,
     accent: 'purple' as const,
   },
@@ -109,9 +109,9 @@ const FEATURES = [
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · agency line · referred by client' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Northwind Studios — thanks for calling. How can I help?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Northwind Studios, thanks for calling. How can I help?' },
   { ts: '00:06', speaker: 'caller' as const, text: 'I was referred by Sam at Mercer. We need help with brand.' },
-  { ts: '00:10', speaker: 'agent' as const, text: 'Great — what industry is the company, and is there a project budget in mind?' },
+  { ts: '00:10', speaker: 'agent' as const, text: 'Great, what industry is the company, and is there a project budget in mind?' },
   { ts: '00:15', speaker: 'caller' as const, text: 'B2B SaaS, around $80K for the full identity rebuild.' },
   { ts: '00:19', speaker: 'agent' as const, text: 'That is in our range. Booking you with Marisa for a discovery call this week.' },
   { ts: '00:23', speaker: 'system' as const, text: 'Discovery booked · CRM updated · Marisa notified' },
@@ -126,7 +126,7 @@ export default function AIReceptionistForAgenciesPage() {
           serviceSchema({
             name: 'AI Receptionist for Agencies',
             description:
-              'AI receptionist tuned for agency inbound — RFP qualification, cold-pitch screening, account-team routing.',
+              'AI receptionist tuned for agency inbound, RFP qualification, cold-pitch screening, account-team routing.',
             serviceType: 'AI Receptionist',
             url: '/ai-receptionist-for-agencies',
           }),
@@ -220,7 +220,7 @@ export default function AIReceptionistForAgenciesPage() {
                 discovery directly into your founder, partner, or strategy
                 lead's calendar with full intake context. Cold pitches and
                 vendor solicitations route to a callback queue your ops team
-                reviews weekly — never to leadership.
+                reviews weekly, never to leadership.
               </p>
               <p>
                 Existing clients get caller-verified fast-path. A name and
@@ -231,7 +231,7 @@ export default function AIReceptionistForAgenciesPage() {
                 inquiries follow their own intake path and route to comms or
                 partnerships. Every call writes back to your CRM with the lead
                 source attached, so business development opens the morning
-                with a clean briefing — not a 20-minute fact-finding call.
+                with a clean briefing, not a 20-minute fact-finding call.
               </p>
             </div>
           </div>
@@ -301,7 +301,7 @@ export default function AIReceptionistForAgenciesPage() {
           <SectionHeader
             eyebrow="Agency types we deploy for"
             title="Tuned for the way each agency type takes inbound"
-            description="Different agency models have different inbound patterns. We tune the script per model — and ship a deeper-dive page for marketing agencies specifically."
+            description="Different agency models have different inbound patterns. We tune the script per model, and ship a deeper-dive page for marketing agencies specifically."
             badgeVariant="purple"
           />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

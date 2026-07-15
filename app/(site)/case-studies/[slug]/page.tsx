@@ -37,7 +37,7 @@ const REVIEWS: Record<
   'placeholder-real-estate': {
     reviewer: 'Yessy',
     reviewBody:
-      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up — we just close. That is the operation now.',
+      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up, we just close. That is the operation now.',
     itemName: 'Implenix AI Receptionist for Real Estate',
   },
   'placeholder-dental': {
@@ -49,7 +49,7 @@ const REVIEWS: Record<
   'gtr-improvements-lexi': {
     reviewer: 'Lexi',
     reviewBody:
-      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath — the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
+      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath, the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
     itemName: 'Implenix AI Receptionist for Home Improvement',
   },
   'parnell-motors': {
@@ -61,7 +61,7 @@ const REVIEWS: Record<
   'franklin-agency': {
     reviewer: 'Franklin',
     reviewBody:
-      'Our job is to grow our clients with more leads — but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
+      'Our job is to grow our clients with more leads, but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
     itemName: 'Implenix AI Receptionist for Marketing Agencies',
   },
 };
@@ -69,15 +69,15 @@ const REVIEWS: Record<
 const RECORDINGS: Record<string, { src: string; label: string }> = {
   'placeholder-hvac': {
     src: 'https://storage.vapi.ai/019dd11a-08f4-7001-be5e-9138391c69f7-1777329860916-1f64e293-9d0f-4aa7-b388-359b12052bbd-mono.mp3',
-    label: 'Real call from this deployment — home-improvement intake (names redacted)',
+    label: 'Real call from this deployment, home-improvement intake (names redacted)',
   },
   'placeholder-real-estate': {
     src: 'https://storage.vapi.ai/019d5386-d076-7995-9f11-00e17cc6c065-1775222981308-169a281a-d8cf-4a47-83bb-3a398c88d1a7-mono.mp3',
-    label: 'Real call from this deployment — seller acquisitions intake (names redacted)',
+    label: 'Real call from this deployment, seller acquisitions intake (names redacted)',
   },
   'gtr-improvements-lexi': {
     src: 'https://storage.vapi.ai/019d44c4-320d-799d-9aa1-e7b20b6a25ea-1774975462085-72a7c940-a44b-4c69-819f-09d6e6d163a9-mono.mp3',
-    label: 'Real call from this deployment — sliding-door assessment booking (names redacted)',
+    label: 'Real call from this deployment, sliding-door assessment booking (names redacted)',
   },
 };
 
@@ -120,8 +120,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
             description: doc.metaDescription,
             url: doc.url,
             datePublished: doc.publishedAt,
-          }),
-          ...(REVIEWS[doc.slug]
+          }), ...(REVIEWS[doc.slug]
             ? [
                 reviewSchema({
                   reviewer: REVIEWS[doc.slug].reviewer,

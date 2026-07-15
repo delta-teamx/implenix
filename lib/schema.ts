@@ -45,7 +45,7 @@ export function localBusinessSchema(industry: string, url: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `Implenix — AI Receptionist for ${industry}`,
+    name: `Implenix, AI Receptionist for ${industry}`,
     url: `${SITE_URL}${url}`,
     description: `AI receptionist solution built for ${industry} businesses.`,
     areaServed: 'United States',
@@ -106,8 +106,7 @@ export function blogPostingSchema({
     datePublished,
     author: {
       '@type': 'Person',
-      name: author,
-      ...(authorRole ? { jobTitle: authorRole } : {}),
+      name: author, ...(authorRole ? { jobTitle: authorRole } : {}),
     },
     publisher: {
       '@type': 'Organization',
@@ -144,7 +143,7 @@ export type BreadcrumbCrumb = { label: string; href: string };
 
 // BreadcrumbList JSON-LD. The href on each crumb is converted to an
 // absolute URL. The final crumb (current page) gets its position but no
-// item per Google guidance — keep last href as the canonical url.
+// item per Google guidance, keep last href as the canonical url.
 export function breadcrumbListSchema(crumbs: BreadcrumbCrumb[]) {
   return {
     '@context': 'https://schema.org',
@@ -358,13 +357,12 @@ export function itemListSchema({
       '@type': 'ListItem',
       position: i + 1,
       url: `${SITE_URL}${it.url}`,
-      name: it.name,
-      ...(it.description ? { description: it.description } : {}),
+      name: it.name, ...(it.description ? { description: it.description } : {}),
     })),
   };
 }
 
-// CollectionPage schema — pairs with ItemList on hub / topic / index
+// CollectionPage schema, pairs with ItemList on hub / topic / index
 // pages so Google recognizes these as collection endpoints rather
 // than isolated articles.
 export function collectionPageSchema({
@@ -395,7 +393,7 @@ export function collectionPageSchema({
   };
 }
 
-// AboutPage schema — attach on /about. Establishes the page as an
+// AboutPage schema, attach on /about. Establishes the page as an
 // entity page for the Organization, which helps entity queries and
 // knowledge-graph inclusion.
 export function aboutPageSchema({
@@ -426,7 +424,7 @@ export function aboutPageSchema({
   };
 }
 
-// ContactPage schema — attach on /contact. Signals contact intent to
+// ContactPage schema, attach on /contact. Signals contact intent to
 // Google, gets picked up by contact-info knowledge-panel surfaces.
 export function contactPageSchema({
   url,
@@ -444,20 +442,18 @@ export function contactPageSchema({
     mainEntity: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: SITE_URL,
-      ...(telephone ? { telephone } : {}),
+      url: SITE_URL, ...(telephone ? { telephone } : {}),
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'sales',
         areaServed: 'US',
-        availableLanguage: ['English', 'Spanish'],
-        ...(telephone ? { telephone } : {}),
+        availableLanguage: ['English', 'Spanish'], ...(telephone ? { telephone } : {}),
       },
     },
   };
 }
 
-// Generic WebPage schema — attach on utility pages like /privacy-policy
+// Generic WebPage schema, attach on utility pages like /privacy-policy
 // and /terms that don't fit Article or specific page types. Ensures
 // Google understands the page's role.
 export function webPageSchema({
@@ -477,8 +473,7 @@ export function webPageSchema({
     name,
     description,
     url: `${SITE_URL}${url}`,
-    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
-    ...(breadcrumb
+    isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: SITE_URL }, ...(breadcrumb
       ? {
           breadcrumb: {
             '@type': 'BreadcrumbList',
@@ -494,7 +489,7 @@ export function webPageSchema({
   };
 }
 
-// WebApplication schema — attach on interactive tools like /audit
+// WebApplication schema, attach on interactive tools like /audit
 // (the missed-call audit calculator). Google surfaces this as an app
 // listing in some SERPs.
 export function webApplicationSchema({
@@ -529,7 +524,7 @@ export function webApplicationSchema({
   };
 }
 
-// Product schema with Offers — for the pricing page. Emits three
+// Product schema with Offers, for the pricing page. Emits three
 // tier Offers so Google sees the price range. Combined with the
 // AggregateRating from softwareApplicationSchema, this lifts pricing-
 // page rich-result eligibility.
@@ -579,7 +574,7 @@ export function productWithOffersSchema({
 // friendly. Attached to FAQ-heavy pages and pillar pages so Google
 // Assistant / Bixby / Alexa can read those sections aloud. The
 // [data-answer] and [data-speakable] selectors are our AEO answer
-// blocks — quoted preferentially by Google AI Overviews, Perplexity,
+// blocks, quoted preferentially by Google AI Overviews, Perplexity,
 // ChatGPT search, and Bing Copilot.
 export function speakableSchema(cssSelectors: string[] = []) {
   const defaults = ['[data-answer]', '[data-speakable]', 'h1'];

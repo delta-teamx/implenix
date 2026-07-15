@@ -1,4 +1,4 @@
-// IndexNow protocol — instant indexing for Bing, Yandex, Naver,
+// IndexNow protocol, instant indexing for Bing, Yandex, Naver,
 // Seznam, and Cloudflare-cached search engines. Google does not yet
 // honor IndexNow but is reportedly evaluating it.
 //
@@ -12,7 +12,7 @@
 export const INDEXNOW_KEY =
   process.env.INDEXNOW_KEY ||
   process.env.NEXT_PUBLIC_INDEXNOW_KEY ||
-  // Default key — generated for the implenix.net domain. Replace by
+  // Default key, generated for the implenix.net domain. Replace by
   // setting INDEXNOW_KEY env var and rotating the file in /public.
   'fa3c2e8d9b1748a6b4f0c5d2e7a98316';
 

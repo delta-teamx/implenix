@@ -79,7 +79,7 @@ function ResourceGrid({
 }) {
   return (
     <>
-      {/* CONTENT TO BE ADDED VIA MDX FILES — ASSIGN TO CONTENT TEAM */}
+      {/* CONTENT TO BE ADDED VIA MDX FILES, ASSIGN TO CONTENT TEAM */}
       {items.length === 0 ? (
         <div className="border border-brand-purple/20 p-10 text-center text-white/70 font-body">
           New {emptyLabel} are being added by the content team.
@@ -127,7 +127,7 @@ function Glossary() {
   const letters = Object.keys(grouped).sort();
   return (
     <div className="space-y-10">
-      {/* CONTENT TO BE ADDED VIA MDX FILES — ASSIGN TO CONTENT TEAM */}
+      {/* CONTENT TO BE ADDED VIA MDX FILES, ASSIGN TO CONTENT TEAM */}
       {letters.map((letter) => (
         <div key={letter}>
           <h3 className="font-heading text-2xl text-brand-purple mb-3">

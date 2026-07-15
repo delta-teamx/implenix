@@ -16,13 +16,13 @@ import { Badge } from '@/components/common/Badge';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Inside Implenix — Dashboard Preview | Implenix',
+  title: 'Inside Implenix, Dashboard Preview | Implenix',
   description:
     'Walkthrough of the Implenix dashboard. Revenue captured, cost of doing nothing, conversation replay, configurable handoff.',
   path: '/preview/dashboard',
 });
 
-// Mocked dashboard view — pure visual preview, no auth, no real data.
+// Mocked dashboard view, pure visual preview, no auth, no real data.
 // Lives at /preview/dashboard so prospects can see what they get inside.
 const CONVERSATIONS = [
   {

@@ -1,4 +1,4 @@
-// Real call transcripts from production deployments — names redacted
+// Real call transcripts from production deployments, names redacted
 // or shortened. These power the AnimatedCallTranscript component on
 // homepage and industry pages.
 
@@ -36,7 +36,7 @@ export const TRANSCRIPT_HOME_IMPROVEMENT_ES: AnimatedTranscript = {
     { speaker: 'caller', text: 'El domingo a las 12.' },
     {
       speaker: 'agent',
-      text: 'Listo Paula. Domingo a las 12pm — el especialista revisa las ventanas y te explica las opciones. Te envío un recordatorio por mensaje.',
+      text: 'Listo Paula. Domingo a las 12pm, el especialista revisa las ventanas y te explica las opciones. Te envío un recordatorio por mensaje.',
     },
     { speaker: 'caller', text: 'Gracias, hasta el domingo.' },
   ],
@@ -49,12 +49,12 @@ export const TRANSCRIPT_ROOFING: AnimatedTranscript = {
   lines: [
     {
       speaker: 'agent',
-      text: "Hi Brunel, it's Sarah with Emore Florida Construction. Quick question about the renovation program — okay time?",
+      text: "Hi Brunel, it's Sarah with Emore Florida Construction. Quick question about the renovation program, okay time?",
     },
     { speaker: 'caller', text: 'Sure.' },
     {
       speaker: 'agent',
-      text: 'I saw you were looking into a roof. That is exactly what we cover at zero out of pocket. Quick check — you are the homeowner at 12330 NE 11th Place?',
+      text: 'I saw you were looking into a roof. That is exactly what we cover at zero out of pocket. Quick check, you are the homeowner at 12330 NE 11th Place?',
     },
     { speaker: 'caller', text: 'Yes.' },
     { speaker: 'agent', text: 'Current on mortgage and property taxes?' },
@@ -78,14 +78,14 @@ export const TRANSCRIPT_GLASS_DOOR: AnimatedTranscript = {
   lines: [
     {
       speaker: 'agent',
-      text: "Hi David, it's Maria with Green Innovation. Quick question about the sliding glass door — okay time?",
+      text: "Hi David, it's Maria with Green Innovation. Quick question about the sliding glass door, okay time?",
     },
     { speaker: 'caller', text: 'Yes, it is.' },
     {
       speaker: 'agent',
       text: 'I saw the door got hit by a rock. That is exactly what we cover. You are the homeowner at 739 Rock Creek Street?',
     },
-    { speaker: 'caller', text: "No — this is for my daughter's house." },
+    { speaker: 'caller', text: "No, this is for my daughter's house." },
     {
       speaker: 'agent',
       text: 'Got it, thanks for clearing that up. What is the correct address?',
@@ -110,7 +110,7 @@ export const TRANSCRIPT_REAL_ESTATE_CASH: AnimatedTranscript = {
   lines: [
     {
       speaker: 'agent',
-      text: "Hi Christine, it's Maria. Quick question about your property — okay time?",
+      text: "Hi Christine, it's Maria. Quick question about your property, okay time?",
     },
     { speaker: 'caller', text: 'Briefly, sure.' },
     {

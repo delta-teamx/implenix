@@ -15,7 +15,7 @@ import {
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'About Implenix — AI Voice Agents for Local Business',
+  title: 'About Implenix, AI Voice Agents for Local Business',
   description:
     'Implenix designs and deploys AI voice agents for local business. Why we exist, how we work, and the four disciplines behind every deployment.',
   path: '/about',
@@ -40,7 +40,7 @@ const PRINCIPLES = [
   {
     title: 'Owned infrastructure',
     description:
-      'Two-way CRM sync, live calendar booking, real recordings, and full transcripts — not next-morning email summaries. Integration depth is the product.',
+      'Two-way CRM sync, live calendar booking, real recordings, and full transcripts, not next-morning email summaries. Integration depth is the product.',
   },
 ];
 
@@ -53,17 +53,17 @@ const TEAM_DISCIPLINES = [
   {
     title: 'Implementation',
     description:
-      'Specialists who scope, build, and ship the agent — CRM, calendar, phone routing, integrations, transfer rules.',
+      'Specialists who scope, build, and ship the agent, CRM, calendar, phone routing, integrations, transfer rules.',
   },
   {
     title: 'Customer success',
     description:
-      'Owners of post-launch tuning — call recordings reviewed, scripts refined, edge cases handled, monthly reports delivered.',
+      'Owners of post-launch tuning, call recordings reviewed, scripts refined, edge cases handled, monthly reports delivered.',
   },
   {
     title: 'Operations',
     description:
-      'Infrastructure, monitoring, compliance, on-call rotation — the team that keeps every deployment running 24/7.',
+      'Infrastructure, monitoring, compliance, on-call rotation, the team that keeps every deployment running 24/7.',
   },
 ];
 
@@ -81,7 +81,7 @@ const TIMELINE = [
   {
     title: 'Integration',
     description:
-      'We connect to your CRM, calendar, and phone routing — and run live tests against your business.',
+      'We connect to your CRM, calendar, and phone routing, and run live tests against your business.',
   },
   {
     title: 'Go-live',
@@ -127,8 +127,7 @@ export default function AboutPage() {
             >
               Implenix exists because local businesses lose deals every day to
               a missed phone call. We design, deploy, and operate the AI
-              voice infrastructure that answers, qualifies, and books —
-              every call, every hour, without exception.
+              voice infrastructure that answers, qualifies, and books, every call, every hour, without exception.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link
@@ -244,7 +243,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4 font-body text-white/80 leading-relaxed text-base">
               <p>
                 Local businesses are the backbone of the call economy.
-                They run on phones — and most of them quietly lose deals
+                They run on phones, and most of them quietly lose deals
                 every single day to a missed inbound. <span className="text-brand-cyan">That is the problem worth solving.</span>
               </p>
               <p>
@@ -273,8 +272,7 @@ export default function AboutPage() {
                 Why Implenix exists
               </p>
               <p className="font-body text-white/85 leading-relaxed text-base">
-                The Implenix team spent years watching local operators —
-                contractors, dentists, brokers, agencies — lose the
+                The Implenix team spent years watching local operators, contractors, dentists, brokers, agencies, lose the
                 majority of their inbound to voicemail, understaffed
                 front desks, and per-minute answering services that
                 couldn't keep up. In 2024 the underlying voice AI became
@@ -334,7 +332,7 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="The team"
             title="One small team. Four disciplines."
-            description="We do not list individual team members publicly — every Implenix deployment is built and operated by the same collective team. Here is what they ship."
+            description="We do not list individual team members publicly, every Implenix deployment is built and operated by the same collective team. Here is what they ship."
             badgeVariant="purple"
           />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -416,7 +414,7 @@ export default function AboutPage() {
                 <span>
                   <strong>We route sensitive calls to humans.</strong>{' '}
                   Crisis, distress, and vulnerable-caller signals trigger
-                  live transfer within 30 seconds — always.
+                  live transfer within 30 seconds, always.
                 </span>
               </li>
               <li className="flex items-start gap-3 border-l-[3px] border-brand-purple bg-black p-4">

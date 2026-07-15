@@ -17,7 +17,7 @@ const SIZE_MAP: Record<NonNullable<Props['size']>, { mark: number; text: string 
 };
 
 // The Implenix lockup: wordmark + mark. Default layout matches the
-// supplied brand asset — white "implenix" with a cyan "i", and the cyan
+// supplied brand asset, white "implenix" with a cyan "i", and the cyan
 // stair-step mark to the right.
 export function LogoLockup({
   href = '/',

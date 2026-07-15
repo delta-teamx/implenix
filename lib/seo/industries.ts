@@ -1,12 +1,12 @@
 // Programmatic industry profiles for /ai-receptionist-for-[slug].
 //
-// One profile per industry. Each is hand-written and unique — Google
+// One profile per industry. Each is hand-written and unique, Google
 // flags templated doorway pages, so every intro / pain point / FAQ
 // here describes the real shape of that industry's call traffic.
 //
 // The 8 industries that have rich MDX content (hvac-companies, dentists,
 // real-estate, law-firms, plumbers, med-spas, auto-repair, roofers) are
-// NOT included here — the page route renders those from MDX.
+// NOT included here, the page route renders those from MDX.
 
 export type ProfilePainPoint = { title: string; description: string };
 export type ProfileUseCase = { title: string; description: string };
@@ -52,7 +52,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'hipaa ai receptionist',
     ],
     intro:
-      "Medical practices live and die by the front desk. New-patient intake calls land while staff is checking in the patient already standing at the counter. Insurance verification calls eat hours. Refill requests pile up on hold. The result is the same every time: high-intent callers hit voicemail, then call the practice down the street that picked up. Implenix takes that pressure off. The AI receptionist for medical practices answers every inbound call within one ring, runs your intake script, verifies insurance against the questions you define, and books the appointment directly into your PMS. It distinguishes between a new patient request, a refill question, an insurance issue, and a true clinical concern — and routes each one according to rules your team approves. Refills go to the queue your nurse already monitors. Clinical questions transfer live. Cold solicitations get screened. Everything else gets booked. After every call, the contact is updated, the recording is archived, and the next-step notification goes out. Practices that switch see new-patient capture rates jump from the typical 45-55% to above 90% inside the first month. Front desk staff stop drowning. Providers stop walking out at 6 PM to a stack of voicemail. And the practice stops losing six-figure pipeline to a phone system that wasn't designed for the volume.",
+      "Medical practices live and die by the front desk. New-patient intake calls land while staff is checking in the patient already standing at the counter. Insurance verification calls eat hours. Refill requests pile up on hold. The result is the same every time: high-intent callers hit voicemail, then call the practice down the street that picked up. Implenix takes that pressure off. The AI receptionist for medical practices answers every inbound call within one ring, runs your intake script, verifies insurance against the questions you define, and books the appointment directly into your PMS. It distinguishes between a new patient request, a refill question, an insurance issue, and a true clinical concern, and routes each one according to rules your team approves. Refills go to the queue your nurse already monitors. Clinical questions transfer live. Cold solicitations get screened. Everything else gets booked. After every call, the contact is updated, the recording is archived, and the next-step notification goes out. Practices that switch see new-patient capture rates jump from the typical 45-55% to above 90% inside the first month. Front desk staff stop drowning. Providers stop walking out at 6 PM to a stack of voicemail. And the practice stops losing six-figure pipeline to a phone system that wasn't designed for the volume.",
     heroStat: '+38%',
     heroStatLabel: 'new-patient bookings in 30 days',
     avgWeeklyCalls: 280,
@@ -61,17 +61,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'New-patient intake collides with in-office check-ins',
         description:
-          'PLACEHOLDER — When the front desk is checking in a patient, every other caller hits voicemail. New-patient acquisition cost is wasted on a call that never gets answered.',
+          'PLACEHOLDER, When the front desk is checking in a patient, every other caller hits voicemail. New-patient acquisition cost is wasted on a call that never gets answered.',
       },
       {
         title: 'Insurance verification eats half the day',
         description:
-          'PLACEHOLDER — Insurance is the most-asked question and the most repetitive. Staff spends real labor hours on calls that follow a script.',
+          'PLACEHOLDER, Insurance is the most-asked question and the most repetitive. Staff spends real labor hours on calls that follow a script.',
       },
       {
         title: 'Refill requests pile up on hold',
         description:
-          'PLACEHOLDER — Refill calls feel non-urgent to staff but urgent to patients. Without a clean queue, both sides get frustrated and the patient relationship degrades.',
+          'PLACEHOLDER, Refill calls feel non-urgent to staff but urgent to patients. Without a clean queue, both sides get frustrated and the patient relationship degrades.',
       },
     ],
     useCases: [
@@ -83,7 +83,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Refill request triage routed to your nurse queue',
         description:
-          'Logs medication, prescriber, pharmacy, and patient ID directly into your PMS as a refill task — no transcription needed.',
+          'Logs medication, prescriber, pharmacy, and patient ID directly into your PMS as a refill task, no transcription needed.',
       },
       {
         title: 'After-hours clinical escalation',
@@ -97,8 +97,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-42%', label: 'voicemail abandonment' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Our front desk used to answer 6 out of every 10 calls. Now we answer all of them, and our front desk has the bandwidth to actually look up at patients walking in.',
-    testimonialAuthor: 'PLACEHOLDER — Practice administrator, primary care group',
+      'PLACEHOLDER, Our front desk used to answer 6 out of every 10 calls. Now we answer all of them, and our front desk has the bandwidth to actually look up at patients walking in.',
+    testimonialAuthor: 'PLACEHOLDER, Practice administrator, primary care group',
     faqs: [
       {
         question: 'Is the Implenix AI receptionist HIPAA compliant?',
@@ -108,7 +108,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Does it integrate with our practice management system?',
         answer:
-          'Most major PMS platforms integrate via direct API or a webhook bridge. Confirm during scoping — we have shipped integrations with Athenahealth, Epic, eClinicalWorks, NextGen, and others.',
+          'Most major PMS platforms integrate via direct API or a webhook bridge. Confirm during scoping, we have shipped integrations with Athenahealth, Epic, eClinicalWorks, NextGen, and others.',
       },
       {
         question: 'Can it handle prescription refill questions?',
@@ -136,7 +136,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'electrical contractor',
     metaTitle: 'AI Receptionist for Electricians | Implenix',
     metaDescription:
-      'AI receptionist for electricians. Capture emergency outages, qualify jobs, and dispatch the right tech 24/7 — residential and commercial.',
+      'AI receptionist for electricians. Capture emergency outages, qualify jobs, and dispatch the right tech 24/7, residential and commercial.',
     targetKeyword: 'ai receptionist for electricians',
     relatedKeywords: [
       'electrician answering service',
@@ -145,7 +145,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       '24/7 electrician answering',
     ],
     intro:
-      "Electricians lose money to two things they cannot control with their hands full: power-out calls at 2 AM and estimate calls during the workday. Both share the same problem — the phone rings while everyone capable of answering is on a roof, in a panel, or driving between sites. Voicemail is an instant lost job for a panel replacement, a generator install, or an emergency outage. Implenix is the AI receptionist for electricians: it picks up inside one ring, triages residential vs commercial, sorts emergencies from estimate requests, and books the right tech to the right window — all written back to your dispatch software before the next call comes in. The agent runs the intake script your team would run if they had time: address, age of panel, scope of work, urgency, accepted payment. For storm-driven outage spikes, it scales without overtime. For routine bid calls, it captures specs in detail your tech can actually act on. And for the calls that should reach a human — a long-time commercial client, a complex bid over a threshold, or a frustrated caller — it transfers live within seconds. Electricians who deploy Implenix typically see emergency-call capture climb from the low 40s to above 90 percent within the first month, and crews report fewer on-site surprises because intake quality is consistent across every call.",
+      "Electricians lose money to two things they cannot control with their hands full: power-out calls at 2 AM and estimate calls during the workday. Both share the same problem, the phone rings while everyone capable of answering is on a roof, in a panel, or driving between sites. Voicemail is an instant lost job for a panel replacement, a generator install, or an emergency outage. Implenix is the AI receptionist for electricians: it picks up inside one ring, triages residential vs commercial, sorts emergencies from estimate requests, and books the right tech to the right window, all written back to your dispatch software before the next call comes in. The agent runs the intake script your team would run if they had time: address, age of panel, scope of work, urgency, accepted payment. For storm-driven outage spikes, it scales without overtime. For routine bid calls, it captures specs in detail your tech can actually act on. And for the calls that should reach a human, a long-time commercial client, a complex bid over a threshold, or a frustrated caller, it transfers live within seconds. Electricians who deploy Implenix typically see emergency-call capture climb from the low 40s to above 90 percent within the first month, and crews report fewer on-site surprises because intake quality is consistent across every call.",
     heroStat: '+92%',
     heroStatLabel: 'after-hours emergency capture rate',
     avgWeeklyCalls: 165,
@@ -154,17 +154,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Outage calls happen when no one can answer',
         description:
-          'PLACEHOLDER — A blown panel at 9 PM is a $1,500-$5,000 job. If voicemail picks up, the customer calls the next number on the list and that job is gone for good.',
+          'PLACEHOLDER, A blown panel at 9 PM is a $1,500-$5,000 job. If voicemail picks up, the customer calls the next number on the list and that job is gone for good.',
       },
       {
         title: 'Estimates get scoped poorly over rushed phone calls',
         description:
-          'PLACEHOLDER — A rushed two-minute call captures half the information. The tech shows up to a different scope, the customer is annoyed, and the close rate drops.',
+          'PLACEHOLDER, A rushed two-minute call captures half the information. The tech shows up to a different scope, the customer is annoyed, and the close rate drops.',
       },
       {
         title: 'Commercial vs residential routing is ad hoc',
         description:
-          'PLACEHOLDER — Most shops route every call to the same dispatcher. Commercial accounts with SLAs sit in the same queue as residential bid calls.',
+          'PLACEHOLDER, Most shops route every call to the same dispatcher. Commercial accounts with SLAs sit in the same queue as residential bid calls.',
       },
     ],
     useCases: [
@@ -181,7 +181,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Live transfer for commercial accounts and VIPs',
         description:
-          'A defined allow-list routes long-term clients and accounts on contract straight to your account manager — no script, no hold.',
+          'A defined allow-list routes long-term clients and accounts on contract straight to your account manager, no script, no hold.',
       },
     ],
     stats: [
@@ -190,8 +190,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+27%', label: 'estimate close rate' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Storm season used to mean missing 30 calls a week. Last quarter we missed two. The agent dispatched the rest before I picked up the truck.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, regional electrical contractor',
+      'PLACEHOLDER, Storm season used to mean missing 30 calls a week. Last quarter we missed two. The agent dispatched the rest before I picked up the truck.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, regional electrical contractor',
     faqs: [
       {
         question: 'Does it integrate with ServiceTitan, Housecall Pro, Jobber?',
@@ -206,7 +206,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Will the agent quote pricing?',
         answer:
-          'Within ranges your team approves — typical service-call ranges and panel-replacement ballparks. Final quotes always go to a human after the on-site assessment.',
+          'Within ranges your team approves, typical service-call ranges and panel-replacement ballparks. Final quotes always go to a human after the on-site assessment.',
       },
       {
         question: 'How does it handle outage emergencies?',
@@ -238,7 +238,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'contractor receptionist',
     ],
     intro:
-      "A general contractor's pipeline is built from phone calls that arrive at the worst possible time — mid-pour, on a ladder, in a meeting with a sub. Every missed call is a project bid that walks across the street to the GC who picked up. Implenix is the AI receptionist for contractors: it answers every inbound call inside one ring, qualifies the lead by project type, scope, budget range, and timeline, and books the site visit directly into your calendar. The questions match what you would ask if you had time — square footage, design status, permit posture, financing readiness, decision-makers involved. Real estate agents and homeowners get a different intake than commercial property managers. Sub coordination calls, change-order questions, and inspector follow-ups route to the people who can actually answer. The agent screens out tire-kickers (no permit, no decision-maker, no realistic budget) so your project manager only sees calls worth a site visit. After every call, the lead lands in your CRM with full context, photos collected via SMS, and a follow-up scheduled. Contractors deploying Implenix tend to see qualified site-visit volume rise 40-60% in the first quarter while their PMs report fewer wasted truck rolls because the intake quality stays consistent across every call.",
+      "A general contractor's pipeline is built from phone calls that arrive at the worst possible time, mid-pour, on a ladder, in a meeting with a sub. Every missed call is a project bid that walks across the street to the GC who picked up. Implenix is the AI receptionist for contractors: it answers every inbound call inside one ring, qualifies the lead by project type, scope, budget range, and timeline, and books the site visit directly into your calendar. The questions match what you would ask if you had time, square footage, design status, permit posture, financing readiness, decision-makers involved. Real estate agents and homeowners get a different intake than commercial property managers. Sub coordination calls, change-order questions, and inspector follow-ups route to the people who can actually answer. The agent screens out tire-kickers (no permit, no decision-maker, no realistic budget) so your project manager only sees calls worth a site visit. After every call, the lead lands in your CRM with full context, photos collected via SMS, and a follow-up scheduled. Contractors deploying Implenix tend to see qualified site-visit volume rise 40-60% in the first quarter while their PMs report fewer wasted truck rolls because the intake quality stays consistent across every call.",
     heroStat: '+54%',
     heroStatLabel: 'qualified site visits booked per quarter',
     avgWeeklyCalls: 95,
@@ -247,17 +247,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Bid calls hit voicemail when crews are on site',
         description:
-          'PLACEHOLDER — Six-figure remodel inquiries die on voicemail because the owner is in a wall pocket. The next contractor on Google answers and wins the job.',
+          'PLACEHOLDER, Six-figure remodel inquiries die on voicemail because the owner is in a wall pocket. The next contractor on Google answers and wins the job.',
       },
       {
         title: 'Tire-kickers waste truck-roll budget',
         description:
-          'PLACEHOLDER — Every site visit costs real time and gas. Without intake screening, half end up with no permits, no budget, no decision-makers.',
+          'PLACEHOLDER, Every site visit costs real time and gas. Without intake screening, half end up with no permits, no budget, no decision-makers.',
       },
       {
         title: 'Sub coordination calls collide with sales calls',
         description:
-          'PLACEHOLDER — Sub schedules, change orders, and inspector calls drown out new-bid calls in the same queue. Sales suffers because operations is loud.',
+          'PLACEHOLDER, Sub schedules, change orders, and inspector calls drown out new-bid calls in the same queue. Sales suffers because operations is loud.',
       },
     ],
     useCases: [
@@ -283,8 +283,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — We used to send our PM on six site visits a week. Now five of those six actually have a budget and a permit, and the sixth just gets a polite no thanks.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, residential GC',
+      'PLACEHOLDER, We used to send our PM on six site visits a week. Now five of those six actually have a budget and a permit, and the sixth just gets a polite no thanks.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, residential GC',
     faqs: [
       {
         question: 'Does it integrate with Buildertrend, CoConstruct, JobTread?',
@@ -294,12 +294,12 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Can it qualify leads by project type and budget?',
         answer:
-          'Yes. We define your minimum-bar rules — project type, scope range, decision-maker, financing status. Only leads that pass get a site visit booked.',
+          'Yes. We define your minimum-bar rules, project type, scope range, decision-maker, financing status. Only leads that pass get a site visit booked.',
       },
       {
         question: 'How does it handle change orders and sub coordination?',
         answer:
-          'Change orders and sub calls follow custom transfer rules into your ops channel — different from the new-business queue.',
+          'Change orders and sub calls follow custom transfer rules into your ops channel, different from the new-business queue.',
       },
       {
         question: 'What about commercial vs residential?',
@@ -322,7 +322,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'salon',
     metaTitle: 'AI Receptionist for Salons | Implenix',
     metaDescription:
-      'AI receptionist for salons. Book appointments, handle stylist requests, and reduce no-shows — without keeping the front desk on the phone all day.',
+      'AI receptionist for salons. Book appointments, handle stylist requests, and reduce no-shows, without keeping the front desk on the phone all day.',
     targetKeyword: 'ai receptionist for salons',
     relatedKeywords: [
       'salon booking ai',
@@ -331,7 +331,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'beauty salon call automation',
     ],
     intro:
-      "Salons run on appointment density. Every minute the front desk spends on a booking call is a minute they're not handling the client in the chair. The math is brutal: a 6-chair salon with one front-desk staff fields ~180 booking calls a week, and on a busy Saturday at least 30% of them hit voicemail. Each missed call is a $80-$250 service that booked somewhere else. Implenix is the AI receptionist for salons: it answers every inbound inside one ring, books directly into Boulevard, Vagaro, Mindbody, or whatever you run, respects stylist availability and capacity rules, and reduces no-shows with multi-touch reminder calls. Specific stylist requests get matched against the booking calendar — the agent will not book Maria for an appointment when she's already double-booked. New-client intake captures referral source, hair history, and product allergies. Group bookings and bridal parties get routed to your senior coordinator. Reschedules and cancellations happen live without staff involvement. Walk-ins still get the personal touch from your front desk. Salons that ship Implenix typically reclaim 15-20 hours per week per front-desk team member and watch no-show rates drop 25-30% inside the first quarter. The chair stays full. The front desk stays out of phone hell.",
+      "Salons run on appointment density. Every minute the front desk spends on a booking call is a minute they're not handling the client in the chair. The math is brutal: a 6-chair salon with one front-desk staff fields ~180 booking calls a week, and on a busy Saturday at least 30% of them hit voicemail. Each missed call is a $80-$250 service that booked somewhere else. Implenix is the AI receptionist for salons: it answers every inbound inside one ring, books directly into Boulevard, Vagaro, Mindbody, or whatever you run, respects stylist availability and capacity rules, and reduces no-shows with multi-touch reminder calls. Specific stylist requests get matched against the booking calendar, the agent will not book Maria for an appointment when she's already double-booked. New-client intake captures referral source, hair history, and product allergies. Group bookings and bridal parties get routed to your senior coordinator. Reschedules and cancellations happen live without staff involvement. Walk-ins still get the personal touch from your front desk. Salons that ship Implenix typically reclaim 15-20 hours per week per front-desk team member and watch no-show rates drop 25-30% inside the first quarter. The chair stays full. The front desk stays out of phone hell.",
     heroStat: '+19h',
     heroStatLabel: 'reclaimed per week per front-desk team member',
     avgWeeklyCalls: 175,
@@ -340,24 +340,24 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Front desk drowning in booking calls during peak hours',
         description:
-          'PLACEHOLDER — Saturday afternoons mean 40+ calls and a lobby full of clients. Front desk picks one to lose and it is usually the phone.',
+          'PLACEHOLDER, Saturday afternoons mean 40+ calls and a lobby full of clients. Front desk picks one to lose and it is usually the phone.',
       },
       {
         title: 'Stylist availability changes faster than the phone updates',
         description:
-          'PLACEHOLDER — A stylist runs late, calls out, or shifts. The booking calendar updates but the front desk is behind, so calls quote times that no longer exist.',
+          'PLACEHOLDER, A stylist runs late, calls out, or shifts. The booking calendar updates but the front desk is behind, so calls quote times that no longer exist.',
       },
       {
         title: 'No-shows break the whole day',
         description:
-          'PLACEHOLDER — Without consistent confirmation calls, no-show rates run 18-25%. Each one is dead chair time and a stylist losing money.',
+          'PLACEHOLDER, Without consistent confirmation calls, no-show rates run 18-25%. Each one is dead chair time and a stylist losing money.',
       },
     ],
     useCases: [
       {
         title: 'Live booking against your salon software',
         description:
-          'Boulevard, Vagaro, Mindbody, GlossGenius — the agent reads real availability and respects capacity rules per chair.',
+          'Boulevard, Vagaro, Mindbody, GlossGenius, the agent reads real availability and respects capacity rules per chair.',
       },
       {
         title: 'Stylist-specific request handling',
@@ -376,8 +376,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+24%', label: 'after-hours bookings' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Saturdays used to be chaos. Now the front desk is actually with our clients and the phone still gets answered.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, multi-chair salon',
+      'PLACEHOLDER, Saturdays used to be chaos. Now the front desk is actually with our clients and the phone still gets answered.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, multi-chair salon',
     faqs: [
       {
         question: 'Does it integrate with Boulevard, Vagaro, Mindbody?',
@@ -387,7 +387,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Can it handle requests for a specific stylist?',
         answer:
-          'Yes. Stylist-aware booking — the agent checks the requested stylist\'s availability and only books real openings.',
+          'Yes. Stylist-aware booking, the agent checks the requested stylist\'s availability and only books real openings.',
       },
       {
         question: 'How does it handle cancellations and reschedules?',
@@ -424,7 +424,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'accountant lead intake',
     ],
     intro:
-      "Tax season for an accounting firm is a six-week phone tsunami sitting on top of an already-saturated calendar. Document requests, status checks, new-client intake, and a steady stream of \"can you just take a quick look\" calls collide with hard filing deadlines. Every call answered by an associate is billable hours not earned. Every call missed is a prospect filing somewhere else. Implenix is the AI receptionist for accountants: it answers every inbound inside one ring, runs your client intake script, captures business structure, prior preparer, document readiness, and entity complexity, then books the right service tier into the right partner's calendar. Existing clients get fast-path routing — name and SSN last-four lookup pulls them out of the new-client queue and into status-check or document-request handling. Document collection happens via SMS or secure portal links the agent sends mid-call. Engagement-letter status, e-file confirmations, and IRS notice handling each have their own intake script. Cold calls and tax-software solicitations get screened. The result: associates stay billable, partners only see qualified consults, and the firm captures 40-60% more new-business calls during peak season without hiring temporary staff. Off-season, the agent stays warm, handling year-round tax planning and bookkeeping intake without paying for capacity you do not need.",
+      "Tax season for an accounting firm is a six-week phone tsunami sitting on top of an already-saturated calendar. Document requests, status checks, new-client intake, and a steady stream of \"can you just take a quick look\" calls collide with hard filing deadlines. Every call answered by an associate is billable hours not earned. Every call missed is a prospect filing somewhere else. Implenix is the AI receptionist for accountants: it answers every inbound inside one ring, runs your client intake script, captures business structure, prior preparer, document readiness, and entity complexity, then books the right service tier into the right partner's calendar. Existing clients get fast-path routing, name and SSN last-four lookup pulls them out of the new-client queue and into status-check or document-request handling. Document collection happens via SMS or secure portal links the agent sends mid-call. Engagement-letter status, e-file confirmations, and IRS notice handling each have their own intake script. Cold calls and tax-software solicitations get screened. The result: associates stay billable, partners only see qualified consults, and the firm captures 40-60% more new-business calls during peak season without hiring temporary staff. Off-season, the agent stays warm, handling year-round tax planning and bookkeeping intake without paying for capacity you do not need.",
     heroStat: '+47%',
     heroStatLabel: 'new-client intake during tax season',
     avgWeeklyCalls: 110,
@@ -433,17 +433,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Tax season buries the phone line for 6 straight weeks',
         description:
-          'PLACEHOLDER — March-April call volume runs 4-5x off-season. Without surge capacity, new-client calls die in voicemail and existing clients get frustrated.',
+          'PLACEHOLDER, March-April call volume runs 4-5x off-season. Without surge capacity, new-client calls die in voicemail and existing clients get frustrated.',
       },
       {
         title: 'Associates burn billable hours on intake and status checks',
         description:
-          'PLACEHOLDER — Every "did you get my W-2" call answered by a senior associate is real money lost. The labor cost shows up on the P&L every April.',
+          'PLACEHOLDER, Every "did you get my W-2" call answered by a senior associate is real money lost. The labor cost shows up on the P&L every April.',
       },
       {
         title: 'Document collection is a constant friction point',
         description:
-          'PLACEHOLDER — Clients say they sent it; the firm never received it. Without a clean intake-and-receipt flow, returns stall and deadlines slip.',
+          'PLACEHOLDER, Clients say they sent it; the firm never received it. Without a clean intake-and-receipt flow, returns stall and deadlines slip.',
       },
     ],
     useCases: [
@@ -469,8 +469,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '100%', label: 'after-hours coverage' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Last March we kept up. That has not happened in 12 years. The agent ate the call volume so my partners could actually file returns.',
-    testimonialAuthor: 'PLACEHOLDER — Managing partner, regional CPA firm',
+      'PLACEHOLDER, Last March we kept up. That has not happened in 12 years. The agent ate the call volume so my partners could actually file returns.',
+    testimonialAuthor: 'PLACEHOLDER, Managing partner, regional CPA firm',
     faqs: [
       {
         question: 'Does it integrate with our tax software and CRM?',
@@ -517,7 +517,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'rfp intake automation',
     ],
     intro:
-      "Marketing agencies have a unique phone problem: most inbound calls are either six-figure RFPs or someone trying to sell you SEO. The cost of mis-routing those is asymmetric. The wrong filter sends a great-fit RFP to voicemail and forwards a cold pitch to your founder. Most agencies handle this by routing everything to a junior account person — which means the RFP either gets a generic response or sits in a queue for two days. By then, the prospect has talked to three other agencies. Implenix is the AI receptionist for marketing agencies: it answers every inbound inside one ring, runs RFP qualification (industry, budget range, timeline, existing-vendor status, decision-maker confirmation), and either books a discovery call directly into your founder or strategy lead's calendar or sends a polite no-thanks to anything below your minimum bar. Cold pitches and vendor solicitations get screened. Existing-client account questions route to the right account team in real time. Press and partnership inquiries route to your comms team. The agent learns your service tiers and minimum project size, so an inquiry for a $5K logo never lands on a calendar built for $250K retainers. After every qualified call, the lead lands in HubSpot or whatever you run with full context — including a recording your business development lead can listen to before the discovery call.",
+      "Marketing agencies have a unique phone problem: most inbound calls are either six-figure RFPs or someone trying to sell you SEO. The cost of mis-routing those is asymmetric. The wrong filter sends a great-fit RFP to voicemail and forwards a cold pitch to your founder. Most agencies handle this by routing everything to a junior account person, which means the RFP either gets a generic response or sits in a queue for two days. By then, the prospect has talked to three other agencies. Implenix is the AI receptionist for marketing agencies: it answers every inbound inside one ring, runs RFP qualification (industry, budget range, timeline, existing-vendor status, decision-maker confirmation), and either books a discovery call directly into your founder or strategy lead's calendar or sends a polite no-thanks to anything below your minimum bar. Cold pitches and vendor solicitations get screened. Existing-client account questions route to the right account team in real time. Press and partnership inquiries route to your comms team. The agent learns your service tiers and minimum project size, so an inquiry for a $5K logo never lands on a calendar built for $250K retainers. After every qualified call, the lead lands in HubSpot or whatever you run with full context, including a recording your business development lead can listen to before the discovery call.",
     heroStat: '+62%',
     heroStatLabel: 'qualified RFP discovery calls booked',
     avgWeeklyCalls: 65,
@@ -526,24 +526,24 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Every cold pitch ends up on the founder\'s desk',
         description:
-          'PLACEHOLDER — The lazy filter sends every "let me sell you SEO" call straight to leadership. Real RFPs get lost in the same queue.',
+          'PLACEHOLDER, The lazy filter sends every "let me sell you SEO" call straight to leadership. Real RFPs get lost in the same queue.',
       },
       {
         title: 'Six-figure inquiries decay if not answered same-day',
         description:
-          'PLACEHOLDER — A prospect calling three agencies on Tuesday morning makes a shortlist by Tuesday afternoon. If you call back Wednesday, you are off the list.',
+          'PLACEHOLDER, A prospect calling three agencies on Tuesday morning makes a shortlist by Tuesday afternoon. If you call back Wednesday, you are off the list.',
       },
       {
         title: 'Junior account staff cannot qualify high-end retainers',
         description:
-          'PLACEHOLDER — Routing inbound to a coordinator means good-fit prospects get a generic intake. Bad fit, you waste a discovery slot. Either way, lost.',
+          'PLACEHOLDER, Routing inbound to a coordinator means good-fit prospects get a generic intake. Bad fit, you waste a discovery slot. Either way, lost.',
       },
     ],
     useCases: [
       {
         title: 'RFP qualification against your minimum-project rules',
         description:
-          'Industry, budget range, timeline, decision-makers — captured up front. Below-floor inquiries get a polite no-thanks. Above-floor get booked into discovery.',
+          'Industry, budget range, timeline, decision-makers, captured up front. Below-floor inquiries get a polite no-thanks. Above-floor get booked into discovery.',
       },
       {
         title: 'Existing-client routing to the right account team',
@@ -553,7 +553,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Cold-pitch and vendor-solicitation screening',
         description:
-          'Pattern-matched solicitations route to a callback queue your ops team reviews weekly — never to a founder.',
+          'Pattern-matched solicitations route to a callback queue your ops team reviews weekly, never to a founder.',
       },
     ],
     stats: [
@@ -562,8 +562,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-89%', label: 'cold-pitch noise to leadership' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Our discovery slots used to be 50% tire-kickers. Now they are 90% real RFPs. Our close rate doubled because we stopped wasting strategist time on bad fits.',
-    testimonialAuthor: 'PLACEHOLDER — Founder, mid-market agency',
+      'PLACEHOLDER, Our discovery slots used to be 50% tire-kickers. Now they are 90% real RFPs. Our close rate doubled because we stopped wasting strategist time on bad fits.',
+    testimonialAuthor: 'PLACEHOLDER, Founder, mid-market agency',
     faqs: [
       {
         question: 'Does it integrate with HubSpot, Salesforce, or our CRM?',
@@ -573,7 +573,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'How do we set the minimum-project bar?',
         answer:
-          'You define it during scoping — minimum retainer, minimum project size, accepted industries, anti-fit signals (e.g., crypto, MLM). The agent enforces it.',
+          'You define it during scoping, minimum retainer, minimum project size, accepted industries, anti-fit signals (e.g. crypto, MLM). The agent enforces it.',
       },
       {
         question: 'Can it handle press and partnership inquiries differently?',
@@ -583,7 +583,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Will it screen out cold pitches without offending callers?',
         answer:
-          'The agent gives every caller a respectful response. Cold pitches get a "we evaluate vendor inquiries quarterly — leave details" path.',
+          'The agent gives every caller a respectful response. Cold pitches get a "we evaluate vendor inquiries quarterly, leave details" path.',
       },
       {
         question: 'How long is deployment?',
@@ -610,7 +610,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'cleaning business receptionist',
     ],
     intro:
-      "A cleaning company runs on recurring revenue and tight scheduling. Your dispatcher is juggling key handoffs, gate codes, parking instructions, and the customer who wants to add a deep clean to next Thursday's appointment — all while the phone rings off the hook with new-customer calls. Most cleaning operators handle this by running their phone through a single dispatcher who picks up when she can. Half the time she cannot. Implenix is the AI receptionist for cleaning services: it answers every inbound inside one ring, books one-time and recurring jobs against your real availability, captures square footage / bathroom count / pet info / access instructions, and handles routine schedule changes without involving your dispatcher. New-customer intake captures the questions that actually matter — frequency, scope, surfaces, allergens — so your crew shows up ready. Recurring customers get fast-path identification: caller ID matches an active account, the agent skips intake and goes straight to schedule changes or add-ons. Commercial accounts with SLAs route to your account manager. Cancellations write back live so the slot reopens. The result: cleaning operators reclaim 12-15 hours per week of dispatcher phone time, capture 30-40% more after-hours bookings, and stop losing recurring customers to operational friction. The crew shows up to clean, not to apologize.",
+      "A cleaning company runs on recurring revenue and tight scheduling. Your dispatcher is juggling key handoffs, gate codes, parking instructions, and the customer who wants to add a deep clean to next Thursday's appointment, all while the phone rings off the hook with new-customer calls. Most cleaning operators handle this by running their phone through a single dispatcher who picks up when she can. Half the time she cannot. Implenix is the AI receptionist for cleaning services: it answers every inbound inside one ring, books one-time and recurring jobs against your real availability, captures square footage / bathroom count / pet info / access instructions, and handles routine schedule changes without involving your dispatcher. New-customer intake captures the questions that actually matter, frequency, scope, surfaces, allergens, so your crew shows up ready. Recurring customers get fast-path identification: caller ID matches an active account, the agent skips intake and goes straight to schedule changes or add-ons. Commercial accounts with SLAs route to your account manager. Cancellations write back live so the slot reopens. The result: cleaning operators reclaim 12-15 hours per week of dispatcher phone time, capture 30-40% more after-hours bookings, and stop losing recurring customers to operational friction. The crew shows up to clean, not to apologize.",
     heroStat: '+34%',
     heroStatLabel: 'after-hours bookings captured',
     avgWeeklyCalls: 130,
@@ -619,17 +619,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Dispatcher juggles phone and schedule simultaneously',
         description:
-          'PLACEHOLDER — One person answering the phone while moving keys, gate codes, and crew assignments. The phone always loses.',
+          'PLACEHOLDER, One person answering the phone while moving keys, gate codes, and crew assignments. The phone always loses.',
       },
       {
         title: 'Recurring customers churn over scheduling friction',
         description:
-          'PLACEHOLDER — A customer calls to move next Thursday, hits voicemail, tries the cleaner across town. By the time you call back the relationship is gone.',
+          'PLACEHOLDER, A customer calls to move next Thursday, hits voicemail, tries the cleaner across town. By the time you call back the relationship is gone.',
       },
       {
         title: 'Commercial SLA calls sit in the same queue as residential bids',
         description:
-          'PLACEHOLDER — A property manager with a contracted SLA expects priority. They will not get it from a queue that treats them like a new homeowner inquiry.',
+          'PLACEHOLDER, A property manager with a contracted SLA expects priority. They will not get it from a queue that treats them like a new homeowner inquiry.',
       },
     ],
     useCases: [
@@ -655,8 +655,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — My dispatcher used to spend half the day on the phone. Now she runs the schedule, handles exceptions, and the routine calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, residential cleaning service',
+      'PLACEHOLDER, My dispatcher used to spend half the day on the phone. Now she runs the schedule, handles exceptions, and the routine calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, residential cleaning service',
     faqs: [
       {
         question: 'Does it integrate with Jobber, Housecall Pro, ZenMaid?',
@@ -666,7 +666,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Can it handle recurring schedule changes?',
         answer:
-          'Yes. The agent moves the booking, frees the slot, writes the change back, and sends the customer a confirmation — without dispatcher involvement.',
+          'Yes. The agent moves the booking, frees the slot, writes the change back, and sends the customer a confirmation, without dispatcher involvement.',
       },
       {
         question: 'How does it handle key codes and access instructions?',
@@ -703,26 +703,26 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'lender receptionist',
     ],
     intro:
-      "A mortgage broker's pipeline is rate-sensitive and time-bound. Calls come in three flavors: rate-shoppers comparing five lenders in a single hour, existing clients chasing closing-document status, and Realtors needing pre-approval letters before tomorrow's offer deadline. Each one is high-stakes, and each one loses if it sits in voicemail. Implenix is the AI receptionist for mortgage brokers: it answers every inbound within one ring, qualifies rate-shoppers (loan amount, property type, credit posture, timeline) before they reach a loan officer, and routes existing-client questions through caller-verified fast-path. Pre-approval letter requests from Realtors get same-day priority routing. Document collection happens via secure SMS portal links the agent sends mid-call — borrowers stop saying \"I emailed it\" and the LO stops chasing missing pages. Compliance-sensitive intake follows your defined scripts so your team is not freelancing on disclosure language. After every call, the lead lands in your LOS or CRM with full context — including a recording the LO can review before calling back. Brokers who deploy Implenix typically cut LO phone time by 12-18 hours per week while qualified pre-approval volume climbs 40-50%, and Realtor partners stop dropping referrals because the broker is now the fastest call back in the market.",
+      "A mortgage broker's pipeline is rate-sensitive and time-bound. Calls come in three flavors: rate-shoppers comparing five lenders in a single hour, existing clients chasing closing-document status, and Realtors needing pre-approval letters before tomorrow's offer deadline. Each one is high-stakes, and each one loses if it sits in voicemail. Implenix is the AI receptionist for mortgage brokers: it answers every inbound within one ring, qualifies rate-shoppers (loan amount, property type, credit posture, timeline) before they reach a loan officer, and routes existing-client questions through caller-verified fast-path. Pre-approval letter requests from Realtors get same-day priority routing. Document collection happens via secure SMS portal links the agent sends mid-call, borrowers stop saying \"I emailed it\" and the LO stops chasing missing pages. Compliance-sensitive intake follows your defined scripts so your team is not freelancing on disclosure language. After every call, the lead lands in your LOS or CRM with full context, including a recording the LO can review before calling back. Brokers who deploy Implenix typically cut LO phone time by 12-18 hours per week while qualified pre-approval volume climbs 40-50%, and Realtor partners stop dropping referrals because the broker is now the fastest call back in the market.",
     heroStat: '+47%',
     heroStatLabel: 'qualified pre-approval requests',
     avgWeeklyCalls: 120,
     avgClientValue: 4200,
     painPoints: [
       {
-        title: 'Rate-shoppers do not wait — they call the next number',
+        title: 'Rate-shoppers do not wait, they call the next number',
         description:
-          'PLACEHOLDER — Mortgage shoppers call 4-6 lenders in a single hour. If you do not pick up, they are gone before you even know they called.',
+          'PLACEHOLDER, Mortgage shoppers call 4-6 lenders in a single hour. If you do not pick up, they are gone before you even know they called.',
       },
       {
         title: 'Loan officers burn an hour daily on document chase',
         description:
-          'PLACEHOLDER — "I sent it." "I did not receive it." "Let me re-send." Multiplied across every active file, this is real labor cost.',
+          'PLACEHOLDER, "I sent it." "I did not receive it." "Let me re-send." Multiplied across every active file, this is real labor cost.',
       },
       {
         title: 'Realtor partners drop you over response time',
         description:
-          'PLACEHOLDER — A Realtor needs a pre-approval letter by tomorrow morning. If you call back at 4 PM, they used a different lender on the offer.',
+          'PLACEHOLDER, A Realtor needs a pre-approval letter by tomorrow morning. If you call back at 4 PM, they used a different lender on the offer.',
       },
     ],
     useCases: [
@@ -748,8 +748,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<2 min', label: 'Realtor response time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — My LOs stopped working until 9 PM chasing documents. The agent collects them during the first call and we close on time.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, regional mortgage brokerage',
+      'PLACEHOLDER, My LOs stopped working until 9 PM chasing documents. The agent collects them during the first call and we close on time.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, regional mortgage brokerage',
     faqs: [
       {
         question: 'Does it integrate with Encompass, BytePro, LendingPad?',
@@ -787,7 +787,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'insurance agency',
     metaTitle: 'AI Receptionist for Insurance Agents | Implenix',
     metaDescription:
-      'AI receptionist for insurance agents and agencies. Handle quote requests, claim intake, and policy questions — without burning your producers on the phone.',
+      'AI receptionist for insurance agents and agencies. Handle quote requests, claim intake, and policy questions, without burning your producers on the phone.',
     targetKeyword: 'ai receptionist for insurance agents',
     relatedKeywords: [
       'insurance agency answering service',
@@ -796,7 +796,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'insurance quote intake',
     ],
     intro:
-      "An insurance agency's phone traffic looks deceptively simple from the outside: people call to get a quote, ask a policy question, or report a claim. Inside the agency, those three buckets eat the entire day. Producers should be selling. Instead, they are answering \"is this covered\" calls. CSRs should be handling renewals. Instead, they are intaking auto claims at 7 PM. Implenix is the AI receptionist for insurance agents: it answers every inbound within one ring, runs your quote intake script, routes claim calls into your defined claim-intake path, and handles routine policy questions without producer involvement. Quote intake captures the data your producers actually need — driver count, vehicles, drivers' age, coverage limits, prior carrier — so the producer's first callback is a real conversation, not a fact-finding mission. Existing-policyholders get caller-verified fast-path: name and policy number look up the account, and the agent answers most billing/policy/coverage questions directly from your AMS. Claim intake follows your carrier's required script and routes to the right adjuster path. After-hours claim calls do not hit voicemail — they get full intake. The result: agencies cut producer phone time by 15-20 hours per week, capture 35-45% more after-hours quote requests, and stop losing renewal customers to the agency that picks up faster.",
+      "An insurance agency's phone traffic looks deceptively simple from the outside: people call to get a quote, ask a policy question, or report a claim. Inside the agency, those three buckets eat the entire day. Producers should be selling. Instead, they are answering \"is this covered\" calls. CSRs should be handling renewals. Instead, they are intaking auto claims at 7 PM. Implenix is the AI receptionist for insurance agents: it answers every inbound within one ring, runs your quote intake script, routes claim calls into your defined claim-intake path, and handles routine policy questions without producer involvement. Quote intake captures the data your producers actually need, driver count, vehicles, drivers' age, coverage limits, prior carrier, so the producer's first callback is a real conversation, not a fact-finding mission. Existing-policyholders get caller-verified fast-path: name and policy number look up the account, and the agent answers most billing/policy/coverage questions directly from your AMS. Claim intake follows your carrier's required script and routes to the right adjuster path. After-hours claim calls do not hit voicemail, they get full intake. The result: agencies cut producer phone time by 15-20 hours per week, capture 35-45% more after-hours quote requests, and stop losing renewal customers to the agency that picks up faster.",
     heroStat: '+42%',
     heroStatLabel: 'after-hours quote requests captured',
     avgWeeklyCalls: 140,
@@ -805,24 +805,24 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Producers stuck on the phone instead of selling',
         description:
-          'PLACEHOLDER — Every "is my deductible $500 or $1000" call answered by a producer is real commission lost. The agency feels expensive without being efficient.',
+          'PLACEHOLDER, Every "is my deductible $500 or $1000" call answered by a producer is real commission lost. The agency feels expensive without being efficient.',
       },
       {
         title: 'Claim intake at 7 PM goes to voicemail',
         description:
-          'PLACEHOLDER — Auto accidents do not happen 9-5. If your claim line is voicemail after hours, customers feel unsupported and your retention drops.',
+          'PLACEHOLDER, Auto accidents do not happen 9-5. If your claim line is voicemail after hours, customers feel unsupported and your retention drops.',
       },
       {
         title: 'Quote shoppers comparison-shop in real time',
         description:
-          'PLACEHOLDER — Auto and home shoppers call 3-5 agents in an hour. The first to answer with a quote becomes the favorite.',
+          'PLACEHOLDER, Auto and home shoppers call 3-5 agents in an hour. The first to answer with a quote becomes the favorite.',
       },
     ],
     useCases: [
       {
         title: 'Quote intake with line-of-business triage',
         description:
-          'Auto, home, life, commercial — each path has its own intake. Driver counts, vehicles, coverage history captured cleanly for the producer.',
+          'Auto, home, life, commercial, each path has its own intake. Driver counts, vehicles, coverage history captured cleanly for the producer.',
       },
       {
         title: 'Existing-policyholder self-service',
@@ -841,8 +841,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '100%', label: 'claim coverage 24/7' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — My producers used to lose their first hour every morning to "did you get my email" calls. Now they pick up at 9 and start closing.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, multi-line independent agency',
+      'PLACEHOLDER, My producers used to lose their first hour every morning to "did you get my email" calls. Now they pick up at 9 and start closing.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, multi-line independent agency',
     faqs: [
       {
         question: 'Does it integrate with AMS360, Applied Epic, EZLynx?',
@@ -880,7 +880,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'veterinary practice',
     metaTitle: 'AI Receptionist for Veterinarians | Implenix',
     metaDescription:
-      'AI receptionist for veterinary practices. Triage emergencies, book wellness exams, and handle anxious pet-parent calls — 24/7, with your tone.',
+      'AI receptionist for veterinary practices. Triage emergencies, book wellness exams, and handle anxious pet-parent calls, 24/7, with your tone.',
     targetKeyword: 'ai receptionist for veterinarians',
     relatedKeywords: [
       'veterinary clinic answering service',
@@ -889,7 +889,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'pet emergency call routing',
     ],
     intro:
-      "A veterinary practice handles three call types in the same queue: anxious pet parents calling about something that might be an emergency, routine wellness/booking calls, and prescription/food refill requests. The mix is brutal because every caller thinks their call is the urgent one — and one of them really is. Voicemail is not an option for a vet. A pet parent who hits voicemail when their dog is bloating drives to the emergency clinic across town and never comes back. Implenix is the AI receptionist for veterinarians: it answers every inbound within one ring, triages emergencies against your defined urgent-criteria list (bloating, seizures, ingestion, breathing trouble, hit-by-car, large-breed limp), and routes them straight to your on-call line or the nearest emergency partner. Routine wellness bookings happen live against your PIMS schedule. Refill requests follow your in-house pharmacy or online formulary path. New-client intake captures species, breed, age, vaccine history, prior vet, and reason for visit before the appointment is booked. After hours, urgent triage stays live; non-urgent goes into a callback queue your tech reviews first thing. The agent's tone is warm — it knows pet parents are scared. Practices that deploy Implenix typically cut tech and front-desk phone time 15-20 hours per week, see no-show rates drop 25-30% with proactive confirmations, and stop losing emergency triage to the urgent-care across the street.",
+      "A veterinary practice handles three call types in the same queue: anxious pet parents calling about something that might be an emergency, routine wellness/booking calls, and prescription/food refill requests. The mix is brutal because every caller thinks their call is the urgent one, and one of them really is. Voicemail is not an option for a vet. A pet parent who hits voicemail when their dog is bloating drives to the emergency clinic across town and never comes back. Implenix is the AI receptionist for veterinarians: it answers every inbound within one ring, triages emergencies against your defined urgent-criteria list (bloating, seizures, ingestion, breathing trouble, hit-by-car, large-breed limp), and routes them straight to your on-call line or the nearest emergency partner. Routine wellness bookings happen live against your PIMS schedule. Refill requests follow your in-house pharmacy or online formulary path. New-client intake captures species, breed, age, vaccine history, prior vet, and reason for visit before the appointment is booked. After hours, urgent triage stays live; non-urgent goes into a callback queue your tech reviews first thing. The agent's tone is warm, it knows pet parents are scared. Practices that deploy Implenix typically cut tech and front-desk phone time 15-20 hours per week, see no-show rates drop 25-30% with proactive confirmations, and stop losing emergency triage to the urgent-care across the street.",
     heroStat: '+91%',
     heroStatLabel: 'after-hours triage capture rate',
     avgWeeklyCalls: 200,
@@ -898,29 +898,29 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Anxious pet parents hitting voicemail at 9 PM',
         description:
-          'PLACEHOLDER — A panicked owner whose dog is bloating cannot wait. They drive to the emergency clinic across town and never come back.',
+          'PLACEHOLDER, A panicked owner whose dog is bloating cannot wait. They drive to the emergency clinic across town and never come back.',
       },
       {
         title: 'Front desk drowns in routine refill calls',
         description:
-          'PLACEHOLDER — Refill requests follow a clean script but eat front-desk time. The receptionist has no bandwidth left for the new puppy walking through the door.',
+          'PLACEHOLDER, Refill requests follow a clean script but eat front-desk time. The receptionist has no bandwidth left for the new puppy walking through the door.',
       },
       {
         title: 'New-client intake is inconsistent',
         description:
-          'PLACEHOLDER — Different staff capture different intake fields. The DVM sometimes walks into the room without species or vaccine history loaded.',
+          'PLACEHOLDER, Different staff capture different intake fields. The DVM sometimes walks into the room without species or vaccine history loaded.',
       },
     ],
     useCases: [
       {
         title: 'Emergency triage against urgent-criteria list',
         description:
-          'Bloating, seizures, ingestion, breathing trouble — flagged urgent and routed live to your on-call line or nearest emergency partner.',
+          'Bloating, seizures, ingestion, breathing trouble, flagged urgent and routed live to your on-call line or nearest emergency partner.',
       },
       {
         title: 'Wellness booking against PIMS schedule',
         description:
-          'Avimark, Cornerstone, ezyVet, Vetspire — the agent reads real availability and books with full intake (species, breed, age, vaccine history).',
+          'Avimark, Cornerstone, ezyVet, Vetspire, the agent reads real availability and books with full intake (species, breed, age, vaccine history).',
       },
       {
         title: 'Refill requests with formulary routing',
@@ -934,8 +934,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-17h', label: 'front-desk phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Our front desk used to be in tears by Friday. Now they actually leave the building at closing. The agent handles the volume.',
-    testimonialAuthor: 'PLACEHOLDER — Practice manager, two-doctor small animal clinic',
+      'PLACEHOLDER, Our front desk used to be in tears by Friday. Now they actually leave the building at closing. The agent handles the volume.',
+    testimonialAuthor: 'PLACEHOLDER, Practice manager, two-doctor small animal clinic',
     faqs: [
       {
         question: 'Does it integrate with Avimark, Cornerstone, ezyVet?',
@@ -982,7 +982,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'spine clinic receptionist',
     ],
     intro:
-      "Chiropractic practices have a particular phone problem: the busy hours on the phone are the same hours the doctor is in adjustments. New-patient calls land at 11 AM when the entire team is mid-treatment. Existing-patient reschedules pile up. Insurance authorization questions follow a script the front desk could handle in their sleep — except they are not at the desk, they are running the table. Implenix is the AI receptionist for chiropractors: it answers every inbound within one ring, books new-patient intake with insurance pre-screening (carrier, member ID, prior auth, treatment history), handles existing-patient reschedules live, and routes anything clinical to the doctor's callback queue. Recurring patients on care plans get fast-path identification — name and DOB lookup pulls them out of the new-patient queue. Insurance auth questions follow your verification script. Treatment-plan upgrades and re-exams route to the appropriate path. The result: chiropractors capture 30-40% more new-patient bookings without hiring a second front-desk staff, no-show rates drop 20-25% with proactive confirmations, and the doctor stops walking into the next adjustment behind because someone needed to take a phone call. Treatment time stays treatment time.",
+      "Chiropractic practices have a particular phone problem: the busy hours on the phone are the same hours the doctor is in adjustments. New-patient calls land at 11 AM when the entire team is mid-treatment. Existing-patient reschedules pile up. Insurance authorization questions follow a script the front desk could handle in their sleep, except they are not at the desk, they are running the table. Implenix is the AI receptionist for chiropractors: it answers every inbound within one ring, books new-patient intake with insurance pre-screening (carrier, member ID, prior auth, treatment history), handles existing-patient reschedules live, and routes anything clinical to the doctor's callback queue. Recurring patients on care plans get fast-path identification, name and DOB lookup pulls them out of the new-patient queue. Insurance auth questions follow your verification script. Treatment-plan upgrades and re-exams route to the appropriate path. The result: chiropractors capture 30-40% more new-patient bookings without hiring a second front-desk staff, no-show rates drop 20-25% with proactive confirmations, and the doctor stops walking into the next adjustment behind because someone needed to take a phone call. Treatment time stays treatment time.",
     heroStat: '+36%',
     heroStatLabel: 'new-patient bookings in 30 days',
     avgWeeklyCalls: 165,
@@ -991,17 +991,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Phone rings during the busiest adjustment hours',
         description:
-          'PLACEHOLDER — Peak treatment hours are also peak inbound. The front desk is on the table, not at the desk. New patients hit voicemail.',
+          'PLACEHOLDER, Peak treatment hours are also peak inbound. The front desk is on the table, not at the desk. New patients hit voicemail.',
       },
       {
         title: 'Insurance auth eats half the day',
         description:
-          'PLACEHOLDER — Verifying coverage and prior auth follows a clean script — but it is repetitive, time-consuming, and easy to drop.',
+          'PLACEHOLDER, Verifying coverage and prior auth follows a clean script, but it is repetitive, time-consuming, and easy to drop.',
       },
       {
         title: 'No-shows compound across recurring care plans',
         description:
-          'PLACEHOLDER — A patient on a 24-visit plan who no-shows breaks the entire week. Without proactive reminders, this happens constantly.',
+          'PLACEHOLDER, A patient on a 24-visit plan who no-shows breaks the entire week. Without proactive reminders, this happens constantly.',
       },
     ],
     useCases: [
@@ -1027,8 +1027,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Before Implenix I was running back to the front desk every 20 minutes. Now I run my schedule and the calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER — DC, two-provider chiropractic clinic',
+      'PLACEHOLDER, Before Implenix I was running back to the front desk every 20 minutes. Now I run my schedule and the calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER, DC, two-provider chiropractic clinic',
     faqs: [
       {
         question: 'Does it integrate with ChiroTouch, Genesis, eClinicalWorks?',
@@ -1075,7 +1075,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'therapist call handling',
     ],
     intro:
-      "Therapists have the most sensitive phone problem in any service business. Every new-client call is someone reaching out, often after a long pause. Voicemail can break that thread permanently. Existing clients sometimes call in moments of crisis. Insurance and sliding-scale questions are emotionally loaded. Yet most therapy practices route their phone through the same provider who is in session 25 hours a week. Implenix is the AI receptionist for therapists: it answers every inbound within one ring with a warm, screened voice, runs your new-client intake (presenting concern, insurance / sliding-scale, prior therapy, geographic location, modality preference), and books only when your practice rules allow. Crisis-keyword detection routes self-harm and acute-distress callers directly to your defined crisis path — your warm-line, an on-call clinician, or 988 — within seconds, never to voicemail. Existing-client questions about scheduling, copay, or telehealth links resolve without disrupting your session schedule. Sliding-scale conversations follow your stated policy without freelancing. After-hours, urgent triage stays live; non-urgent goes into a callback queue your office manager handles first thing. The tone matches the field. The intake is consistent. And the provider keeps their session hours protected, which is the whole point.",
+      "Therapists have the most sensitive phone problem in any service business. Every new-client call is someone reaching out, often after a long pause. Voicemail can break that thread permanently. Existing clients sometimes call in moments of crisis. Insurance and sliding-scale questions are emotionally loaded. Yet most therapy practices route their phone through the same provider who is in session 25 hours a week. Implenix is the AI receptionist for therapists: it answers every inbound within one ring with a warm, screened voice, runs your new-client intake (presenting concern, insurance / sliding-scale, prior therapy, geographic location, modality preference), and books only when your practice rules allow. Crisis-keyword detection routes self-harm and acute-distress callers directly to your defined crisis path, your warm-line, an on-call clinician, or 988, within seconds, never to voicemail. Existing-client questions about scheduling, copay, or telehealth links resolve without disrupting your session schedule. Sliding-scale conversations follow your stated policy without freelancing. After-hours, urgent triage stays live; non-urgent goes into a callback queue your office manager handles first thing. The tone matches the field. The intake is consistent. And the provider keeps their session hours protected, which is the whole point.",
     heroStat: '+44%',
     heroStatLabel: 'new-client intake conversion',
     avgWeeklyCalls: 90,
@@ -1084,17 +1084,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'New-client calls land in provider voicemail',
         description:
-          'PLACEHOLDER — A first-time call took courage. If it ends in voicemail, that thread often breaks for good.',
+          'PLACEHOLDER, A first-time call took courage. If it ends in voicemail, that thread often breaks for good.',
       },
       {
         title: 'Crisis calls cannot wait for callback',
         description:
-          'PLACEHOLDER — A client in acute distress calling at 9 PM needs an answer in seconds, not the next morning.',
+          'PLACEHOLDER, A client in acute distress calling at 9 PM needs an answer in seconds, not the next morning.',
       },
       {
         title: 'Insurance and sliding-scale questions burn provider time',
         description:
-          'PLACEHOLDER — Detailed, emotionally loaded conversations that follow a clear policy — but cost the provider real session hours.',
+          'PLACEHOLDER, Detailed, emotionally loaded conversations that follow a clear policy, but cost the provider real session hours.',
       },
     ],
     useCases: [
@@ -1106,7 +1106,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Crisis-keyword detection with live routing',
         description:
-          'Self-harm and acute-distress phrases route immediately to your warm-line, on-call clinician, or 988 — never to voicemail.',
+          'Self-harm and acute-distress phrases route immediately to your warm-line, on-call clinician, or 988, never to voicemail.',
       },
       {
         title: 'Existing-client schedule + copay handling',
@@ -1120,8 +1120,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-12h', label: 'provider phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — My new clients used to drop off after a missed first call. Now every initial call gets answered, screened, and warmly handed back to me.',
-    testimonialAuthor: 'PLACEHOLDER — LCSW, solo private practice',
+      'PLACEHOLDER, My new clients used to drop off after a missed first call. Now every initial call gets answered, screened, and warmly handed back to me.',
+    testimonialAuthor: 'PLACEHOLDER, LCSW, solo private practice',
     faqs: [
       {
         question: 'Is it appropriate for sensitive mental health calls?',
@@ -1146,7 +1146,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         question: 'Can it handle sliding-scale conversations?',
         answer:
-          'Yes — within the stated policy you provide. The agent does not freelance fee discussions; it follows your script.',
+          'Yes, within the stated policy you provide. The agent does not freelance fee discussions; it follows your script.',
       },
     ],
     caseStudySlug: 'placeholder-dental',
@@ -1168,7 +1168,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'spa call automation',
     ],
     intro:
-      "A day spa lives in a quiet contradiction: the front desk is supposed to be a calm, welcoming presence for the guest checking in — and a hot phone line at the same time. Massage and facial bookings, package and gift-card questions, group bookings for bridal parties, and last-minute cancellations all collide in the same queue, with the same staff person, during the same hour the spa is busiest. Implenix is the AI receptionist for spas: it answers every inbound within one ring, books treatments live against your scheduling system, handles gift-card balance and package-redemption questions directly from your point-of-sale, and routes group bookings (bridal, mother-daughter, corporate) into the right coordinator queue. New-guest intake captures intake-form needs, allergens, mobility considerations, and pregnancy/treatment contraindications so therapists are not surprised. Returning guests get fast-path identification — caller ID matches the account, intake skipped, schedule shown. Cancellations and reschedules write back live so the slot reopens for the next caller. After-hours bookings flow normally; Saturday-morning rushes do not break the front desk. The result: spas reclaim 15-18 hours per week of front-desk phone time, capture 30-40% more after-hours bookings, and the guest in the lobby actually gets a calm welcome instead of being mid-conversation when the next call rings.",
+      "A day spa lives in a quiet contradiction: the front desk is supposed to be a calm, welcoming presence for the guest checking in, and a hot phone line at the same time. Massage and facial bookings, package and gift-card questions, group bookings for bridal parties, and last-minute cancellations all collide in the same queue, with the same staff person, during the same hour the spa is busiest. Implenix is the AI receptionist for spas: it answers every inbound within one ring, books treatments live against your scheduling system, handles gift-card balance and package-redemption questions directly from your point-of-sale, and routes group bookings (bridal, mother-daughter, corporate) into the right coordinator queue. New-guest intake captures intake-form needs, allergens, mobility considerations, and pregnancy/treatment contraindications so therapists are not surprised. Returning guests get fast-path identification, caller ID matches the account, intake skipped, schedule shown. Cancellations and reschedules write back live so the slot reopens for the next caller. After-hours bookings flow normally; Saturday-morning rushes do not break the front desk. The result: spas reclaim 15-18 hours per week of front-desk phone time, capture 30-40% more after-hours bookings, and the guest in the lobby actually gets a calm welcome instead of being mid-conversation when the next call rings.",
     heroStat: '+38%',
     heroStatLabel: 'after-hours bookings captured',
     avgWeeklyCalls: 155,
@@ -1177,17 +1177,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Front desk cannot greet guests and answer calls at once',
         description:
-          'PLACEHOLDER — The first impression of a spa is the front desk. When the phone rings every two minutes, the in-person guest gets the worse experience.',
+          'PLACEHOLDER, The first impression of a spa is the front desk. When the phone rings every two minutes, the in-person guest gets the worse experience.',
       },
       {
         title: 'Gift-card and package questions are repetitive call-killers',
         description:
-          'PLACEHOLDER — "Can you check my gift-card balance" follows a clean script but eats real time. Multiplied across the day, it is the front desk\'s third job.',
+          'PLACEHOLDER, "Can you check my gift-card balance" follows a clean script but eats real time. Multiplied across the day, it is the front desk\'s third job.',
       },
       {
         title: 'Bridal and group bookings get lost in the routine queue',
         description:
-          'PLACEHOLDER — A six-person bridal package is a real revenue event. If the booking call hits voicemail, that party books somewhere else.',
+          'PLACEHOLDER, A six-person bridal package is a real revenue event. If the booking call hits voicemail, that party books somewhere else.',
       },
     ],
     useCases: [
@@ -1213,8 +1213,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Saturday lobbies used to be a circus. Now the front desk is actually with our guests and the phone still gets answered every time.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, multi-room day spa',
+      'PLACEHOLDER, Saturday lobbies used to be a circus. Now the front desk is actually with our guests and the phone still gets answered every time.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, multi-room day spa',
     faqs: [
       {
         question: 'Does it integrate with Mindbody, Boulevard, Booker, Vagaro?',
@@ -1261,7 +1261,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'landscape business phone ai',
     ],
     intro:
-      "Landscaping is a seasonal business with a non-seasonal phone problem. Spring brings a six-week deluge of cleanup, mulch, irrigation, and design-build calls. Summer is recurring maintenance plus weather-driven rescheduling chaos. Fall is leaf-removal and hardscape bids. Winter is plowing dispatch when it snows and silence when it does not. Most landscapers handle all of it with the owner's cell phone, which means the moment a crew leaves for the first job at 6:30 AM, every inbound call goes to voicemail until lunch. Implenix is the AI receptionist for landscapers: it answers every inbound within one ring, qualifies design-build bids (property size, scope, decision-makers, budget posture), books recurring maintenance customers against your real route schedule, and handles weather-driven reschedules without involving the owner. Plowing dispatch flips on automatically when storms hit. Commercial accounts route to your account manager. Routine calls — \"can you skip me this week\" or \"add an extra cut\" — happen live and write back to your scheduling system. The result: landscapers capture 40-60% more spring-season bid calls without hiring temporary staff, weather reschedules stop breaking the route, and the owner stops missing dinner because the phone never quits.",
+      "Landscaping is a seasonal business with a non-seasonal phone problem. Spring brings a six-week deluge of cleanup, mulch, irrigation, and design-build calls. Summer is recurring maintenance plus weather-driven rescheduling chaos. Fall is leaf-removal and hardscape bids. Winter is plowing dispatch when it snows and silence when it does not. Most landscapers handle all of it with the owner's cell phone, which means the moment a crew leaves for the first job at 6:30 AM, every inbound call goes to voicemail until lunch. Implenix is the AI receptionist for landscapers: it answers every inbound within one ring, qualifies design-build bids (property size, scope, decision-makers, budget posture), books recurring maintenance customers against your real route schedule, and handles weather-driven reschedules without involving the owner. Plowing dispatch flips on automatically when storms hit. Commercial accounts route to your account manager. Routine calls, \"can you skip me this week\" or \"add an extra cut\", happen live and write back to your scheduling system. The result: landscapers capture 40-60% more spring-season bid calls without hiring temporary staff, weather reschedules stop breaking the route, and the owner stops missing dinner because the phone never quits.",
     heroStat: '+52%',
     heroStatLabel: 'spring-season bid calls captured',
     avgWeeklyCalls: 145,
@@ -1270,17 +1270,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Spring season buries the owner\'s phone',
         description:
-          'PLACEHOLDER — March-May call volume is 4x baseline. Without surge capacity, design-build bids die in voicemail and routine maintenance customers churn.',
+          'PLACEHOLDER, March-May call volume is 4x baseline. Without surge capacity, design-build bids die in voicemail and routine maintenance customers churn.',
       },
       {
         title: 'Weather reschedules break the entire route',
         description:
-          'PLACEHOLDER — Rain pushes today\'s route to tomorrow. Customers call to confirm or move. Without live handling, the route compounds and everyone is angry by Friday.',
+          'PLACEHOLDER, Rain pushes today\'s route to tomorrow. Customers call to confirm or move. Without live handling, the route compounds and everyone is angry by Friday.',
       },
       {
         title: 'Crews are unreachable, owner answers everything',
         description:
-          'PLACEHOLDER — The crew leaves at 6:30 AM. The owner is in a truck with cement gloves on. The phone rings until lunch.',
+          'PLACEHOLDER, The crew leaves at 6:30 AM. The owner is in a truck with cement gloves on. The phone rings until lunch.',
       },
     ],
     useCases: [
@@ -1306,8 +1306,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-12h', label: 'owner phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — March used to mean 16-hour days because the phone never stopped. This year I left at 6 PM most nights.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, residential landscaping company',
+      'PLACEHOLDER, March used to mean 16-hour days because the phone never stopped. This year I left at 6 PM most nights.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, residential landscaping company',
     faqs: [
       {
         question: 'Does it integrate with LMN, Aspire, Service Autopilot?',
@@ -1345,7 +1345,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
     nicheSingular: 'pest control company',
     metaTitle: 'AI Receptionist for Pest Control Companies | Implenix',
     metaDescription:
-      'AI receptionist for pest control companies. Capture emergency infestation calls, book recurring service, and qualify commercial accounts — 24/7.',
+      'AI receptionist for pest control companies. Capture emergency infestation calls, book recurring service, and qualify commercial accounts, 24/7.',
     targetKeyword: 'ai receptionist for pest control',
     relatedKeywords: [
       'pest control answering service',
@@ -1354,7 +1354,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'commercial pest dispatch',
     ],
     intro:
-      "A pest control operator's phone has two modes: routine recurring service and the high-emotion emergency call from a customer who just discovered something they cannot live with. The emergency calls do not wait — a homeowner who sees rodents at 8 PM is calling three companies, and the first to pick up wins. Most operators handle this with a dispatcher who covers business hours and a callback service that does not. Implenix is the AI receptionist for pest control companies: it answers every inbound within one ring, triages emergency infestations against your urgent-pest list (rodents, bedbugs, wasps, termites, hornets), books recurring service against your route schedule, and routes commercial accounts to your account manager. New-customer intake captures pest type, location, square footage, pets/children present, and prior treatment history so the tech rolls with the right product. Recurring customers on a quarterly contract get fast-path identification — name and address lookup pulls them out of the new-business queue. Commercial accounts with SLAs route to dedicated handling. The result: pest control operators capture 40-50% more emergency calls during peak pest season, reduce dispatch friction during summer rushes, and stop losing recurring customers to the company that picked up the phone first.",
+      "A pest control operator's phone has two modes: routine recurring service and the high-emotion emergency call from a customer who just discovered something they cannot live with. The emergency calls do not wait, a homeowner who sees rodents at 8 PM is calling three companies, and the first to pick up wins. Most operators handle this with a dispatcher who covers business hours and a callback service that does not. Implenix is the AI receptionist for pest control companies: it answers every inbound within one ring, triages emergency infestations against your urgent-pest list (rodents, bedbugs, wasps, termites, hornets), books recurring service against your route schedule, and routes commercial accounts to your account manager. New-customer intake captures pest type, location, square footage, pets/children present, and prior treatment history so the tech rolls with the right product. Recurring customers on a quarterly contract get fast-path identification, name and address lookup pulls them out of the new-business queue. Commercial accounts with SLAs route to dedicated handling. The result: pest control operators capture 40-50% more emergency calls during peak pest season, reduce dispatch friction during summer rushes, and stop losing recurring customers to the company that picked up the phone first.",
     heroStat: '+48%',
     heroStatLabel: 'emergency-call capture rate',
     avgWeeklyCalls: 130,
@@ -1363,24 +1363,24 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Emergency infestation calls hit voicemail at 8 PM',
         description:
-          'PLACEHOLDER — A homeowner who just found rodents calls three companies in 10 minutes. Voicemail loses the job permanently.',
+          'PLACEHOLDER, A homeowner who just found rodents calls three companies in 10 minutes. Voicemail loses the job permanently.',
       },
       {
         title: 'Summer pest season overwhelms dispatch',
         description:
-          'PLACEHOLDER — Wasp and ant season runs 4-5x baseline call volume. Without surge capacity, recurring customers feel deprioritized.',
+          'PLACEHOLDER, Wasp and ant season runs 4-5x baseline call volume. Without surge capacity, recurring customers feel deprioritized.',
       },
       {
         title: 'Commercial SLAs drown in residential queue',
         description:
-          'PLACEHOLDER — A restaurant with a contracted SLA expects priority. Without account-aware routing, they sit behind a homeowner asking about ant traps.',
+          'PLACEHOLDER, A restaurant with a contracted SLA expects priority. Without account-aware routing, they sit behind a homeowner asking about ant traps.',
       },
     ],
     useCases: [
       {
         title: 'Emergency triage by pest type',
         description:
-          'Rodents, bedbugs, wasps, termites, hornets — flagged urgent and dispatched immediately. Routine pests get booked into the next available window.',
+          'Rodents, bedbugs, wasps, termites, hornets, flagged urgent and dispatched immediately. Routine pests get booked into the next available window.',
       },
       {
         title: 'Recurring contract fast-path with route awareness',
@@ -1399,8 +1399,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-15h', label: 'dispatcher phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Last summer we lost about 20 emergency calls a week to voicemail. This year, every one got picked up and dispatched.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, regional pest control company',
+      'PLACEHOLDER, Last summer we lost about 20 emergency calls a week to voicemail. This year, every one got picked up and dispatched.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, regional pest control company',
     faqs: [
       {
         question: 'Does it integrate with PestPac, ServSuite, FieldRoutes?',
@@ -1447,7 +1447,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'moving call automation',
     ],
     intro:
-      "Moving is the most seasonal business in the service economy. Memorial Day through Labor Day, every operator runs at 130% of capacity, the phone never stops, and every call that hits voicemail is a $1,500-$8,000 job that books with whoever answered. Quote intake is the bottleneck because it is detailed: pickup, destination, square footage, stairs, elevators, parking permits, packing scope, specialty items, dates flexible vs hard. The owner can either answer the phone or run the job — not both. Implenix is the AI receptionist for moving companies: it answers every inbound within one ring, runs the quote intake script your estimator would, captures all the pricing-relevant variables, and books site surveys (virtual or in-person) into your real calendar. Local vs long-distance vs commercial each follow their own qualification path. High-touch quotes (executive relocations, fragile/specialty items, multi-day) route to your senior estimator. Same-day or next-day moves get screened against capacity. Off-season the agent handles steady-state volume; peak season it scales without overtime. After-call attribution writes the lead into your CRM with full intake — your estimator's first callback is a real conversation, not a 20-minute fact-finding call.",
+      "Moving is the most seasonal business in the service economy. Memorial Day through Labor Day, every operator runs at 130% of capacity, the phone never stops, and every call that hits voicemail is a $1,500-$8,000 job that books with whoever answered. Quote intake is the bottleneck because it is detailed: pickup, destination, square footage, stairs, elevators, parking permits, packing scope, specialty items, dates flexible vs hard. The owner can either answer the phone or run the job, not both. Implenix is the AI receptionist for moving companies: it answers every inbound within one ring, runs the quote intake script your estimator would, captures all the pricing-relevant variables, and books site surveys (virtual or in-person) into your real calendar. Local vs long-distance vs commercial each follow their own qualification path. High-touch quotes (executive relocations, fragile/specialty items, multi-day) route to your senior estimator. Same-day or next-day moves get screened against capacity. Off-season the agent handles steady-state volume; peak season it scales without overtime. After-call attribution writes the lead into your CRM with full intake, your estimator's first callback is a real conversation, not a 20-minute fact-finding call.",
     heroStat: '+58%',
     heroStatLabel: 'peak-season quote calls captured',
     avgWeeklyCalls: 175,
@@ -1456,17 +1456,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Memorial Day through Labor Day buries the phone',
         description:
-          'PLACEHOLDER — Peak season runs 3-4x baseline volume. Without surge capacity, $5K+ jobs die in voicemail every single day.',
+          'PLACEHOLDER, Peak season runs 3-4x baseline volume. Without surge capacity, $5K+ jobs die in voicemail every single day.',
       },
       {
         title: 'Quote intake is too detailed for owners on jobs',
         description:
-          'PLACEHOLDER — A real estimate needs 15+ variables. Owners on a job site cannot capture them on a rushed call. The estimate is wrong, the move is bid badly.',
+          'PLACEHOLDER, A real estimate needs 15+ variables. Owners on a job site cannot capture them on a rushed call. The estimate is wrong, the move is bid badly.',
       },
       {
         title: 'Long-distance and commercial calls mix with local',
         description:
-          'PLACEHOLDER — A long-distance corporate relocation needs different intake than a local apartment move. Same queue, same script — both lose.',
+          'PLACEHOLDER, A long-distance corporate relocation needs different intake than a local apartment move. Same queue, same script, both lose.',
       },
     ],
     useCases: [
@@ -1481,7 +1481,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
           'Each move type has its own intake. Long-distance corporate relocations route to the senior estimator from the start.',
       },
       {
-        title: 'Site survey booking — virtual or in-person',
+        title: 'Site survey booking, virtual or in-person',
         description:
           'Books surveys directly into your calendar with full context. Customer chooses virtual vs in-person based on your rules.',
       },
@@ -1492,8 +1492,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+24%', label: 'estimator close rate' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — June used to be chaos. We dropped 20 calls a day. This year we picked them all up and our close rate went up because the intake was actually complete.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, regional moving company',
+      'PLACEHOLDER, June used to be chaos. We dropped 20 calls a day. This year we picked them all up and our close rate went up because the intake was actually complete.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, regional moving company',
     faqs: [
       {
         question: 'Does it integrate with SmartMoving, MoveitPro, Network Movers?',
@@ -1540,7 +1540,7 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       'training receptionist',
     ],
     intro:
-      "A personal trainer's most expensive hours — the ones in actual sessions with clients — are also the hours when new-client inquiry calls land. Solo trainers are with a client at the moment a prospect calls; small studios have the same problem multiplied across coaches. The result is a familiar pattern: prospect researches, calls three studios, two pick up, one is yours, you call back two hours later, the prospect already booked. Implenix is the AI receptionist for personal trainers: it answers every inbound within one ring, runs your consultation intake (goals, current activity, injuries, schedule, package preference), and books the discovery session directly into your calendar against your real availability. Existing clients get fast-path identification — they can move sessions, ask package balance questions, or buy add-ons without disrupting your training schedule. Class and group-training inquiries follow their own intake. Cancellations write back live so the slot reopens. Solo trainers can finally hold sessions without watching the phone; small studios capture 30-40% more discovery sessions in the first quarter without hiring a coordinator.",
+      "A personal trainer's most expensive hours, the ones in actual sessions with clients, are also the hours when new-client inquiry calls land. Solo trainers are with a client at the moment a prospect calls; small studios have the same problem multiplied across coaches. The result is a familiar pattern: prospect researches, calls three studios, two pick up, one is yours, you call back two hours later, the prospect already booked. Implenix is the AI receptionist for personal trainers: it answers every inbound within one ring, runs your consultation intake (goals, current activity, injuries, schedule, package preference), and books the discovery session directly into your calendar against your real availability. Existing clients get fast-path identification, they can move sessions, ask package balance questions, or buy add-ons without disrupting your training schedule. Class and group-training inquiries follow their own intake. Cancellations write back live so the slot reopens. Solo trainers can finally hold sessions without watching the phone; small studios capture 30-40% more discovery sessions in the first quarter without hiring a coordinator.",
     heroStat: '+39%',
     heroStatLabel: 'discovery sessions booked',
     avgWeeklyCalls: 85,
@@ -1549,17 +1549,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'You\'re in a session when prospects call',
         description:
-          'PLACEHOLDER — The whole problem in one sentence. The trainer cannot answer because they are training. The prospect books somewhere else.',
+          'PLACEHOLDER, The whole problem in one sentence. The trainer cannot answer because they are training. The prospect books somewhere else.',
       },
       {
         title: 'Returning client questions disrupt the session',
         description:
-          'PLACEHOLDER — A returning client texting to move tomorrow\'s session interrupts the current session. Multiplied across the day, it is exhausting.',
+          'PLACEHOLDER, A returning client texting to move tomorrow\'s session interrupts the current session. Multiplied across the day, it is exhausting.',
       },
       {
-        title: 'Package and pricing questions follow a clean script — but eat time',
+        title: 'Package and pricing questions follow a clean script, but eat time',
         description:
-          'PLACEHOLDER — "How much for 10 sessions" is a 90-second call. The trainer should not be the one taking it.',
+          'PLACEHOLDER, "How much for 10 sessions" is a 90-second call. The trainer should not be the one taking it.',
       },
     ],
     useCases: [
@@ -1585,8 +1585,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-9h', label: 'trainer phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER — Before, every session was punctuated by my phone vibrating. Now I run the session, and the calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER — Owner, two-coach training studio',
+      'PLACEHOLDER, Before, every session was punctuated by my phone vibrating. Now I run the session, and the calls just happen.',
+    testimonialAuthor: 'PLACEHOLDER, Owner, two-coach training studio',
     faqs: [
       {
         question: 'Does it integrate with Mindbody, TrueCoach, Trainerize?',

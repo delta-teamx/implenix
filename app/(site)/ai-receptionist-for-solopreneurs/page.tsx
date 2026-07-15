@@ -22,7 +22,7 @@ import { buildMetadata, SITE_NAME } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'AI Receptionist for Solopreneurs | Implenix',
   description:
-    'AI receptionist for solo operators. Answer every call while you work the job. Book appointments, sync your CRM, transfer urgent calls — for $297/mo.',
+    'AI receptionist for solo operators. Answer every call while you work the job. Book appointments, sync your CRM, transfer urgent calls, for $297/mo.',
   path: '/ai-receptionist-for-solopreneurs',
 });
 
@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'Is an AI receptionist worth it for a solo business?',
     answer:
-      'Especially for solo operators. The bottleneck for any solo business is your own phone time. A typical solo operator loses 8–15 inbound calls a week to "I was on the job and couldn\'t pick up" — and at average client values of $400-$3,000, that math justifies the AI inside the first few weeks.',
+      'Especially for solo operators. The bottleneck for any solo business is your own phone time. A typical solo operator loses 8–15 inbound calls a week to "I was on the job and couldn\'t pick up", and at average client values of $400-$3,000, that math justifies the AI inside the first few weeks.',
   },
   {
     question: 'How does this work when I\'m the only person in the business?',
@@ -40,15 +40,15 @@ const FAQS = [
   {
     question: 'Can I afford this as a solo operator?',
     answer:
-      'The Solo Operator plan is $297/month — typically less than the lost pipeline from a single missed booking call per month. For most solo trades, this is the most leveraged subscription on the P&L.',
+      'The Solo Operator plan is $297/month, typically less than the lost pipeline from a single missed booking call per month. For most solo trades, this is the most leveraged subscription on the P&L.',
   },
   {
     question: 'Will it know how to handle my specific business?',
     answer:
-      'Yes. We tune the script for your industry during onboarding. Plumbers, electricians, photographers, personal trainers, consultants, lawyers, therapists — each gets industry-specific intake, transfer rules, and integrations.',
+      'Yes. We tune the script for your industry during onboarding. Plumbers, electricians, photographers, personal trainers, consultants, lawyers, therapists, each gets industry-specific intake, transfer rules, and integrations.',
   },
   {
-    question: 'How do I set this up alone — I don\'t have IT?',
+    question: 'How do I set this up alone, I don\'t have IT?',
     answer:
       'You don\'t need IT. We handle the technical setup during onboarding. You provide your phone number routing, calendar access, CRM access (if any), and approve the script. Live in 7-14 business days.',
   },
@@ -84,7 +84,7 @@ const FEATURES = [
     Icon: PhoneForwarded,
     title: 'Sends urgent calls to your mobile',
     description:
-      'You set the rules — which calls justify interrupting your work. The AI obeys them and routes the rest.',
+      'You set the rules, which calls justify interrupting your work. The AI obeys them and routes the rest.',
   },
   {
     Icon: Database,
@@ -148,7 +148,7 @@ export default function AIReceptionistForSolopreneursPage() {
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 You're the technician, the salesperson, and the front desk
-                — usually all at once. Implenix is the AI receptionist
+usually all at once. Implenix is the AI receptionist
                 purpose-built for solo operators: picks up every call
                 while you work, books appointments, syncs your CRM, and
                 only interrupts you for the calls that actually matter.
@@ -181,7 +181,7 @@ export default function AIReceptionistForSolopreneursPage() {
           <div className="max-w-3xl">
             <SectionHeader
               eyebrow="The solo phone problem"
-              title="You can't be on a job and on the phone — every solo operator loses to this"
+              title="You can't be on a job and on the phone, every solo operator loses to this"
             />
             <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
@@ -197,8 +197,8 @@ export default function AIReceptionistForSolopreneursPage() {
               <p>
                 Hiring a receptionist solves the phone problem at the
                 exact wrong cost. A part-time hire is $1,800-$2,400/month
-                — more than the average solo operator's monthly software
-                stack — for 20 hours of coverage. Even if the math worked,
+more than the average solo operator's monthly software
+                stack, for 20 hours of coverage. Even if the math worked,
                 a one-person business doesn't have the bandwidth to manage
                 a part-time employee on top of everything else.
               </p>
@@ -244,7 +244,7 @@ export default function AIReceptionistForSolopreneursPage() {
           <div className="mt-12">
             <DividedStats
               stats={[
-                { number: '$297', label: 'monthly cost — less than 1 missed booking' },
+                { number: '$297', label: 'monthly cost, less than 1 missed booking' },
                 { number: '8–15', label: 'calls per week typical solo operator misses' },
                 { number: '24/7', label: 'coverage at no premium upcharge' },
               ]}

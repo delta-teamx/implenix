@@ -13,7 +13,7 @@ type EventParams = Record<string, unknown>;
 
 // Named GA4 conversion events. Mark these as "Mark as conversion" in the
 // Google Analytics 4 Admin → Events panel to register them as conversions.
-// Keep names stable — analytics dashboards and ad campaigns reference
+// Keep names stable, analytics dashboards and ad campaigns reference
 // these strings.
 export const GA4_EVENTS = {
   // Lead capture surfaces (form submits)
@@ -54,12 +54,11 @@ export function trackConversion(
   // GA4 named event (configure as Conversion in GA4 Admin)
   if (typeof window.gtag === 'function') {
     window.gtag('event', eventName, params);
-    // Google Ads conversion event placeholder — replace with real label
+    // Google Ads conversion event placeholder, replace with real label
     // <!-- GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX/CONVERSION_LABEL -->
     window.gtag('event', 'conversion', {
       send_to: 'AW-XXXXXXXXXX/CONVERSION_LABEL',
-      event_label: eventName,
-      ...params,
+      event_label: eventName, ...params,
     });
   }
   trackEvent(eventName, params);
@@ -84,7 +83,7 @@ export function trackLead(
 
 // POSTs the form payload to the internal /api/leads route, which forwards to
 // CRM_WEBHOOK_URL when configured. Failures are swallowed so the UI can still
-// complete its success state — analytics events still fire either way.
+// complete its success state, analytics events still fire either way.
 export async function submitWebhook(
   data: Record<string, unknown>,
   source: string,

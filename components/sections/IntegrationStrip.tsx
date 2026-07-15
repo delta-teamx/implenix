@@ -28,7 +28,7 @@ export function IntegrationStrip() {
             ▸ Connects to the stack you already run on
           </p>
           <p className="mt-2 font-body text-white/75 text-sm md:text-base">
-            CRMs, calendars, dispatch software, and industry PMS — deep
+            CRMs, calendars, dispatch software, and industry PMS, deep
             two-way sync, not one-way email summaries.
           </p>
         </div>

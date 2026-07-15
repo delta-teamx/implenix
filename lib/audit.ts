@@ -1,5 +1,5 @@
 // Industry medians for the Missed Call Audit tool. These figures are
-// directional — they are used to give prospects an instant estimate
+// directional, they are used to give prospects an instant estimate
 // before the real audit runs. Values are conservative and based on
 // public benchmarks for local-business inbound call volume.
 //

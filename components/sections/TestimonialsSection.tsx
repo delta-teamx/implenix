@@ -23,7 +23,7 @@ const TESTIMONIALS = [
     ownerName: 'Yessy',
     industry: 'Real Estate',
     quote:
-      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up — we just close. That is the operation now.',
+      'We juggle deals, appointments, and follow-ups all day. Implenix books and follows up, we just close. That is the operation now.',
     recordingSrc: RECORDING_REAL_ESTATE,
     caseStudyHref: '/case-studies/placeholder-real-estate',
   },
@@ -32,7 +32,7 @@ const TESTIMONIALS = [
     ownerName: 'Lexi',
     industry: 'Home Improvements',
     quote:
-      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath — the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
+      'Urgent calls, building team comms, scheduling assessments, quality checks across roof, kitchen, and bath, the day was gone. Implenix runs the communication now and it sounds like a full professional team.',
     recordingSrc: RECORDING_IMPROVEMENT,
     caseStudyHref: '/case-studies/gtr-improvements-lexi',
   },
@@ -57,7 +57,7 @@ const TESTIMONIALS = [
     ownerName: 'Franklin',
     industry: 'Marketing Agency',
     quote:
-      'Our job is to grow our clients with more leads — but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
+      'Our job is to grow our clients with more leads, but we were drowning in our own inbound. Implenix handles our inbound completely so the team stays on client work.',
     caseStudyHref: '/case-studies/franklin-agency',
   },
 ];
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
         <SectionHeader
           eyebrow="Verified results"
           title="From real businesses"
-          description="Six clients, six different industries, all still deployed. The first three include the real call recording — tap play to hear the agent live."
+          description="Six clients, six different industries, all still deployed. The first three include the real call recording, tap play to hear the agent live."
         />
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t) => (

@@ -7,7 +7,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 // Per-case-study OG image. Renders the result headline + primary
-// metric on the brand background — designed to win the scroll on
+// metric on the brand background, designed to win the scroll on
 // LinkedIn and Twitter shares.
 export default function CaseStudyOgImage({
   params,

@@ -17,7 +17,7 @@ import {
 } from '@/lib/leadCapture';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Hear Implenix Live — Call Our Demo Receptionist | Implenix',
+  title: 'Hear Implenix Live, Call Our Demo Receptionist | Implenix',
   description:
     'Skip the video demo. Pick up your phone, dial our demo number, and have a real conversation with the Implenix AI configured as a sample HVAC receptionist.',
   path: '/try-it',
@@ -26,10 +26,10 @@ export const metadata: Metadata = buildMetadata({
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · demo · Northwind HVAC' },
   { ts: '00:02', speaker: 'agent' as const, text: 'Northwind HVAC, this is Ava. How can I help?' },
-  { ts: '00:05', speaker: 'caller' as const, text: 'Hi — I want to test how you handle a real call.' },
-  { ts: '00:09', speaker: 'agent' as const, text: 'Happy to demo. Try giving me a real-world request — like an emergency, a quote, or a reschedule.' },
+  { ts: '00:05', speaker: 'caller' as const, text: 'Hi, I want to test how you handle a real call.' },
+  { ts: '00:09', speaker: 'agent' as const, text: 'Happy to demo. Try giving me a real-world request, like an emergency, a quote, or a reschedule.' },
   { ts: '00:14', speaker: 'caller' as const, text: 'My AC is out, can you book someone today?' },
-  { ts: '00:18', speaker: 'agent' as const, text: 'Yes — what is the address, and what time window works?' },
+  { ts: '00:18', speaker: 'agent' as const, text: 'Yes, what is the address, and what time window works?' },
 ];
 
 const STEPS = [
@@ -56,9 +56,9 @@ export default function TryItPage() {
       <SchemaOrg
         schema={[
           serviceSchema({
-            name: 'Implenix AI Receptionist — Live Demo',
+            name: 'Implenix AI Receptionist, Live Demo',
             description:
-              'Live phone demo of the Implenix AI voice agent configured as a sample HVAC receptionist. No signup — just call and try it.',
+              'Live phone demo of the Implenix AI voice agent configured as a sample HVAC receptionist. No signup, just call and try it.',
             serviceType: 'AI Receptionist',
             url: '/try-it',
           }),
@@ -81,7 +81,7 @@ export default function TryItPage() {
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Pick up your phone, dial the number, and have a real
-                conversation with the Implenix agent — configured as a
+                conversation with the Implenix agent, configured as a
                 sample HVAC receptionist named Ava. No form. No signup.
                 Just talk.
               </p>
@@ -111,7 +111,7 @@ export default function TryItPage() {
               <p className="text-[11px] font-mono uppercase tracking-widest text-white/45">
                 ▸ {HAS_REAL_PHONE
                   ? 'Tap on mobile to dial · standard carrier rates apply'
-                  : 'The live demo line goes live this week — book a slot in the meantime'}
+                  : 'The live demo line goes live this week, book a slot in the meantime'}
               </p>
 
               <div className="grid sm:grid-cols-3 gap-3 pt-6 border-t border-brand-purple/15">

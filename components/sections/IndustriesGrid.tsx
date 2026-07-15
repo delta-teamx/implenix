@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { IndustrySlider } from '@/components/common/IndustrySlider';
 
-// Renamed conceptually to "industries section" — uses the slider now
+// Renamed conceptually to "industries section", uses the slider now
 // instead of a 4-col grid. Keeps the export name so existing imports
 // continue to work.
 export function IndustriesGrid() {

@@ -1,17 +1,42 @@
 ---
 title: "First Call Test"
-description: "Run your first end-to-end live call test."
+description: "How to run your first test call against a shadow number before go-live."
 section: "Getting Started"
 order: 3
 ---
 
 # First Call Test
 
-PLACEHOLDER DOC CONTENT — replace with the verified test plan.
+Before go-live, we run 30 to 50 mock calls against a shadow number. This is where issues surface and where prompt tuning happens most productively. Here is how to run your side of that battery effectively.
 
-The First Call Test verifies your agent end-to-end before traffic is routed.
+## What the shadow number is
 
-1. Trigger a call to the staging number.
-2. Walk through the highest-intent path.
-3. Confirm the booking lands in the calendar.
-4. Confirm the lead is created in the CRM.
+A separate phone number provisioned specifically for testing. It runs the same production agent with the same integrations, but it does not affect your live inbound. Feel free to call it as often as you want during the test window.
+
+## The five call categories to test
+
+**1. Standard happy path.** Call and go through the intake exactly as a typical caller would. Book an appointment. Verify the booking landed in the right calendar and the CRM record was created correctly.
+
+**2. Edge cases.** Ask unusual questions. Interrupt the agent mid-sentence. Change your mind mid-intake. Verify the agent handles gracefully rather than getting stuck.
+
+**3. Escalation triggers.** Say "let me speak to a human" and verify transfer happens within 3 seconds. Trigger a crisis keyword (test scenario) and verify immediate warm handoff.
+
+**4. Out-of-scope questions.** Ask something the agent should not answer. Verify the polite decline and offer to route to a human.
+
+**5. Adversarial testing.** Try to trick the agent. Give contradictory information. Ask leading questions. Verify the agent stays scoped and does not hallucinate.
+
+## What to listen for
+
+- **Tone.** Does the agent sound like your brand? Warm where appropriate, direct where appropriate?
+- **Vocabulary.** Does the agent speak your callers' language, or does it use generic phrasing?
+- **Pacing.** Does it feel natural, or robotic?
+- **Latency.** Response time after you stop speaking should feel natural (under 900ms).
+- **Correctness.** Does the intake capture the right fields? Does the write to CRM appear correctly?
+
+## What to do with issues you find
+
+Write them down. Include the exact scenario (what you asked, how the agent responded) and what should have happened instead. Send the list to your deployment lead. Most issues can be fixed by prompt or logic adjustment in hours.
+
+## When you are ready for cutover
+
+After you have completed the test battery and any adjustments have been made, we schedule the cutover. Silent-monitoring runs for at least 48 hours after cutover so a human catches anything unexpected on real calls.

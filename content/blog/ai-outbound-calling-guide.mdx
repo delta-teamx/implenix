@@ -1,19 +1,19 @@
 ---
 title: "AI outbound calling: what is legal, what is not, and what works"
-description: "A working guide to AI outbound calling — the TCPA rules, the use cases that pay for themselves, and the ones that get businesses sued."
+description: "A working guide to AI outbound calling, the TCPA rules, the use cases that pay for themselves, and the ones that get businesses sued."
 category: "Operator Playbooks"
 publishedAt: "2026-04-22"
 author: "Tashfeen Ahmad"
 authorRole: "Founder, Implenix · Voice AI deployment lead"
 authorBio: "Tashfeen Ahmad is the founder of Implenix and has spent the last six years shipping AI voice agents into HVAC, dental, legal, real estate, and medspa operations. He writes from live deployments, call recordings, and post-mortem reviews rather than product-sheet claims."
 metaTitle: "AI Outbound Calling: What Is Legal + What Works | Implenix"
-metaDescription: "AI outbound calling done right — TCPA rules, use cases that work, and the ones that get businesses sued. Practical guide from live deployments."
+metaDescription: "AI outbound calling done right, TCPA rules, use cases that work, and the ones that get businesses sued. Practical guide from live deployments."
 heroImage: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80&auto=format&fit=crop"
 heroImageAlt: "Sales rep making an outbound call from a modern office"
 ---
 
 <Answer q="Can AI agents make outbound calls, and is it legal?">
-Yes, AI agents can make outbound calls, but the legal picture is narrow. In the US, AI-initiated outbound calls to mobile numbers require prior express written consent under TCPA — that means an active opt-in from the recipient. Confirmed-customer outbound (appointment reminders, quote follow-ups, membership renewals, post-service check-ins) works when the recipient has already opted in through the business relationship. Cold outbound from a purchased list to consumer mobiles is a fast path to class-action lawsuits. Business-to-business outbound has more latitude but is not consequence-free.
+Yes, AI agents can make outbound calls, but the legal picture is narrow. In the US, AI-initiated outbound calls to mobile numbers require prior express written consent under TCPA, that means an active opt-in from the recipient. Confirmed-customer outbound (appointment reminders, quote follow-ups, membership renewals, post-service check-ins) works when the recipient has already opted in through the business relationship. Cold outbound from a purchased list to consumer mobiles is a fast path to class-action lawsuits. Business-to-business outbound has more latitude but is not consequence-free.
 </Answer>
 
 Outbound is where I see operators most likely to hurt themselves.
@@ -58,7 +58,7 @@ opted in through the booking process.
 After a service provider gives an estimate, a four-touch sequence
 (call, SMS, call, SMS) over 10 days. Recovers 15 to 22 percent
 of unclosed estimates. Recipient is a customer who requested a
-quote — the relationship carries the consent.
+quote, the relationship carries the consent.
 
 ### Membership and subscription renewal
 
@@ -107,10 +107,10 @@ honor STOP immediately. That is defensible.
 Do not do this. I have watched operators try it and get letters
 within 90 days.
 
-- Purchased consumer lists — never safe.
-- Data-broker-sourced "opted in" lists — usually fraudulent
+- Purchased consumer lists, never safe.
+- Data-broker-sourced "opted in" lists, usually fraudulent
   consent, does not survive a challenge.
-- "Warm" lists from a third party — inherited consent almost
+- "Warm" lists from a third party, inherited consent almost
   never covers you.
 - Any list where you cannot produce the consent record for a
   specific number if asked.
@@ -143,7 +143,7 @@ Here is a real reminder sequence for a HVAC shop, roughly.
     { ts: "00:00", speaker: "system", text: "Outbound · confirmed customer · fall tune-up window" },
     { ts: "00:02", speaker: "agent", text: "Hi, this is Kai calling from Riverwood Heating. Is this John?" },
     { ts: "00:07", speaker: "caller", text: "Yes, this is John." },
-    { ts: "00:09", speaker: "agent", text: "I am a virtual assistant for Riverwood — just calling because your annual furnace tune-up window is open. Want me to book you in this month?" },
+    { ts: "00:09", speaker: "agent", text: "I am a virtual assistant for Riverwood, just calling because your annual furnace tune-up window is open. Want me to book you in this month?" },
     { ts: "00:20", speaker: "caller", text: "Sure, what days do you have?" },
     { ts: "00:24", speaker: "agent", text: "Wednesday the 15th at 10 AM or Friday the 17th at 1 PM." },
     { ts: "00:31", speaker: "caller", text: "Friday works." },
@@ -228,7 +228,7 @@ relationship, with appropriate disclosure and STOP compliance,
 are legal.
 
 **Can I use AI to make sales calls?**
-To confirmed customers, yes. To cold prospects, no — even if the
+To confirmed customers, yes. To cold prospects, no, even if the
 list is technically "opted in" through some third-party source.
 The safest B2B posture is inbound-only lead nurture, not cold
 outbound.

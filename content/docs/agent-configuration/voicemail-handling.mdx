@@ -1,12 +1,69 @@
 ---
 title: "Voicemail Handling"
-description: "How the agent captures, transcribes, and routes voicemails."
+description: "How the Implenix agent handles callers who prefer voicemail or need to leave a message."
 section: "Agent Configuration"
 order: 4
 ---
 
 # Voicemail Handling
 
-PLACEHOLDER DOC CONTENT — replace with the verified voicemail flow.
+Most Implenix deployments replace voicemail entirely, the agent answers and captures the intake instead of playing a message. But some scenarios still call for voicemail behavior. Here is how those cases are handled.
 
-When a caller leaves voicemail, Implenix records, transcribes, classifies the intent, and routes the message to the right inbox or CRM record.
+## When voicemail behavior applies
+
+**Explicit request.** Some callers say "I want to leave a voicemail" or "just take a message." The agent complies, takes the structured message, and delivers it through the standard channel.
+
+**Fallback on tool failure.** If the calendar or CRM is completely down and the agent cannot book, it takes a structured message with promised callback window.
+
+**Fallback on human unavailable.** If a call needs to transfer but no human is available, the message-taking behavior kicks in.
+
+**Configured hours.** Some deployments configure the agent to take messages only during certain windows, and to book actively during others.
+
+## What a structured message includes
+
+Unlike traditional voicemail, agent-taken messages have structured fields:
+
+- Caller name
+- Callback number (verified against caller ID)
+- Reason for call in the caller's own words
+- Urgency level (asked explicitly)
+- Best callback time
+- Any specific person requested
+
+The message posts to your CRM as an activity and optionally triggers an alert to the appropriate team member.
+
+## Voicemail replacement pattern
+
+For most deployments, the agent replaces voicemail entirely. Common transition steps:
+
+**Week 1 to 2 post-cutover.** Traditional voicemail box remains active as a safety net. Any callers who reach it (rare, but possible if the agent has an outage) still leave messages.
+
+**Week 3 onwards.** Voicemail box disabled. All inbound goes through the agent. Message-taking behavior kicks in for the specific scenarios above.
+
+## Traditional voicemail box coexistence
+
+If you want to keep a traditional voicemail box alongside the agent (some businesses do for specific extensions or after-hours emergency), we configure the routing accordingly:
+
+- Main line to agent.
+- Direct-dial extensions to human with voicemail fallback.
+- After-hours specific voicemail for emergency line if you want a low-tech fallback.
+
+## Voicemail retrieval
+
+Structured messages appear in:
+
+- Your CRM as activity or task.
+- Your email inbox with transcript and audio if configured.
+- Your SMS if configured.
+
+Standard practice: main deployment lead gets email + SMS for all messages, appropriate team members get email only for their assigned messages.
+
+## Common issues
+
+**Messages not appearing.** Check delivery channel configuration. Verify email/SMS destination is correct.
+
+**Duplicate messages.** Sometimes callers leave messages and also book; the intake creates both. Not usually a problem, verify with your team's workflow.
+
+**Long messages.** Callers occasionally give very long descriptions. The agent transcribes accurately; the intake captures the structured fields, and the full transcript is available for review.
+
+**Callback promises.** The agent promises specific callback windows. Missing those windows damages trust. Ensure the promised windows match what your team can actually deliver.

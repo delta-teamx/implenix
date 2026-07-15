@@ -54,7 +54,7 @@ export default function GlossaryIndexPage() {
             </h1>
             <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
               The terms that come up when you research AI receptionists,
-              voice agents, and modern call infrastructure — defined
+              voice agents, and modern call infrastructure, defined
               clearly, with cross-links to the relevant pages on this
               site.
             </p>
@@ -66,7 +66,7 @@ export default function GlossaryIndexPage() {
         <div className="max-w-content mx-auto px-6 py-20">
           <SectionHeader
             eyebrow="The terms"
-            title={`${GLOSSARY_ENTRIES.length} entries — alphabetical`}
+            title={`${GLOSSARY_ENTRIES.length} entries, alphabetical`}
             badgeVariant="purple"
           />
           <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

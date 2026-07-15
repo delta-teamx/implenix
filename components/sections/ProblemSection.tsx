@@ -10,7 +10,7 @@ export function ProblemSection() {
           title="Every missed call is a deal you already lost"
           description="Local businesses run on calls. Local businesses also miss most of them. The math is unforgiving."
         />
-        {/* VERIFY THESE STATS BEFORE LAUNCH — replace with sourced data */}
+        {/* VERIFY THESE STATS BEFORE LAUNCH, replace with sourced data */}
         <div className="mt-12">
           <DividedStats
             stats={[

@@ -31,7 +31,7 @@ const FAQS = [
   {
     question: 'How is it different from an IVR or phone tree?',
     answer:
-      'An IVR ("press 1 for sales") routes calls through a menu and is universally hated by customers. An AI receptionist has an actual conversation, qualifies the caller, and resolves the request — booking, intake, transfer — without forcing the caller through a menu.',
+      'An IVR ("press 1 for sales") routes calls through a menu and is universally hated by customers. An AI receptionist has an actual conversation, qualifies the caller, and resolves the request, booking, intake, transfer, without forcing the caller through a menu.',
   },
   {
     question: 'How is it different from a live answering service?',
@@ -56,7 +56,7 @@ const FAQS = [
   {
     question: 'Is an AI receptionist HIPAA compliant?',
     answer:
-      'Implenix is. We sign a BAA, encrypt PHI in transit and at rest, restrict access by role, and follow HIPAA minimum-necessary principles. Other AI receptionists vary — confirm during scoping.',
+      'Implenix is. We sign a BAA, encrypt PHI in transit and at rest, restrict access by role, and follow HIPAA minimum-necessary principles. Other AI receptionists vary, confirm during scoping.',
   },
 ];
 
@@ -104,7 +104,7 @@ export default function WhatIsAnAIReceptionistPage() {
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 An AI receptionist is a voice-AI agent that answers your
                 business phone in real time, qualifies callers, books
-                appointments, and syncs your CRM — without a human operator
+                appointments, and syncs your CRM, without a human operator
                 on the line. This guide walks through what it actually is,
                 how it differs from related tools, and when to deploy one.
               </p>
@@ -157,7 +157,7 @@ export default function WhatIsAnAIReceptionistPage() {
                 callers do not leave voicemail</span> and call the next
                 business on Google. Hiring a receptionist runs
                 $3,500-$5,000/month for 40 hours. Live answering services
-                bill per minute — cost rises with growth. AI receptionists
+                bill per minute, cost rises with growth. AI receptionists
                 fill the niche none of those cover:{' '}
                 <span className="text-white font-medium">continuous
                 coverage, unlimited concurrency, real-time integration,
@@ -315,7 +315,7 @@ export default function WhatIsAnAIReceptionistPage() {
               </span>
               <ul className="flex flex-col gap-2.5 mt-2">
                 {[
-                  'Missed-call cost is meaningful — $1,500+/month in lost pipeline',
+                  'Missed-call cost is meaningful, $1,500+/month in lost pipeline',
                   'You take inbound after hours and currently send to voicemail',
                   'Concurrent calls regularly hit voicemail during peak hours',
                   'Per-call billing with a live answering service is rising with growth',

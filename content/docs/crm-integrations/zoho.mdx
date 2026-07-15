@@ -1,12 +1,69 @@
 ---
-title: "Zoho"
-description: "Integrate Implenix with Zoho CRM."
+title: "Zoho CRM Integration"
+description: "How the Implenix agent integrates with Zoho CRM."
 section: "CRM Integrations"
 order: 4
 ---
 
-# Zoho
+# Zoho CRM Integration
 
-PLACEHOLDER DOC CONTENT — replace with verified Zoho integration steps.
+Zoho CRM integration ships in the standard deployment window. Zoho's API is functional though less mature than HubSpot or Salesforce. Works well for the SMB and mid-market deployments where Zoho is common.
 
-Implenix supports Zoho CRM via OAuth. Calls and bookings sync directly to the lead or contact record.
+## What the integration does
+
+**Read scope.**
+- Contact and Lead lookup by phone or email.
+- Deal or opportunity history.
+- Account association.
+- Field values for personalization.
+
+**Write scope.**
+- Create Contact or Lead depending on your intake flow.
+- Update fields captured during the call.
+- Log the call as an Activity or Note.
+- Create Task for follow-up.
+- Trigger Workflow rules for downstream automation.
+
+## Authentication
+
+OAuth 2.0 with a Zoho registered client. Scopes:
+
+- ZohoCRM.modules.ALL (read + write on all modules we need)
+- ZohoCRM.settings.ALL (for field metadata discovery)
+- ZohoCRM.users.READ (for owner assignment)
+
+## Lead vs Contact routing
+
+Zoho's Lead / Contact / Deal / Account model requires clear intake logic. Standard approach:
+
+- Unknown callers create as Lead.
+- Existing Contacts get updated directly.
+- Qualified Leads can auto-convert to Contact + Deal if your Zoho workflow supports it.
+
+Custom module deployments (SalesInbox custom object, Custom Modules for specific verticals) are supported with additional configuration.
+
+## Duplicate prevention
+
+Zoho's native duplicate rules apply. Our integration respects them and updates existing records when duplicates are detected.
+
+## Workflow rules
+
+Zoho Workflow rules trigger on our writes. Common patterns:
+
+- Auto-response email on new Lead.
+- Round-robin assignment.
+- Field update triggering next-step actions.
+
+## Blueprint compatibility
+
+If your Zoho org uses Blueprint for structured processes, the agent's writes can trigger Blueprint transitions. Configure the trigger criteria to match what the agent writes.
+
+## Common issues
+
+**Field API name vs display name confusion.** Zoho uses internal API names that differ from display labels. Verify mapping during discovery.
+
+**Rate limit errors.** Zoho has per-day API call limits. For high-volume orgs, we implement queuing.
+
+**Custom module permissions.** Integration user needs explicit access to custom modules. Admin adjusts profile.
+
+**Workflow trigger timing.** Some workflows require specific field patterns to fire. Verify during testing.

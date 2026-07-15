@@ -14,9 +14,9 @@ import {
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Pricing — Outcome-Based AI Receptionist Plans | Implenix',
+  title: 'Pricing, Outcome-Based AI Receptionist Plans | Implenix',
   description:
-    'Implenix plans priced against a human receptionist ($3,500-$5,000/mo). Solo, Growing, Established tiers — revenue captured per tier.',
+    'Implenix plans priced against a human receptionist ($3,500-$5,000/mo). Solo, Growing, Established tiers, revenue captured per tier.',
   path: '/pricing',
 });
 
@@ -95,7 +95,7 @@ export default function PricingPage() {
           productWithOffersSchema({
             name: 'Implenix AI Receptionist',
             description:
-              'AI Receptionist for local business — three tiers with fixed monthly pricing. Solo Operator, Growing Agency, Established Firm.',
+              'AI Receptionist for local business, three tiers with fixed monthly pricing. Solo Operator, Growing Agency, Established Firm.',
             url: '/pricing',
             offers: TIERS.map((t) => ({
               name: t.name,
@@ -220,8 +220,7 @@ export default function PricingPage() {
               </h2>
               <p className="font-body text-white/75 leading-relaxed">
                 One-time fee. Our implementation engineer configures your
-                scripts, voice, routing, calendar, and CRM end-to-end —
-                live in 72 hours.
+                scripts, voice, routing, calendar, and CRM end-to-end, live in 72 hours.
               </p>
               <ul className="flex flex-col gap-2 mt-2">
                 {WHITE_GLOVE.inclusions.map((line) => (
@@ -256,7 +255,7 @@ export default function PricingPage() {
                 Our self-serve setup wizard takes about 15 minutes.
               </p>
               <ol className="flex flex-col gap-2 text-sm font-body text-white/80 list-decimal pl-5 marker:text-brand-purple">
-                <li>Paste your website URL — we auto-build the knowledge base</li>
+                <li>Paste your website URL, we auto-build the knowledge base</li>
                 <li>Upload existing FAQs (optional)</li>
                 <li>Answer 5 voice prompts to capture tone</li>
                 <li>Connect your calendar</li>

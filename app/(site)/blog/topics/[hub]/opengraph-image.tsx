@@ -6,7 +6,7 @@ export const alt = 'Implenix topic hub';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Branded topic-hub OG image — same visual language as blog covers
+// Branded topic-hub OG image, same visual language as blog covers
 // (BLOGS pill, big heading, description, IMPLENIX.NET | @IMPLENIX.AI
 // footer) but the badge reads TOPIC HUB.
 export default function TopicOgImage({

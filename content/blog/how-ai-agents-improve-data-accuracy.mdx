@@ -13,11 +13,11 @@ heroImageAlt: "Business analytics dashboard showing data accuracy metrics"
 ---
 
 <Answer q="How do AI agents improve data accuracy?">
-AI agents improve data accuracy in three specific ways: they capture the same fields the same way every time (eliminating human data-entry variance), they write to systems automatically instead of relying on post-call manual entry, and they use structured tool calls with typed inputs that constrain output to valid values. They can also introduce new categories of error — misheard names, transcription mistakes on unusual words, hallucinated details when models drift. The net accuracy gain depends heavily on how the agent is designed. Good agents beat human data entry by a wide margin; poorly-scoped agents make it worse.
+AI agents improve data accuracy in three specific ways: they capture the same fields the same way every time (eliminating human data-entry variance), they write to systems automatically instead of relying on post-call manual entry, and they use structured tool calls with typed inputs that constrain output to valid values. They can also introduce new categories of error, misheard names, transcription mistakes on unusual words, hallucinated details when models drift. The net accuracy gain depends heavily on how the agent is designed. Good agents beat human data entry by a wide margin; poorly-scoped agents make it worse.
 </Answer>
 
 Data accuracy is one of the most consistent gains I see after
-shipping an AI voice agent — and one of the least advertised
+shipping an AI voice agent, and one of the least advertised
 by vendors, probably because it is unsexy compared to
 capture-rate numbers. But the accuracy of what ends up in your
 CRM, dispatch system, or EHR determines whether the downstream
@@ -61,8 +61,8 @@ Phone numbers must match a phone format. Dates must be valid
 dates. Enumerated fields (service type, insurance carrier) get
 constrained to valid values.
 
-This does not eliminate every error — the caller might say the
-wrong ZIP — but it eliminates a whole class of errors that
+This does not eliminate every error, the caller might say the
+wrong ZIP, but it eliminates a whole class of errors that
 manual entry produces.
 
 ## Where AI agents introduce new categories of error
@@ -99,7 +99,7 @@ is not certain about, rather than committing to an interpretation.
 If the write to your CRM fails and the agent does not detect it,
 the call ends with the caller thinking their appointment is
 booked and the CRM having no record. This is worse than a human
-missing a field — it is a systemic gap.
+missing a field, it is a systemic gap.
 
 Mitigation: every tool call verifies success. If the write
 fails, the agent tells the caller and queues the record for
@@ -140,7 +140,7 @@ audited 400 recent human intake records. Findings:
 - 8% had a phone number in a non-standard format.
 - 12% had a spelling issue on the patient name.
 - 15% had insurance carrier entered inconsistently ("BCBS"
-  versus "Blue Cross Blue Shield" versus "Blue Cross" — same
+  versus "Blue Cross Blue Shield" versus "Blue Cross", same
   carrier, three different values).
 - 6% had address fields that could not be geocoded.
 
@@ -179,12 +179,12 @@ harder to attribute cleanly.
 ## Where operators should NOT expect data accuracy gains
 
 - Complex, judgment-heavy data (severity of a complaint, tone
-  of a customer) — AI extractions are useful but not always
+  of a customer), AI extractions are useful but not always
   right, and shouldn't be the source of truth.
-- Free-text notes fields where nuance matters — human summaries
+- Free-text notes fields where nuance matters, human summaries
   are richer.
 - Domain-specific abbreviations and jargon the model has not
-  been tuned on — accuracy varies until the model or the
+  been tuned on, accuracy varies until the model or the
   prompts are trained.
 
 ## Frequently asked questions
@@ -202,7 +202,7 @@ after tuning. Manual data entry in comparable operations runs
 complexity.
 
 **Can the AI validate against external sources?**
-Yes — insurance eligibility APIs, address validation services,
+Yes, insurance eligibility APIs, address validation services,
 phone-number-to-name lookups. Every external validation call is
 an accuracy improvement.
 

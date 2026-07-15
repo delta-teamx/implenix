@@ -30,12 +30,12 @@ const FAQS = [
   {
     question: 'How does the AI route calls across multiple locations?',
     answer:
-      'Geofenced routing by area code or zip lookup. The agent identifies the caller\'s service area on the first turn and routes to the right location\'s schedule, dispatch, and team — with brand-consistent intake across all of them.',
+      'Geofenced routing by area code or zip lookup. The agent identifies the caller\'s service area on the first turn and routes to the right location\'s schedule, dispatch, and team, with brand-consistent intake across all of them.',
   },
   {
     question: 'Can each location have its own script and schedule?',
     answer:
-      'Yes. We tune per-location overrides on top of a shared brand script — service hours, capacity rules, on-call rotations, holiday schedules. Brand consistency stays; operational specifics flex per location.',
+      'Yes. We tune per-location overrides on top of a shared brand script, service hours, capacity rules, on-call rotations, holiday schedules. Brand consistency stays; operational specifics flex per location.',
   },
   {
     question: 'How does reporting work across locations?',
@@ -64,7 +64,7 @@ const FEATURES = [
     Icon: MapPin,
     title: 'Geofenced routing',
     description:
-      'Caller area code or zip identifies the right location. Routing happens on the first turn — no menu, no friction.',
+      'Caller area code or zip identifies the right location. Routing happens on the first turn, no menu, no friction.',
     span: 'lg' as const,
     accent: 'purple' as const,
   },
@@ -72,7 +72,7 @@ const FEATURES = [
     Icon: Building2,
     title: 'Per-location schedules',
     description:
-      'Service hours, capacity rules, on-call rotations, holiday schedules — each location overrides the shared defaults.',
+      'Service hours, capacity rules, on-call rotations, holiday schedules, each location overrides the shared defaults.',
   },
   {
     Icon: ShieldCheck,
@@ -150,7 +150,7 @@ export default function AIReceptionistForMultiLocationPage() {
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Centralize the brand. Decentralize the operations.
                 Geofenced routing, per-location schedules, multi-CRM
-                integration — every caller routed to the right location
+                integration, every caller routed to the right location
                 in the first turn, every location reporting roll-up
                 visible to ownership.
               </p>
@@ -182,7 +182,7 @@ export default function AIReceptionistForMultiLocationPage() {
           <div className="max-w-3xl">
             <SectionHeader
               eyebrow="The multi-location problem"
-              title="Brand consistency vs operational specifics — most businesses pick one and lose the other"
+              title="Brand consistency vs operational specifics, most businesses pick one and lose the other"
             />
             <div className="mt-8 flex flex-col gap-5 font-body text-white/80 text-base lg:text-lg leading-relaxed">
               <p>
@@ -192,21 +192,21 @@ export default function AIReceptionistForMultiLocationPage() {
                 customer experience), but each location has different
                 operational specifics (service hours, capacity, on-call
                 rotations, dispatch tools). Most businesses end up
-                picking one and losing the other — either every
+                picking one and losing the other, either every
                 location runs its own front desk with drift in
                 experience, or a centralized call center loses the
                 operational nuance each location needs.
               </p>
               <p>
                 Implenix is built to handle both. The shared brand
-                script — voice, qualification logic, transfer rules,
-                customer experience — runs across every location. On
+                script, voice, qualification logic, transfer rules,
+                customer experience, runs across every location. On
                 top of that, per-location config layers in: service
                 hours, capacity rules, holiday schedules, on-call
                 rotations, location-specific transfer rules, and
                 location-specific CRM and dispatch integrations.
                 Geofenced routing identifies the caller's service area
-                on the first turn and routes accordingly — no menu, no
+                on the first turn and routes accordingly, no menu, no
                 "press 1 for Boston, press 2 for Chicago."
               </p>
               <p>
@@ -229,7 +229,7 @@ export default function AIReceptionistForMultiLocationPage() {
           <SectionHeader
             eyebrow="Capabilities"
             title="What multi-location requires from an AI receptionist"
-            description="Geofencing, per-location config, multi-CRM, and roll-up reporting — all on one agent."
+            description="Geofencing, per-location config, multi-CRM, and roll-up reporting, all on one agent."
             badgeVariant="purple"
           />
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-4 gap-5">
@@ -314,7 +314,7 @@ export default function AIReceptionistForMultiLocationPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               {
                 href: '/ai-receptionist-for-small-business',
                 label: 'AI Receptionist for Small Business',

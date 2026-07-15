@@ -36,7 +36,7 @@ export function StickyDemoCTA() {
             Talk to the AI agent now
           </p>
           <p className="text-xs text-white/70 font-body mt-0.5 leading-relaxed">
-            Hear it run a real call — or pick a slot on the calendar.
+            Hear it run a real call, or pick a slot on the calendar.
           </p>
         </div>
         <button

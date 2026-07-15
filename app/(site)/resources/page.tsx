@@ -11,7 +11,7 @@ import { buildMetadata } from '@/lib/seo';
 import { ResourcesClient, type ResourceItem } from './ResourcesClient';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Resources — Guides + Playbooks + Glossary | Implenix',
+  title: 'Resources, Guides + Playbooks + Glossary | Implenix',
   description:
     'Long-form guides, deployment playbooks, and a working glossary for anyone implementing voice AI in a local business.',
   path: '/resources',
@@ -42,7 +42,7 @@ export default function ResourcesPage() {
       <SchemaOrg
         schema={[
           collectionPageSchema({
-            name: 'Implenix Resources — Guides + Playbooks',
+            name: 'Implenix Resources, Guides + Playbooks',
             description:
               'Long-form guides and deployment playbooks for teams shipping voice AI in local business.',
             url: '/resources',

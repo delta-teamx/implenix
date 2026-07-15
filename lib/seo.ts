@@ -7,7 +7,7 @@ export const SITE_DESCRIPTION =
 
 export const DEFAULT_SEO = {
   titleTemplate: '%s | Implenix',
-  defaultTitle: 'Implenix — AI Receptionist for Local Businesses',
+  defaultTitle: 'Implenix, AI Receptionist for Local Businesses',
   description: SITE_DESCRIPTION,
   openGraph: {
     type: 'website' as const,
@@ -28,13 +28,13 @@ type BuildMetadataInput = {
   path: string;
   ogImage?: string;
   noindex?: boolean;
-  /** OG type — 'article' for blog posts + case studies, 'website' for everything else (default). */
+  /** OG type, 'article' for blog posts + case studies, 'website' for everything else (default). */
   ogType?: 'website' | 'article';
-  /** Only used with ogType='article' — ISO date for article:published_time. */
+  /** Only used with ogType='article', ISO date for article:published_time. */
   publishedTime?: string;
-  /** Only used with ogType='article' — author string for article:author. */
+  /** Only used with ogType='article', author string for article:author. */
   author?: string;
-  /** Only used with ogType='article' — array of tag strings for article:tag. */
+  /** Only used with ogType='article', array of tag strings for article:tag. */
   tags?: string[];
 };
 
@@ -59,10 +59,7 @@ export function buildMetadata({
           siteName: SITE_NAME,
           type: 'article',
           locale: 'en_US',
-          images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
-          ...(publishedTime ? { publishedTime } : {}),
-          ...(author ? { authors: [author] } : {}),
-          ...(tags && tags.length > 0 ? { tags } : {}),
+          images: [{ url: ogImage, width: 1200, height: 630, alt: title }], ...(publishedTime ? { publishedTime } : {}), ...(author ? { authors: [author] } : {}), ...(tags && tags.length > 0 ? { tags } : {}),
         }
       : {
           title,

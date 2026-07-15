@@ -1,12 +1,46 @@
 ---
 title: "SIP Trunk Basics"
-description: "How SIP trunking connects your existing phone system to Implenix."
+description: "How SIP trunking connects your phone infrastructure to the Implenix agent."
 section: "Phone Setup"
 order: 2
 ---
 
 # SIP Trunk Basics
 
-PLACEHOLDER DOC CONTENT — replace with verified SIP setup guide.
+SIP (Session Initiation Protocol) is the protocol modern VoIP phone systems use to connect calls. Understanding the basics helps you evaluate integration options with your existing phone setup.
 
-If you run an existing PBX, Implenix integrates via SIP trunk. We support most major SIP providers.
+## What a SIP trunk is
+
+A SIP trunk is a virtual "line" that carries voice calls over the internet between your phone system and a telephony provider. Instead of physical phone lines, calls travel as digital packets. This lets us route your inbound calls directly to the Implenix agent infrastructure without going through legacy phone hardware.
+
+## When SIP trunking matters for your deployment
+
+**Standard case.** You already have VoIP service (RingCentral, Nextiva, Vonage, Twilio). Your carrier already runs SIP under the hood. We connect the Implenix agent to your provider's SIP trunk with configuration only, no new hardware.
+
+**Custom PBX case.** Your business runs an on-premises or hosted PBX (3CX, FreePBX, Asterisk, RingCentral MVP). We configure a SIP trunk between your PBX and the Implenix agent, so inbound calls hit the agent while your existing extensions and internal calling continue to work.
+
+**Enterprise case.** You have a large call center platform (Five9, Genesys, NICE) with SIP interconnect capability. The agent integrates as an additional SIP peer, handling specific queues while the rest of the platform continues to operate.
+
+## What you need for a SIP integration
+
+- The SIP address (or IP address) of the endpoint we should route calls to.
+- Authentication credentials (username, password, or IP whitelist).
+- Codec preferences (we support the standard G.711, G.722, and Opus).
+- Concurrent call capacity you expect (this drives Twilio account provisioning).
+- Any TLS or SRTP encryption requirements.
+
+## Common issues we handle during setup
+
+**One-way audio.** Usually a NAT traversal issue. We configure appropriate SIP ALG or STUN settings.
+
+**Call quality issues.** Codec mismatch or bandwidth constraints. We adjust codec priority and jitter buffer settings.
+
+**Failed authentication.** Credential typo or IP whitelist gap. We verify against your carrier's SIP configuration.
+
+**Number presentation.** Caller ID or business name not appearing correctly on the agent side. Configuration on the outbound trunk needs adjustment.
+
+## What you do not need to know
+
+You do not need to become a SIP expert. Your Implenix deployment lead handles the technical configuration. This page exists so you understand what is happening under the hood when we ask for SIP credentials during onboarding.
+
+If your phone setup is unusual and you want a pre-deployment SIP compatibility check, request one during the discovery call.

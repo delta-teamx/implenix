@@ -41,7 +41,7 @@ type Step = 'date' | 'time' | 'form' | 'confirmed';
 
 // Native booking widget that talks to /api/availability + /api/book.
 // State machine: date → time → form → confirmed. Drop-in replacement
-// for CalendlyEmbed — the ctaLocation prop is the identifier used in
+// for CalendlyEmbed, the ctaLocation prop is the identifier used in
 // analytics conversion events.
 export function BookingWidget({ ctaLocation, height }: Props) {
   const [step, setStep] = useState<Step>('date');

@@ -49,7 +49,7 @@ const FAQS = [
   {
     question: 'Can the AI book appointments live?',
     answer:
-      'Yes. The agent reads your real availability from Google Calendar, Outlook, Calendly, or your industry PMS during the call and books the appointment in real time — not later via a human team member.',
+      'Yes. The agent reads your real availability from Google Calendar, Outlook, Calendly, or your industry PMS during the call and books the appointment in real time, not later via a human team member.',
   },
   {
     question: 'What about after-hours and weekend calls?',
@@ -64,12 +64,12 @@ const FAQS = [
   {
     question: 'Can it transfer calls to a human when needed?',
     answer:
-      'Yes. We define your transfer rules during onboarding — VIP allow-lists, urgent-criteria triggers, frustration detection, specific keywords. Flagged calls route to your team, on-call line, or backup human service in real time.',
+      'Yes. We define your transfer rules during onboarding, VIP allow-lists, urgent-criteria triggers, frustration detection, specific keywords. Flagged calls route to your team, on-call line, or backup human service in real time.',
   },
   {
     question: 'How long does setup take?',
     answer:
-      'Most deployments go live in 7 to 14 business days. Faster than hiring; slower than a self-serve free tier elsewhere — because we tune the script and integrations to your business before going live.',
+      'Most deployments go live in 7 to 14 business days. Faster than hiring; slower than a self-serve free tier elsewhere, because we tune the script and integrations to your business before going live.',
   },
 ];
 
@@ -92,7 +92,7 @@ const FEATURES = [
     Icon: Database,
     title: 'Two-way CRM sync',
     description:
-      'Lead, transcript, recording, outcome — written back during the call.',
+      'Lead, transcript, recording, outcome, written back during the call.',
   },
   {
     Icon: PhoneForwarded,
@@ -118,9 +118,9 @@ const FEATURES = [
 
 const SAMPLE_TRANSCRIPT = [
   { ts: '00:00', speaker: 'system' as const, text: 'Inbound · after-hours · 9:14 PM' },
-  { ts: '00:02', speaker: 'agent' as const, text: 'Riverstone Plumbing — thanks for calling. How can I help?' },
+  { ts: '00:02', speaker: 'agent' as const, text: 'Riverstone Plumbing, thanks for calling. How can I help?' },
   { ts: '00:06', speaker: 'caller' as const, text: 'I have a leak. Is this an emergency line?' },
-  { ts: '00:09', speaker: 'agent' as const, text: 'Yes — describe the leak and tell me the address.' },
+  { ts: '00:09', speaker: 'agent' as const, text: 'Yes, describe the leak and tell me the address.' },
   { ts: '00:14', speaker: 'caller' as const, text: 'Active drip from a ceiling on the second floor. 47 Birch Ave.' },
   { ts: '00:19', speaker: 'agent' as const, text: 'Dispatching the on-call tech. ETA 35 minutes. Confirmation by text.' },
   { ts: '00:24', speaker: 'system' as const, text: 'Tech notified · CRM updated · job created' },
@@ -148,7 +148,7 @@ export default function AIPhoneAnsweringServicePage() {
           serviceSchema({
             name: 'AI Phone Answering Service',
             description:
-              'AI phone answering service for businesses — 24/7 coverage, fixed monthly cost, live booking, real CRM integration.',
+              'AI phone answering service for businesses, 24/7 coverage, fixed monthly cost, live booking, real CRM integration.',
             serviceType: 'AI Phone Answering Service',
             url: '/ai-phone-answering-service',
           }),
@@ -175,7 +175,7 @@ export default function AIPhoneAnsweringServicePage() {
                 Implenix is the AI phone answering service for local businesses
                 and professional firms. Every call answered within one ring,
                 qualified against your script, booked into your calendar, and
-                synced to your CRM — at a fixed monthly cost regardless of call
+                synced to your CRM, at a fixed monthly cost regardless of call
                 volume.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -242,7 +242,7 @@ export default function AIPhoneAnsweringServicePage() {
               </p>
               <p>
                 The trade-off is real: human operators handle nuanced,
-                emotionally complex calls in ways AI does not — yet.
+                emotionally complex calls in ways AI does not, yet.
                 Most deployments solve this with{' '}
                 <span className="text-white">live-transfer rules</span>:
                 the AI handles 80-90% of routine inbound at fixed cost,
@@ -324,7 +324,7 @@ export default function AIPhoneAnsweringServicePage() {
             </h2>
             <p className="font-body text-white/75 leading-relaxed max-w-xl">
               Most answering services charge a premium for after-hours
-              coverage — and the operator still needs to call you to
+              coverage, and the operator still needs to call you to
               dispatch. Implenix takes the call, runs the urgent-criteria
               rules you defined, and notifies your on-call tech directly.
               No premium, no callback delay.
@@ -478,7 +478,7 @@ export default function AIPhoneAnsweringServicePage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               {
                 href: '/ai-receptionist-vs-answering-service',
                 label: 'AI Receptionist vs Answering Service',

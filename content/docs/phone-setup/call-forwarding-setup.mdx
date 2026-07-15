@@ -1,12 +1,48 @@
 ---
 title: "Call Forwarding Setup"
-description: "Forward existing numbers to your Implenix agent."
+description: "How to forward your existing business number to the Implenix agent."
 section: "Phone Setup"
-order: 3
+order: 1
 ---
 
 # Call Forwarding Setup
 
-PLACEHOLDER DOC CONTENT — replace with verified forwarding instructions.
+Most Implenix deployments start by forwarding calls from your existing business number to a Twilio-hosted routing number. This lets you keep your published number and phone system while the agent handles inbound.
 
-The fastest path to live: forward your existing business number to the Implenix-managed number.
+## Forwarding options
+
+**Unconditional forwarding.** All inbound calls forward to the agent immediately. This is standard for AI-first deployments where the agent is the primary answer path.
+
+**Conditional forwarding (busy / no-answer).** Calls only forward if your existing line is busy or unanswered after N rings. This is standard for hybrid deployments where humans answer during business hours and AI catches overflow and after-hours.
+
+**Time-based forwarding.** Calls forward to the agent outside business hours (evenings, weekends, holidays). Human staff answer during business hours. Simple to configure but requires clean business-hour definitions.
+
+## Setup by carrier type
+
+### VoIP carriers (RingCentral, Nextiva, 8x8, Vonage)
+
+Log into your admin console. Find the number in your number list. Enable call forwarding. Enter the Twilio number we provide. For conditional forwarding, set the ring-count trigger (usually 3 to 4 rings). Save.
+
+### Google Voice
+
+Settings, forwarding rules. Add the Twilio number. Configure the schedule if using time-based forwarding.
+
+### Microsoft Teams calling
+
+Admin center, Voice, Phone numbers. Set call routing to the Twilio number.
+
+### Traditional landline
+
+Depends on your carrier. Some support conditional forwarding through the phone itself (star codes like *71 or *72). Others require carrier admin panel access. If forwarding is not available, port the number to VoIP first.
+
+## Verifying forwarding is working
+
+Call your business number from your mobile. Verify the agent answers. Book a test appointment. Verify the booking appears in your CRM and calendar. If the agent does not answer, check the forwarding rule and Twilio number correctness.
+
+## Reversing forwarding for testing
+
+You can disable forwarding at any time to return calls to your original setup. Test disabling and re-enabling before go-live so you know how quickly you can revert if needed.
+
+## Number porting instead of forwarding
+
+If you want the agent to become the primary owner of your number rather than a forward target, we can port your number to Twilio directly. Porting takes 5 to 10 business days and requires signed authorization. Forwarding is faster to set up but adds one telephony hop.

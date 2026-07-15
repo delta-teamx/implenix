@@ -22,7 +22,7 @@ import { buildMetadata, SITE_NAME } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: '24/7 AI Receptionist | Round-the-Clock Coverage | Implenix',
   description:
-    '24/7 AI receptionist that answers, qualifies, and books every call — nights, weekends, holidays. No premium for after-hours coverage.',
+    '24/7 AI receptionist that answers, qualifies, and books every call, nights, weekends, holidays. No premium for after-hours coverage.',
   path: '/24-7-ai-receptionist',
 });
 
@@ -30,12 +30,12 @@ const FAQS = [
   {
     question: 'What is a 24/7 AI receptionist?',
     answer:
-      'A 24/7 AI receptionist answers your inbound business calls continuously — every hour, every day, including nights, weekends, and holidays. It does not sleep, take breaks, or charge a premium for after-hours coverage.',
+      'A 24/7 AI receptionist answers your inbound business calls continuously, every hour, every day, including nights, weekends, and holidays. It does not sleep, take breaks, or charge a premium for after-hours coverage.',
   },
   {
     question: 'Why does 24/7 coverage matter?',
     answer:
-      'Most local-business inbound happens during peak hours when staff cannot pick up, and 30-50% of bookings actually come from outside business hours. After-hours emergencies (HVAC outages, plumbing leaks, vet emergencies) cannot wait for the next business day — the first business to answer wins.',
+      'Most local-business inbound happens during peak hours when staff cannot pick up, and 30-50% of bookings actually come from outside business hours. After-hours emergencies (HVAC outages, plumbing leaks, vet emergencies) cannot wait for the next business day, the first business to answer wins.',
   },
   {
     question: 'Is there a premium for after-hours coverage?',
@@ -45,7 +45,7 @@ const FAQS = [
   {
     question: 'Can it handle emergency calls overnight?',
     answer:
-      'Yes. We define your urgent-criteria rules during onboarding. Emergency calls trigger live transfer to your on-call line, dispatch software, or escalation path within seconds — even at 2 AM.',
+      'Yes. We define your urgent-criteria rules during onboarding. Emergency calls trigger live transfer to your on-call line, dispatch software, or escalation path within seconds, even at 2 AM.',
   },
   {
     question: 'Will customers know it is AI rather than a human at midnight?',
@@ -55,7 +55,7 @@ const FAQS = [
   {
     question: 'Does it slow down at peak hours?',
     answer:
-      'No. Concurrent capacity is unbounded — a hundred simultaneous callers all get answered in under one ring. Storm-driven spikes, lunch-rush concurrency, and holiday surges do not break the system.',
+      'No. Concurrent capacity is unbounded, a hundred simultaneous callers all get answered in under one ring. Storm-driven spikes, lunch-rush concurrency, and holiday surges do not break the system.',
   },
 ];
 
@@ -121,12 +121,12 @@ export default function TwentyFourSevenAIReceptionistPage() {
               <Badge label="24/7 · Round the clock" variant="cyan" />
               <h1 className="font-heading text-4xl md:text-6xl leading-[1.04]">
                 <span className="text-brand-purple">24/7 AI receptionist</span>{' '}
-                — every call, every hour.
+every call, every hour.
               </h1>
               <p className="font-body text-white/80 text-lg max-w-2xl leading-relaxed">
                 Most after-hours calls go to voicemail and never call back.
-                Implenix answers them all — overnight emergencies, weekend
-                bookings, holiday inquiries — at the same fixed monthly cost
+                Implenix answers them all, overnight emergencies, weekend
+                bookings, holiday inquiries, at the same fixed monthly cost
                 as business-hours coverage.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -172,7 +172,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
                 that charges premium rates for after-hours work.
               </p>
               <p>
-                The economics never quite work — voicemail loses callers
+                The economics never quite work, voicemail loses callers
                 outright, and after-hours premium billing makes a{' '}
                 $300/month service feel like $900/month by month-end.
               </p>
@@ -181,7 +181,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
                 <span className="text-white font-medium">fixed monthly
                 cost</span>. Same agent handles a 9 AM booking, a
                 Saturday quote, an 11 PM emergency dispatch, a Sunday
-                morning reschedule — no time-of-day surcharge. For HVAC,
+                morning reschedule, no time-of-day surcharge. For HVAC,
                 plumbing, electrical, roofing, and vet operators where
                 after-hours dominates the profile, 24/7 stops being
                 nice-to-have and becomes the entire reason to deploy.
@@ -207,9 +207,9 @@ export default function TwentyFourSevenAIReceptionistPage() {
                   { ts: '02:14', speaker: 'system', text: 'Inbound · Tuesday 2:14am · After-hours · Answered in 0 rings' },
                   { ts: '02:14', speaker: 'agent', text: "Northside HVAC, this is Avery. Are you having a heating or cooling problem right now?" },
                   { ts: '02:14', speaker: 'caller', text: "Furnace stopped, kids' bedroom is freezing." },
-                  { ts: '02:14', speaker: 'agent', text: "I'm sorry — that's exactly what we cover for after-hours emergency. I'll dispatch our on-call tech. Address?" },
+                  { ts: '02:14', speaker: 'agent', text: "I'm sorry, that's exactly what we cover for after-hours emergency. I'll dispatch our on-call tech. Address?" },
                   { ts: '02:14', speaker: 'caller', text: '4412 Maple, Northside.' },
-                  { ts: '02:15', speaker: 'agent', text: "Got it. Mike is on call and en route — ETA about 45 minutes. I've sent you a confirmation text. Anything else right now?" },
+                  { ts: '02:15', speaker: 'agent', text: "Got it. Mike is on call and en route, ETA about 45 minutes. I've sent you a confirmation text. Anything else right now?" },
                   { ts: '02:15', speaker: 'caller', text: 'No, thanks for picking up.' },
                   { ts: '02:15', speaker: 'system', text: 'Call ended · 53s · Tech dispatched · CRM updated · No after-hours premium charged' },
                 ]}
@@ -344,7 +344,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               {
                 href: '/ai-receptionist-vs-answering-service',
                 label: 'AI Receptionist vs Answering Service',
@@ -361,7 +361,7 @@ export default function TwentyFourSevenAIReceptionistPage() {
   );
 }
 
-// Coverage dial — SVG donut showing the 40 vs 128 hour split (typical
+// Coverage dial, SVG donut showing the 40 vs 128 hour split (typical
 // SMB covered hours vs uncovered hours in a week). Cyan slice = covered
 // by staff, purple slice = uncovered by staff (where AI takes over).
 function CoverageDial() {

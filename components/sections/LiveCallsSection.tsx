@@ -27,7 +27,7 @@ export function LiveCallsSection() {
         <SectionHeader
           eyebrow="Live · real calls"
           title="Watch the AI take a real call"
-          description="Four real conversations from production deployments — Spanish-language window booking, roof assessment, mid-call address correction, and a real-estate seller call. Tap a tab to see each one type out live."
+          description="Four real conversations from production deployments, Spanish-language window booking, roof assessment, mid-call address correction, and a real-estate seller call. Tap a tab to see each one type out live."
           badgeVariant="purple"
         />
         <div className="mt-10 flex flex-wrap gap-2">
@@ -85,7 +85,7 @@ export function LiveCallsSection() {
                 EN + ES
               </p>
               <p className="mt-2 font-body text-white/70 text-sm">
-                Language can branch on the first turn — caller-led, not
+                Language can branch on the first turn, caller-led, not
                 menu-driven.
               </p>
             </div>

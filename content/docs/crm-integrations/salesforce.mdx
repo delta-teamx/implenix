@@ -1,12 +1,77 @@
 ---
-title: "Salesforce"
-description: "Integrate Implenix with Salesforce."
+title: "Salesforce Integration"
+description: "How the Implenix agent integrates with Salesforce, including Sales Cloud and Service Cloud."
 section: "CRM Integrations"
-order: 3
+order: 2
 ---
 
-# Salesforce
+# Salesforce Integration
 
-PLACEHOLDER DOC CONTENT — replace with verified Salesforce integration steps.
+Salesforce integration is more complex than HubSpot but ships production-quality once wired. Standard integration adds 5 to 10 business days to the deployment timeline. Enterprise deployments with custom Apex logic or heavy custom-object usage can extend longer.
 
-Implenix integrates with Salesforce via OAuth. Lead, contact, opportunity, and activity sync are supported.
+## Editions supported
+
+- Sales Cloud (Enterprise, Unlimited)
+- Service Cloud (Enterprise, Unlimited)
+- Financial Services Cloud
+- Health Cloud (with HIPAA-compliant configuration)
+- Nonprofit Cloud
+- Custom orgs with API access enabled
+
+Professional Edition and below have limited API access; check with your Salesforce admin whether API-only user licenses are available.
+
+## Authentication
+
+OAuth 2.0 with a connected app configured in your Salesforce org. We provide the connected-app configuration; your admin approves and installs. Scopes requested:
+
+- api (full API access)
+- refresh_token (for persistent connection)
+- offline_access
+
+We use a dedicated integration user rather than a real user's credentials, so activities are attributed to the "Implenix Agent" user in your org.
+
+## Object mapping
+
+Standard mapping:
+
+- Contact / Lead lookup by phone (or email if phone match fails)
+- Account association for existing customers
+- Case creation for support-style calls
+- Task or Event creation for booked appointments
+- Custom object writes for industry-specific data (available on higher tiers)
+
+For deployments where the primary object is a custom object (common in Health Cloud and Financial Services Cloud), the integration maps to your custom object rather than standard Contact.
+
+## Person Accounts vs Contact + Account
+
+If your org uses Person Accounts, the integration works against Person Accounts directly. If your org uses standard Contact + Account, we lookup and create Contacts with appropriate Account association.
+
+## Duplicate management
+
+Salesforce's native duplicate rules run on writes. Our integration respects those rules and does not create duplicates that Salesforce would block. If a duplicate is detected, the agent uses the existing record.
+
+## Flows and Process Builder
+
+Any Salesforce Flow or Process triggered on record create or update fires normally when the agent writes. Common patterns:
+
+- Auto-response email sends on new Lead creation
+- Round-robin assignment via assignment rules
+- Case escalation rules on high-priority intake
+
+## Formula field and validation rule compatibility
+
+The agent's writes respect validation rules. If a validation rule blocks a write, the agent logs the failure and creates a task for human review rather than silently dropping the record.
+
+## Reporting and dashboards
+
+Every agent-handled call appears in Salesforce reports the same way human-handled calls do. Custom fields we write can be surfaced in dashboards for AI-assisted call analytics.
+
+## Common issues
+
+**API limit warnings.** Salesforce has API call limits per 24-hour window. For high-volume orgs, we adjust batching to stay within limits.
+
+**Field-level security errors.** Integration user lacks FLS on a field we need. Admin adjusts the profile or permission set.
+
+**Trigger loops.** Custom Apex triggers may need adjustment to prevent recursive updates when the agent writes.
+
+**Sandbox testing.** We can develop against your sandbox before production cutover. Recommended for large orgs.

@@ -1,6 +1,6 @@
 // Deterministic mapping from industry-page slug to relevant blog
 // posts. Used to inject high-value contextual internal links into
-// industry pages — Google 2026 rewards the internal-linking depth
+// industry pages, Google 2026 rewards the internal-linking depth
 // that identifies topical clusters.
 
 export const INDUSTRY_TO_BLOG_POSTS: Record<
@@ -13,7 +13,7 @@ export const INDUSTRY_TO_BLOG_POSTS: Record<
     { slug: 'ai-outbound-calling-guide', label: 'AI outbound calling: compliance + ROI' },
   ],
   dentists: [
-    { slug: 'ai-voice-agents-healthcare-medicine', label: 'AI voice agents in healthcare — the honest scope' },
+    { slug: 'ai-voice-agents-healthcare-medicine', label: 'AI voice agents in healthcare, the honest scope' },
     { slug: 'can-ai-handle-sensitive-conversations', label: 'Can AI handle sensitive conversations?' },
     { slug: 'how-to-calculate-your-missed-call-cost', label: 'How to calculate your missed-call cost' },
   ],
@@ -28,7 +28,7 @@ export const INDUSTRY_TO_BLOG_POSTS: Record<
     { slug: 'ai-outbound-calling-guide', label: 'AI outbound: compliance + follow-up' },
   ],
   'law-firms': [
-    { slug: 'ai-agents-for-lawyers', label: 'AI agents for law firms — intake playbook' },
+    { slug: 'ai-agents-for-lawyers', label: 'AI agents for law firms, intake playbook' },
     { slug: 'can-ai-handle-sensitive-conversations', label: 'Sensitive-conversation guardrails' },
     { slug: 'ethical-considerations-ai-agents', label: 'Ethical considerations of AI agents' },
   ],
@@ -38,7 +38,7 @@ export const INDUSTRY_TO_BLOG_POSTS: Record<
     { slug: 'ai-outbound-calling-guide', label: 'Follow-up compliance + ROI' },
   ],
   'med-spas': [
-    { slug: 'ai-agents-for-medspas', label: 'AI agents for med spas — booking playbook' },
+    { slug: 'ai-agents-for-medspas', label: 'AI agents for med spas, booking playbook' },
     { slug: 'ai-voice-agents-healthcare-medicine', label: 'Healthcare AI compliance framework' },
     { slug: 'how-to-calculate-your-missed-call-cost', label: 'Med-spa missed-call cost math' },
   ],
@@ -63,17 +63,17 @@ export const INDUSTRY_TO_BLOG_POSTS: Record<
     { slug: 'ai-outbound-calling-guide', label: 'Bid follow-up compliance' },
   ],
   'mortgage-brokers': [
-    { slug: 'ai-agents-for-finance', label: 'AI agents for finance — mortgage playbook' },
+    { slug: 'ai-agents-for-finance', label: 'AI agents for finance, mortgage playbook' },
     { slug: 'how-to-automate-sales-forecasting-with-ai-agents', label: 'Automating sales forecasting' },
     { slug: 'ethical-considerations-ai-agents', label: 'Ethical framework' },
   ],
   'insurance-agents': [
-    { slug: 'ai-agents-for-finance', label: 'AI agents for finance — insurance playbook' },
+    { slug: 'ai-agents-for-finance', label: 'AI agents for finance, insurance playbook' },
     { slug: 'ai-outbound-calling-guide', label: 'Consent + outbound compliance' },
     { slug: 'can-ai-handle-sensitive-conversations', label: 'Sensitive-caller handling' },
   ],
   accountants: [
-    { slug: 'ai-agents-for-finance', label: 'AI agents for finance — CPA playbook' },
+    { slug: 'ai-agents-for-finance', label: 'AI agents for finance, CPA playbook' },
     { slug: 'how-to-automate-sales-forecasting-with-ai-agents', label: 'Automate revenue forecasting' },
     { slug: 'ai-agent-integration-crm-erp-bi', label: 'AI + CRM/ERP integration' },
   ],
@@ -103,7 +103,7 @@ export const INDUSTRY_TO_BLOG_POSTS: Record<
     { slug: 'ai-agents-for-medspas', label: 'Booking-density playbook' },
   ],
   therapists: [
-    { slug: 'can-ai-handle-sensitive-conversations', label: 'Sensitive conversations — critical framework' },
+    { slug: 'can-ai-handle-sensitive-conversations', label: 'Sensitive conversations, critical framework' },
     { slug: 'ethical-considerations-ai-agents', label: 'Ethical considerations' },
     { slug: 'ai-voice-agents-healthcare-medicine', label: 'Healthcare AI scope' },
   ],

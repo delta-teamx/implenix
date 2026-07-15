@@ -1,18 +1,46 @@
 ---
 title: "Prerequisites"
-description: "What you need ready before deployment kickoff."
+description: "What you need to have in place before an Implenix deployment kicks off."
 section: "Getting Started"
 order: 2
 ---
 
 # Prerequisites
 
-PLACEHOLDER DOC CONTENT — replace with verified onboarding requirements.
+Before kickoff, five things need to be in place. If any are missing, we help you close the gap during the first week rather than blocking the whole deployment.
 
-Before kickoff, gather:
+## 1. A phone number we can route
 
-- A list of inbound call numbers and where they currently route.
-- Admin access to your CRM and calendar.
-- Top 10 frequently asked caller questions.
-- Sample call recordings, if available.
-- Hours of operation and on-call rotation rules.
+Any of these work: an existing VoIP number (RingCentral, Nextiva, 8x8, Vonage), a Google Voice or Microsoft Teams number, a Twilio-hosted number, or a traditional landline you are willing to port to VoIP. Landlines without SIP routing require a short porting step first.
+
+## 2. Read and write access to your CRM
+
+We integrate at the API level, which means an API key or OAuth grant scoped for read (contacts, deals, calendars) and write (create leads, update fields, log activities). Common CRMs (HubSpot, Salesforce, Follow Up Boss, GoHighLevel, Clio, Boulevard, ServiceTitan) have documented API access. Custom systems require a webhook conversation.
+
+## 3. A calendar system the agent can book against
+
+Google Calendar, Outlook / Microsoft 365, Calendly, Acuity, or the calendar layer inside your CRM or practice management system. Real-time availability read is required, synced snapshots produce double-bookings.
+
+## 4. A dedicated owner on your side
+
+One person from your team who owns the deployment. Not the CEO in most cases, more often the ops lead, office manager, or dedicated marketing lead. This person joins the discovery call, reviews the prompt, and owns the escalation-rule sign-off.
+
+## 5. Willingness to invest in the discovery week
+
+The single most common cause of deployment disappointment is skipping discovery. If you do not want to spend 2 to 3 hours of your operator time in week one, the deployment will feel generic on the first real call. Invest the time.
+
+## Nice-to-have (not required)
+
+- SMS-provisioned Twilio account (we can provision one on your behalf).
+- Existing call recordings (they accelerate discovery but we can start with live calls if none exist).
+- Written FAQ document or knowledge base (accelerates the intake script build).
+- Written brand voice guidelines (accelerates tone tuning).
+
+## What we handle for you
+
+- Number provisioning if you do not have one you like.
+- SIP routing configuration.
+- Twilio account setup and SMS provisioning.
+- Voice model selection and voice cloning if desired.
+- Test-call battery.
+- Cutover coordination and silent-monitoring.

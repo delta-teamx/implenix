@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const doc = allDocs.find((d) => d.slug === slug);
   if (!doc) return {};
   return buildMetadata({
-    title: `${doc.title} — Implenix Docs`,
+    title: `${doc.title}, Implenix Docs`,
     description: doc.description,
     path: `/docs/${slug}`,
   });

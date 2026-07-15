@@ -24,7 +24,7 @@ const STEPS: Step[] = [
     Icon: PhoneCall,
     title: 'AI answers every call',
     description:
-      'Your dedicated agent picks up every inbound call within one ring, 24 hours a day, 7 days a week — with a script tuned for your industry.',
+      'Your dedicated agent picks up every inbound call within one ring, 24 hours a day, 7 days a week, with a script tuned for your industry.',
     bullets: ['Answered in under one ring', 'Custom script per industry', 'English + Spanish'],
     Visual: StepOneVisual,
   },
@@ -33,7 +33,7 @@ const STEPS: Step[] = [
     Icon: ListChecks,
     title: 'Qualifies and books',
     description:
-      'The agent follows your custom script, qualifies the lead, and books the appointment directly into your calendar — respecting capacity and team rotation.',
+      'The agent follows your custom script, qualifies the lead, and books the appointment directly into your calendar, respecting capacity and team rotation.',
     bullets: [
       'Live booking against real availability',
       'Smart routing by job type',
@@ -46,7 +46,7 @@ const STEPS: Step[] = [
     Icon: Database,
     title: 'Your CRM updates itself',
     description:
-      'Every call is logged, every lead is created, every follow-up is scheduled — without you touching anything. Two-way sync, every time.',
+      'Every call is logged, every lead is created, every follow-up is scheduled, without you touching anything. Two-way sync, every time.',
     bullets: [
       'Two-way CRM sync',
       'Recordings + transcripts archived',
@@ -72,7 +72,7 @@ export function HowItWorks() {
             Three steps. Zero missed calls.
           </h2>
           <p className="mt-4 font-body text-white/70 text-lg">
-            From the first ring to the CRM update — Implenix handles the
+            From the first ring to the CRM update, Implenix handles the
             entire call cycle. Watch each step happen in order.
           </p>
         </header>

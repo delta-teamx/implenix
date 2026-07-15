@@ -42,12 +42,12 @@ const HOME_FAQS = [
   {
     question: 'How much does an AI receptionist cost?',
     answer:
-      'Implenix AI Receptionist pricing starts at $297/month for single-location businesses handling 100-500 calls/month, $497/month for growing multi-line operations, and $697-$1,497/month for multi-location deployments. All tiers include 24/7 coverage, unlimited concurrent calls, two-way CRM sync, and live calendar booking at fixed monthly cost — no per-minute billing that punishes growth.',
+      'Implenix AI Receptionist pricing starts at $297/month for single-location businesses handling 100-500 calls/month, $497/month for growing multi-line operations, and $697-$1,497/month for multi-location deployments. All tiers include 24/7 coverage, unlimited concurrent calls, two-way CRM sync, and live calendar booking at fixed monthly cost, no per-minute billing that punishes growth.',
   },
   {
     question: 'How is Implenix different from a traditional answering service?',
     answer:
-      'Implenix answers within one ring, holds unlimited concurrent calls, books directly against your calendar system, and writes to your CRM in real time — all at fixed monthly cost. Traditional answering services bill per-minute (cost scales with volume), rely on human operator turnover, and typically send next-morning email summaries instead of live CRM sync. See the full side-by-side at /ai-receptionist-vs-answering-service.',
+      'Implenix answers within one ring, holds unlimited concurrent calls, books directly against your calendar system, and writes to your CRM in real time, all at fixed monthly cost. Traditional answering services bill per-minute (cost scales with volume), rely on human operator turnover, and typically send next-morning email summaries instead of live CRM sync. See the full side-by-side at /ai-receptionist-vs-answering-service.',
   },
   {
     question: 'How long does deployment take?',
@@ -57,12 +57,12 @@ const HOME_FAQS = [
   {
     question: 'Does the AI actually replace a human receptionist?',
     answer:
-      'For routine inbound — booking, rescheduling, qualification, intake, recurring service — yes, at production quality that most callers cannot distinguish from a well-trained receptionist. For calls requiring real human judgment (crisis intake, angry customer resolution, complex negotiation, bereavement, medical emergencies) the AI detects the sensitivity and transfers to a human on your team within 30 seconds. The pattern that works: AI handles the 70-90% that is repeatable, humans handle the 10-30% that needs judgment.',
+      'For routine inbound, booking, rescheduling, qualification, intake, recurring service, yes, at production quality that most callers cannot distinguish from a well-trained receptionist. For calls requiring real human judgment (crisis intake, angry customer resolution, complex negotiation, bereavement, medical emergencies) the AI detects the sensitivity and transfers to a human on your team within 30 seconds. The pattern that works: AI handles the 70-90% that is repeatable, humans handle the 10-30% that needs judgment.',
   },
   {
     question: 'Will my customers know it is AI?',
     answer:
-      'Some will, some will not. In deployments we measure, roughly 20-30% of callers realize they are speaking to an AI at some point in the call. Rather than hiding it, Implenix identifies itself clearly on the greeting ("virtual assistant for [your business]") — hidden AI erodes trust when discovered, and clear disclosure improves caller acceptance. Voice quality in 2026 is natural enough that identification is inconsistent even with disclosure.',
+      'Some will, some will not. In deployments we measure, roughly 20-30% of callers realize they are speaking to an AI at some point in the call. Rather than hiding it, Implenix identifies itself clearly on the greeting ("virtual assistant for [your business]"), hidden AI erodes trust when discovered, and clear disclosure improves caller acceptance. Voice quality in 2026 is natural enough that identification is inconsistent even with disclosure.',
   },
   {
     question: 'Which industries do you support?',
@@ -72,7 +72,7 @@ const HOME_FAQS = [
   {
     question: 'What is the compliance posture for regulated industries?',
     answer:
-      'Healthcare deployments run under HIPAA with signed BAAs across the vendor stack, access-controlled transcript storage, and minimum-necessary intake — the agent does not diagnose or handle clinical decisions. Legal deployments include conflict-check webhook integration and a "hard stop" list (no legal advice, no fee quotes, no case-strength opinions). Financial services deployments enforce licensing-state gates and prohibit rate quotes over the phone. Every deployment includes recording notification in the greeting.',
+      'Healthcare deployments run under HIPAA with signed BAAs across the vendor stack, access-controlled transcript storage, and minimum-necessary intake, the agent does not diagnose or handle clinical decisions. Legal deployments include conflict-check webhook integration and a "hard stop" list (no legal advice, no fee quotes, no case-strength opinions). Financial services deployments enforce licensing-state gates and prohibit rate quotes over the phone. Every deployment includes recording notification in the greeting.',
   },
 ];
 
@@ -87,7 +87,7 @@ export default function HomePage() {
           serviceSchema({
             name: 'AI Receptionist',
             description:
-              'AI Receptionist for local business — answers, qualifies, and books every inbound call 24/7 at fixed monthly cost.',
+              'AI Receptionist for local business, answers, qualifies, and books every inbound call 24/7 at fixed monthly cost.',
             serviceType: 'AI Receptionist',
             url: '/',
           }),
@@ -131,7 +131,7 @@ export default function HomePage() {
                 Implenix replaces both the missed-call cost of voicemail
                 and the per-minute cost of live answering services with{' '}
                 <span className="text-white font-medium">fixed monthly
-                pricing — $297-$697/month</span> — and handles unlimited
+                pricing, $297-$697/month</span>, and handles unlimited
                 concurrent calls without extra headcount. Built by voice
                 AI operators who ship deployments into regulated and
                 unregulated industries every week.
@@ -182,7 +182,7 @@ export default function HomePage() {
         <div className="max-w-content mx-auto px-6 py-20 md:py-24">
           <SectionHeader
             eyebrow="FAQ"
-            title="AI Receptionist — frequently asked"
+            title="AI Receptionist, frequently asked"
             description="Fastest way to answer the questions every operator asks before booking a scoping call."
           />
           <div className="mt-12 grid md:grid-cols-2 gap-5">

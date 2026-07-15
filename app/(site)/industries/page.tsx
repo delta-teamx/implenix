@@ -41,9 +41,9 @@ import { buildMetadata, SITE_NAME } from '@/lib/seo';
 import { INDUSTRIES, industryUrl } from '@/lib/industries';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'AI Receptionist Industries — 25 Tuned Playbooks | Implenix',
+  title: 'AI Receptionist Industries, 25 Tuned Playbooks | Implenix',
   description:
-    'Browse all 25 industries with tuned AI receptionist playbooks — local services, health and wellness, beauty, professional services. Pick yours.',
+    'Browse all 25 industries with tuned AI receptionist playbooks, local services, health and wellness, beauty, professional services. Pick yours.',
   path: '/industries',
 });
 
@@ -274,7 +274,7 @@ export default function IndustriesIndexPage() {
             </h2>
             <p className="mt-4 font-body text-white/75 max-w-xl">
               These are the 25 industries with shipped, tuned playbooks. We
-              regularly deploy for industries outside this list — if your
+              regularly deploy for industries outside this list, if your
               call profile fits, we'll build the playbook with you.
             </p>
           </div>
@@ -302,7 +302,7 @@ export default function IndustriesIndexPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               { href: '/pricing', label: 'AI Receptionist pricing' },
               {
                 href: '/ai-receptionist-vs-human-receptionist',

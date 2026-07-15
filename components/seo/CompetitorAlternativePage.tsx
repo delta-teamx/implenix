@@ -37,7 +37,7 @@ export function CompetitorAlternativePage({ profile }: Props) {
       <SchemaOrg
         schema={[
           articleSchema({
-            title: `${headline} — Implenix AI Receptionist`,
+            title: `${headline}, Implenix AI Receptionist`,
             description: profile.metaDescription,
             url,
             datePublished: new Date().toISOString().slice(0, 10),
@@ -146,8 +146,8 @@ export function CompetitorAlternativePage({ profile }: Props) {
                   ▸ The architecture difference
                 </span>
                 <p className="mt-3 font-body text-white/85 text-sm leading-relaxed">
-                  {profile.competitorName} is human-anchored — every minute on
-                  the call is billable headcount. Implenix is AI-first — the
+                  {profile.competitorName} is human-anchored, every minute on
+                  the call is billable headcount. Implenix is AI-first, the
                   same call carries no marginal cost and runs in parallel with
                   every other call hitting your line.
                 </p>
@@ -199,7 +199,7 @@ export function CompetitorAlternativePage({ profile }: Props) {
         <div className="max-w-content mx-auto px-6 py-24">
           <SectionHeader
             eyebrow="Honest assessment"
-            title={`What ${profile.competitorName} does well — and where Implenix differs`}
+            title={`What ${profile.competitorName} does well, and where Implenix differs`}
             description={`Not every business needs an AI receptionist. Here is the honest read on both sides.`}
           />
           <div className="mt-12 grid md:grid-cols-2 gap-5">

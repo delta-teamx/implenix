@@ -15,7 +15,7 @@ const FEATURED = [
     industry: 'Real Estate',
     resultHeadline: '+28% deals closed with AI-run booking + follow-up',
     summary:
-      'Columbus Property handed inbound qualification and follow-up to Implenix. Closers stay on closing — the AI runs everything before it.',
+      'Columbus Property handed inbound qualification and follow-up to Implenix. Closers stay on closing, the AI runs everything before it.',
     href: '/case-studies/placeholder-real-estate',
   },
   {

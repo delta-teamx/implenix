@@ -121,7 +121,7 @@ export function Footer() {
             </p>
             <div className="border border-brand-cyan/30 bg-brand-dark p-4 flex flex-col gap-3">
               <p className="font-mono text-[10px] uppercase tracking-widest text-brand-cyan">
-                ▸ Skip the form — call the agent
+                ▸ Skip the form, call the agent
               </p>
               <p className="font-body text-xs text-white/65 leading-relaxed">
                 Hear the same AI agent that runs on customer phone lines.

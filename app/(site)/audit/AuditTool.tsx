@@ -225,11 +225,11 @@ export function AuditTool() {
 
             <div className="border border-brand-purple/30 bg-black p-5 flex flex-col gap-3">
               <span className="text-[10px] font-mono uppercase tracking-widest text-brand-cyan">
-                ▸ Step 2 · Save these numbers — get on a call
+                ▸ Step 2 · Save these numbers, get on a call
               </span>
               <p className="font-body text-sm text-white/80 leading-relaxed">
                 Call our agent now to hear the playbook live, or book a
-                30-minute slot with the team — no email, no form.
+                30-minute slot with the team, no email, no form.
               </p>
               <div className="flex flex-col sm:flex-row gap-2 mt-1">
                 <PhoneCTA

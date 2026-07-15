@@ -20,7 +20,7 @@ export function Hero() {
             <p className="font-body text-white/80 text-lg max-w-xl leading-relaxed">
               Every missed call is revenue that walked to a competitor
               within twelve minutes. Implenix is the AI receptionist that
-              answers within one ring, 24/7 — qualified, booked against
+              answers within one ring, 24/7, qualified, booked against
               your live calendar, and written back to your CRM before
               the caller hangs up.
             </p>

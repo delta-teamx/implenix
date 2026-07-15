@@ -1,12 +1,75 @@
 ---
-title: "HubSpot"
-description: "Integrate Implenix with HubSpot CRM."
+title: "HubSpot Integration"
+description: "How the Implenix agent integrates with HubSpot for real-time lead and activity sync."
 section: "CRM Integrations"
-order: 2
+order: 1
 ---
 
-# HubSpot
+# HubSpot Integration
 
-PLACEHOLDER DOC CONTENT — replace with verified HubSpot integration steps.
+HubSpot has the cleanest API in the CRM landscape and is the fastest integration path in our portfolio. Standard integration ships within the day-6 to day-9 window of a typical deployment.
 
-Implenix writes to HubSpot via private app. Each call appears as an activity on the contact timeline.
+## What the integration does
+
+**Read scope.**
+- Contact lookup by phone number on inbound.
+- Contact history (recent interactions, open deals, notes).
+- Deal or opportunity status.
+- Contact owner (for warm-transfer routing).
+- Lifecycle stage and lead score.
+- VIP or tier custom properties.
+
+**Write scope.**
+- Create new contacts for unknown callers.
+- Log calls as activities with transcript.
+- Update contact properties captured during the call.
+- Create deals or tasks based on call outcome.
+- Update lifecycle stage on qualified conversations.
+- Push custom properties for downstream automation triggers.
+
+## Authentication
+
+OAuth 2.0 through the HubSpot app marketplace. You approve the connection once during setup; token refresh is automatic. Scopes we request:
+
+- contacts (read + write)
+- crm.objects.contacts.read + write
+- crm.objects.deals.read + write
+- crm.schemas.contacts.read (for custom property discovery)
+- timeline (for activity logging)
+- automation (if you want the agent to enroll contacts in workflows)
+
+## Property mapping
+
+During discovery we map every field the agent captures to a HubSpot property, standard or custom. Common mappings:
+
+- Caller name to firstname / lastname
+- Phone to phone
+- Email if captured to email
+- Address to address / city / state / zip
+- Reason for call to a custom property (name varies by industry)
+- Appointment booked to a boolean custom property
+- Call outcome to a dropdown custom property
+- Transcript to a long-text custom property
+
+## Handling duplicates
+
+The agent looks up by phone first, then email if phone match fails. Match logic is fuzzy on formatting (handles +1 prefix, parentheses, dashes). Only creates a new contact if no match is found within the last 12 months.
+
+## Workflow integration
+
+Once a contact is created or updated by the agent, standard HubSpot workflows fire normally. Common patterns we ship into:
+
+- New lead enrollment for nurture sequences.
+- Booking confirmation email trigger.
+- Sales rep round-robin task assignment.
+- Deal stage progression based on call outcome.
+
+## Common issues
+
+**Custom property not populating.** Usually a scope or naming mismatch. Verify the property exists and matches the expected internal name.
+
+**Duplicate contacts appearing.** Fuzzy match may be too tight for your data. We can adjust match confidence thresholds.
+
+**Activity not appearing in the timeline.** Check that timeline scope was granted during OAuth.
+
+**Workflow not triggering.** Verify the trigger property matches what the agent is writing.

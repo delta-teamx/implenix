@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: 'How is this different from a regular virtual assistant?',
     answer:
-      'A virtual assistant is a remote human worker doing administrative work (email, calendar, research) that includes phone as a slice. A virtual AI receptionist is dedicated phone infrastructure — only handles calls, but does so 24/7 with unlimited concurrent capacity and real-time CRM integration.',
+      'A virtual assistant is a remote human worker doing administrative work (email, calendar, research) that includes phone as a slice. A virtual AI receptionist is dedicated phone infrastructure, only handles calls, but does so 24/7 with unlimited concurrent capacity and real-time CRM integration.',
   },
   {
     question: 'Do I need to install anything on-site?',
@@ -89,7 +89,7 @@ export default function VirtualAIReceptionistPage() {
           articleSchema({
             title: 'Virtual AI Receptionist',
             description:
-              'Virtual AI receptionist hosted in the cloud — no on-prem hardware, scalable, integrated with your CRM and calendar live.',
+              'Virtual AI receptionist hosted in the cloud, no on-prem hardware, scalable, integrated with your CRM and calendar live.',
             url: '/virtual-ai-receptionist',
             datePublished: new Date().toISOString().slice(0, 10),
             author: SITE_NAME,
@@ -126,7 +126,7 @@ export default function VirtualAIReceptionistPage() {
                 No hardware, no on-prem install, no human staff on-site.
                 Implenix runs as a virtual AI receptionist in our cloud,
                 connects to your phone routing via SIP, and handles every
-                inbound call 24/7 — with live CRM and calendar
+                inbound call 24/7, with live CRM and calendar
                 integration.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -177,7 +177,7 @@ export default function VirtualAIReceptionistPage() {
               </p>
               <p>
                 Setup is <span className="text-white font-medium">configuration
-                only</span> — no hardware install, no PBX changes, no
+                only</span>, no hardware install, no PBX changes, no
                 IT project. Most deployments go live in 7-14 business
                 days, parallel-tested for a week, then routed to real
                 traffic.
@@ -247,9 +247,9 @@ export default function VirtualAIReceptionistPage() {
           <div className="mt-16">
             <DividedStats
               stats={[
-                { number: '7-14 days', label: 'Cloud deploy time — no hardware, no on-prem install' },
+                { number: '7-14 days', label: 'Cloud deploy time, no hardware, no on-prem install' },
                 { number: '<800ms', label: 'Turn-taking latency end-to-end through the cloud' },
-                { number: 'unlimited', label: 'Concurrent calls — scales instantly with peak hours' },
+                { number: 'unlimited', label: 'Concurrent calls, scales instantly with peak hours' },
               ]}
             />
           </div>
@@ -261,7 +261,7 @@ export default function VirtualAIReceptionistPage() {
           <SectionHeader
             eyebrow="Hear it"
             title="A virtual receptionist call, end to end"
-            description="The agent runs in our cloud. Your business number forwards to the SIP trunk. The caller never knows where the agent is hosted — they just know they got an instant answer."
+            description="The agent runs in our cloud. Your business number forwards to the SIP trunk. The caller never knows where the agent is hosted, they just know they got an instant answer."
           />
           <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8">
@@ -273,11 +273,11 @@ export default function VirtualAIReceptionistPage() {
                   { ts: '10:08', speaker: 'caller', text: "I'm a current patient, just need to reschedule my Thursday cleaning." },
                   { ts: '10:08', speaker: 'agent', text: "I see you on Dr. Patel's calendar Thursday at 2pm. What day works better?" },
                   { ts: '10:08', speaker: 'caller', text: 'Friday afternoon if possible.' },
-                  { ts: '10:08', speaker: 'agent', text: "Friday at 3pm with Dr. Patel — moved. You'll get a confirmation text and the new calendar invite in a moment. Anything else?" },
+                  { ts: '10:08', speaker: 'agent', text: "Friday at 3pm with Dr. Patel, moved. You'll get a confirmation text and the new calendar invite in a moment. Anything else?" },
                   { ts: '10:09', speaker: 'caller', text: 'Nope, thanks.' },
                   { ts: '10:09', speaker: 'system', text: 'Calendar updated · CRM note added · SMS sent · No on-prem hardware involved · 47s' },
                 ]}
-                caption="Cloud-to-cloud — SIP, dialogue model, calendar, CRM — all hosted, all live"
+                caption="Cloud-to-cloud, SIP, dialogue model, calendar, CRM, all hosted, all live"
               />
             </div>
             <aside className="lg:col-span-4 flex flex-col gap-4">
@@ -398,7 +398,7 @@ export default function VirtualAIReceptionistPage() {
             topic="Keep reading"
             type="resource"
             links={[
-              { href: '/', label: 'AI Receptionist — main pillar' },
+              { href: '/', label: 'AI Receptionist, main pillar' },
               {
                 href: '/ai-receptionist-vs-virtual-assistant',
                 label: 'AI Receptionist vs Virtual Assistant',

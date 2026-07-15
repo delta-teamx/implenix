@@ -310,7 +310,7 @@ export default function IndustryPage({ params }: { params: Params }) {
               “{data.testimonialQuote}”
             </p>
             <footer className="mt-auto text-sm font-body text-white/55">
-              — {data.testimonialAuthor}
+{data.testimonialAuthor}
             </footer>
           </blockquote>
         </div>
