@@ -55,11 +55,18 @@ module.exports = {
     '/api/*',
     '/admin/*',
     '/preview/*',
-    // /i and /v are internal rewrite targets — the public URLs
+    // /i and /v are internal rewrite targets. The public URLs
     // (/ai-receptionist-for-X, /ai-receptionist-vs-X) are what Google
     // indexes. Prevent duplicate indexing.
     '/i/*',
     '/v/*',
+    // Static assets and feeds should not appear in the URL sitemap.
+    // RSS is announced separately via additionalSitemaps.
+    '/icon.svg',
+    '/manifest.webmanifest',
+    '/blog/rss.xml',
+    // Legacy /ai-call-answering-service is 301'd to /ai-phone-answering-service.
+    '/ai-call-answering-service',
   ],
   robotsTxtOptions: {
     policies: [

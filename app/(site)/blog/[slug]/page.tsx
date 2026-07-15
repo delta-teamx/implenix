@@ -71,7 +71,9 @@ export default function BlogPostPage({ params }: { params: Params }) {
             datePublished: doc.publishedAt,
             author: doc.author,
             authorRole: doc.authorRole,
-          }), ...(howToSteps && howToSteps.length > 0
+            image: doc.heroImage,
+          }),
+          ...(howToSteps && howToSteps.length > 0
             ? [
                 howToSchema({
                   name: doc.title,

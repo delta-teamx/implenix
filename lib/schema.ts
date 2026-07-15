@@ -87,31 +87,49 @@ export function blogPostingSchema({
   description,
   url,
   datePublished,
+  dateModified,
   author,
   authorRole,
+  authorUrl,
+  image,
 }: {
   title: string;
   description: string;
   url: string;
   datePublished: string;
+  dateModified?: string;
   author: string;
   authorRole?: string;
+  authorUrl?: string;
+  image?: string;
 }) {
+  const canonical = `${SITE_URL}${url}`;
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: title,
     description,
-    url: `${SITE_URL}${url}`,
+    url: canonical,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     datePublished,
+    dateModified: dateModified ?? datePublished,
+    image: image ? [image] : [`${SITE_URL}/og-default.png`],
     author: {
       '@type': 'Person',
-      name: author, ...(authorRole ? { jobTitle: authorRole } : {}),
+      name: author,
+      url: authorUrl ?? `${SITE_URL}/about#${author.toLowerCase().replace(/\s+/g, '-')}`,
+      ...(authorRole ? { jobTitle: authorRole } : {}),
     },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
       url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+        width: 512,
+        height: 512,
+      },
     },
   };
 }

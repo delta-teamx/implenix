@@ -59,7 +59,10 @@ export function buildMetadata({
           siteName: SITE_NAME,
           type: 'article',
           locale: 'en_US',
-          images: [{ url: ogImage, width: 1200, height: 630, alt: title }], ...(publishedTime ? { publishedTime } : {}), ...(author ? { authors: [author] } : {}), ...(tags && tags.length > 0 ? { tags } : {}),
+          images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+          ...(publishedTime ? { publishedTime } : {}),
+          ...(author ? { authors: [author] } : {}),
+          ...(tags && tags.length > 0 ? { tags } : {}),
         }
       : {
           title,

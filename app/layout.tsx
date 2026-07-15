@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Dela_Gothic_One, Montserrat, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { SchemaOrg } from '@/components/seo/SchemaOrg';
@@ -57,7 +57,23 @@ export const metadata: Metadata = {
     title: DEFAULT_SEO.defaultTitle,
     description: DEFAULT_SEO.description,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  manifest: '/manifest.webmanifest',
   // Search Console + Bing Webmaster verification.
   // Set NEXT_PUBLIC_GOOGLE_VERIFICATION + NEXT_PUBLIC_BING_VERIFICATION
   // before launch to validate site ownership.
@@ -67,6 +83,19 @@ export const metadata: Metadata = {
       ? { 'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION] }
       : undefined,
   },
+};
+
+// Next.js 14+ separates viewport into its own export so it can be
+// dynamically overridden per-route without polluting metadata.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#070538' },
+  ],
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({
@@ -93,35 +122,43 @@ export default function RootLayout({
         />
         <link rel="dns-prefetch" href="https://storage.vapi.ai" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        {/* GTM: REPLACE GTM-XXXXXXX WITH YOUR CONTAINER ID */}
-        <Script id="gtm-init" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-XXXXXXX');`}
-        </Script>
-        {/* META PIXEL: REPLACE 000000000000000 WITH YOUR PIXEL ID */}
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
-            n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-            t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init','000000000000000');fbq('track','PageView');`}
-        </Script>
-        {/* GOOGLE ADS CONVERSION: REPLACE AW-XXXXXXXXXX WITH YOUR TAG ID */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-XXXXXXXXXX');`}
-        </Script>
+        {/* GTM: set NEXT_PUBLIC_GTM_ID to enable. */}
+        {process.env.NEXT_PUBLIC_GTM_ID ? (
+          <Script id="gtm-init" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`}
+          </Script>
+        ) : null}
+        {/* META PIXEL: set NEXT_PUBLIC_META_PIXEL_ID to enable. */}
+        {process.env.NEXT_PUBLIC_META_PIXEL_ID ? (
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+              n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+              t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window,document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init','${process.env.NEXT_PUBLIC_META_PIXEL_ID}');fbq('track','PageView');`}
+          </Script>
+        ) : null}
+        {/* GOOGLE ADS: set NEXT_PUBLIC_GOOGLE_ADS_ID (AW-XXXXXXXXXX) to enable. */}
+        {process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-ads" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');`}
+            </Script>
+          </>
+        ) : null}
       </head>
       <body className="min-h-screen bg-brand-dark text-white antialiased">
         <a
@@ -130,14 +167,16 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {process.env.NEXT_PUBLIC_GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        ) : null}
         <main id="main">{children}</main>
       </body>
     </html>
