@@ -27,7 +27,7 @@ const FALLBACKS: Record<Props['type'], LinkItem[]> = {
   ],
   'case-study': [
     { href: '/case-studies', label: 'All case studies' },
-    { href: '/solutions/ai-receptionist', label: 'AI Receptionist solution' },
+    { href: '/', label: 'AI Receptionist solution' },
     { href: '/solutions/ai-followup', label: 'AI Follow-up solution' },
   ],
 };

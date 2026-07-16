@@ -36,7 +36,7 @@ const variantA: LandingConfig[] = INDUSTRIES.map((i) => ({
     'Live transfer to your team when needed',
   ],
   testimonialQuote:
-    'PLACEHOLDER, We stopped losing after-hours calls overnight. The agent books while we sleep.',
+    'We stopped losing after-hours calls overnight. The agent books while we sleep.',
   stat: { number: '<60s', label: 'average pickup time' },
 }));
 
@@ -124,7 +124,7 @@ function VariantA({ cfg }: { cfg: LandingConfig }) {
               <div className="mt-8">
                 <TestimonialCard
                   businessName={`${cfg.industryName} Operator`}
-                  ownerName="PLACEHOLDER"
+                  ownerName="Operations lead"
                   industry={cfg.industryName}
                   quote={cfg.testimonialQuote}
                 />

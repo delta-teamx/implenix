@@ -102,13 +102,17 @@ export default function BlogPostPage({ params }: { params: Params }) {
             ]}
             className="mb-6"
           />
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-brand-cyan font-mono mb-8 hover:opacity-80"
-          >
-            <ArrowLeft size={12} /> All posts
-          </Link>
-          <Badge label={doc.category} variant="purple" />
+          <div className="mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-brand-cyan font-mono hover:opacity-80"
+            >
+              <ArrowLeft size={12} /> All posts
+            </Link>
+          </div>
+          <div>
+            <Badge label={doc.category} variant="purple" />
+          </div>
           <h1 className="font-heading text-3xl md:text-5xl mt-5 leading-[1.08]">
             {doc.title}
           </h1>

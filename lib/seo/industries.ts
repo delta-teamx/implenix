@@ -61,17 +61,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'New-patient intake collides with in-office check-ins',
         description:
-          'PLACEHOLDER, When the front desk is checking in a patient, every other caller hits voicemail. New-patient acquisition cost is wasted on a call that never gets answered.',
+          'When the front desk is checking in a patient, every other caller hits voicemail. New-patient acquisition cost is wasted on a call that never gets answered.',
       },
       {
         title: 'Insurance verification eats half the day',
         description:
-          'PLACEHOLDER, Insurance is the most-asked question and the most repetitive. Staff spends real labor hours on calls that follow a script.',
+          'Insurance is the most-asked question and the most repetitive. Staff spends real labor hours on calls that follow a script.',
       },
       {
         title: 'Refill requests pile up on hold',
         description:
-          'PLACEHOLDER, Refill calls feel non-urgent to staff but urgent to patients. Without a clean queue, both sides get frustrated and the patient relationship degrades.',
+          'Refill calls feel non-urgent to staff but urgent to patients. Without a clean queue, both sides get frustrated and the patient relationship degrades.',
       },
     ],
     useCases: [
@@ -97,8 +97,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-42%', label: 'voicemail abandonment' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Our front desk used to answer 6 out of every 10 calls. Now we answer all of them, and our front desk has the bandwidth to actually look up at patients walking in.',
-    testimonialAuthor: 'PLACEHOLDER, Practice administrator, primary care group',
+      'Our front desk used to answer 6 out of every 10 calls. Now we answer all of them, and our front desk has the bandwidth to actually look up at patients walking in.',
+    testimonialAuthor: 'Practice administrator, primary care group',
     faqs: [
       {
         question: 'Is the Implenix AI receptionist HIPAA compliant?',
@@ -154,17 +154,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Outage calls happen when no one can answer',
         description:
-          'PLACEHOLDER, A blown panel at 9 PM is a $1,500-$5,000 job. If voicemail picks up, the customer calls the next number on the list and that job is gone for good.',
+          'A blown panel at 9 PM is a $1,500-$5,000 job. If voicemail picks up, the customer calls the next number on the list and that job is gone for good.',
       },
       {
         title: 'Estimates get scoped poorly over rushed phone calls',
         description:
-          'PLACEHOLDER, A rushed two-minute call captures half the information. The tech shows up to a different scope, the customer is annoyed, and the close rate drops.',
+          'A rushed two-minute call captures half the information. The tech shows up to a different scope, the customer is annoyed, and the close rate drops.',
       },
       {
         title: 'Commercial vs residential routing is ad hoc',
         description:
-          'PLACEHOLDER, Most shops route every call to the same dispatcher. Commercial accounts with SLAs sit in the same queue as residential bid calls.',
+          'Most shops route every call to the same dispatcher. Commercial accounts with SLAs sit in the same queue as residential bid calls.',
       },
     ],
     useCases: [
@@ -190,8 +190,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+27%', label: 'estimate close rate' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Storm season used to mean missing 30 calls a week. Last quarter we missed two. The agent dispatched the rest before I picked up the truck.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, regional electrical contractor',
+      'Storm season used to mean missing 30 calls a week. Last quarter we missed two. The agent dispatched the rest before I picked up the truck.',
+    testimonialAuthor: 'Owner, regional electrical contractor',
     faqs: [
       {
         question: 'Does it integrate with ServiceTitan, Housecall Pro, Jobber?',
@@ -247,17 +247,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Bid calls hit voicemail when crews are on site',
         description:
-          'PLACEHOLDER, Six-figure remodel inquiries die on voicemail because the owner is in a wall pocket. The next contractor on Google answers and wins the job.',
+          'Six-figure remodel inquiries die on voicemail because the owner is in a wall pocket. The next contractor on Google answers and wins the job.',
       },
       {
         title: 'Tire-kickers waste truck-roll budget',
         description:
-          'PLACEHOLDER, Every site visit costs real time and gas. Without intake screening, half end up with no permits, no budget, no decision-makers.',
+          'Every site visit costs real time and gas. Without intake screening, half end up with no permits, no budget, no decision-makers.',
       },
       {
         title: 'Sub coordination calls collide with sales calls',
         description:
-          'PLACEHOLDER, Sub schedules, change orders, and inspector calls drown out new-bid calls in the same queue. Sales suffers because operations is loud.',
+          'Sub schedules, change orders, and inspector calls drown out new-bid calls in the same queue. Sales suffers because operations is loud.',
       },
     ],
     useCases: [
@@ -283,8 +283,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, We used to send our PM on six site visits a week. Now five of those six actually have a budget and a permit, and the sixth just gets a polite no thanks.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, residential GC',
+      'We used to send our PM on six site visits a week. Now five of those six actually have a budget and a permit, and the sixth just gets a polite no thanks.',
+    testimonialAuthor: 'Owner, residential GC',
     faqs: [
       {
         question: 'Does it integrate with Buildertrend, CoConstruct, JobTread?',
@@ -340,17 +340,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Front desk drowning in booking calls during peak hours',
         description:
-          'PLACEHOLDER, Saturday afternoons mean 40+ calls and a lobby full of clients. Front desk picks one to lose and it is usually the phone.',
+          'Saturday afternoons mean 40+ calls and a lobby full of clients. Front desk picks one to lose and it is usually the phone.',
       },
       {
         title: 'Stylist availability changes faster than the phone updates',
         description:
-          'PLACEHOLDER, A stylist runs late, calls out, or shifts. The booking calendar updates but the front desk is behind, so calls quote times that no longer exist.',
+          'A stylist runs late, calls out, or shifts. The booking calendar updates but the front desk is behind, so calls quote times that no longer exist.',
       },
       {
         title: 'No-shows break the whole day',
         description:
-          'PLACEHOLDER, Without consistent confirmation calls, no-show rates run 18-25%. Each one is dead chair time and a stylist losing money.',
+          'Without consistent confirmation calls, no-show rates run 18-25%. Each one is dead chair time and a stylist losing money.',
       },
     ],
     useCases: [
@@ -376,8 +376,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+24%', label: 'after-hours bookings' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Saturdays used to be chaos. Now the front desk is actually with our clients and the phone still gets answered.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, multi-chair salon',
+      'Saturdays used to be chaos. Now the front desk is actually with our clients and the phone still gets answered.',
+    testimonialAuthor: 'Owner, multi-chair salon',
     faqs: [
       {
         question: 'Does it integrate with Boulevard, Vagaro, Mindbody?',
@@ -433,17 +433,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Tax season buries the phone line for 6 straight weeks',
         description:
-          'PLACEHOLDER, March-April call volume runs 4-5x off-season. Without surge capacity, new-client calls die in voicemail and existing clients get frustrated.',
+          'March-April call volume runs 4-5x off-season. Without surge capacity, new-client calls die in voicemail and existing clients get frustrated.',
       },
       {
         title: 'Associates burn billable hours on intake and status checks',
         description:
-          'PLACEHOLDER, Every "did you get my W-2" call answered by a senior associate is real money lost. The labor cost shows up on the P&L every April.',
+          'Every "did you get my W-2" call answered by a senior associate is real money lost. The labor cost shows up on the P&L every April.',
       },
       {
         title: 'Document collection is a constant friction point',
         description:
-          'PLACEHOLDER, Clients say they sent it; the firm never received it. Without a clean intake-and-receipt flow, returns stall and deadlines slip.',
+          'Clients say they sent it; the firm never received it. Without a clean intake-and-receipt flow, returns stall and deadlines slip.',
       },
     ],
     useCases: [
@@ -469,8 +469,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '100%', label: 'after-hours coverage' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Last March we kept up. That has not happened in 12 years. The agent ate the call volume so my partners could actually file returns.',
-    testimonialAuthor: 'PLACEHOLDER, Managing partner, regional CPA firm',
+      'Last March we kept up. That has not happened in 12 years. The agent ate the call volume so my partners could actually file returns.',
+    testimonialAuthor: 'Managing partner, regional CPA firm',
     faqs: [
       {
         question: 'Does it integrate with our tax software and CRM?',
@@ -526,17 +526,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Every cold pitch ends up on the founder\'s desk',
         description:
-          'PLACEHOLDER, The lazy filter sends every "let me sell you SEO" call straight to leadership. Real RFPs get lost in the same queue.',
+          'The lazy filter sends every "let me sell you SEO" call straight to leadership. Real RFPs get lost in the same queue.',
       },
       {
         title: 'Six-figure inquiries decay if not answered same-day',
         description:
-          'PLACEHOLDER, A prospect calling three agencies on Tuesday morning makes a shortlist by Tuesday afternoon. If you call back Wednesday, you are off the list.',
+          'A prospect calling three agencies on Tuesday morning makes a shortlist by Tuesday afternoon. If you call back Wednesday, you are off the list.',
       },
       {
         title: 'Junior account staff cannot qualify high-end retainers',
         description:
-          'PLACEHOLDER, Routing inbound to a coordinator means good-fit prospects get a generic intake. Bad fit, you waste a discovery slot. Either way, lost.',
+          'Routing inbound to a coordinator means good-fit prospects get a generic intake. Bad fit, you waste a discovery slot. Either way, lost.',
       },
     ],
     useCases: [
@@ -562,8 +562,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-89%', label: 'cold-pitch noise to leadership' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Our discovery slots used to be 50% tire-kickers. Now they are 90% real RFPs. Our close rate doubled because we stopped wasting strategist time on bad fits.',
-    testimonialAuthor: 'PLACEHOLDER, Founder, mid-market agency',
+      'Our discovery slots used to be 50% tire-kickers. Now they are 90% real RFPs. Our close rate doubled because we stopped wasting strategist time on bad fits.',
+    testimonialAuthor: 'Founder, mid-market agency',
     faqs: [
       {
         question: 'Does it integrate with HubSpot, Salesforce, or our CRM?',
@@ -619,17 +619,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Dispatcher juggles phone and schedule simultaneously',
         description:
-          'PLACEHOLDER, One person answering the phone while moving keys, gate codes, and crew assignments. The phone always loses.',
+          'One person answering the phone while moving keys, gate codes, and crew assignments. The phone always loses.',
       },
       {
         title: 'Recurring customers churn over scheduling friction',
         description:
-          'PLACEHOLDER, A customer calls to move next Thursday, hits voicemail, tries the cleaner across town. By the time you call back the relationship is gone.',
+          'A customer calls to move next Thursday, hits voicemail, tries the cleaner across town. By the time you call back the relationship is gone.',
       },
       {
         title: 'Commercial SLA calls sit in the same queue as residential bids',
         description:
-          'PLACEHOLDER, A property manager with a contracted SLA expects priority. They will not get it from a queue that treats them like a new homeowner inquiry.',
+          'A property manager with a contracted SLA expects priority. They will not get it from a queue that treats them like a new homeowner inquiry.',
       },
     ],
     useCases: [
@@ -655,8 +655,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, My dispatcher used to spend half the day on the phone. Now she runs the schedule, handles exceptions, and the routine calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, residential cleaning service',
+      'My dispatcher used to spend half the day on the phone. Now she runs the schedule, handles exceptions, and the routine calls just happen.',
+    testimonialAuthor: 'Owner, residential cleaning service',
     faqs: [
       {
         question: 'Does it integrate with Jobber, Housecall Pro, ZenMaid?',
@@ -712,17 +712,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Rate-shoppers do not wait, they call the next number',
         description:
-          'PLACEHOLDER, Mortgage shoppers call 4-6 lenders in a single hour. If you do not pick up, they are gone before you even know they called.',
+          'Mortgage shoppers call 4-6 lenders in a single hour. If you do not pick up, they are gone before you even know they called.',
       },
       {
         title: 'Loan officers burn an hour daily on document chase',
         description:
-          'PLACEHOLDER, "I sent it." "I did not receive it." "Let me re-send." Multiplied across every active file, this is real labor cost.',
+          '"I sent it." "I did not receive it." "Let me re-send." Multiplied across every active file, this is real labor cost.',
       },
       {
         title: 'Realtor partners drop you over response time',
         description:
-          'PLACEHOLDER, A Realtor needs a pre-approval letter by tomorrow morning. If you call back at 4 PM, they used a different lender on the offer.',
+          'A Realtor needs a pre-approval letter by tomorrow morning. If you call back at 4 PM, they used a different lender on the offer.',
       },
     ],
     useCases: [
@@ -748,8 +748,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<2 min', label: 'Realtor response time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, My LOs stopped working until 9 PM chasing documents. The agent collects them during the first call and we close on time.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, regional mortgage brokerage',
+      'My LOs stopped working until 9 PM chasing documents. The agent collects them during the first call and we close on time.',
+    testimonialAuthor: 'Owner, regional mortgage brokerage',
     faqs: [
       {
         question: 'Does it integrate with Encompass, BytePro, LendingPad?',
@@ -805,17 +805,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Producers stuck on the phone instead of selling',
         description:
-          'PLACEHOLDER, Every "is my deductible $500 or $1000" call answered by a producer is real commission lost. The agency feels expensive without being efficient.',
+          'Every "is my deductible $500 or $1000" call answered by a producer is real commission lost. The agency feels expensive without being efficient.',
       },
       {
         title: 'Claim intake at 7 PM goes to voicemail',
         description:
-          'PLACEHOLDER, Auto accidents do not happen 9-5. If your claim line is voicemail after hours, customers feel unsupported and your retention drops.',
+          'Auto accidents do not happen 9-5. If your claim line is voicemail after hours, customers feel unsupported and your retention drops.',
       },
       {
         title: 'Quote shoppers comparison-shop in real time',
         description:
-          'PLACEHOLDER, Auto and home shoppers call 3-5 agents in an hour. The first to answer with a quote becomes the favorite.',
+          'Auto and home shoppers call 3-5 agents in an hour. The first to answer with a quote becomes the favorite.',
       },
     ],
     useCases: [
@@ -841,8 +841,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '100%', label: 'claim coverage 24/7' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, My producers used to lose their first hour every morning to "did you get my email" calls. Now they pick up at 9 and start closing.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, multi-line independent agency',
+      'My producers used to lose their first hour every morning to "did you get my email" calls. Now they pick up at 9 and start closing.',
+    testimonialAuthor: 'Owner, multi-line independent agency',
     faqs: [
       {
         question: 'Does it integrate with AMS360, Applied Epic, EZLynx?',
@@ -898,17 +898,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Anxious pet parents hitting voicemail at 9 PM',
         description:
-          'PLACEHOLDER, A panicked owner whose dog is bloating cannot wait. They drive to the emergency clinic across town and never come back.',
+          'A panicked owner whose dog is bloating cannot wait. They drive to the emergency clinic across town and never come back.',
       },
       {
         title: 'Front desk drowns in routine refill calls',
         description:
-          'PLACEHOLDER, Refill requests follow a clean script but eat front-desk time. The receptionist has no bandwidth left for the new puppy walking through the door.',
+          'Refill requests follow a clean script but eat front-desk time. The receptionist has no bandwidth left for the new puppy walking through the door.',
       },
       {
         title: 'New-client intake is inconsistent',
         description:
-          'PLACEHOLDER, Different staff capture different intake fields. The DVM sometimes walks into the room without species or vaccine history loaded.',
+          'Different staff capture different intake fields. The DVM sometimes walks into the room without species or vaccine history loaded.',
       },
     ],
     useCases: [
@@ -934,8 +934,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-17h', label: 'front-desk phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Our front desk used to be in tears by Friday. Now they actually leave the building at closing. The agent handles the volume.',
-    testimonialAuthor: 'PLACEHOLDER, Practice manager, two-doctor small animal clinic',
+      'Our front desk used to be in tears by Friday. Now they actually leave the building at closing. The agent handles the volume.',
+    testimonialAuthor: 'Practice manager, two-doctor small animal clinic',
     faqs: [
       {
         question: 'Does it integrate with Avimark, Cornerstone, ezyVet?',
@@ -991,17 +991,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Phone rings during the busiest adjustment hours',
         description:
-          'PLACEHOLDER, Peak treatment hours are also peak inbound. The front desk is on the table, not at the desk. New patients hit voicemail.',
+          'Peak treatment hours are also peak inbound. The front desk is on the table, not at the desk. New patients hit voicemail.',
       },
       {
         title: 'Insurance auth eats half the day',
         description:
-          'PLACEHOLDER, Verifying coverage and prior auth follows a clean script, but it is repetitive, time-consuming, and easy to drop.',
+          'Verifying coverage and prior auth follows a clean script, but it is repetitive, time-consuming, and easy to drop.',
       },
       {
         title: 'No-shows compound across recurring care plans',
         description:
-          'PLACEHOLDER, A patient on a 24-visit plan who no-shows breaks the entire week. Without proactive reminders, this happens constantly.',
+          'A patient on a 24-visit plan who no-shows breaks the entire week. Without proactive reminders, this happens constantly.',
       },
     ],
     useCases: [
@@ -1027,8 +1027,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Before Implenix I was running back to the front desk every 20 minutes. Now I run my schedule and the calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER, DC, two-provider chiropractic clinic',
+      'Before Implenix I was running back to the front desk every 20 minutes. Now I run my schedule and the calls just happen.',
+    testimonialAuthor: 'DC, two-provider chiropractic clinic',
     faqs: [
       {
         question: 'Does it integrate with ChiroTouch, Genesis, eClinicalWorks?',
@@ -1084,17 +1084,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'New-client calls land in provider voicemail',
         description:
-          'PLACEHOLDER, A first-time call took courage. If it ends in voicemail, that thread often breaks for good.',
+          'A first-time call took courage. If it ends in voicemail, that thread often breaks for good.',
       },
       {
         title: 'Crisis calls cannot wait for callback',
         description:
-          'PLACEHOLDER, A client in acute distress calling at 9 PM needs an answer in seconds, not the next morning.',
+          'A client in acute distress calling at 9 PM needs an answer in seconds, not the next morning.',
       },
       {
         title: 'Insurance and sliding-scale questions burn provider time',
         description:
-          'PLACEHOLDER, Detailed, emotionally loaded conversations that follow a clear policy, but cost the provider real session hours.',
+          'Detailed, emotionally loaded conversations that follow a clear policy, but cost the provider real session hours.',
       },
     ],
     useCases: [
@@ -1120,8 +1120,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-12h', label: 'provider phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, My new clients used to drop off after a missed first call. Now every initial call gets answered, screened, and warmly handed back to me.',
-    testimonialAuthor: 'PLACEHOLDER, LCSW, solo private practice',
+      'My new clients used to drop off after a missed first call. Now every initial call gets answered, screened, and warmly handed back to me.',
+    testimonialAuthor: 'LCSW, solo private practice',
     faqs: [
       {
         question: 'Is it appropriate for sensitive mental health calls?',
@@ -1177,17 +1177,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Front desk cannot greet guests and answer calls at once',
         description:
-          'PLACEHOLDER, The first impression of a spa is the front desk. When the phone rings every two minutes, the in-person guest gets the worse experience.',
+          'The first impression of a spa is the front desk. When the phone rings every two minutes, the in-person guest gets the worse experience.',
       },
       {
         title: 'Gift-card and package questions are repetitive call-killers',
         description:
-          'PLACEHOLDER, "Can you check my gift-card balance" follows a clean script but eats real time. Multiplied across the day, it is the front desk\'s third job.',
+          '"Can you check my gift-card balance" follows a clean script but eats real time. Multiplied across the day, it is the front desk\'s third job.',
       },
       {
         title: 'Bridal and group bookings get lost in the routine queue',
         description:
-          'PLACEHOLDER, A six-person bridal package is a real revenue event. If the booking call hits voicemail, that party books somewhere else.',
+          'A six-person bridal package is a real revenue event. If the booking call hits voicemail, that party books somewhere else.',
       },
     ],
     useCases: [
@@ -1213,8 +1213,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '<60s', label: 'average pickup time' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Saturday lobbies used to be a circus. Now the front desk is actually with our guests and the phone still gets answered every time.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, multi-room day spa',
+      'Saturday lobbies used to be a circus. Now the front desk is actually with our guests and the phone still gets answered every time.',
+    testimonialAuthor: 'Owner, multi-room day spa',
     faqs: [
       {
         question: 'Does it integrate with Mindbody, Boulevard, Booker, Vagaro?',
@@ -1270,17 +1270,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Spring season buries the owner\'s phone',
         description:
-          'PLACEHOLDER, March-May call volume is 4x baseline. Without surge capacity, design-build bids die in voicemail and routine maintenance customers churn.',
+          'March-May call volume is 4x baseline. Without surge capacity, design-build bids die in voicemail and routine maintenance customers churn.',
       },
       {
         title: 'Weather reschedules break the entire route',
         description:
-          'PLACEHOLDER, Rain pushes today\'s route to tomorrow. Customers call to confirm or move. Without live handling, the route compounds and everyone is angry by Friday.',
+          'Rain pushes today\'s route to tomorrow. Customers call to confirm or move. Without live handling, the route compounds and everyone is angry by Friday.',
       },
       {
         title: 'Crews are unreachable, owner answers everything',
         description:
-          'PLACEHOLDER, The crew leaves at 6:30 AM. The owner is in a truck with cement gloves on. The phone rings until lunch.',
+          'The crew leaves at 6:30 AM. The owner is in a truck with cement gloves on. The phone rings until lunch.',
       },
     ],
     useCases: [
@@ -1306,8 +1306,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-12h', label: 'owner phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, March used to mean 16-hour days because the phone never stopped. This year I left at 6 PM most nights.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, residential landscaping company',
+      'March used to mean 16-hour days because the phone never stopped. This year I left at 6 PM most nights.',
+    testimonialAuthor: 'Owner, residential landscaping company',
     faqs: [
       {
         question: 'Does it integrate with LMN, Aspire, Service Autopilot?',
@@ -1363,17 +1363,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Emergency infestation calls hit voicemail at 8 PM',
         description:
-          'PLACEHOLDER, A homeowner who just found rodents calls three companies in 10 minutes. Voicemail loses the job permanently.',
+          'A homeowner who just found rodents calls three companies in 10 minutes. Voicemail loses the job permanently.',
       },
       {
         title: 'Summer pest season overwhelms dispatch',
         description:
-          'PLACEHOLDER, Wasp and ant season runs 4-5x baseline call volume. Without surge capacity, recurring customers feel deprioritized.',
+          'Wasp and ant season runs 4-5x baseline call volume. Without surge capacity, recurring customers feel deprioritized.',
       },
       {
         title: 'Commercial SLAs drown in residential queue',
         description:
-          'PLACEHOLDER, A restaurant with a contracted SLA expects priority. Without account-aware routing, they sit behind a homeowner asking about ant traps.',
+          'A restaurant with a contracted SLA expects priority. Without account-aware routing, they sit behind a homeowner asking about ant traps.',
       },
     ],
     useCases: [
@@ -1399,8 +1399,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-15h', label: 'dispatcher phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Last summer we lost about 20 emergency calls a week to voicemail. This year, every one got picked up and dispatched.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, regional pest control company',
+      'Last summer we lost about 20 emergency calls a week to voicemail. This year, every one got picked up and dispatched.',
+    testimonialAuthor: 'Owner, regional pest control company',
     faqs: [
       {
         question: 'Does it integrate with PestPac, ServSuite, FieldRoutes?',
@@ -1456,17 +1456,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'Memorial Day through Labor Day buries the phone',
         description:
-          'PLACEHOLDER, Peak season runs 3-4x baseline volume. Without surge capacity, $5K+ jobs die in voicemail every single day.',
+          'Peak season runs 3-4x baseline volume. Without surge capacity, $5K+ jobs die in voicemail every single day.',
       },
       {
         title: 'Quote intake is too detailed for owners on jobs',
         description:
-          'PLACEHOLDER, A real estimate needs 15+ variables. Owners on a job site cannot capture them on a rushed call. The estimate is wrong, the move is bid badly.',
+          'A real estimate needs 15+ variables. Owners on a job site cannot capture them on a rushed call. The estimate is wrong, the move is bid badly.',
       },
       {
         title: 'Long-distance and commercial calls mix with local',
         description:
-          'PLACEHOLDER, A long-distance corporate relocation needs different intake than a local apartment move. Same queue, same script, both lose.',
+          'A long-distance corporate relocation needs different intake than a local apartment move. Same queue, same script, both lose.',
       },
     ],
     useCases: [
@@ -1492,8 +1492,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '+24%', label: 'estimator close rate' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, June used to be chaos. We dropped 20 calls a day. This year we picked them all up and our close rate went up because the intake was actually complete.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, regional moving company',
+      'June used to be chaos. We dropped 20 calls a day. This year we picked them all up and our close rate went up because the intake was actually complete.',
+    testimonialAuthor: 'Owner, regional moving company',
     faqs: [
       {
         question: 'Does it integrate with SmartMoving, MoveitPro, Network Movers?',
@@ -1549,17 +1549,17 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       {
         title: 'You\'re in a session when prospects call',
         description:
-          'PLACEHOLDER, The whole problem in one sentence. The trainer cannot answer because they are training. The prospect books somewhere else.',
+          'The whole problem in one sentence. The trainer cannot answer because they are training. The prospect books somewhere else.',
       },
       {
         title: 'Returning client questions disrupt the session',
         description:
-          'PLACEHOLDER, A returning client texting to move tomorrow\'s session interrupts the current session. Multiplied across the day, it is exhausting.',
+          'A returning client texting to move tomorrow\'s session interrupts the current session. Multiplied across the day, it is exhausting.',
       },
       {
         title: 'Package and pricing questions follow a clean script, but eat time',
         description:
-          'PLACEHOLDER, "How much for 10 sessions" is a 90-second call. The trainer should not be the one taking it.',
+          '"How much for 10 sessions" is a 90-second call. The trainer should not be the one taking it.',
       },
     ],
     useCases: [
@@ -1585,8 +1585,8 @@ export const INDUSTRY_PROFILES: IndustryProfile[] = [
       { number: '-9h', label: 'trainer phone time / week' },
     ],
     testimonialQuote:
-      'PLACEHOLDER, Before, every session was punctuated by my phone vibrating. Now I run the session, and the calls just happen.',
-    testimonialAuthor: 'PLACEHOLDER, Owner, two-coach training studio',
+      'Before, every session was punctuated by my phone vibrating. Now I run the session, and the calls just happen.',
+    testimonialAuthor: 'Owner, two-coach training studio',
     faqs: [
       {
         question: 'Does it integrate with Mindbody, TrueCoach, Trainerize?',

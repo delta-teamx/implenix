@@ -15,7 +15,7 @@ const payloadSchema = z.object({
 
 // CRM webhook URL is read from the environment at request time.
 // When unset, the route still returns 200 so the UI can complete its success
-// state — leads are only logged. Set CRM_WEBHOOK_URL in production.
+// state, leads are only logged. Set CRM_WEBHOOK_URL in production.
 async function forwardToCrm(body: unknown): Promise<{ ok: boolean }> {
   const url = process.env.CRM_WEBHOOK_URL;
   if (!url) {

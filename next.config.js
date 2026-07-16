@@ -59,8 +59,17 @@ const nextConfig = {
         permanent: true,
       },
       {
+        // /solutions/ai-receptionist retired to eliminate
+        // AI-Receptionist keyword cannibalization with the homepage.
+        // Google flags two pages competing for the same query as
+        // duplicate content and ranks neither.
+        source: '/solutions/ai-receptionist',
+        destination: '/',
+        permanent: true,
+      },
+      {
         // /ai-call-answering-service was near-duplicate content vs
-        // /ai-phone-answering-service — same keyword family. 301
+        // /ai-phone-answering-service, same keyword family. 301
         // consolidates the ranking signal on the phone version.
         source: '/ai-call-answering-service',
         destination: '/ai-phone-answering-service',

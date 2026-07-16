@@ -38,8 +38,8 @@ export function GET() {
     })
     .join('\n');
 
-  // RSS 2.0 with Dublin Core (dc:creator — spec-compliant author) and
-  // Media RSS (media:content — per-item hero image for reader thumbnails)
+  // RSS 2.0 with Dublin Core (dc:creator, spec-compliant author) and
+  // Media RSS (media:content, per-item hero image for reader thumbnails)
   // namespaces declared on the root <rss> element.
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"

@@ -41,7 +41,7 @@ export async function GET(req: NextRequest) {
       );
     }
     return html(
-      `<h2>Success — copy this refresh token into Vercel.</h2>
+      `<h2>Success, copy this refresh token into Vercel.</h2>
        <p>Add it as <code>GOOGLE_REFRESH_TOKEN</code> in your Vercel project's <strong>Production</strong>, <strong>Preview</strong>, and <strong>Development</strong> environments.</p>
        <pre style="background:#111;color:#3dfaff;padding:16px;border:1px solid #444;overflow-x:auto;word-break:break-all;white-space:pre-wrap;">${escapeHtml(
          tokens.refresh_token,
@@ -49,10 +49,10 @@ export async function GET(req: NextRequest) {
        <h3>After you paste it:</h3>
        <ol>
          <li>Trigger a redeploy on Vercel so the token is picked up</li>
-         <li>Visit <code>/contact</code> — the booking widget should now render available time slots from your Google Calendar</li>
+         <li>Visit <code>/contact</code>, the booking widget should now render available time slots from your Google Calendar</li>
          <li>Book a test slot to verify a real Google Meet link is generated</li>
        </ol>
-       <p style="opacity:.6;margin-top:2em;">This page will not be shown again unless the app is revoked and re-consented. Close this tab after saving the token — it will not display on refresh.</p>`,
+       <p style="opacity:.6;margin-top:2em;">This page will not be shown again unless the app is revoked and re-consented. Close this tab after saving the token, it will not display on refresh.</p>`,
       200,
     );
   } catch (err) {

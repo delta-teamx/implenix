@@ -51,7 +51,7 @@ type NavGroup = {
 };
 
 const NAV_GROUPS: NavGroup[] = [
-  { label: 'Solutions', href: '/solutions/ai-receptionist', type: 'mega-solutions' },
+  { label: 'Solutions', href: '/', type: 'mega-solutions' },
   {
     label: 'Industries',
     href: '/ai-receptionist-for-hvac-companies',
@@ -69,7 +69,7 @@ const NAV_GROUPS: NavGroup[] = [
 
 const SOLUTIONS = [
   {
-    href: '/solutions/ai-receptionist',
+    href: '/',
     title: 'AI Receptionist',
     description: 'Answer every inbound call. Qualify and book the lead.',
     Icon: PhoneCall,

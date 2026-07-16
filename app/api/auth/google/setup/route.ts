@@ -10,7 +10,7 @@ export const runtime = 'nodejs';
 
 export async function GET() {
   try {
-    // Cheap CSRF state — enough for this one-time flow.
+    // Cheap CSRF state, enough for this one-time flow.
     const state = Math.random().toString(36).slice(2);
     return NextResponse.redirect(buildAuthUrl(state));
   } catch (err) {
