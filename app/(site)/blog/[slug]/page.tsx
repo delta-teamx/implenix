@@ -129,6 +129,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               alt={doc.heroImageAlt ?? doc.title}
               fill
               priority
+              unoptimized
               sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover"
             />
