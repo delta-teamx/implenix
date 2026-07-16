@@ -47,6 +47,8 @@ export default function BlogIndexPage() {
       category: p.category,
       publishedAt: p.publishedAt,
       readTime: p.readTime,
+      heroImage: p.heroImage,
+      heroImageAlt: p.heroImageAlt,
     }));
 
   return (

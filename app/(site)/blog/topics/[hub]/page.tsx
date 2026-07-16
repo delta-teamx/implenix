@@ -117,14 +117,15 @@ export default function TopicHubPage({ params }: { params: Params }) {
                 className="group flex flex-col bg-black border border-brand-purple/20 hover:border-brand-purple transition-colors overflow-hidden"
               >
                 <div className="relative aspect-[16/9] bg-brand-dark border-b border-brand-purple/20 overflow-hidden">
-                  <Image
-                    src={`${post.url}/opengraph-image`}
-                    alt={post.title}
-                    fill
-                    unoptimized
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
+                  {post.heroImage ? (
+                    <Image
+                      src={post.heroImage}
+                      alt={post.heroImageAlt ?? post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  ) : null}
                 </div>
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <span className="self-start bg-brand-purple text-white text-[10px] uppercase tracking-widest font-medium px-2 py-1">

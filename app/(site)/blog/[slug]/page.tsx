@@ -121,19 +121,20 @@ export default function BlogPostPage({ params }: { params: Params }) {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-6 pt-6">
-        <div className="relative w-full aspect-[16/9] border border-brand-purple/25 bg-black overflow-hidden">
-          <Image
-            src={`${doc.url}/opengraph-image`}
-            alt={doc.title}
-            fill
-            priority
-            unoptimized
-            sizes="(max-width: 1024px) 100vw, 896px"
-            className="object-cover"
-          />
+      {doc.heroImage ? (
+        <div className="max-w-4xl mx-auto px-6 pt-6">
+          <div className="relative w-full aspect-[16/9] border border-brand-purple/25 bg-black overflow-hidden">
+            <Image
+              src={doc.heroImage}
+              alt={doc.heroImageAlt ?? doc.title}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover"
+            />
+          </div>
         </div>
-      </div>
+      ) : null}
 
       <article className="max-w-3xl mx-auto px-6 py-12">
         <header className="flex items-center gap-4 border-y border-brand-purple/20 py-5">
